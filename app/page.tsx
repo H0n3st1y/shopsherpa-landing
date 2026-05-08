@@ -1,367 +1,362 @@
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { PreorderButton } from "@/components/PreorderButton";
-import { FAQ } from "@/components/FAQ";
 
 export default function Page() {
   return (
-    <main className="min-h-screen">
-      {/* Nav */}
-      <header className="border-b border-[var(--color-line)] sticky top-0 z-40 backdrop-blur-md bg-[var(--color-bg)]/80">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <main className="min-h-screen bg-[#0d1f2d] pb-20">
+      {/* SECTION 1 — HERO (deep teal block) */}
+      <section className="bg-[#2e6273] text-white relative overflow-hidden">
+        {/* Top nav */}
+        <header className="relative z-20 px-6 md:px-10 py-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Logo />
             <span className="font-semibold text-lg tracking-tight">ShopSherpa</span>
           </div>
-          <nav className="hidden md:flex items-center gap-8 text-sm text-[var(--color-ink-muted)]">
-            <a href="#features" className="hover:text-[var(--color-ink)] transition">Features</a>
-            <a href="#pricing" className="hover:text-[var(--color-ink)] transition">Pricing</a>
-            <a href="#faq" className="hover:text-[var(--color-ink)] transition">FAQ</a>
+          <nav className="hidden md:flex items-center gap-8 text-sm text-white/80">
+            <a href="#manifesto" className="hover:text-white transition">Manifesto</a>
+            <a href="#founder" className="hover:text-white transition">Founder</a>
+            <a href="#stories" className="hover:text-white transition">Stories</a>
+            <a href="#plus" className="hover:text-white transition">Plus</a>
           </nav>
           <a
-            href="#pricing"
-            className="text-sm font-medium px-4 py-2 rounded-full bg-[var(--color-teal)] text-white hover:bg-[var(--color-teal-deep)] transition"
+            href="#preorder"
+            className="text-sm font-medium px-5 py-2.5 rounded-full bg-black text-white hover:bg-black/80 transition flex items-center gap-2"
           >
+            <span className="size-1.5 rounded-full bg-[#1d9e75]" />
             Pre-order
           </a>
-        </div>
-      </header>
+        </header>
 
-      {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--color-line)] bg-[var(--color-card)] text-xs font-medium text-[var(--color-teal)] mb-8">
-            <span className="size-1.5 rounded-full bg-[var(--color-green)] animate-pulse" />
-            Plus tier launching Q3 2026
-          </div>
-          <h1 className="text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05] mb-6">
-            You already trust us<br />
-            <span className="text-[var(--color-teal)]">at checkout.</span>
+        {/* Hero content */}
+        <div className="relative z-10 px-6 md:px-10 pt-16 pb-32 md:pt-24 md:pb-48 text-center">
+          <h1 className="text-[4rem] md:text-[8rem] leading-[0.95] font-medium tracking-tighter max-w-5xl mx-auto">
+            Shopping security,<br />redesigned.
           </h1>
-          <p className="text-xl md:text-2xl text-[var(--color-ink-muted)] leading-relaxed mb-10 max-w-2xl">
-            ShopSherpa Plus extends our fraud detection beyond shopping. Phishing in your inbox, breaches in your accounts, and stolen card data. We catch them all. One subscription.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <PreorderButton />
-            <a
-              href="#waitlist"
-              className="px-6 py-3.5 rounded-full border border-[var(--color-line)] bg-[var(--color-card)] font-medium hover:bg-[var(--color-bg-alt)] transition text-center"
-            >
-              Join waitlist instead
-            </a>
-          </div>
-          <p className="text-sm text-[var(--color-ink-muted)]">
-            <span className="font-mono">2,000+</span> shoppers protected.{" "}
-            <span className="font-mono">$14,000</span> in scams stopped this year.
+          <p className="mt-8 text-base md:text-lg max-w-md mx-auto text-white/70 leading-relaxed">
+            We're building the safety layer of online shopping. For families, for individuals, for everyone who still feels nervous at checkout.
           </p>
         </div>
+
+        {/* Floating shapes */}
+        <FloatingHeroShapes />
       </section>
 
-      {/* Social proof strip */}
-      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-alt)]">
-        <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <Stat label="Active users" value="2,000+" />
-          <Stat label="Scans run" value="47,000" />
-          <Stat label="Fraud patterns" value="1,800+" />
-          <Stat label="Avg rating" value="4.8 / 5" />
-        </div>
-      </section>
-
-      {/* Problem */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
-        <div className="max-w-3xl mb-16">
-          <p className="text-sm font-mono text-[var(--color-teal)] mb-4 uppercase tracking-wider">The problem</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
-            The scam follows you home.
-          </h2>
-          <p className="text-lg text-[var(--color-ink-muted)] leading-relaxed">
-            The fake Amazon page was just the start. The real attack happens after. In your inbox. In your saved passwords. In the card data you handed over six months ago.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          <ProblemCard
-            stat="75%"
-            title="Phishing emails"
-            body="Three out of four data breaches start with a single email. Fake delivery notices, fake refund offers, fake password resets."
-          />
-          <ProblemCard
-            stat="81%"
-            title="Reused passwords"
-            body="Most account hacks happen because one password got leaked from a different site you forgot about. Your bank pays for a Netflix breach."
-          />
-          <ProblemCard
-            stat="every"
-            title="Stolen card data"
-            body="Every checkout is a lottery ticket for a future fraudster. Once your number is out there, it gets sold and resold for years."
-          />
-        </div>
-      </section>
-
-      {/* Features */}
-      <section id="features" className="bg-[var(--color-bg-alt)] border-y border-[var(--color-line)]">
-        <div className="max-w-6xl mx-auto px-6 py-24">
-          <div className="max-w-3xl mb-16">
-            <p className="text-sm font-mono text-[var(--color-teal)] mb-4 uppercase tracking-wider">What's in Plus</p>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
-              Three tools. One job. Keep your money where it belongs.
+      {/* SECTION 2 — Manifesto (dark navy block) */}
+      <section id="manifesto" className="bg-[#0d1f2d] text-white px-6 md:px-10 py-32 md:py-48 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 relative">
+          <div>
+            <h2 className="text-5xl md:text-7xl font-medium tracking-tighter leading-[0.95]">
+              We're building the future of safe shopping.
             </h2>
-          </div>
 
-          <div className="space-y-4">
-            <FeatureRow
-              num="01"
-              title="Phishing Shield"
-              tagline="Same fraud AI. Now in your inbox."
-              body="Connect Gmail or Outlook in two clicks. Our scanner reads incoming mail and flags fake delivery notices, fake refund offers, and fake login pages before you click them. The same AI that's caught $14,000 in shopping scams now watches every message you get."
-            />
-            <FeatureRow
-              num="02"
-              title="Password Vault"
-              tagline="Breach alerts before the news does."
-              body="Save your logins. We watch the dark web. The moment a site you use gets breached, we tell you. One tap rotates the password. No more discovering a leak six months late from a panicked email."
-            />
-            <FeatureRow
-              num="03"
-              title="Masked Cards"
-              tagline="A new card number for every store."
-              body="Your real card stays hidden. Every merchant gets a unique virtual number. If they get hacked, your number is worthless. If you cancel a subscription, they can't charge you again. Built right into our existing checkout flow."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* The moment */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
-        <div className="max-w-3xl mb-12">
-          <p className="text-sm font-mono text-[var(--color-teal)] mb-4 uppercase tracking-wider">A real story</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
-            Last Tuesday, Maria almost lost $312.
-          </h2>
-        </div>
-
-        <div className="bg-[var(--color-card)] border border-[var(--color-line)] rounded-2xl p-8 md:p-12 max-w-3xl shadow-[var(--shadow-soft)]">
-          <div className="flex items-start gap-4 mb-6 pb-6 border-b border-[var(--color-line)]">
-            <div className="size-10 rounded-full bg-[var(--color-bg-alt)] flex items-center justify-center font-mono text-sm">A</div>
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="font-medium">Amazon Shipping</span>
-                <span className="text-xs px-2 py-0.5 rounded bg-red-50 text-red-700 font-mono">FLAGGED</span>
-              </div>
-              <p className="text-sm text-[var(--color-ink-muted)] font-mono">amazn-shipping@delivery.net</p>
-            </div>
-          </div>
-          <p className="text-lg leading-relaxed mb-6">
-            <span className="font-medium">Subject:</span> Issue with your delivery — verify address now
-          </p>
-          <p className="text-[var(--color-ink-muted)] leading-relaxed mb-8">
-            Real package arriving 2pm. Sender domain doesn't match. "Verify" link points to a credential harvester registered yesterday.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 text-sm">
-            <div className="flex-1 px-4 py-3 rounded-xl bg-red-50 text-red-900 border border-red-100">
-              <p className="font-mono text-xs uppercase tracking-wider mb-1">Without Plus</p>
-              <p className="font-medium">$312 charged. Card data sold.</p>
-            </div>
-            <div className="flex-1 px-4 py-3 rounded-xl bg-emerald-50 text-emerald-900 border border-emerald-100">
-              <p className="font-mono text-xs uppercase tracking-wider mb-1">With Plus</p>
-              <p className="font-medium">Flagged in 0.4 seconds. Never opened.</p>
-            </div>
-          </div>
-        </div>
-
-        <p className="text-[var(--color-ink-muted)] mt-8 max-w-2xl">
-          This is what Plus does. Every day. Quietly. Without you having to remember to check.
-        </p>
-      </section>
-
-      {/* Pricing */}
-      <section id="pricing" className="bg-[var(--color-bg-alt)] border-y border-[var(--color-line)]">
-        <div className="max-w-6xl mx-auto px-6 py-24">
-          <div className="max-w-3xl mb-16">
-            <p className="text-sm font-mono text-[var(--color-teal)] mb-4 uppercase tracking-wider">Pricing</p>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-4">
-              Pay $9.99 once. Use Plus forever.
-            </h2>
-            <p className="text-lg text-[var(--color-ink-muted)]">
-              First 500 pre-orders only. Then the lifetime tier closes and Plus is monthly.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
-            {/* Free */}
-            <div className="bg-[var(--color-card)] border border-[var(--color-line)] rounded-2xl p-8">
-              <p className="text-sm font-mono text-[var(--color-ink-muted)] mb-2 uppercase tracking-wider">Free</p>
-              <p className="text-4xl font-semibold mb-1">$0</p>
-              <p className="text-sm text-[var(--color-ink-muted)] mb-8">Forever. Always.</p>
-              <ul className="space-y-3 text-sm mb-8">
-                <Bullet>Shopping fraud detection</Bullet>
-                <Bullet>Amazon, eBay, Walmart, AliExpress, Etsy</Bullet>
-                <Bullet>5 scans per month</Bullet>
-                <Bullet>Browser extension</Bullet>
-              </ul>
-              <a
-                href="https://chrome.google.com/webstore/"
-                className="block w-full text-center px-6 py-3 rounded-full border border-[var(--color-line)] font-medium hover:bg-[var(--color-bg-alt)] transition"
-              >
-                Install free
-              </a>
-            </div>
-
-            {/* Plus */}
-            <div className="bg-[var(--color-teal)] text-white rounded-2xl p-8 relative overflow-hidden shadow-[var(--shadow-lift)]">
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-[var(--color-green)] text-xs font-medium">
-                Pre-order — 184 left
-              </div>
-              <p className="text-sm font-mono text-white/70 mb-2 uppercase tracking-wider">Plus</p>
-              <div className="flex items-baseline gap-2 mb-1">
-                <p className="text-4xl font-semibold">$9.99</p>
-                <p className="text-white/70 text-sm">one-time, lifetime</p>
-              </div>
-              <p className="text-sm text-white/70 mb-8 line-through">Will be $14.99/mo at launch</p>
-              <ul className="space-y-3 text-sm mb-8">
-                <BulletWhite>Everything in Free, unlimited scans</BulletWhite>
-                <BulletWhite>Phishing shield for Gmail + Outlook</BulletWhite>
-                <BulletWhite>Password vault + breach alerts</BulletWhite>
-                <BulletWhite>Masked card numbers</BulletWhite>
-                <BulletWhite>Priority support</BulletWhite>
-                <BulletWhite>Beta access starting July 2026</BulletWhite>
-              </ul>
-              <PreorderButton variant="white" />
-              <p className="text-xs text-white/60 mt-4 text-center">30-day refund. No questions asked.</p>
+            {/* Center cube + sphere */}
+            <div className="mt-16 md:mt-24 hidden md:block">
+              <CubeSphereGraphic />
             </div>
           </div>
 
-          {/* Waitlist below pricing */}
-          <div id="waitlist" className="mt-16 max-w-2xl">
-            <p className="text-sm font-mono text-[var(--color-teal)] mb-4 uppercase tracking-wider">Not ready to pre-order?</p>
-            <h3 className="text-2xl font-semibold mb-4">Get notified when Plus launches.</h3>
-            <p className="text-[var(--color-ink-muted)] mb-6">
-              Drop your email. We'll send one note when Plus is live and one if the lifetime tier is about to sell out. Nothing else.
-            </p>
-            <WaitlistForm />
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="max-w-6xl mx-auto px-6 py-24">
-        <div className="max-w-3xl mb-12">
-          <p className="text-sm font-mono text-[var(--color-teal)] mb-4 uppercase tracking-wider">Questions</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
-            The stuff people ask before paying.
-          </h2>
-        </div>
-        <FAQ />
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-[var(--color-line)] bg-[var(--color-bg-alt)]">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div className="md:col-span-2">
-              <div className="flex items-center gap-2 mb-4">
-                <Logo />
-                <span className="font-semibold text-lg">ShopSherpa</span>
-              </div>
-              <p className="text-[var(--color-ink-muted)] text-sm max-w-sm leading-relaxed">
-                Built by Anghelo Araujo and Milan Joby. Made in Nashua, NH. Made for everyone who still gets that feeling at checkout.
+          <div className="space-y-16 md:pt-16">
+            <div>
+              <h3 className="text-xl font-medium mb-4 text-white">Focus on you.</h3>
+              <p className="text-white/60 leading-relaxed text-sm">
+                You shop differently than everyone else. ShopSherpa adapts to that. We learn what you trust, what you don't, and we get out of the way unless something feels wrong. No nagging. No theater. Just protection that fits your patterns.
               </p>
             </div>
+
             <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-muted)] mb-4">Product</p>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#features" className="hover:text-[var(--color-teal)] transition">Features</a></li>
-                <li><a href="#pricing" className="hover:text-[var(--color-teal)] transition">Pricing</a></li>
-                <li><a href="#faq" className="hover:text-[var(--color-teal)] transition">FAQ</a></li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-muted)] mb-4">Contact</p>
-              <ul className="space-y-2 text-sm">
-                <li><a href="mailto:hello@shopsherpa.ai" className="hover:text-[var(--color-teal)] transition">hello@shopsherpa.ai</a></li>
-                <li><a href="mailto:refund@shopsherpa.ai" className="hover:text-[var(--color-teal)] transition">refund@shopsherpa.ai</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-[var(--color-line)] flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-[var(--color-ink-muted)]">
-            <p>© 2026 ShopSherpa, Inc. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="/privacy" className="hover:text-[var(--color-teal)] transition">Privacy</a>
-              <a href="/terms" className="hover:text-[var(--color-teal)] transition">Terms</a>
+              <h3 className="text-xl font-medium mb-4 text-white">Private by design.</h3>
+              <p className="text-white/60 leading-relaxed text-sm">
+                Your shopping is personal. Your inbox is personal. We built ShopSherpa with end-to-end encryption from day one. We can't sell what we never see, and we don't see your data. Safety should never cost you privacy.
+              </p>
             </div>
           </div>
         </div>
-      </footer>
+
+        {/* Mobile cube */}
+        <div className="md:hidden mt-16 flex justify-center">
+          <CubeSphereGraphic />
+        </div>
+      </section>
+
+      {/* SECTION 3 — Founder (warm linen block) */}
+      <section id="founder" className="bg-[#F4F0E8] text-[#1a1a1a] px-6 md:px-10 py-32 md:py-48">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-6xl md:text-8xl font-medium tracking-tighter text-[#2e6273] mb-16 md:mb-24">
+            Founder
+          </h2>
+
+          <div className="grid md:grid-cols-[1fr_auto_1.5fr] gap-12 md:gap-16 items-start">
+            {/* Left: name */}
+            <div className="border-b-2 border-[#2e6273] pb-3">
+              <p className="text-2xl font-medium">Anghelo Araujo</p>
+            </div>
+
+            {/* Center: photo placeholder */}
+            <div className="size-48 md:size-56 rounded-full bg-[#e8dfc8] flex items-center justify-center text-[#2e6273] font-mono text-sm overflow-hidden border border-[#2e6273]/10">
+              {/* Replace with actual photo via next/image */}
+              <span className="opacity-50">photo</span>
+            </div>
+
+            {/* Right: bio */}
+            <div>
+              <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-3 font-mono">About</p>
+              <p className="text-[#1a1a1a]/80 leading-relaxed text-sm">
+                Anghelo is a high school sophomore at Nashua South building ShopSherpa from his bedroom. He's been obsessed with online fraud since middle school, when his mom almost lost $400 to a fake delivery email. He's been quietly building, talking to users, and shipping ever since. ShopSherpa has 2,000 beta users and has stopped $14,000 in scams across its first four months.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4 — Stories (dark navy block) */}
+      <section id="stories" className="bg-[#0d1f2d] text-white px-6 md:px-10 py-32 md:py-48 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-6xl md:text-8xl font-medium tracking-tighter text-[#1d9e75] mb-16 md:mb-24 text-center">
+            Real saves,<br />real money.
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <StoryCard
+              source="Last Tuesday"
+              title="Maria almost paid $312 for a package she didn't order."
+            />
+            <StoryCard
+              source="Two weeks ago"
+              title="Devin caught a fake Amazon page with a $3 markup on a $200 order."
+            />
+          </div>
+
+          {/* Mailbox-style decoration */}
+          <div className="mt-24 flex justify-center">
+            <MailboxGraphic />
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5 — What's coming (warm linen block) */}
+      <section id="plus" className="bg-[#F4F0E8] text-[#1a1a1a] px-6 md:px-10 py-32 md:py-48">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-6xl md:text-8xl font-medium tracking-tighter text-[#2e6273] mb-4 max-w-3xl">
+            Building Plus<br />this summer.
+          </h2>
+          <p className="text-[#1a1a1a]/60 max-w-md mb-16 md:mb-24">
+            We're extending ShopSherpa beyond shopping. Into your inbox. Into your saved logins. Into every checkout you'll ever make.
+          </p>
+
+          <div className="grid md:grid-cols-[1.5fr_2fr] gap-12 md:gap-16 items-start">
+            {/* Left: benefits list */}
+            <div>
+              <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-6 font-mono">Coming in Plus</p>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-3"><Dot /><span>Phishing shield for Gmail and Outlook</span></li>
+                <li className="flex items-start gap-3"><Dot /><span>Password vault with breach alerts</span></li>
+                <li className="flex items-start gap-3"><Dot /><span>Masked card numbers per merchant</span></li>
+                <li className="flex items-start gap-3"><Dot /><span>Unlimited scans across every site</span></li>
+                <li className="flex items-start gap-3"><Dot /><span>Priority support</span></li>
+                <li className="flex items-start gap-3"><Dot /><span>Beta access starts July 2026</span></li>
+              </ul>
+            </div>
+
+            {/* Right: pricing rows */}
+            <div className="space-y-3">
+              <RoleRow
+                title="Plus — Lifetime"
+                price="$9.99"
+                note="One-time. First 500 only. 184 left."
+              />
+              <RoleRow
+                title="Plus — Monthly"
+                price="$14.99/mo"
+                note="At launch."
+                muted
+              />
+
+              <div id="preorder" className="pt-4">
+                <PreorderButton />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6 — CTA (green block) */}
+      <section className="bg-[#1d9e75] text-white px-6 md:px-10 py-32 md:py-48 relative overflow-hidden">
+        <div className="max-w-3xl mx-auto text-center relative z-10">
+          <h2 className="text-6xl md:text-8xl font-medium tracking-tighter leading-[0.95]">
+            Be the first<br />to know.
+          </h2>
+          <p className="mt-8 mb-12 text-white/80 max-w-md mx-auto">
+            One email when Plus launches. One if the lifetime tier is about to sell out. Nothing else.
+          </p>
+
+          <div className="max-w-md mx-auto">
+            <WaitlistForm />
+          </div>
+
+          <p className="mt-8 text-xs text-white/60 font-mono">
+            Definitely don't press this big green button.
+          </p>
+        </div>
+
+        {/* Decorative shape */}
+        <div className="absolute -bottom-32 -right-32 size-96 rounded-full bg-white/5" />
+        <div className="absolute -top-24 -left-24 size-72 rounded-full bg-white/5" />
+      </section>
+
+      {/* Sticky bottom bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-black text-white px-6 py-3 flex items-center justify-between text-xs">
+        <div className="flex items-center gap-6 text-white/70">
+          <a href="https://twitter.com/shopsherpa" className="hover:text-white transition">Twitter</a>
+          <a href="#preorder" className="hover:text-white transition">Pre-order</a>
+          <a href="/privacy" className="hover:text-white transition hidden sm:inline">Privacy</a>
+        </div>
+        <div className="flex items-center gap-2">
+          <Logo small />
+          <span className="font-medium">ShopSherpa</span>
+        </div>
+        <div className="text-white/50 text-xs hidden sm:block">© 2026</div>
+      </div>
     </main>
   );
 }
 
-function Logo() {
+/* ─────── COMPONENTS ─────── */
+
+function Logo({ small }: { small?: boolean }) {
   return (
-    <div className="size-8 rounded-lg bg-[var(--color-teal)] text-white flex items-center justify-center font-serif text-sm font-semibold">
+    <div
+      className={`${
+        small ? "size-6 text-xs" : "size-8 text-sm"
+      } rounded-lg bg-white text-[#2e6273] flex items-center justify-center font-serif font-semibold`}
+    >
       SS
     </div>
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+function Dot() {
+  return <span className="size-1.5 rounded-full bg-[#2e6273] mt-2 shrink-0" />;
+}
+
+function StoryCard({ source, title }: { source: string; title: string }) {
   return (
-    <div>
-      <p className="font-mono text-2xl md:text-3xl font-medium tracking-tight mb-1">{value}</p>
-      <p className="text-xs text-[var(--color-ink-muted)] uppercase tracking-wider">{label}</p>
+    <div className="bg-[#142736] border border-white/10 rounded-2xl p-8">
+      <p className="text-xs uppercase tracking-wider text-white/40 font-mono mb-4">{source}</p>
+      <p className="text-xl md:text-2xl leading-snug font-medium">{title}</p>
+      <button className="mt-6 inline-flex items-center gap-2 text-xs px-4 py-2 rounded-full bg-[#1d9e75] text-white hover:bg-[#167a5a] transition">
+        Read more →
+      </button>
     </div>
   );
 }
 
-function ProblemCard({ stat, title, body }: { stat: string; title: string; body: string }) {
-  return (
-    <div className="bg-[var(--color-card)] border border-[var(--color-line)] rounded-2xl p-8">
-      <p className="font-mono text-3xl text-[var(--color-warn)] mb-4">{stat}</p>
-      <h3 className="font-semibold text-lg mb-3">{title}</h3>
-      <p className="text-[var(--color-ink-muted)] text-sm leading-relaxed">{body}</p>
-    </div>
-  );
-}
-
-function FeatureRow({
-  num,
+function RoleRow({
   title,
-  tagline,
-  body,
+  price,
+  note,
+  muted,
 }: {
-  num: string;
   title: string;
-  tagline: string;
-  body: string;
+  price: string;
+  note: string;
+  muted?: boolean;
 }) {
   return (
-    <div className="bg-[var(--color-card)] border border-[var(--color-line)] rounded-2xl p-8 md:p-10 grid md:grid-cols-[80px_1fr] gap-6 md:gap-12">
-      <p className="font-mono text-sm text-[var(--color-teal)] tracking-wider">{num}</p>
+    <div
+      className={`flex items-center justify-between p-5 rounded-xl bg-white border border-[#2e6273]/10 ${
+        muted ? "opacity-60" : ""
+      }`}
+    >
       <div>
-        <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">{title}</h3>
-        <p className="text-[var(--color-teal)] mb-4 italic">{tagline}</p>
-        <p className="text-[var(--color-ink-muted)] leading-relaxed">{body}</p>
+        <p className="font-medium">{title}</p>
+        <p className="text-xs text-[#1a1a1a]/60 mt-1">{note}</p>
       </div>
+      <p className="font-mono font-medium text-[#2e6273]">{price}</p>
     </div>
   );
 }
 
-function Bullet({ children }: { children: React.ReactNode }) {
+function FloatingHeroShapes() {
   return (
-    <li className="flex items-start gap-3">
-      <svg className="size-5 text-[var(--color-green)] shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
-      </svg>
-      <span>{children}</span>
-    </li>
+    <svg
+      className="absolute inset-0 w-full h-full pointer-events-none opacity-90"
+      viewBox="0 0 1200 800"
+      preserveAspectRatio="xMidYMid slice"
+      fill="none"
+    >
+      {/* Shopping bag */}
+      <g transform="translate(180 140) rotate(-8)">
+        <rect x="0" y="40" width="100" height="120" rx="10" fill="#F4F0E8" stroke="white" strokeWidth="2" />
+        <path d="M28 40 Q28 12 50 12 Q72 12 72 40" stroke="white" strokeWidth="3" fill="none" />
+      </g>
+      {/* Padlock */}
+      <g transform="translate(950 120) rotate(12)">
+        <rect x="0" y="40" width="80" height="68" rx="8" fill="#1d9e75" />
+        <path d="M16 40 V24 Q16 4 40 4 Q64 4 64 24 V40" stroke="#1d9e75" strokeWidth="6" fill="none" />
+        <circle cx="40" cy="74" r="5" fill="white" />
+      </g>
+      {/* Envelope */}
+      <g transform="translate(880 540) rotate(-15)">
+        <rect x="0" y="0" width="120" height="80" rx="6" fill="#1f4a58" stroke="white" strokeWidth="2" />
+        <path d="M0 0 L60 50 L120 0" stroke="white" strokeWidth="2" fill="none" />
+      </g>
+      {/* Card */}
+      <g transform="translate(120 540) rotate(8)">
+        <rect x="0" y="0" width="140" height="90" rx="10" fill="#0d1f2d" stroke="white" strokeWidth="2" />
+        <rect x="14" y="62" width="60" height="6" rx="2" fill="white" opacity="0.6" />
+        <circle cx="118" cy="20" r="6" fill="#1d9e75" />
+      </g>
+      {/* Magnifier */}
+      <g transform="translate(560 80) rotate(-20)">
+        <circle cx="40" cy="40" r="36" stroke="white" strokeWidth="4" fill="#2e6273" />
+        <line x1="68" y1="68" x2="100" y2="100" stroke="white" strokeWidth="6" strokeLinecap="round" />
+      </g>
+      {/* Shield */}
+      <g transform="translate(560 600) rotate(6)">
+        <path
+          d="M0 0 L80 0 L80 50 Q80 90 40 110 Q0 90 0 50 Z"
+          fill="#F4F0E8"
+          stroke="white"
+          strokeWidth="2"
+        />
+        <path d="M22 50 L36 64 L60 38" stroke="#1d9e75" strokeWidth="6" strokeLinecap="round" fill="none" />
+      </g>
+    </svg>
   );
 }
 
-function BulletWhite({ children }: { children: React.ReactNode }) {
+function CubeSphereGraphic() {
   return (
-    <li className="flex items-start gap-3">
-      <svg className="size-5 text-white shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
-      </svg>
-      <span>{children}</span>
-    </li>
+    <svg viewBox="0 0 300 200" className="w-full max-w-sm">
+      {/* Cube */}
+      <g transform="translate(80 40)">
+        <polygon points="0,40 60,10 120,40 60,70" fill="#2e6273" />
+        <polygon points="0,40 0,120 60,150 60,70" fill="#1f4a58" />
+        <polygon points="120,40 120,120 60,150 60,70" fill="#3a7a8c" />
+      </g>
+      {/* Sphere */}
+      <circle cx="220" cy="140" r="32" fill="#1d9e75" />
+      <ellipse cx="212" cy="130" rx="10" ry="6" fill="#2dbf8f" opacity="0.6" />
+    </svg>
+  );
+}
+
+function MailboxGraphic() {
+  return (
+    <svg viewBox="0 0 200 240" className="w-32 md:w-48 opacity-90">
+      {/* Pole */}
+      <rect x="92" y="120" width="16" height="120" fill="#F4F0E8" />
+      {/* Box */}
+      <path
+        d="M30 60 Q30 30 60 30 L140 30 Q170 30 170 60 L170 130 L30 130 Z"
+        fill="#F4F0E8"
+        stroke="white"
+        strokeWidth="2"
+      />
+      {/* Door */}
+      <rect x="50" y="70" width="60" height="50" rx="4" fill="#0d1f2d" stroke="white" strokeWidth="1.5" />
+      {/* Flag */}
+      <rect x="170" y="50" width="20" height="14" fill="#1d9e75" />
+    </svg>
   );
 }
