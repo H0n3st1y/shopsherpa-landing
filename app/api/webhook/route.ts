@@ -48,12 +48,12 @@ export async function POST(req: NextRequest) {
         await resend.emails.send({
           from: FROM,
           to: email,
-          subject: "Welcome to ShopSherpa Plus (lifetime)",
+          subject: "Welcome to ShopSherpa",
           html: `
             <div style="font-family: -apple-system, system-ui, sans-serif; max-width: 480px; margin: 0 auto; padding: 32px 24px; color: #1a1a1a;">
               <h1 style="font-size: 24px; margin: 0 0 16px;">You're in. For life.</h1>
               <p style="line-height: 1.6; color: #4a4a4a; margin: 0 0 16px;">
-                Thanks for backing ShopSherpa Plus. Your $9.99 locks in lifetime access. You'll never see a monthly bill from us.
+                Thanks for backing ShopSherpa. Your $9.99 locks in lifetime access. You'll never see a monthly bill from us.
               </p>
               <p style="line-height: 1.6; color: #4a4a4a; margin: 0 0 16px;">
                 Beta access opens July 2026. We'll email you when it's ready, plus once or twice between now and then with progress updates. Nothing else.
@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
                 If anything feels off in the next 30 days, reply to this email or write to refund@shopsherpa.ai. Full refund, no questions.
               </p>
               <p style="line-height: 1.6; color: #888; margin: 32px 0 0; font-size: 13px;">
-                Anghelo + Milan<br/>
+                Anghelo <br/>
                 ShopSherpa
               </p>
             </div>
