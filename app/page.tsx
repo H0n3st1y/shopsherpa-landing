@@ -3,9 +3,8 @@ import { PreorderButton } from "@/components/PreorderButton";
 import { ScrollFade } from "@/components/ScrollFade";
 import { HeroHeadline } from "@/components/HeroHeadline";
 import { HeroShapes } from "@/components/HeroShapes";
-import { StoryCard } from "@/components/StoryCard";
 import { LiveCounter } from "@/components/LiveCounter";
-import { PhishingDemo } from "@/components/PhishingDemo";
+import { InteractiveField } from "@/components/InteractiveField";
 
 export default function Page() {
   return (
@@ -109,25 +108,26 @@ export default function Page() {
         </div>
       </section>
 
-      {/* SECTION 4 — Stories (with showpiece phishing demo) */}
-      <section id="stories" className="bg-[#0d1f2d] text-white px-6 md:px-10 py-32 md:py-48 relative overflow-hidden">
+      {/* SECTION 4 — Interactive moment (replaces fake customer stories) */}
+      <section id="stories" className="bg-[#F4F0E8] text-[#1a1a1a] px-6 md:px-10 py-32 md:py-48 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
-          <ScrollFade as="h2" className="text-6xl md:text-8xl font-medium tracking-tighter text-[#1d9e75] mb-16 md:mb-24 text-center">
-            Real saves,<br />real money.
+          <ScrollFade as="h2" className="text-6xl md:text-8xl font-medium tracking-tighter text-[#2e6273] mb-6 md:mb-10 text-center">
+            Quiet by default.<br />Calm to the touch.
           </ScrollFade>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* Showpiece — interactive email reveal */}
-            <PhishingDemo />
-            <ScrollFade delay={100}>
-              <StoryCard
-                source="Two weeks ago"
-                title="Devin caught a fake Amazon page with a $3 markup on a $200 order."
-              />
-            </ScrollFade>
-          </div>
+          <ScrollFade delay={150}>
+            <p className="text-[#1a1a1a]/60 max-w-md mx-auto text-center mb-12 md:mb-16">
+              ShopSherpa stays out of the way until it has something to say. Move your cursor across the field below — click anywhere.
+            </p>
+          </ScrollFade>
 
-          <div className="mt-24 flex justify-center">
+          <ScrollFade delay={250}>
+            <div className="max-w-4xl mx-auto">
+              <InteractiveField />
+            </div>
+          </ScrollFade>
+
+          <div className="mt-20 flex justify-center">
             <ScrollFade><MailboxGraphic /></ScrollFade>
           </div>
         </div>
