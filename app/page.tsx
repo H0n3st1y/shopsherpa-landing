@@ -5,6 +5,8 @@ import { HeroHeadline } from "@/components/HeroHeadline";
 import { HeroShapes } from "@/components/HeroShapes";
 import { LiveCounter } from "@/components/LiveCounter";
 import { InteractiveField } from "@/components/InteractiveField";
+import { DuckRiver } from "@/components/DuckRiver";
+import { StoryCard } from "@/components/StoryCard";
 
 export default function Page() {
   return (
@@ -127,6 +129,23 @@ export default function Page() {
             </div>
           </ScrollFade>
 
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-16">
+            <ScrollFade>
+              <StoryCard
+                variant="light"
+                source="Last Tuesday"
+                title="Maria almost paid $312 for a package she didn't order."
+              />
+            </ScrollFade>
+            <ScrollFade delay={120}>
+              <StoryCard
+                variant="light"
+                source="Two weeks ago"
+                title="Devin caught a fake Amazon page with a $3 markup on a $200 order."
+              />
+            </ScrollFade>
+          </div>
+
           <div className="mt-20 flex justify-center">
             <ScrollFade><MailboxGraphic /></ScrollFade>
           </div>
@@ -180,6 +199,12 @@ export default function Page() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* RIVER — a tiny moment of joy between Plus and the CTA.
+          Click the duckies. They quack. No audio. */}
+      <section aria-label="River" className="relative">
+        <DuckRiver />
       </section>
 
       {/* SECTION 6 — CTA */}
@@ -298,4 +323,3 @@ function MailboxGraphic() {
     </svg>
   );
 }
-// hello
