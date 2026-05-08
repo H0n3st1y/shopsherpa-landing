@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 
+/**
+ * PreorderButton
+ * Adds active:scale-[0.98] for tactile feedback on click.
+ */
 export function PreorderButton({ variant = "default" }: { variant?: "default" | "white" }) {
   const [loading, setLoading] = useState(false);
 
@@ -27,7 +31,7 @@ export function PreorderButton({ variant = "default" }: { variant?: "default" | 
       <button
         onClick={handleClick}
         disabled={loading}
-        className="w-full px-6 py-3.5 rounded-full bg-white text-[var(--color-teal)] font-semibold hover:bg-[var(--color-bg-alt)] transition disabled:opacity-50"
+        className="w-full px-6 py-3.5 rounded-full bg-white text-[var(--color-teal)] font-semibold hover:bg-[var(--color-bg-alt)] transition-[transform,background-color] duration-150 active:scale-[0.98] disabled:opacity-50"
       >
         {loading ? "Redirecting..." : "Pre-order lifetime — $9.99"}
       </button>
@@ -38,7 +42,7 @@ export function PreorderButton({ variant = "default" }: { variant?: "default" | 
     <button
       onClick={handleClick}
       disabled={loading}
-      className="px-6 py-3.5 rounded-full bg-[var(--color-teal)] text-white font-medium hover:bg-[var(--color-teal-deep)] transition disabled:opacity-50 disabled:cursor-not-allowed"
+      className="px-6 py-3.5 rounded-full bg-[var(--color-teal)] text-white font-medium hover:bg-[var(--color-teal-deep)] transition-[transform,background-color] duration-150 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
     >
       {loading ? "Redirecting..." : "Pre-order lifetime — $9.99"}
     </button>

@@ -68,3 +68,77 @@ body {
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+/* ─────── ANIMATIONS ─────── */
+
+/* Hero word fade-up: each word starts hidden + offset, becomes visible after stagger delay */
+.hero-word {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.hero-word--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Generic scroll-fade for H2s and section content */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.scroll-fade--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CTA hue shift when email input is focused — driven by data attribute on body */
+body[data-cta-focused="true"] .cta-section {
+  filter: hue-rotate(-8deg) saturate(1.05);
+}
+.cta-section {
+  transition: filter 600ms ease-out;
+}
+
+/* Pricing row hover lift */
+.pricing-row {
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  will-change: transform;
+}
+.pricing-row:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
+/* Soft pulse for nav pre-order dot */
+@keyframes softPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.pulse-dot {
+  animation: softPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Honor reduced-motion preferences globally */
+@media (prefers-reduced-motion: reduce) {
+  .hero-word,
+  .scroll-fade,
+  .pricing-row,
+  .cta-section {
+    transition: none !important;
+    transform: none !important;
+  }
+  .hero-word { opacity: 1 !important; }
+  .scroll-fade { opacity: 1 !important; }
+  .pulse-dot { animation: none !important; }
+}
