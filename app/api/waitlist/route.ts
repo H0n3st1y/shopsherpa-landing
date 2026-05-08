@@ -44,10 +44,10 @@ export async function POST(req: NextRequest) {
             <a href="https://shopsherpa.ai/#pricing" style="display: inline-block; padding: 12px 24px; background: #2e6273; color: white; text-decoration: none; border-radius: 999px; font-weight: 500;">
               Pre-order lifetime
             </a>
-            <p style="line-height: 1.6; color: #888; margin: 32px 0 0; font-size: 13px;">
-              Anghelo + Milan<br/>
-              ShopSherpa
-            </p>
+          <p style="line-height: 1.6; color: #888; margin: 32px 0 0; font-size: 13px;">
+  Anghelo<br/>
+  ShopSherpa
+</p>
           </div>
         `,
       });
