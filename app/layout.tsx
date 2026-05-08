@@ -19,9 +19,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shopsherpa.ai";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "ShopSherpa Plus — Security that follows you off Amazon",
+  title: "ShopSherpa",
   description:
-    "ShopSherpa Plus extends our fraud detection beyond shopping. Catch phishing in your inbox, get alerts when your data leaks, and mask your card so it never gets stolen.",
+    "ShopSherpa is the safety layer for online shopping. Catch phishing in your inbox, get alerts when your data leaks, and mask your card so it never gets stolen.",
   keywords: [
     "phishing protection",
     "online shopping security",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "ShopSherpa" }],
   openGraph: {
-    title: "ShopSherpa Plus — Security that follows you off Amazon",
+    title: "ShopSherpa",
     description:
-      "Phishing shield, password vault, and masked cards. One subscription. Your whole digital life.",
+      "The safety layer for online shopping. Phishing shield, password vault, masked cards.",
     url: siteUrl,
     siteName: "ShopSherpa",
     type: "website",
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "ShopSherpa Plus",
+        alt: "ShopSherpa",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ShopSherpa Plus",
-    description: "Security that follows you off Amazon. Pre-order $9.99 lifetime.",
+    title: "ShopSherpa",
+    description: "The safety layer for online shopping. Pre-order $9.99 lifetime.",
     images: ["/og-image.png"],
   },
   robots: {
