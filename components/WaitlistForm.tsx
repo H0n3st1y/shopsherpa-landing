@@ -35,34 +35,35 @@ export function WaitlistForm() {
 
   if (status === "success") {
     return (
-      <div className="px-6 py-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900">
-        <p className="font-medium">Got it.</p>
-        <p className="text-sm mt-1 text-emerald-800">{message}</p>
+      <div className="px-6 py-5 rounded-full bg-white text-[#1a1a1a]">
+        <p className="font-medium">{message}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-      <input
-        type="email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="you@gmail.com"
-        disabled={status === "loading"}
-        className="flex-1 px-5 py-3.5 rounded-full bg-[var(--color-card)] border border-[var(--color-line)] focus:border-[var(--color-teal)] outline-none transition disabled:opacity-50"
-      />
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="px-6 py-3.5 rounded-full bg-[var(--color-teal)] text-white font-medium hover:bg-[var(--color-teal-deep)] transition disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {status === "loading" ? "Adding..." : "Notify me"}
-      </button>
+    <div>
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 p-2 bg-white rounded-full">
+        <input
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Your email address"
+          disabled={status === "loading"}
+          className="flex-1 px-5 py-3 rounded-full bg-transparent text-[#1a1a1a] placeholder-[#1a1a1a]/40 outline-none disabled:opacity-50"
+        />
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="px-6 py-3 rounded-full bg-black text-white font-medium hover:bg-black/80 transition disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+        >
+          {status === "loading" ? "Adding..." : "Get notified"}
+        </button>
+      </form>
       {status === "error" && (
-        <p className="text-sm text-red-600 sm:col-span-2 mt-2">{message}</p>
+        <p className="text-sm text-white mt-3">{message}</p>
       )}
-    </form>
+    </div>
   );
 }
