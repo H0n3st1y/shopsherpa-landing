@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { PreorderButton } from "@/components/PreorderButton";
 import { ScrollFade } from "@/components/ScrollFade";
@@ -28,16 +27,14 @@ export default function Page() {
           </nav>
           <a
             href="#preorder"
-            className="text-sm font-medium px-5 py-2.5 rounded-full bg-black text-white hover:bg-black/80 transition-[transform,background-color] duration-150 active:scale-[0.98] flex items-center gap[...]
+            className="text-sm font-medium px-5 py-2.5 rounded-full bg-black text-white hover:bg-black/80 transition-[transform,background-color] duration-150 active:scale-[0.98] flex items-center gap-2"
           >
-            {/* Pulsing green dot — soft 2s loop */}
             <span className="size-1.5 rounded-full bg-[#1d9e75] pulse-dot" />
             Pre-order
           </a>
         </header>
 
         <div className="relative z-10 px-6 md:px-10 pt-16 pb-32 md:pt-24 md:pb-48 text-center">
-          {/* Word-by-word fade-up headline (80ms stagger) */}
           <HeroHeadline lines={["Shopping security,", "redesigned."]} />
           <ScrollFade delay={600}>
             <p className="mt-8 text-base md:text-lg max-w-md mx-auto text-white/70 leading-relaxed">
@@ -46,7 +43,6 @@ export default function Page() {
           </ScrollFade>
         </div>
 
-        {/* Floating shapes — parallax + cursor follow */}
         <HeroShapes />
       </section>
 
@@ -66,13 +62,13 @@ export default function Page() {
             <ScrollFade delay={150}>
               <h3 className="text-xl font-medium mb-4 text-white">Focus on you.</h3>
               <p className="text-white/60 leading-relaxed text-sm">
-                You shop differently than everyone else. ShopSherpa adapts to that. We learn what you trust, what you don&apos;t, and we get out of the way unless something feels wrong. No nagging[...]
+                You shop differently than everyone else. ShopSherpa adapts to that. We learn what you trust, what you don&apos;t, and we get out of the way unless something feels wrong. No nagging.
               </p>
             </ScrollFade>
             <ScrollFade delay={300}>
               <h3 className="text-xl font-medium mb-4 text-white">Private by design.</h3>
               <p className="text-white/60 leading-relaxed text-sm">
-                Your shopping is personal. Your inbox is personal. We built ShopSherpa with end-to-end encryption from day one. We can&apos;t sell what we never see, and we don&apos;t see your dat[...]
+                Your shopping is personal. Your inbox is personal. We built ShopSherpa with end-to-end encryption from day one. We can&apos;t sell what we never see, and we don&apos;t see your data.
               </p>
             </ScrollFade>
           </div>
@@ -96,16 +92,8 @@ export default function Page() {
               </div>
             </ScrollFade>
             <ScrollFade delay={200}>
-                                 <div className="size-48 md:size-56 rounded-full overflow-hidden border border-[#2e6273]/10">
-                    <Image
-                      src="/founder.png"
-                      alt="Anghelo Araujo"
-                      width={224}
-                      height={224}
-                      className="w-full h-full object-cover"
-                      priority
-                    />
-                  </div>
+              <div className="size-48 md:size-56 rounded-full overflow-hidden border border-[#2e6273]/10">
+                <Image
                   src="/founder.png"
                   alt="Anghelo Araujo"
                   width={224}
@@ -119,7 +107,7 @@ export default function Page() {
               <div>
                 <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-3 font-mono">About</p>
                 <p className="text-[#1a1a1a]/80 leading-relaxed text-sm">
-                  Anghelo is a high school sophomore at Nashua South building ShopSherpa from his bedroom. He&apos;s been obsessed with online fraud since middle school, when his mom almost lost [...]
+                  Anghelo is a high school sophomore at Nashua South building ShopSherpa from his bedroom. He&apos;s been obsessed with online fraud since middle school, when his mom almost lost $400 to a fake delivery email. He&apos;s been quietly building, talking to users, and shipping ever since. ShopSherpa has 2,000 beta users and has stopped $14,000 in scams across its first four months.
                 </p>
               </div>
             </ScrollFade>
@@ -127,7 +115,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* SECTION 4 — Stories (dark navy for visual rhythm) */}
+      {/* SECTION 4 — Stories */}
       <section id="stories" className="bg-[#0d1f2d] text-white px-6 md:px-10 py-32 md:py-48 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <ScrollFade as="h2" className="text-6xl md:text-8xl font-medium tracking-tighter text-[#1d9e75] mb-6 md:mb-10 text-center">
@@ -167,7 +155,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* SECTION 5 — Plus (warmer sand tone to differentiate from Founder's cooler linen) */}
+      {/* SECTION 5 — Plus */}
       <section id="plus" className="bg-[#ECE3CF] text-[#1a1a1a] px-6 md:px-10 py-32 md:py-48">
         <div className="max-w-6xl mx-auto">
           <ScrollFade as="h2" className="text-6xl md:text-8xl font-medium tracking-tighter text-[#2e6273] mb-4 max-w-3xl">
@@ -216,8 +204,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* RIVER — a tiny moment of joy between Plus and the CTA.
-          Click the duckies. They quack. No audio. */}
+      {/* RIVER */}
       <section aria-label="River" className="relative">
         <DuckRiver />
       </section>
