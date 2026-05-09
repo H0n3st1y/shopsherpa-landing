@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { ScrollFade } from "@/components/ScrollFade";
 import { HeroShapes } from "@/components/HeroShapes";
-import { PhishingDemo } from "@/components/PhishingDemo";
 import { PreorderButton } from "@/components/PreorderButton";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { InteractiveField } from "@/components/InteractiveField";
@@ -137,10 +136,6 @@ export default function Page() {
               </p>
             </ScrollFade>
           </div>
-
-          <ScrollFade delay={200} threshold={0.1}>
-            <PhishingDemo />
-          </ScrollFade>
 
           <ScrollFade delay={300}>
             <div className="grid md:grid-cols-2 gap-4 mt-6">
