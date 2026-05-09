@@ -464,63 +464,58 @@ export default function Page() {
       </section>
 
       {/* ─── FOUNDER ───────────────────────────────────────────────────────────
-          Circle photo like a profile picture — personal, not promotional.
-          The fake dog listing story is the origin. Lead with it.
+          Centered layout: photo + name badge above, story text below.
       ────────────────────────────────────────────────────────────────────── */}
       <section id="founder" className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-2xl mx-auto text-center">
 
-            <ScrollFade>
-              <div className="flex flex-col items-start gap-5">
-                <div className="relative">
-                  {/* Circle crop — intentionally small like a profile photo */}
-                  <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-[#142736] ring-2 ring-white/10">
-                    <Image
-                      src="/founder.png"
-                      alt="Anghelo Araujo, founder of ShopSherpa"
-                      width={144}
-                      height={144}
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
-                  <div className="absolute -bottom-2 -right-2 bg-[#1d9e75] text-white text-xs font-mono px-2.5 py-1.5 rounded-lg leading-snug">
-                    <span className="block font-medium">Anghelo, 16</span>
-                    <span className="text-white/80">Nashua, NH</span>
-                  </div>
+          {/* Photo centered */}
+          <ScrollFade>
+            <div className="flex flex-col items-center gap-4 mb-10">
+              <div className="relative inline-block">
+                <div className="w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden bg-[#142736] ring-4 ring-white/10">
+                  <Image
+                    src="/founder.png"
+                    alt="Anghelo Araujo, founder of ShopSherpa"
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="absolute -bottom-2 -right-2 bg-[#1d9e75] text-white text-xs font-mono px-2.5 py-1.5 rounded-lg leading-snug">
+                  <span className="block font-medium">Anghelo, 16</span>
+                  <span className="text-white/80">Nashua, NH</span>
                 </div>
               </div>
-            </ScrollFade>
-
-            <div>
-              <ScrollFade delay={100}>
-                <p className="text-xs uppercase tracking-wider text-[#1d9e75] mb-6 font-mono">The story</p>
-              </ScrollFade>
-              <ScrollFade delay={200}>
-                <h2 className="text-4xl md:text-5xl font-medium tracking-tighter leading-[1.05] mb-8">
-                  He almost lost $600 to a fake puppy.<br />That's why this exists.
-                </h2>
-              </ScrollFade>
-              <ScrollFade delay={300}>
-                <div className="space-y-5 text-white/75 text-base md:text-lg leading-relaxed">
-                  <p>
-                    When Anghelo was young, he found a puppy listing online. The photos looked real. The seller sent a contract. He almost wired $600 before something felt off.
-                  </p>
-                  <p>
-                    The puppy never existed. The seller vanished.
-                  </p>
-                  <p>
-                    He spent years thinking about how easy it is to get fooled. Then he built ShopSherpa so it doesn't happen to you.
-                  </p>
-                </div>
-              </ScrollFade>
-              <ScrollFade delay={400}>
-                <div className="mt-8 pt-8 border-t border-white/10">
-                  <p className="text-sm text-white/40 font-mono">Anghelo Araujo, Founder of ShopSherpa</p>
-                </div>
-              </ScrollFade>
             </div>
-          </div>
+          </ScrollFade>
+
+          <ScrollFade delay={100}>
+            <p className="text-xs uppercase tracking-wider text-[#1d9e75] mb-5 font-mono">The story</p>
+          </ScrollFade>
+          <ScrollFade delay={200}>
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tighter leading-[1.05] mb-8">
+              He almost lost $600 to a fake puppy.<br />That's why this exists.
+            </h2>
+          </ScrollFade>
+          <ScrollFade delay={300}>
+            <div className="space-y-5 text-white/70 text-base md:text-lg leading-relaxed text-left max-w-xl mx-auto">
+              <p>
+                When Anghelo was young, he found a puppy listing online. The photos looked real. The seller sent a contract. He almost wired $600 before something felt off.
+              </p>
+              <p>
+                The puppy never existed. The seller vanished.
+              </p>
+              <p>
+                He spent years thinking about how easy it is to get fooled. Then he built ShopSherpa so it doesn't happen to you.
+              </p>
+            </div>
+          </ScrollFade>
+          <ScrollFade delay={400}>
+            <div className="mt-8 pt-8 border-t border-white/10 text-center">
+              <p className="text-sm text-white/40 font-mono">Anghelo Araujo, Founder of ShopSherpa</p>
+            </div>
+          </ScrollFade>
         </div>
       </section>
 
