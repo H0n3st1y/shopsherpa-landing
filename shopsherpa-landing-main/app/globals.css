@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #faf8f4;
+  --color-bg-alt: #f4f0e8;
+  --color-ink: #1a1a1a;
+  --color-ink-muted: #6b6b6b;
+  --color-teal: #2e6273;
+  --color-teal-deep: #1f4a58;
+  --color-green: #1d9e75;
+  --color-green-deep: #167a5a;
+  --color-line: #e8e2d6;
+  --color-card: #ffffff;
+  --color-warn: #c2410c;
+
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+
+  --shadow-soft: 0 1px 2px rgba(26, 26, 26, 0.04), 0 4px 16px rgba(26, 26, 26, 0.04);
+  --shadow-lift: 0 2px 4px rgba(26, 26, 26, 0.06), 0 12px 32px rgba(26, 26, 26, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-bg: #0d1f2d;
+    --color-bg-alt: #102a3a;
+    --color-ink: #e8e8e8;
+    --color-ink-muted: #9aa5b1;
+    --color-teal: #5a9bad;
+    --color-teal-deep: #7bb5c5;
+    --color-green: #2dbf8f;
+    --color-green-deep: #1d9e75;
+    --color-line: #1f3a4d;
+    --color-card: #142736;
+    --color-warn: #fb923c;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-teal);
+  color: white;
+}
+
+/* Subtle paper texture for warm-linen feel without using an image */
+.bg-paper {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(46, 98, 115, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(29, 158, 117, 0.03) 0%, transparent 40%),
+    var(--color-bg);
+}
+
+/* Custom focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─────── ANIMATIONS ─────── */
+
+/* Hero word fade-up: each word starts hidden + offset, becomes visible after stagger delay */
+.hero-word {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.hero-word--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Generic scroll-fade for H2s and section content */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.scroll-fade--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CTA hue shift when email input is focused — driven by data attribute on body */
+body[data-cta-focused="true"] .cta-section {
+  filter: hue-rotate(-8deg) saturate(1.05);
+}
+.cta-section {
+  transition: filter 600ms ease-out;
+}
+
+/* Pricing row hover lift */
+.pricing-row {
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  will-change: transform;
+}
+.pricing-row:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
+/* Soft pulse for nav pre-order dot */
+@keyframes softPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.pulse-dot {
+  animation: softPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Honor reduced-motion preferences globally */
+@media (prefers-reduced-motion: reduce) {
+  .hero-word,
+  .scroll-fade,
+  .pricing-row,
+  .cta-section {
+    transition: none !important;
+    transform: none !important;
+  }
+  .hero-word { opacity: 1 !important; }
+  .scroll-fade { opacity: 1 !important; }
+  .pulse-dot { animation: none !important; }
+}
