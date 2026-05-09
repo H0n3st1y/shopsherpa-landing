@@ -8,6 +8,7 @@ import { LiveCounter } from "@/components/LiveCounter";
 import { InteractiveField } from "@/components/InteractiveField";
 import { DuckRiver } from "@/components/DuckRiver";
 import { StoryCard } from "@/components/StoryCard";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -95,8 +96,16 @@ export default function Page() {
               </div>
             </ScrollFade>
             <ScrollFade delay={200}>
-              <div className="size-48 md:size-56 rounded-full overflow-hidden border border-[#2e6273]/10">
-                <Image
+                 <div className="size-48 md:size-56 rounded-full overflow-hidden border border-[#2e6273]/10">
+                    <Image
+                      src="/founder.png"
+                      alt="Anghelo Araujo"
+                      width={224}
+                      height={224}
+                      className="w-full h-full object-cover"
+                      priority
+                    />
+                  </div>
                   src="/founder.png"
                   alt="Anghelo Araujo"
                   width={224}
