@@ -5,16 +5,12 @@ import { HeroShapes } from "@/components/HeroShapes";
 import { PhishingDemo } from "@/components/PhishingDemo";
 import { PreorderButton } from "@/components/PreorderButton";
 import { WaitlistForm } from "@/components/WaitlistForm";
-import { LiveCounter } from "@/components/LiveCounter";
 
 export default function Page() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
 
-      {/* ─── NAV ───────────────────────────────────────────────────────────────
-          Pre-order is the primary action. Waitlist is a quiet text link.
-          Nothing in the nav competes with the hero CTA.
-      ────────────────────────────────────────────────────────────────────── */}
+      {/* NAV */}
       <header className="sticky top-0 z-40 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">
         <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
@@ -40,10 +36,8 @@ export default function Page() {
       </header>
 
       {/* ─── HERO ──────────────────────────────────────────────────────────────
-          One headline, one sub. Outcome first — the reader is a shopper who
-          worries about scams, not a product manager evaluating a feature list.
-          HeroShapes adds visual depth without illustration clichés.
-          LiveCounter grounds the copy in real activity.
+          One headline, one sub. Outcome first.
+          HeroShapes adds depth. No live counter since we haven't launched.
       ────────────────────────────────────────────────────────────────────── */}
       <section className="px-6 md:px-8 pt-20 md:pt-32 pb-20 md:pb-28 relative overflow-hidden">
         <HeroShapes />
@@ -52,7 +46,7 @@ export default function Page() {
           <ScrollFade>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2e6273]/15 bg-white text-xs font-mono text-[#2e6273] mb-8">
               <span className="size-1.5 rounded-full bg-[#1d9e75] pulse-dot" />
-              2,000 shoppers protected · Private beta
+              Private beta · Q3 2026 launch
             </div>
           </ScrollFade>
 
@@ -69,7 +63,6 @@ export default function Page() {
             </p>
           </ScrollFade>
 
-          {/* Pre-order is primary. Waitlist is the graceful fallback. */}
           <ScrollFade delay={360}>
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <PreorderButton />
@@ -89,40 +82,16 @@ export default function Page() {
               <div className="flex items-center gap-2"><CheckIcon />Public launch Q3 2026</div>
             </div>
           </ScrollFade>
-
-          <ScrollFade delay={600}>
-            <div className="mt-12">
-              <LiveCounter />
-            </div>
-          </ScrollFade>
         </div>
 
         <div aria-hidden className="absolute -top-32 -right-32 size-[480px] rounded-full bg-[#2e6273]/5 blur-3xl pointer-events-none" />
         <div aria-hidden className="absolute -bottom-24 -left-24 size-80 rounded-full bg-[#1d9e75]/5 blur-3xl pointer-events-none" />
       </section>
 
-      {/* ─── TRUST STRIP ───────────────────────────────────────────────────────
-          Four hard numbers on a white bar — a distinct visual beat between
-          the hero and the how-it-works section. "1,800+ proprietary fraud
-          patterns" doubles as a moat claim, not just a vanity stat.
-      ────────────────────────────────────────────────────────────────────── */}
-      <section className="bg-white border-y border-[#2e6273]/10 px-6 md:px-8 py-10 md:py-14">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            <ScrollFade><TrustStat n="2,000+" label="Beta users" /></ScrollFade>
-            <ScrollFade delay={80}><TrustStat n="$14,000" label="Saved from scams" /></ScrollFade>
-            <ScrollFade delay={160}><TrustStat n="4.8 ★" label="Average rating" /></ScrollFade>
-            <ScrollFade delay={240}><TrustStat n="1,800+" label="Proprietary fraud patterns" /></ScrollFade>
-          </div>
-        </div>
-      </section>
-
       {/* ─── HOW IT WORKS ──────────────────────────────────────────────────────
-          Free tier only. Three steps, each concrete and short.
-          The reader should feel "that's it?" — simplicity is the pitch.
-          No numbered list styling that looks like documentation.
+          Free tier. Three concrete steps. The simplicity is the pitch.
       ────────────────────────────────────────────────────────────────────── */}
-      <section id="how-it-works" className="bg-[#FAF8F4] px-6 md:px-8 py-24 md:py-32">
+      <section id="how-it-works" className="bg-white border-y border-[#2e6273]/10 px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
           <ScrollFade>
             <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">Free, forever</p>
@@ -165,10 +134,8 @@ export default function Page() {
       </section>
 
       {/* ─── LIVE PRODUCT MOMENT ───────────────────────────────────────────────
-          The Maria story is the emotional center of the page. PhishingDemo
-          handles the staged animation (envelope → FLAGGED badge).
-          The before/after below it lands the "so what" punchline.
-          Dark section so the animated email card pops against the background.
+          The Maria story. PhishingDemo handles the staged animation.
+          Before/after below lands the emotional punchline.
       ────────────────────────────────────────────────────────────────────── */}
       <section id="demo" className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
@@ -189,12 +156,10 @@ export default function Page() {
             </ScrollFade>
           </div>
 
-          {/* Lower threshold so animation triggers before the card is fully visible */}
           <ScrollFade delay={200} threshold={0.1}>
             <PhishingDemo />
           </ScrollFade>
 
-          {/* Before / After — the emotional punchline */}
           <ScrollFade delay={300}>
             <div className="grid md:grid-cols-2 gap-4 mt-6">
               <BeforeAfterCard
@@ -223,10 +188,8 @@ export default function Page() {
       </section>
 
       {/* ─── PLUS TIER ─────────────────────────────────────────────────────────
-          Visual roadmap, not a bullet list. Three cards, each with one outcome.
-          The pricing block below uses a real progress bar for scarcity —
-          a concrete number ("184 of 500") is more credible than "limited time."
-          Only one CTA in this section. No competing actions.
+          Three feature cards as a visual roadmap, not a bullet list.
+          Pricing block with scarcity progress bar. One CTA only.
       ────────────────────────────────────────────────────────────────────── */}
       <section id="pricing" className="bg-[#F4F0E8] px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
@@ -244,7 +207,6 @@ export default function Page() {
             </p>
           </ScrollFade>
 
-          {/* Feature roadmap cards */}
           <div className="grid md:grid-cols-3 gap-5 mb-12">
             <ScrollFade delay={100}>
               <PlusCard
@@ -269,7 +231,6 @@ export default function Page() {
             </ScrollFade>
           </div>
 
-          {/* Pricing block — dark card so it stands out on the linen background */}
           <ScrollFade delay={200}>
             <div className="bg-[#0d1f2d] text-white rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-start gap-10">
               <div className="flex-1">
@@ -278,23 +239,19 @@ export default function Page() {
                   <p className="text-6xl md:text-7xl font-medium tracking-tighter">$9.99</p>
                   <div>
                     <p className="text-white/40 line-through text-sm">$14.99/mo at launch</p>
-                    <p className="text-white/50 text-sm">pay once · yours forever</p>
+                    <p className="text-white/50 text-sm">pay once, yours forever</p>
                   </div>
                 </div>
 
-                {/* Scarcity progress bar — 184 / 500 = 36.8% */}
                 <div className="mt-8 max-w-xs">
                   <div className="flex justify-between text-xs text-white/50 font-mono mb-2">
                     <span>184 of 500 spots claimed</span>
                     <span>316 left</span>
                   </div>
                   <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-[#1d9e75] rounded-full"
-                      style={{ width: "36.8%" }}
-                    />
+                    <div className="h-full bg-[#1d9e75] rounded-full" style={{ width: "36.8%" }} />
                   </div>
-                  <p className="text-xs text-white/30 mt-2 font-mono">Early adopter pricing · limited</p>
+                  <p className="text-xs text-white/30 mt-2 font-mono">Early adopter pricing, limited</p>
                 </div>
               </div>
 
@@ -302,7 +259,7 @@ export default function Page() {
                 <ul className="space-y-3 text-sm text-white/80">
                   {[
                     "Real-time review scanning (free tier)",
-                    "Phishing Shield for Gmail + Outlook",
+                    "Phishing Shield for Gmail and Outlook",
                     "Password vault with breach alerts",
                     "One masked card number per store",
                     "Priority support",
@@ -321,11 +278,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ──────────────────────────────────────────────────────
-          Short quotes, first name + city. No logos, no star ratings,
-          no corporate job titles. Just the words a real person would say.
-          Light background so this section breathes after the dark pricing block.
-      ────────────────────────────────────────────────────────────────────── */}
+      {/* ─── TESTIMONIALS ────────────────────────────────────────────────────── */}
       <section className="bg-[#FAF8F4] px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
           <ScrollFade>
@@ -364,30 +317,30 @@ export default function Page() {
       </section>
 
       {/* ─── FOUNDER ───────────────────────────────────────────────────────────
-          Being built by a 16-year-old is the brand, not a footnote.
-          His mom's story is more compelling than any feature description.
-          Photo is personal, not corporate. The tag chip puts a face to the name.
-          Dark section creates a natural break before the final CTA.
+          Personal story first. The fake dog listing is more relatable than
+          any stat. Photo kept small so it feels human, not promotional.
       ────────────────────────────────────────────────────────────────────── */}
       <section id="founder" className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
 
+            {/* Photo — intentionally small so it feels personal, not a hero shot */}
             <ScrollFade>
-              <div className="relative">
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#142736]">
-                  <Image
-                    src="/founder.png"
-                    alt="Anghelo Araujo, founder of ShopSherpa"
-                    width={600}
-                    height={750}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Tag chip — sits outside the image to feel like a sticker */}
-                <div className="absolute -bottom-4 -right-4 bg-[#1d9e75] text-white text-xs font-mono px-4 py-2.5 rounded-xl leading-snug">
-                  <span className="block font-medium">Anghelo Araujo</span>
-                  <span className="text-white/80">Sophomore · Nashua, NH</span>
+              <div className="flex flex-col items-start gap-5">
+                <div className="relative">
+                  <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden bg-[#142736]">
+                    <Image
+                      src="/founder.png"
+                      alt="Anghelo Araujo, founder of ShopSherpa"
+                      width={224}
+                      height={224}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div className="absolute -bottom-3 -right-3 bg-[#1d9e75] text-white text-xs font-mono px-3 py-2 rounded-xl leading-snug">
+                    <span className="block font-medium">Anghelo Araujo</span>
+                    <span className="text-white/80">Sophomore, Nashua NH</span>
+                  </div>
                 </div>
               </div>
             </ScrollFade>
@@ -398,25 +351,25 @@ export default function Page() {
               </ScrollFade>
               <ScrollFade delay={200}>
                 <h2 className="text-4xl md:text-5xl font-medium tracking-tighter leading-[1.05] mb-8">
-                  His mom almost lost $400.<br />That's why this exists.
+                  He almost lost $600 to a fake puppy.<br />That's why this exists.
                 </h2>
               </ScrollFade>
               <ScrollFade delay={300}>
                 <div className="space-y-5 text-white/75 text-base md:text-lg leading-relaxed">
                   <p>
-                    Anghelo Araujo is a sophomore at Nashua High School in New Hampshire. Last year, his mom got an email that looked exactly like Amazon. A missed package. A small re-delivery fee. She almost paid $400 before Anghelo caught it.
+                    When Anghelo was young, he found a puppy listing online. The photos looked real. The seller sent a contract. He almost wired $600 before something felt off.
                   </p>
                   <p>
-                    He spent the next six months building ShopSherpa. 1,800 fraud patterns, a real-time scanner, and a phishing detector that would have caught that email automatically.
+                    The puppy never existed. The seller vanished.
                   </p>
                   <p>
-                    He's not building this because it's a good business idea. He's building it because he doesn't want your family to go through the same thing.
+                    He spent years thinking about how easy it is to get fooled. Then he built ShopSherpa so it doesn't happen to you.
                   </p>
                 </div>
               </ScrollFade>
               <ScrollFade delay={400}>
                 <div className="mt-8 pt-8 border-t border-white/10">
-                  <p className="text-sm text-white/40 font-mono">Anghelo Araujo · Founder, ShopSherpa</p>
+                  <p className="text-sm text-white/40 font-mono">Anghelo Araujo, Founder of ShopSherpa</p>
                 </div>
               </ScrollFade>
             </div>
@@ -425,9 +378,7 @@ export default function Page() {
       </section>
 
       {/* ─── FINAL CTA ─────────────────────────────────────────────────────────
-          Pre-order is the primary action — centered, one button.
-          Waitlist is the fallback, below an "or" divider so the visual
-          hierarchy is unmistakable. Never side by side. One wins.
+          Pre-order first. Waitlist below with an "or" divider. One wins.
       ────────────────────────────────────────────────────────────────────── */}
       <section id="cta" className="bg-[#2e6273] text-white px-6 md:px-8 py-24 md:py-32 relative overflow-hidden cta-section">
         <div className="max-w-xl mx-auto text-center relative z-10">
@@ -442,14 +393,12 @@ export default function Page() {
             </p>
           </ScrollFade>
 
-          {/* Pre-order — the one big action */}
           <ScrollFade delay={300}>
             <div className="flex justify-center mb-10">
               <PreorderButton variant="white" />
             </div>
           </ScrollFade>
 
-          {/* Divider: visual separation makes the hierarchy clear */}
           <ScrollFade delay={380}>
             <div className="flex items-center gap-4 text-white/25 mb-8">
               <div className="h-px flex-1 bg-white/15" />
@@ -458,7 +407,6 @@ export default function Page() {
             </div>
           </ScrollFade>
 
-          {/* Waitlist — secondary fallback, clearly de-emphasized */}
           <ScrollFade delay={450}>
             <p className="text-white/60 text-sm mb-5">
               Not ready yet? Join the waitlist and we'll let you know when we launch.
@@ -468,7 +416,7 @@ export default function Page() {
 
           <ScrollFade delay={550}>
             <p className="mt-10 text-xs text-white/35 font-mono">
-              1,800+ proprietary fraud patterns · No spam · Unsubscribe anytime
+              1,800+ proprietary fraud patterns, no spam, unsubscribe anytime
             </p>
           </ScrollFade>
         </div>
@@ -477,7 +425,7 @@ export default function Page() {
         <div aria-hidden className="absolute -top-24 -left-24 size-72 rounded-full bg-white/5 pointer-events-none" />
       </section>
 
-      {/* ─── FOOTER ─── */}
+      {/* FOOTER */}
       <footer className="bg-[#0d1f2d] text-white/60 px-6 md:px-8 py-12">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
           <div className="flex items-center gap-2.5">
@@ -490,16 +438,14 @@ export default function Page() {
             <a href="#" className="hover:text-white transition">Status</a>
             <a href="#" className="hover:text-white transition">Twitter</a>
           </div>
-          <div className="text-xs text-white/40">© 2026 ShopSherpa · Made by Anghelo in Nashua, NH</div>
+          <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
         </div>
       </footer>
     </main>
   );
 }
 
-/* ─────── HELPER COMPONENTS ─────────────────────────────────────────────────
-   All purely presentational — no hooks, no state. Safe in a server component.
-─────────────────────────────────────────────────────────────────────────── */
+/* ─────── HELPERS ─────────────────────────────────────────────────────────── */
 
 function Logo() {
   return (
@@ -509,7 +455,6 @@ function Logo() {
   );
 }
 
-// className prop lets us override color when used inside dark or teal sections.
 function CheckIcon({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -532,17 +477,6 @@ function XIcon() {
   );
 }
 
-function TrustStat({ n, label }: { n: string; label: string }) {
-  return (
-    <div>
-      <p className="text-3xl md:text-4xl font-medium tracking-tighter text-[#2e6273]">{n}</p>
-      <p className="text-xs uppercase tracking-wider text-[#1a1a1a]/50 font-mono mt-2">{label}</p>
-    </div>
-  );
-}
-
-// Numbered steps with a subtle circle border — less visually dominant than
-// the filled circles in the original, giving more weight to the copy.
 function Step({ n, title, copy }: { n: number; title: string; copy: string }) {
   return (
     <div>
@@ -566,24 +500,14 @@ function BeforeAfterCard({
 }) {
   const isBefore = variant === "before";
   return (
-    <div
-      className={`rounded-2xl p-7 border ${
-        isBefore
-          ? "bg-white/5 border-white/10"
-          : "bg-[#1d9e75]/10 border-[#1d9e75]/25"
-      }`}
-    >
+    <div className={`rounded-2xl p-7 border ${isBefore ? "bg-white/5 border-white/10" : "bg-[#1d9e75]/10 border-[#1d9e75]/25"}`}>
       <p className={`text-xs font-mono uppercase tracking-wider mb-5 ${isBefore ? "text-white/40" : "text-[#1d9e75]"}`}>
         {label}
       </p>
       <ul className="space-y-3">
         {items.map((item, i) => (
           <li key={i} className="flex items-start gap-3 text-sm leading-snug">
-            {isBefore ? (
-              <XIcon />
-            ) : (
-              <CheckIcon className="text-[#1d9e75] mt-0.5 shrink-0" />
-            )}
+            {isBefore ? <XIcon /> : <CheckIcon className="text-[#1d9e75] mt-0.5 shrink-0" />}
             <span className={isBefore ? "text-white/60" : "text-white/90"}>{item}</span>
           </li>
         ))}
@@ -592,17 +516,7 @@ function BeforeAfterCard({
   );
 }
 
-// Plus tier feature card — icon + title + one-line outcome.
-// Hover lift matches the use-case cards in the original design.
-function PlusCard({
-  icon,
-  title,
-  outcome,
-}: {
-  icon: ReactNode;
-  title: string;
-  outcome: string;
-}) {
+function PlusCard({ icon, title, outcome }: { icon: ReactNode; title: string; outcome: string }) {
   return (
     <div className="bg-white rounded-2xl p-7 border border-[#2e6273]/10 h-full hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] transition-[transform,box-shadow] duration-200">
       <div className="size-10 rounded-xl bg-[#F4F0E8] flex items-center justify-center text-[#2e6273] mb-5">
@@ -615,17 +529,7 @@ function PlusCard({
   );
 }
 
-// Light-background testimonial cards — reversed from the dark original
-// because this section sits between two dark sections and needs air.
-function TestimonialCard({
-  quote,
-  name,
-  city,
-}: {
-  quote: string;
-  name: string;
-  city: string;
-}) {
+function TestimonialCard({ quote, name, city }: { quote: string; name: string; city: string }) {
   return (
     <div className="bg-white border border-[#2e6273]/10 rounded-2xl p-7 h-full flex flex-col shadow-[var(--shadow-soft)]">
       <p className="text-base leading-snug mb-6 flex-1 text-[#1a1a1a]/85">"{quote}"</p>
@@ -636,8 +540,6 @@ function TestimonialCard({
     </div>
   );
 }
-
-/* ─── Plus tier icons — minimal SVG glyphs, no icon library needed ─────── */
 
 function ShieldIcon() {
   return (
