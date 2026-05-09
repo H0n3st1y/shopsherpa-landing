@@ -137,6 +137,26 @@ export default function Page() {
             </ScrollFade>
           </div>
 
+          {/* Email card — no envelope, just the flagged message */}
+          <ScrollFade delay={200}>
+            <div className="relative bg-[#142736] border border-white/10 rounded-2xl p-8 md:p-10 mb-6">
+              {/* FLAGGED badge */}
+              <span className="absolute top-6 right-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 text-white text-xs font-mono font-medium tracking-wider uppercase shadow-lg shadow-red-500/30">
+                <span className="size-1.5 rounded-full bg-white animate-pulse" />
+                Flagged
+              </span>
+              <p className="text-xs font-mono text-white/40 mb-1">FROM</p>
+              <p className="font-mono text-sm text-white/90 mb-5">tracking@am4z0n-delivery.shop</p>
+              <p className="text-xs font-mono text-white/40 mb-1">SUBJECT</p>
+              <p className="text-lg md:text-xl text-white/95 leading-snug mb-6 pr-24">
+                Your package needs a redelivery fee. Confirm now.
+              </p>
+              <p className="text-sm text-white/50 leading-relaxed max-w-xl">
+                Spoofed sender domain. Pressure language. Payment ask. ShopSherpa caught all three before Maria opened it.
+              </p>
+            </div>
+          </ScrollFade>
+
           <ScrollFade delay={300}>
             <div className="grid md:grid-cols-2 gap-4 mt-6">
               <BeforeAfterCard
