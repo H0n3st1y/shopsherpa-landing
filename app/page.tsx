@@ -96,7 +96,7 @@ export default function Page() {
               </div>
             </ScrollFade>
             <ScrollFade delay={200}>
-                 <div className="size-48 md:size-56 rounded-full overflow-hidden border border-[#2e6273]/10">
+                                 <div className="size-48 md:size-56 rounded-full overflow-hidden border border-[#2e6273]/10">
                     <Image
                       src="/founder.png"
                       alt="Anghelo Araujo"
