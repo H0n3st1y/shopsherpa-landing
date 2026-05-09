@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { PreorderButton } from "@/components/PreorderButton";
 import { ScrollFade } from "@/components/ScrollFade";
@@ -26,7 +27,7 @@ export default function Page() {
           </nav>
           <a
             href="#preorder"
-            className="text-sm font-medium px-5 py-2.5 rounded-full bg-black text-white hover:bg-black/80 transition-[transform,background-color] duration-150 active:scale-[0.98] flex items-center gap-2"
+            className="text-sm font-medium px-5 py-2.5 rounded-full bg-black text-white hover:bg-black/80 transition-[transform,background-color] duration-150 active:scale-[0.98] flex items-center gap[...]
           >
             {/* Pulsing green dot — soft 2s loop */}
             <span className="size-1.5 rounded-full bg-[#1d9e75] pulse-dot" />
@@ -64,13 +65,13 @@ export default function Page() {
             <ScrollFade delay={150}>
               <h3 className="text-xl font-medium mb-4 text-white">Focus on you.</h3>
               <p className="text-white/60 leading-relaxed text-sm">
-                You shop differently than everyone else. ShopSherpa adapts to that. We learn what you trust, what you don&apos;t, and we get out of the way unless something feels wrong. No nagging. No theater. Just protection that fits your patterns.
+                You shop differently than everyone else. ShopSherpa adapts to that. We learn what you trust, what you don&apos;t, and we get out of the way unless something feels wrong. No nagging[...]
               </p>
             </ScrollFade>
             <ScrollFade delay={300}>
               <h3 className="text-xl font-medium mb-4 text-white">Private by design.</h3>
               <p className="text-white/60 leading-relaxed text-sm">
-                Your shopping is personal. Your inbox is personal. We built ShopSherpa with end-to-end encryption from day one. We can&apos;t sell what we never see, and we don&apos;t see your data. Safety should never cost you privacy.
+                Your shopping is personal. Your inbox is personal. We built ShopSherpa with end-to-end encryption from day one. We can&apos;t sell what we never see, and we don&apos;t see your dat[...]
               </p>
             </ScrollFade>
           </div>
@@ -94,15 +95,22 @@ export default function Page() {
               </div>
             </ScrollFade>
             <ScrollFade delay={200}>
-              <div className="size-48 md:size-56 rounded-full bg-[#e8dfc8] flex items-center justify-center text-[#2e6273] font-mono text-sm overflow-hidden border border-[#2e6273]/10">
-                <span className="opacity-50">photo</span>
+              <div className="size-48 md:size-56 rounded-full overflow-hidden border border-[#2e6273]/10">
+                <Image
+                  src="/founder.png"
+                  alt="Anghelo Araujo"
+                  width={224}
+                  height={224}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
             </ScrollFade>
             <ScrollFade delay={300}>
               <div>
                 <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-3 font-mono">About</p>
                 <p className="text-[#1a1a1a]/80 leading-relaxed text-sm">
-                  Anghelo is a high school sophomore at Nashua South building ShopSherpa from his bedroom. He&apos;s been obsessed with online fraud since middle school, when his mom almost lost $400 to a fake delivery email. He&apos;s been quietly building, talking to users, and shipping ever since. ShopSherpa has 2,000 beta users and has stopped $14,000 in scams across its first four months.
+                  Anghelo is a high school sophomore at Nashua South building ShopSherpa from his bedroom. He&apos;s been obsessed with online fraud since middle school, when his mom almost lost [...]
                 </p>
               </div>
             </ScrollFade>
