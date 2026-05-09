@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { ScrollFade } from "@/components/ScrollFade";
-import { HeroShapes } from "@/components/HeroShapes";
 import { PreorderButton } from "@/components/PreorderButton";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { InteractiveField } from "@/components/InteractiveField";
 import { StoryCard } from "@/components/StoryCard";
+import ScrollExpandMedia from "@/components/blocks/scroll-expansion-hero";
 
 export default function Page() {
   return (
@@ -34,54 +34,40 @@ export default function Page() {
       </header>
 
       {/* ─── HERO ────────────────────────────────────────────────────────────── */}
-      <section className="px-6 md:px-8 pt-20 md:pt-32 pb-20 md:pb-28 relative overflow-hidden">
-        <HeroShapes />
-        <div className="max-w-6xl mx-auto relative z-10">
-
-          <ScrollFade>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2e6273]/15 bg-white text-xs font-mono text-[#2e6273] mb-8">
-              <span className="size-1.5 rounded-full bg-[#1d9e75] pulse-dot" />
-              Private beta · Q3 2026 launch
-            </div>
-          </ScrollFade>
-
-          <ScrollFade delay={120}>
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium tracking-tighter leading-[0.98] max-w-4xl">
-              Catch the scam{" "}
-              <span className="text-[#2e6273]">before you pay.</span>
-            </h1>
-          </ScrollFade>
-
-          <ScrollFade delay={240}>
-            <p className="mt-6 md:mt-8 text-lg md:text-xl text-[#1a1a1a]/65 max-w-xl leading-relaxed">
-              ShopSherpa scans every store you visit for fake reviews and bad sellers. It flags phishing emails before you open them. Free, and ready in 60 seconds.
-            </p>
-          </ScrollFade>
-
-          <ScrollFade delay={360}>
-            <div className="mt-10 flex flex-col sm:flex-row gap-3">
-              <PreorderButton />
-              <a
-                href="#cta"
-                className="px-6 py-3.5 rounded-full bg-white text-[#1a1a1a] border border-[#2e6273]/15 font-medium text-sm hover:border-[#2e6273]/40 transition active:scale-[0.98] text-center"
-              >
-                Join the free waitlist
-              </a>
-            </div>
-          </ScrollFade>
-
-          <ScrollFade delay={480}>
-            <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-[#1a1a1a]/60">
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Public launch Q3 2026</div>
-            </div>
-          </ScrollFade>
+      <ScrollExpandMedia
+        mediaType="image"
+        mediaSrc="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1280&auto=format&fit=crop"
+        bgImageSrc="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&auto=format&fit=crop"
+        title="Catch the Scam"
+        date="Before You Pay."
+        scrollToExpand="Scroll to explore"
+        textBlend
+      >
+        {/* Content shown after hero fully expands */}
+        <div className="max-w-2xl mx-auto text-center py-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2e6273]/15 bg-white text-xs font-mono text-[#2e6273] mb-8">
+            <span className="size-1.5 rounded-full bg-[#1d9e75] pulse-dot" />
+            Private beta · Q3 2026 launch
+          </div>
+          <p className="text-lg md:text-xl text-[#1a1a1a]/70 max-w-xl mx-auto leading-relaxed mb-10">
+            ShopSherpa scans every store you visit for fake reviews and bad sellers. It flags phishing emails before you open them. Free, and ready in 60 seconds.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+            <PreorderButton />
+            <a
+              href="#cta"
+              className="px-6 py-3.5 rounded-full bg-white text-[#1a1a1a] border border-[#2e6273]/15 font-medium text-sm hover:border-[#2e6273]/40 transition active:scale-[0.98] text-center"
+            >
+              Join the free waitlist
+            </a>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-[#1a1a1a]/60">
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Public launch Q3 2026</div>
+          </div>
         </div>
-
-        <div aria-hidden className="absolute -top-32 -right-32 size-[480px] rounded-full bg-[#2e6273]/5 blur-3xl pointer-events-none" />
-        <div aria-hidden className="absolute -bottom-24 -left-24 size-80 rounded-full bg-[#1d9e75]/5 blur-3xl pointer-events-none" />
-      </section>
+      </ScrollExpandMedia>
 
       {/* ─── HOW IT WORKS ──────────────────────────────────────────────────────
           Free tier. Three steps. Simplicity is the pitch.

@@ -142,7 +142,7 @@ export default function BlogPage() {
       <footer className="bg-[#0d1f2d] text-white/60 px-6 md:px-8 py-12">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition">
-            <Logo />
+            <Logo dark />
             <span className="font-medium text-white">ShopSherpa</span>
           </Link>
           <div className="flex flex-wrap gap-6 text-sm">
@@ -159,10 +159,11 @@ export default function BlogPage() {
   );
 }
 
-function Logo() {
+function Logo({ dark = false }: { dark?: boolean }) {
   return (
-    <div className="size-7 rounded-lg bg-[#2e6273] text-white flex items-center justify-center font-serif font-semibold text-xs">
-      SS
+    <div className={`size-8 rounded-lg overflow-hidden flex items-center justify-center shrink-0 ${dark ? "bg-white" : ""}`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/logo.png" alt="ShopSherpa" width={32} height={32} className="w-full h-full object-contain" />
     </div>
   );
 }
