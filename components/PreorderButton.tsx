@@ -2,13 +2,6 @@
 
 import { useState } from "react";
 
-/**
- * PreorderButton
- * Initiates the Stripe checkout flow. Three variants:
- *   - default: teal fill, used in the hero and standalone sections
- *   - white:   white fill on a dark/teal background (pricing block, final CTA)
- *   - size="sm": compact padding for use in the nav bar
- */
 export function PreorderButton({
   variant = "default",
   size = "md",
@@ -35,13 +28,11 @@ export function PreorderButton({
     }
   }
 
-  const sizeClasses = size === "sm"
-    ? "px-4 py-2 text-sm"
-    : "px-6 py-3.5 text-sm";
-
-  const colorClasses = variant === "white"
-    ? "bg-white text-[#2e6273] hover:bg-[#F4F0E8]"
-    : "bg-[#1a1a1a] text-white hover:bg-[#2e6273]";
+  const sizeClasses = size === "sm" ? "px-4 py-2 text-sm" : "px-6 py-3.5 text-sm";
+  const colorClasses =
+    variant === "white"
+      ? "bg-white text-[#2e6273] hover:bg-[#F4F0E8]"
+      : "bg-[#1a1a1a] text-white hover:bg-[#2e6273]";
 
   return (
     <button
@@ -49,7 +40,7 @@ export function PreorderButton({
       disabled={loading}
       className={`rounded-full font-medium transition-[transform,background-color] duration-150 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap ${sizeClasses} ${colorClasses}`}
     >
-      {loading ? "Redirecting..." : "Pre-order lifetime — $9.99"}
+      {loading ? "Redirecting..." : "Pre-order for $9.99"}
     </button>
   );
 }
