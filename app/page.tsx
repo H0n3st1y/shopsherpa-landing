@@ -22,9 +22,10 @@ export default function Page() {
           </div>
           <nav className="hidden md:flex items-center gap-7 text-sm text-[#1a1a1a]/70">
             <a href="#how-it-works" className="hover:text-[#1a1a1a] transition">How it works</a>
-            <a href="#demo" className="hover:text-[#1a1a1a] transition">Demo</a>
             <a href="#roadmap" className="hover:text-[#1a1a1a] transition">Roadmap</a>
             <a href="#pricing" className="hover:text-[#1a1a1a] transition">Pricing</a>
+            <a href="/team" className="hover:text-[#1a1a1a] transition">Team</a>
+            <a href="/product" className="hover:text-[#1a1a1a] transition">MiniUAV</a>
           </nav>
           <div className="flex items-center gap-3">
             <a href="#cta" className="hidden sm:inline text-sm text-[#1a1a1a]/60 hover:text-[#1a1a1a] transition">
@@ -612,7 +613,8 @@ export default function Page() {
             <a href="#" className="hover:text-white transition">Privacy</a>
             <a href="#" className="hover:text-white transition">Security</a>
             <a href="/blog" className="hover:text-white transition">Blog</a>
-            <a href="#roadmap" className="hover:text-white transition">Roadmap</a>
+            <a href="/team" className="hover:text-white transition">Team</a>
+            <a href="/product" className="hover:text-white transition">MiniUAV</a>
             <a href="#" className="hover:text-white transition">Twitter</a>
           </div>
           <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
