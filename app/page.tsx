@@ -71,10 +71,10 @@ export default function Page() {
           </ScrollFade>
 
           <ScrollFade delay={480}>
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-[#1a1a1a]/50">
-              <div className="flex items-center gap-2"><CheckIcon />No credit card for free tier</div>
-              <div className="flex items-center gap-2"><CheckIcon />Chrome, Firefox, Safari</div>
-              <div className="flex items-center gap-2"><CheckIcon />Public launch Q3 2026</div>
+            <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-[#1a1a1a]/60">
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Public launch Q3 2026</div>
             </div>
           </ScrollFade>
         </div>
