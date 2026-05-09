@@ -1,11 +1,13 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { ScrollFade } from "@/components/ScrollFade";
+import { HeroShapes } from "@/components/HeroShapes";
 import { PreorderButton } from "@/components/PreorderButton";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { InteractiveField } from "@/components/InteractiveField";
 import { StoryCard } from "@/components/StoryCard";
-import ScrollExpandMedia from "@/components/blocks/scroll-expansion-hero";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { WebGLShader } from "@/components/ui/web-gl-shader";
 
 export default function Page() {
   return (
@@ -34,40 +36,54 @@ export default function Page() {
       </header>
 
       {/* ─── HERO ────────────────────────────────────────────────────────────── */}
-      <ScrollExpandMedia
-        mediaType="image"
-        mediaSrc="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1280&auto=format&fit=crop"
-        bgImageSrc="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&auto=format&fit=crop"
-        title="Catch the Scam"
-        date="Before You Pay."
-        scrollToExpand="Scroll to explore"
-        textBlend
-      >
-        {/* Content shown after hero fully expands */}
-        <div className="max-w-2xl mx-auto text-center py-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2e6273]/15 bg-white text-xs font-mono text-[#2e6273] mb-8">
-            <span className="size-1.5 rounded-full bg-[#1d9e75] pulse-dot" />
-            Private beta · Q3 2026 launch
-          </div>
-          <p className="text-lg md:text-xl text-[#1a1a1a]/70 max-w-xl mx-auto leading-relaxed mb-10">
-            ShopSherpa scans every store you visit for fake reviews and bad sellers. It flags phishing emails before you open them. Free, and ready in 60 seconds.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-            <PreorderButton />
-            <a
-              href="#cta"
-              className="px-6 py-3.5 rounded-full bg-white text-[#1a1a1a] border border-[#2e6273]/15 font-medium text-sm hover:border-[#2e6273]/40 transition active:scale-[0.98] text-center"
-            >
-              Join the free waitlist
-            </a>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-[#1a1a1a]/60">
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Public launch Q3 2026</div>
-          </div>
+      <section className="px-6 md:px-8 pt-20 md:pt-32 pb-20 md:pb-28 relative overflow-hidden">
+        <HeroShapes />
+        <div className="max-w-6xl mx-auto relative z-10">
+
+          <ScrollFade>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2e6273]/15 bg-white text-xs font-mono text-[#2e6273] mb-8">
+              <span className="size-1.5 rounded-full bg-[#1d9e75] pulse-dot" />
+              Private beta · Q3 2026 launch
+            </div>
+          </ScrollFade>
+
+          <ScrollFade delay={120}>
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium tracking-tighter leading-[0.98] max-w-4xl">
+              Catch the scam{" "}
+              <span className="text-[#2e6273]">before you pay.</span>
+            </h1>
+          </ScrollFade>
+
+          <ScrollFade delay={240}>
+            <p className="mt-6 md:mt-8 text-lg md:text-xl text-[#1a1a1a]/65 max-w-xl leading-relaxed">
+              ShopSherpa scans every store you visit for fake reviews and bad sellers. It flags phishing emails before you open them. Free, and ready in 60 seconds.
+            </p>
+          </ScrollFade>
+
+          <ScrollFade delay={360}>
+            <div className="mt-10 flex flex-col sm:flex-row gap-3">
+              <PreorderButton />
+              <a
+                href="#cta"
+                className="px-6 py-3.5 rounded-full bg-white text-[#1a1a1a] border border-[#2e6273]/15 font-medium text-sm hover:border-[#2e6273]/40 transition active:scale-[0.98] text-center"
+              >
+                Join the free waitlist
+              </a>
+            </div>
+          </ScrollFade>
+
+          <ScrollFade delay={480}>
+            <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-[#1a1a1a]/60">
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Public launch Q3 2026</div>
+            </div>
+          </ScrollFade>
         </div>
-      </ScrollExpandMedia>
+
+        <div aria-hidden className="absolute -top-32 -right-32 size-[480px] rounded-full bg-[#2e6273]/5 blur-3xl pointer-events-none" />
+        <div aria-hidden className="absolute -bottom-24 -left-24 size-80 rounded-full bg-[#1d9e75]/5 blur-3xl pointer-events-none" />
+      </section>
 
       {/* ─── HOW IT WORKS ──────────────────────────────────────────────────────
           Free tier. Three steps. Simplicity is the pitch.
@@ -103,46 +119,69 @@ export default function Page() {
       </section>
 
       {/* ─── LIVE PRODUCT MOMENT ───────────────────────────────────────────────
-          The Maria story. PhishingDemo handles the staged animation.
+          ContainerScroll: email window tilts in on scroll like a laptop opening.
       ────────────────────────────────────────────────────────────────────── */}
-      <section id="demo" className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <ScrollFade>
+      <section id="demo" className="bg-[#0d1f2d] text-white relative overflow-hidden">
+        <ContainerScroll
+          titleComponent={
+            <div className="px-6 md:px-8">
               <p className="text-xs uppercase tracking-wider text-[#1d9e75] mb-4 font-mono">Real example</p>
-            </ScrollFade>
-            <ScrollFade delay={120}>
-              <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-3xl">
+              <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-3xl mx-auto">
                 Maria almost paid $312.
               </h2>
-            </ScrollFade>
-            <ScrollFade delay={240}>
-              <p className="text-white/65 max-w-lg text-base md:text-lg leading-relaxed">
+              <p className="text-white/65 max-w-lg mx-auto text-base md:text-lg leading-relaxed">
                 She got an email about a missed package. The sender looked exactly like Amazon. ShopSherpa flagged it before she clicked anything.
               </p>
-            </ScrollFade>
-          </div>
-
-          {/* Email card — no envelope, just the flagged message */}
-          <ScrollFade delay={200}>
-            <div className="relative bg-[#142736] border border-white/10 rounded-2xl p-8 md:p-10 mb-6">
+            </div>
+          }
+        >
+          {/* Email window inside the rotating card */}
+          <div className="h-full w-full bg-[#1a1a2e] rounded-xl overflow-hidden flex flex-col">
+            {/* Window chrome bar */}
+            <div className="flex items-center gap-2 px-4 py-3 bg-[#111120] border-b border-white/5 shrink-0">
+              <span className="size-3 rounded-full bg-red-400" />
+              <span className="size-3 rounded-full bg-yellow-400" />
+              <span className="size-3 rounded-full bg-green-400" />
+              <span className="ml-3 text-xs font-mono text-white/30">Gmail — Inbox</span>
+            </div>
+            {/* Email content */}
+            <div className="flex-1 p-6 md:p-10 relative overflow-hidden">
               {/* FLAGGED badge */}
-              <span className="absolute top-6 right-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 text-white text-xs font-mono font-medium tracking-wider uppercase shadow-lg shadow-red-500/30">
+              <span className="absolute top-6 right-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 text-white text-xs font-mono font-medium tracking-wider uppercase shadow-lg shadow-red-500/40">
                 <span className="size-1.5 rounded-full bg-white animate-pulse" />
                 Flagged
               </span>
-              <p className="text-xs font-mono text-white/40 mb-1">FROM</p>
-              <p className="font-mono text-sm text-white/90 mb-5">tracking@am4z0n-delivery.shop</p>
-              <p className="text-xs font-mono text-white/40 mb-1">SUBJECT</p>
-              <p className="text-lg md:text-xl text-white/95 leading-snug mb-6 pr-24">
+              {/* Sender row */}
+              <div className="flex items-start gap-3 mb-6">
+                <div className="size-9 rounded-full bg-[#2e6273] flex items-center justify-center text-xs font-bold text-white shrink-0">A</div>
+                <div>
+                  <p className="text-sm font-medium text-white/90">Amazon</p>
+                  <p className="text-xs font-mono text-red-400">tracking@am4z0n-delivery.shop</p>
+                </div>
+              </div>
+              <p className="text-lg md:text-2xl font-medium text-white leading-snug mb-4 pr-24">
                 Your package needs a redelivery fee. Confirm now.
               </p>
-              <p className="text-sm text-white/50 leading-relaxed max-w-xl">
-                Spoofed sender domain. Pressure language. Payment ask. ShopSherpa caught all three before Maria opened it.
+              <p className="text-sm text-white/50 leading-relaxed mb-6">
+                We were unable to deliver your package. A redelivery fee of $3.99 is required within 24 hours or your package will be returned.
               </p>
+              {/* Fake CTA button */}
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FF9900] text-black text-sm font-semibold rounded opacity-50 cursor-not-allowed select-none">
+                Pay $3.99 now
+              </div>
+              {/* ShopSherpa warning banner */}
+              <div className="absolute bottom-0 left-0 right-0 bg-red-500/20 border-t border-red-500/30 px-6 py-3 flex items-center gap-3">
+                <svg className="size-4 text-red-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+                  <line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
+                <p className="text-xs text-red-300 font-mono">ShopSherpa: Spoofed domain detected. Do not click any links.</p>
+              </div>
             </div>
-          </ScrollFade>
+          </div>
+        </ContainerScroll>
 
+        <div className="max-w-6xl mx-auto px-6 md:px-8 pb-24">
           <ScrollFade delay={300}>
             <div className="grid md:grid-cols-2 gap-4 mt-6">
               <BeforeAfterCard
@@ -166,7 +205,6 @@ export default function Page() {
             </div>
           </ScrollFade>
         </div>
-        <div aria-hidden className="absolute -bottom-40 -right-40 size-96 rounded-full bg-[#2e6273]/10 blur-3xl pointer-events-none" />
       </section>
 
       {/* ─── INTERACTIVE FIELD ─────────────────────────────────────────────────
