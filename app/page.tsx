@@ -74,9 +74,9 @@ export default function Page() {
 
           <ScrollFade delay={480}>
             <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-[#1a1a1a]/60">
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#2e6273]/10 rounded-full px-3 py-1.5"><CheckIcon />Public launch Q3 2026</div>
+              <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
+              <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
+              <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />Public launch Q3 2026</div>
             </div>
           </ScrollFade>
         </div>
@@ -146,20 +146,21 @@ export default function Page() {
             </div>
             {/* Email content */}
             <div className="flex-1 p-6 md:p-10 relative overflow-hidden">
-              {/* FLAGGED badge */}
-              <span className="absolute top-6 right-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 text-white text-xs font-mono font-medium tracking-wider uppercase shadow-lg shadow-red-500/40">
-                <span className="size-1.5 rounded-full bg-white animate-pulse" />
-                Flagged
-              </span>
-              {/* Sender row */}
-              <div className="flex items-start gap-3 mb-6">
-                <div className="size-9 rounded-full bg-[#2e6273] flex items-center justify-center text-xs font-bold text-white shrink-0">A</div>
-                <div>
-                  <p className="text-sm font-medium text-white/90">Amazon</p>
-                  <p className="text-xs font-mono text-red-400">tracking@am4z0n-delivery.shop</p>
+              {/* Sender row + FLAGGED badge in same row so they never overlap */}
+              <div className="flex items-start justify-between gap-3 mb-6">
+                <div className="flex items-start gap-3 min-w-0">
+                  <div className="size-9 rounded-full bg-[#2e6273] flex items-center justify-center text-xs font-bold text-white shrink-0">A</div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-white/90">Amazon</p>
+                    <p className="text-xs font-mono text-red-400 truncate">tracking@am4z0n-delivery.shop</p>
+                  </div>
                 </div>
+                <span className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-500 text-white text-xs font-mono font-medium tracking-wider uppercase shadow-lg shadow-red-500/40">
+                  <span className="size-1.5 rounded-full bg-white animate-pulse" />
+                  Flagged
+                </span>
               </div>
-              <p className="text-lg md:text-2xl font-medium text-white leading-snug mb-4 pr-24">
+              <p className="text-lg md:text-2xl font-medium text-white leading-snug mb-4">
                 Your package needs a redelivery fee. Confirm now.
               </p>
               <p className="text-sm text-white/50 leading-relaxed mb-6">
@@ -511,20 +512,19 @@ export default function Page() {
           {/* Photo centered */}
           <ScrollFade>
             <div className="flex flex-col items-center gap-4 mb-10">
-              <div className="relative inline-block">
-                <div className="w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden bg-[#142736] ring-4 ring-white/10">
-                  <Image
-                    src="/founder.png"
-                    alt="Anghelo Araujo, founder of ShopSherpa"
-                    width={160}
-                    height={160}
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-                <div className="absolute -bottom-2 -right-2 bg-[#1d9e75] text-white text-xs font-mono px-2.5 py-1.5 rounded-lg leading-snug">
-                  <span className="block font-medium">Anghelo, 16</span>
-                  <span className="text-white/80">Nashua, NH</span>
-                </div>
+              <div className="w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden bg-[#142736] ring-4 ring-white/10">
+                <Image
+                  src="/founder.png"
+                  alt="Anghelo Araujo, founder of ShopSherpa"
+                  width={160}
+                  height={160}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              {/* Badge sits below photo with comfortable spacing */}
+              <div className="bg-[#1d9e75] text-white text-xs font-mono px-3 py-2 rounded-lg leading-snug text-center">
+                <span className="block font-medium">Anghelo, 16</span>
+                <span className="text-white/80">Nashua, NH</span>
               </div>
             </div>
           </ScrollFade>
@@ -626,10 +626,15 @@ export default function Page() {
 
 function Logo({ dark = false }: { dark?: boolean }) {
   return (
-    <div className={`size-8 rounded-lg overflow-hidden flex items-center justify-center shrink-0 ${dark ? "bg-white" : ""}`}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/logo.png" alt="ShopSherpa" width={32} height={32} className="w-full h-full object-contain" />
-    </div>
+    // On dark surfaces, invert the logo so the dark outlines become white
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/logo.svg"
+      alt="ShopSherpa"
+      width={32}
+      height={32}
+      className={`size-8 shrink-0 object-contain ${dark ? "brightness-0 invert" : ""}`}
+    />
   );
 }
 

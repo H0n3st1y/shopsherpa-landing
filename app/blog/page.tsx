@@ -161,9 +161,13 @@ export default function BlogPage() {
 
 function Logo({ dark = false }: { dark?: boolean }) {
   return (
-    <div className={`size-8 rounded-lg overflow-hidden flex items-center justify-center shrink-0 ${dark ? "bg-white" : ""}`}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/logo.png" alt="ShopSherpa" width={32} height={32} className="w-full h-full object-contain" />
-    </div>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/logo.svg"
+      alt="ShopSherpa"
+      width={32}
+      height={32}
+      className={`size-8 shrink-0 object-contain ${dark ? "brightness-0 invert" : ""}`}
+    />
   );
 }

@@ -112,7 +112,7 @@ export function HeroShapes() {
           <circle cx="118" cy="20" r="6" fill="#1d9e75" />
         </g>
       </g>
-      <g data-shape data-depth="1.1" style={{ willChange: "transform" }}>
+      <g data-shape data-depth="1.1" className="hidden md:block" style={{ willChange: "transform" }}>
         <g transform="translate(560 80) rotate(-20)">
           <circle cx="40" cy="40" r="36" stroke="white" strokeWidth="4" fill="#2e6273" />
           <line x1="68" y1="68" x2="100" y2="100" stroke="white" strokeWidth="6" strokeLinecap="round" />
