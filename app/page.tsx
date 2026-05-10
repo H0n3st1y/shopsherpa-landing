@@ -14,14 +14,8 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased overflow-x-hidden">
 
-      {/* ─── CINEMATIC INTRO ─────────────────────────────────────────────────────
-          Full-screen GSAP scroll sequence. Pins itself for ~7000px of scroll,
-          then releases to reveal the rest of the page below.
-      ────────────────────────────────────────────────────────────────────────── */}
-      <CinematicHero />
-
-      {/* NAV */}
-      <header className="sticky top-0 z-40 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">
+      {/* NAV — sticky z-50 so it floats above the cinematic section */}
+      <header className="sticky top-0 z-50 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">
         <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <Logo />
@@ -42,6 +36,12 @@ export default function Page() {
           </div>
         </div>
       </header>
+
+      {/* ─── CINEMATIC INTRO ─────────────────────────────────────────────────────
+          GSAP scroll sequence, pinned for ~7000px. The sticky nav above
+          stays visible throughout the entire cinematic + regular page scroll.
+      ────────────────────────────────────────────────────────────────────────── */}
+      <CinematicHero />
 
       {/* ─── HERO ────────────────────────────────────────────────────────────── */}
       <section className="px-6 md:px-8 pt-20 md:pt-32 pb-20 md:pb-28 relative overflow-hidden">
