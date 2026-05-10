@@ -47,13 +47,13 @@ export default function TeamPage() {
           </ScrollFade>
           <ScrollFade delay={240}>
             <p className="text-[#1a1a1a]/60 text-lg max-w-lg leading-relaxed">
-              We started ShopSherpa after getting burned online. This is personal, and that's exactly why we're building it right.
+              We started ShopSherpa after getting burned online. This is personal, and that&apos;s exactly why we&apos;re building it right.
             </p>
           </ScrollFade>
         </div>
       </section>
 
-      {/* FOUNDER */}
+      {/* FOUNDER — ANGHELO */}
       <section className="px-6 md:px-8 py-24 bg-white border-b border-[#2e6273]/10">
         <div className="max-w-6xl mx-auto">
           <ScrollFade>
@@ -66,16 +66,21 @@ export default function TeamPage() {
                 <div className="w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden bg-[#FAF8F4] ring-4 ring-[#2e6273]/10">
                   <Image
                     src="/founder.png"
-                    alt="Anghelo Araujo"
+                    alt="Anghelo Araujo Lazaro"
                     width={176}
                     height={176}
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div className="text-center md:text-left">
-                  <p className="font-semibold text-[#1a1a1a] text-lg">Anghelo Araujo</p>
-                  <p className="text-sm text-[#2e6273] font-mono mt-0.5">Founder & CEO</p>
+                  <p className="font-semibold text-[#1a1a1a] text-lg">Anghelo Araujo Lazaro</p>
+                  <p className="text-sm text-[#2e6273] font-mono mt-0.5">Founder &amp; CEO</p>
                   <p className="text-xs text-[#1a1a1a]/40 font-mono mt-1">Nashua, NH · Age 16</p>
+                </div>
+                {/* Social/credential links */}
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                  <span className="px-2.5 py-1 rounded-full bg-[#0d1f2d] text-white text-xs font-mono">Harvard CS50</span>
+                  <span className="px-2.5 py-1 rounded-full bg-[#2e6273]/10 text-[#2e6273] text-xs font-mono">MIT Beaver Works</span>
                 </div>
               </div>
             </ScrollFade>
@@ -83,25 +88,25 @@ export default function TeamPage() {
             <div className="flex-1">
               <ScrollFade delay={100}>
                 <h2 className="text-3xl md:text-4xl font-medium tracking-tighter leading-[1.1] mb-6">
-                  He almost lost $600 to a fake puppy listing. That's why ShopSherpa exists.
+                  He almost lost $600 to a fake puppy listing. That&apos;s why ShopSherpa exists.
                 </h2>
               </ScrollFade>
               <ScrollFade delay={200}>
-                <div className="space-y-4 text-[#1a1a1a]/65 text-base md:text-lg leading-relaxed">
+                <div className="space-y-4 text-[#1a1a1a]/65 text-base leading-relaxed font-serif">
                   <p>
                     When Anghelo was young, he found what looked like the perfect puppy listing online. The photos were real. The seller sent a contract. He nearly wired $600 before something felt off. The puppy never existed. The seller vanished.
                   </p>
                   <p>
-                    That experience stuck. He spent years watching the same thing happen to people around him — fake storefronts, phishing emails, review-stuffed products. At 16, he decided to build the tool he wished existed.
+                    That experience stuck. At 16, Anghelo is a self-taught developer and student at Nashua High School South. He completed Harvard John A. Paulson School of Engineering&apos;s CS50 curriculum and attended MIT Beaver Works Summer Institute, where he built MiniUAV Guardian, an autonomous indoor drone with ESP32, PIR sensing, and real-time threat detection.
                   </p>
                   <p>
-                    ShopSherpa is his answer: a quiet, always-on shield that catches the scam before you pay.
+                    He competed in DECA at the district and state levels, participated in FIRST Robotics, served as an officer in Interact Rotary, and interned with Harvard Undergraduate Ventures. ShopSherpa is his answer: a quiet, always-on shield that catches the scam before you pay.
                   </p>
                 </div>
               </ScrollFade>
               <ScrollFade delay={300}>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  {["Browser Extensions", "Fraud Detection", "Consumer Safety", "ESP32 / Embedded"].map((tag) => (
+                  {["Browser Extensions", "Fraud Detection", "ESP32 / Embedded", "DECA", "FIRST Robotics", "Interact Rotary"].map((tag) => (
                     <span key={tag} className="px-3 py-1.5 rounded-full bg-[#FAF8F4] border border-[#2e6273]/15 text-xs font-mono text-[#2e6273]">
                       {tag}
                     </span>
@@ -121,38 +126,60 @@ export default function TeamPage() {
           </ScrollFade>
           <ScrollFade delay={120}>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tighter leading-[1.05] mb-4 max-w-xl">
-              Growing the team.
+              The people making it real.
             </h2>
           </ScrollFade>
           <ScrollFade delay={200}>
             <p className="text-[#1a1a1a]/60 text-base mb-16 max-w-lg leading-relaxed">
-              We're actively looking for co-founders who care about consumer safety. If that's you, reach out.
+              A small, focused team with deep roots in engineering and community. We move fast and we care about the people we protect.
             </p>
           </ScrollFade>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Placeholder 1 */}
+
+            {/* PRITHVI */}
             <ScrollFade delay={100}>
-              <CofounderPlaceholder
-                slot={1}
-                hint="Engineering · Security · AI"
+              <CofounderCard
+                name="Prithvi Gupta"
+                role="Tech Co-Founder"
+                location="Nashua, NH · Age 15"
+                imageSrc="/prithvi.png"
+                imageAlt="Prithvi Gupta"
+                bio="Prithvi is a sophomore at Nashua High School South with a deep focus on aerospace engineering and PCB design. He serves as Treasurer of UNICEF NH and is an active GitHub contributor — bringing real engineering discipline to ShopSherpa&apos;s technical stack."
+                tags={["PCB Design", "Aerospace", "UNICEF NH", "GitHub", "DECA"]}
+                highlights={[
+                  { label: "Focus", value: "Aerospace / PCB" },
+                  { label: "Role", value: "UNICEF NH Treasurer" },
+                ]}
               />
             </ScrollFade>
-            {/* Placeholder 2 */}
+
+            {/* MILAN */}
             <ScrollFade delay={200}>
-              <CofounderPlaceholder
-                slot={2}
-                hint="Growth · Marketing · Community"
+              <CofounderCard
+                name="Milan Joby"
+                role="Co-Founder"
+                location="Nashua, NH"
+                imageSrc="/milan.jpg"
+                imageAlt="Milan Joby"
+                bio="Milan is an Interact Rotary club officer who has built and led volunteer programs reaching 100+ members. He placed 2nd in New Hampshire CDC at DECA, and competes in soccer and track. He brings the organizational and community-building muscle that turns a product into a movement."
+                tags={["Interact Rotary", "DECA", "Community", "Soccer", "Track"]}
+                highlights={[
+                  { label: "DECA", value: "2nd Place NH CDC" },
+                  { label: "Volunteers led", value: "100+" },
+                ]}
               />
             </ScrollFade>
+
           </div>
 
+          {/* Still looking */}
           <ScrollFade delay={300}>
             <div className="mt-12 p-8 rounded-2xl bg-[#0d1f2d] text-white flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
               <div>
-                <p className="font-medium text-lg mb-1">Interested in co-founding ShopSherpa?</p>
+                <p className="font-medium text-lg mb-1">Want to join the team?</p>
                 <p className="text-white/55 text-sm leading-relaxed max-w-sm">
-                  We're early, scrappy, and building something real. If you're passionate about keeping people safe online, let's talk.
+                  We&apos;re early, scrappy, and building something real. If you care about keeping people safe online, let&apos;s talk.
                 </p>
               </div>
               <a
@@ -188,26 +215,78 @@ export default function TeamPage() {
   );
 }
 
-function CofounderPlaceholder({ slot, hint }: { slot: number; hint: string }) {
+/* ─── CofounderCard ─────────────────────────────────────── */
+
+interface Highlight {
+  label: string;
+  value: string;
+}
+
+function CofounderCard({
+  name,
+  role,
+  location,
+  imageSrc,
+  imageAlt,
+  bio,
+  tags,
+  highlights,
+}: {
+  name: string;
+  role: string;
+  location: string;
+  imageSrc: string | null;
+  imageAlt: string;
+  bio: string;
+  tags: string[];
+  highlights: Highlight[];
+}) {
   return (
-    <div className="group bg-white border-2 border-dashed border-[#2e6273]/20 rounded-2xl p-8 hover:border-[#2e6273]/40 transition-colors duration-200">
+    <div className="bg-white border border-[#2e6273]/10 rounded-2xl p-8 card-hover">
+      {/* Header */}
       <div className="flex items-start gap-5 mb-6">
-        <div className="w-16 h-16 rounded-full bg-[#FAF8F4] border-2 border-dashed border-[#2e6273]/20 flex items-center justify-center text-[#2e6273]/30 shrink-0">
-          <svg className="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
-          </svg>
+        <div className="w-16 h-16 rounded-full overflow-hidden bg-[#FAF8F4] ring-2 ring-[#2e6273]/10 shrink-0">
+          {imageSrc ? (
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={64}
+              height={64}
+              className="w-full h-full object-cover object-top"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-[#2e6273]/30">
+              <svg className="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+          )}
         </div>
-        <div>
-          <p className="font-medium text-[#1a1a1a]/30 text-lg">Co-founder #{slot}</p>
-          <p className="text-xs font-mono text-[#2e6273]/50 mt-0.5">Position open</p>
+        <div className="flex-1 min-w-0">
+          <p className="font-semibold text-[#1a1a1a] text-lg leading-tight">{name}</p>
+          <p className="text-sm text-[#2e6273] font-mono mt-0.5">{role}</p>
+          <p className="text-xs text-[#1a1a1a]/40 font-mono mt-1">{location}</p>
         </div>
       </div>
-      <p className="text-sm text-[#1a1a1a]/30 leading-relaxed mb-4">
-        This seat is waiting for the right person. Someone who sees the problem and wants to own part of the solution.
-      </p>
+
+      {/* Highlight stats */}
+      <div className="flex gap-4 mb-5">
+        {highlights.map((h) => (
+          <div key={h.label} className="px-3 py-2 rounded-xl bg-[#FAF8F4] flex-1 text-center">
+            <p className="text-xs text-[#1a1a1a]/40 font-mono mb-0.5">{h.label}</p>
+            <p className="text-sm font-semibold text-[#1a1a1a] leading-tight">{h.value}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Bio */}
+      <p className="text-sm text-[#1a1a1a]/65 leading-relaxed mb-5 font-serif" dangerouslySetInnerHTML={{ __html: bio }} />
+
+      {/* Tags */}
       <div className="flex flex-wrap gap-2">
-        {hint.split(" · ").map((t) => (
-          <span key={t} className="px-2.5 py-1 rounded-full bg-[#FAF8F4] border border-[#2e6273]/10 text-xs font-mono text-[#1a1a1a]/30">
+        {tags.map((t) => (
+          <span key={t} className="px-2.5 py-1 rounded-full bg-[#FAF8F4] border border-[#2e6273]/10 text-xs font-mono text-[#2e6273]">
             {t}
           </span>
         ))}
@@ -215,6 +294,8 @@ function CofounderPlaceholder({ slot, hint }: { slot: number; hint: string }) {
     </div>
   );
 }
+
+/* ─── Logo ──────────────────────────────────────────────── */
 
 function Logo({ dark = false }: { dark?: boolean }) {
   return (

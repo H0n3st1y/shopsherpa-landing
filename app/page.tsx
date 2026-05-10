@@ -49,9 +49,9 @@ export default function Page() {
           </ScrollFade>
 
           <ScrollFade delay={120}>
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium tracking-tighter leading-[0.98] max-w-4xl">
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-semibold leading-[1] max-w-4xl">
               Catch the scam{" "}
-              <span className="text-[#2e6273]">before you pay.</span>
+              <span className="text-[#2e6273] sketch-underline">before you pay.</span>
             </h1>
           </ScrollFade>
 
@@ -82,8 +82,8 @@ export default function Page() {
           </ScrollFade>
         </div>
 
-        <div aria-hidden className="absolute -top-32 -right-32 size-[480px] rounded-full bg-[#2e6273]/5 blur-3xl pointer-events-none" />
-        <div aria-hidden className="absolute -bottom-24 -left-24 size-80 rounded-full bg-[#1d9e75]/5 blur-3xl pointer-events-none" />
+        <div aria-hidden className="blob-float absolute -top-32 -right-32 size-[480px] rounded-full bg-[#2e6273]/5 blur-3xl pointer-events-none" />
+        <div aria-hidden className="blob-float-slow absolute -bottom-24 -left-24 size-80 rounded-full bg-[#1d9e75]/5 blur-3xl pointer-events-none" />
       </section>
 
       {/* ─── HOW IT WORKS ──────────────────────────────────────────────────────
@@ -539,7 +539,7 @@ export default function Page() {
             </h2>
           </ScrollFade>
           <ScrollFade delay={300}>
-            <div className="space-y-5 text-white/70 text-base md:text-lg leading-relaxed text-left max-w-xl mx-auto">
+            <div className="font-serif space-y-5 text-white/70 text-base md:text-lg leading-relaxed text-left max-w-xl mx-auto">
               <p>
                 When Anghelo was young, he found a puppy listing online. The photos looked real. The seller sent a contract. He almost wired $600 before something felt off.
               </p>
@@ -687,7 +687,7 @@ function BeforeAfterCard({ label, variant, items }: { label: string; variant: "b
 
 function PlusCard({ icon, title, outcome }: { icon: ReactNode; title: string; outcome: string }) {
   return (
-    <div className="bg-white rounded-2xl p-7 border border-[#2e6273]/10 h-full hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] transition-[transform,box-shadow] duration-200">
+    <div className="card-hover bg-white rounded-2xl p-7 border border-[#2e6273]/10 h-full">
       <div className="size-10 rounded-xl bg-[#F4F0E8] flex items-center justify-center text-[#2e6273] mb-5">{icon}</div>
       <p className="text-xs font-mono uppercase tracking-wider text-[#2e6273]/50 mb-2">Coming Q3 2026</p>
       <h3 className="text-xl font-medium tracking-tight mb-3">{title}</h3>
@@ -741,7 +741,7 @@ function BlogCard({ tag, title, read }: { tag: string; title: string; read: stri
   return (
     <a
       href="/blog"
-      className="group bg-[#FAF8F4] rounded-2xl p-7 border border-[#2e6273]/10 h-full flex flex-col hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] transition-[transform,box-shadow] duration-200"
+      className="card-hover group bg-[#FAF8F4] rounded-2xl p-7 border border-[#2e6273]/10 h-full flex flex-col"
     >
       <p className="text-xs font-mono uppercase tracking-wider text-[#2e6273]/60 mb-4">{tag}</p>
       <h3 className="text-lg font-medium leading-snug tracking-tight mb-6 flex-1">{title}</h3>
@@ -760,10 +760,14 @@ function BlogCard({ tag, title, read }: { tag: string; title: string; read: stri
 
 function TestimonialCard({ quote, name, city }: { quote: string; name: string; city: string }) {
   return (
-    <div className="bg-white border border-[#2e6273]/10 rounded-2xl p-7 h-full flex flex-col shadow-[var(--shadow-soft)]">
-      <p className="text-base leading-snug mb-6 flex-1 text-[#1a1a1a]/85">"{quote}"</p>
+    <div className="card-hover bg-white border border-[#2e6273]/10 rounded-2xl p-7 h-full flex flex-col shadow-[var(--shadow-soft)]">
+      {/* Opening quote mark in teal for visual warmth */}
+      <svg className="size-7 text-[#2e6273]/20 mb-3 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/>
+      </svg>
+      <p className="font-serif italic text-base leading-relaxed mb-6 flex-1 text-[#1a1a1a]/80">{quote}</p>
       <div className="pt-5 border-t border-[#2e6273]/10">
-        <p className="text-sm font-medium text-[#1a1a1a]">{name}</p>
+        <p className="text-sm font-semibold text-[#1a1a1a]">{name}</p>
         <p className="text-xs text-[#1a1a1a]/40 font-mono mt-0.5">{city}</p>
       </div>
     </div>

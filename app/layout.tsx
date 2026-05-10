@@ -1,13 +1,33 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Mono } from "next/font/google";
+import { Barlow, Barlow_Semi_Condensed, Lora, DM_Mono } from "next/font/google";
 import "./globals.css";
 
-const sans = DM_Sans({
+/* Body text — Barlow Regular/Medium/SemiBold */
+const barlow = Barlow({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
   display: "swap",
 });
 
+/* Headings — Barlow Semi Condensed, more impactful than full-width */
+const barlowHeading = Barlow_Semi_Condensed({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+/* Accent serif — Lora for testimonial quotes, founder story, pull quotes */
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+/* Mono — kept for code/labels/badges */
 const mono = DM_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
@@ -15,7 +35,7 @@ const mono = DM_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shopsherpa.ai";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shopsherpa.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -39,14 +59,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "ShopSherpa",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "ShopSherpa",
-      },
-    ],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ShopSherpa" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -66,13 +79,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+    <html
+      lang="en"
+      className={`${barlow.variable} ${barlowHeading.variable} ${lora.variable} ${mono.variable}`}
+    >
       <body className="bg-paper antialiased">{children}</body>
     </html>
   );
