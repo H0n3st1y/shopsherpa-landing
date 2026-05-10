@@ -8,10 +8,17 @@ import { InteractiveField } from "@/components/InteractiveField";
 import { StoryCard } from "@/components/StoryCard";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
+import { CinematicHero } from "@/components/ui/cinematic-landing-hero";
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
+    <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased overflow-x-hidden">
+
+      {/* ─── CINEMATIC INTRO ─────────────────────────────────────────────────────
+          Full-screen GSAP scroll sequence. Pins itself for ~7000px of scroll,
+          then releases to reveal the rest of the page below.
+      ────────────────────────────────────────────────────────────────────────── */}
+      <CinematicHero />
 
       {/* NAV */}
       <header className="sticky top-0 z-40 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">

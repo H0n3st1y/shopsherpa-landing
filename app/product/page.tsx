@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollFade } from "@/components/ScrollFade";
+import { WebGLShader } from "@/components/ui/web-gl-shader";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 export const metadata: Metadata = {
   title: "MiniUAV Guardian | ShopSherpa",
@@ -36,9 +38,10 @@ export default function ProductPage() {
 
       {/* ─── HERO ─── */}
       <section className="relative flex flex-col items-center justify-center min-h-[95vh] px-6 text-center overflow-hidden">
-        {/* Ambient glow */}
-        <div aria-hidden className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] rounded-full bg-[#2e6273]/20 blur-[120px] pointer-events-none" />
-        <div aria-hidden className="absolute top-1/4 right-1/4 size-72 rounded-full bg-[#1d9e75]/10 blur-[80px] pointer-events-none" />
+        {/* WebGL wave shader — fills the hero */}
+        <WebGLShader className="absolute inset-0 w-full h-full block opacity-40" />
+        {/* Dark overlay so text stays readable */}
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black pointer-events-none" />
 
         <ScrollFade>
           <p className="text-xs uppercase tracking-[0.2em] text-[#1d9e75] mb-6 font-mono">MiniUAV Guardian</p>
@@ -58,12 +61,15 @@ export default function ProductPage() {
         </ScrollFade>
         <ScrollFade delay={300}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:hello@shopsherpa.org"
-              className="px-8 py-4 rounded-full bg-white text-black font-medium text-sm hover:bg-white/90 transition active:scale-[0.98]"
+            <LiquidButton
+              size="xl"
+              className="text-white border border-white/30 rounded-full"
+              onClick={undefined}
             >
-              Request early access
-            </a>
+              <a href="mailto:hello@shopsherpa.org" className="flex items-center gap-2">
+                Request early access
+              </a>
+            </LiquidButton>
             <a
               href="#specs"
               className="px-8 py-4 rounded-full bg-white/10 text-white font-medium text-sm border border-white/15 hover:bg-white/15 transition active:scale-[0.98]"
@@ -294,15 +300,14 @@ export default function ProductPage() {
           </p>
         </ScrollFade>
         <ScrollFade delay={300}>
-          <a
-            href="mailto:hello@shopsherpa.org"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-medium text-sm hover:bg-white/90 transition active:scale-[0.98]"
-          >
-            Contact us
-            <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
+          <LiquidButton size="xl" className="text-white border border-white/30 rounded-full">
+            <a href="mailto:hello@shopsherpa.org" className="flex items-center gap-2">
+              Contact us
+              <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </LiquidButton>
         </ScrollFade>
       </section>
 
