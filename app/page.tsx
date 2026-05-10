@@ -8,6 +8,7 @@ import { InteractiveField } from "@/components/InteractiveField";
 import { StoryCard } from "@/components/StoryCard";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
+import { ThreatLogEmail } from "@/components/ThreatLogEmail";
 
 export default function Page() {
   return (
@@ -119,112 +120,84 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── LIVE PRODUCT MOMENT ───────────────────────────────────────────────
-          ContainerScroll: email window tilts in on scroll like a laptop opening.
+      {/* ─── INTERCEPTED THREAT LOG ────────────────────────────────────────────
+          Design: sharp grid box, flat terracotta overlay on threat state,
+          monospaced terminal output. No curves. No bounce.
       ────────────────────────────────────────────────────────────────────── */}
-      <section id="demo" className="bg-[#0d1f2d] text-white relative overflow-hidden">
-        <ContainerScroll
-          titleComponent={
-            <div className="px-6 md:px-8">
-              <p className="text-xs uppercase tracking-wider text-[#1d9e75] mb-4 font-mono">Real example</p>
-              <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-3xl mx-auto">
-                Maria almost paid $312.
-              </h2>
-              <p className="text-white/65 max-w-lg mx-auto text-base md:text-lg leading-relaxed">
-                She got an email about a missed package. The sender looked exactly like Amazon. ShopSherpa flagged it before she clicked anything.
-              </p>
-            </div>
-          }
-        >
-          {/* Email window inside the rotating card */}
-          <div className="h-full w-full bg-[#1a1a2e] rounded-xl overflow-hidden flex flex-col">
-            {/* Window chrome bar */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-[#111120] border-b border-white/5 shrink-0">
-              <span className="size-3 rounded-full bg-red-400" />
-              <span className="size-3 rounded-full bg-yellow-400" />
-              <span className="size-3 rounded-full bg-green-400" />
-              <span className="ml-3 text-xs font-mono text-white/30">Gmail — Inbox</span>
-            </div>
-            {/* Email content */}
-            <div className="flex-1 p-6 md:p-10 relative overflow-hidden">
-              {/* Sender row + FLAGGED badge in same row so they never overlap */}
-              <div className="flex items-start justify-between gap-3 mb-6">
-                <div className="flex items-start gap-3 min-w-0">
-                  <div className="size-9 rounded-full bg-[#2e6273] flex items-center justify-center text-xs font-bold text-white shrink-0">A</div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-white/90">Amazon</p>
-                    <p className="text-xs font-mono text-red-400 truncate">tracking@am4z0n-delivery.shop</p>
-                  </div>
-                </div>
-                <span className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-500 text-white text-xs font-mono font-medium tracking-wider uppercase shadow-lg shadow-red-500/40">
-                  <span className="size-1.5 rounded-full bg-white animate-pulse" />
-                  Flagged
-                </span>
-              </div>
-              <p className="text-lg md:text-2xl font-medium text-white leading-snug mb-4">
-                Your package needs a redelivery fee. Confirm now.
-              </p>
-              <p className="text-sm text-white/50 leading-relaxed mb-6">
-                We were unable to deliver your package. A redelivery fee of $3.99 is required within 24 hours or your package will be returned.
-              </p>
-              {/* Fake CTA button */}
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FF9900] text-black text-sm font-semibold rounded opacity-50 cursor-not-allowed select-none">
-                Pay $3.99 now
-              </div>
-              {/* ShopSherpa warning banner */}
-              <div className="absolute bottom-0 left-0 right-0 bg-red-500/20 border-t border-red-500/30 px-6 py-3 flex items-center gap-3">
-                <svg className="size-4 text-red-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
-                  <line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" />
-                </svg>
-                <p className="text-xs text-red-300 font-mono">ShopSherpa: Spoofed domain detected. Do not click any links.</p>
-              </div>
-            </div>
-          </div>
-        </ContainerScroll>
+      <section id="demo" style={{ background: "#CAAF98" }} className="relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 py-24 md:py-32">
 
-        <div className="max-w-6xl mx-auto px-6 md:px-8 pb-24">
+          <ScrollFade>
+            <p className="text-[9px] uppercase tracking-[0.2em] font-mono mb-6" style={{ color: "#AD2010" }}>
+              THREAT_LOG · INCIDENT_0042 · INTERCEPTED
+            </p>
+          </ScrollFade>
+          <ScrollFade delay={80}>
+            <h2 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[1] mb-3" style={{ color: "#22180F", fontFamily: "var(--font-heading)" }}>
+              Maria almost paid $312.
+            </h2>
+          </ScrollFade>
+          <ScrollFade delay={160}>
+            <p className="text-sm leading-relaxed mb-14 max-w-lg" style={{ color: "#22180F80", fontFamily: "var(--font-serif)" }}>
+              A spoofed Amazon email about a missed package. The domain was off by one character. ShopSherpa caught it before she clicked anything.
+            </p>
+          </ScrollFade>
+
+          <ScrollFade delay={220}>
+            {/* The threat log — sharp border, grid aesthetic */}
+            <ThreatLogEmail />
+          </ScrollFade>
+
+          {/* Before / After — styled as log comparison */}
           <ScrollFade delay={300}>
-            <div className="grid md:grid-cols-2 gap-4 mt-6">
-              <BeforeAfterCard
-                label="Without ShopSherpa"
-                variant="before"
-                items={[
-                  "Opens the email.",
-                  "Clicks the link. Enters her card.",
-                  "Loses $312 to a scammer.",
-                ]}
-              />
-              <BeforeAfterCard
-                label="With ShopSherpa"
-                variant="after"
-                items={[
-                  "Email arrives. ShopSherpa scans it.",
-                  "A FLAGGED badge slides in.",
-                  "Maria deletes it. Keeps her $312.",
-                ]}
-              />
+            <div className="grid md:grid-cols-2 gap-0 mt-10" style={{ border: "1px solid #22180F" }}>
+              <div className="p-8 border-b md:border-b-0 md:border-r" style={{ borderColor: "#22180F" }}>
+                <p className="text-[9px] uppercase tracking-[0.18em] font-mono mb-6" style={{ color: "#AD2010" }}>WITHOUT SHOPSHERPA</p>
+                <div className="space-y-3">
+                  {[
+                    "01  Opens the email.",
+                    "02  Clicks the link. Enters her card.",
+                    "03  Loses $312 to a scammer.",
+                  ].map((line) => (
+                    <p key={line} className="text-xs font-mono" style={{ color: "#22180F99" }}>{line}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="p-8">
+                <p className="text-[9px] uppercase tracking-[0.18em] font-mono mb-6" style={{ color: "#22180F60" }}>WITH SHOPSHERPA</p>
+                <div className="space-y-3">
+                  {[
+                    "01  Email arrives. ShopSherpa scans sender domain.",
+                    "02  [SYS.ALERT] SPOOFED_DOMAIN_DETECTED",
+                    "03  Maria deletes it. Keeps her $312.",
+                  ].map((line) => (
+                    <p key={line} className="text-xs font-mono" style={{ color: "#22180F" }}>{line}</p>
+                  ))}
+                </div>
+              </div>
             </div>
           </ScrollFade>
         </div>
       </section>
 
-      {/* ─── INTERACTIVE FIELD ─────────────────────────────────────────────────
-          A quiet moment between the demo and the pricing pitch.
-          Shows the product's personality: calm, not alarming.
-          StoryCards below reinforce with real examples.
+      {/* ─── CALIBRATION / INTERACTIVE FIELD ──────────────────────────────────
+          Architectural wireframe grid. Live cursor tracker. No bounce.
       ────────────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#0d1f2d] text-white px-6 md:px-10 py-24 md:py-40 relative overflow-hidden">
+      <section style={{ background: "#22180F", color: "#CAAF98" }} className="px-6 md:px-10 py-24 md:py-32 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <ScrollFade>
-            <h2 className="text-5xl md:text-7xl font-medium tracking-tighter text-[#1d9e75] mb-6 md:mb-10 text-center">
+            <p className="text-[9px] uppercase tracking-[0.2em] font-mono mb-5" style={{ color: "#AD2010" }}>
+              INTERACTION_MODULE · PRECISION_CALIBRATION
+            </p>
+          </ScrollFade>
+          <ScrollFade delay={80}>
+            <h2 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[1] mb-5" style={{ fontFamily: "var(--font-heading)", color: "#CAAF98" }}>
               Quiet by default.<br />Calm to the touch.
             </h2>
           </ScrollFade>
-
-          <ScrollFade delay={150}>
-            <p className="text-white/60 max-w-md mx-auto text-center mb-12 md:mb-16">
-              ShopSherpa stays out of the way until it has something to say. Move your cursor across the field below and click anywhere.
+          <ScrollFade delay={160}>
+            <p className="text-sm leading-relaxed mb-12 max-w-md" style={{ color: "#CAAF9880", fontFamily: "var(--font-serif)" }}>
+              ShopSherpa stays out of the way until it has something to say. Move your cursor across the field below.
             </p>
           </ScrollFade>
 
@@ -234,7 +207,7 @@ export default function Page() {
             </div>
           </ScrollFade>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-16">
+          <div className="grid md:grid-cols-2 gap-0 max-w-4xl mx-auto mt-12" style={{ border: "1px solid #CAAF9830" }}>
             <ScrollFade>
               <StoryCard
                 source="Last Tuesday"
@@ -504,112 +477,149 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── MINUAV GUARDIAN ──────────────────────────────────────────────────── */}
-      <section className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32 relative overflow-hidden">
-        {/* Ambient glow */}
-        <div aria-hidden className="absolute top-1/2 right-0 size-[500px] rounded-full bg-[#2e6273]/10 blur-[100px] pointer-events-none -translate-y-1/2" />
+      {/* ─── MINUAV GUARDIAN · BLUEPRINT ──────────────────────────────────────── */}
+      <section style={{ background: "#CAAF98" }} className="relative overflow-hidden">
+        {/* Blueprint header bar */}
+        <div className="border-b px-6 md:px-8 py-3 flex items-center justify-between" style={{ borderColor: "#22180F40" }}>
+          <p className="text-[9px] uppercase tracking-[0.2em] font-mono" style={{ color: "#AD2010" }}>
+            HARDWARE_SCHEMATIC · REV_003 · MINUAV_GUARDIAN
+          </p>
+          <p className="text-[9px] font-mono" style={{ color: "#22180F60" }}>
+            ANGHELO_ARAUJO + PRITHVI_GUPTA · CO-DESIGNERS
+          </p>
+        </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 py-20 md:py-28">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-start">
 
             {/* Left — text */}
             <div className="flex-1">
               <ScrollFade>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#1d9e75] mb-5 font-mono">ShopSherpa Hardware</p>
-              </ScrollFade>
-              <ScrollFade delay={100}>
-                <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter leading-[1] mb-6">
-                  The same intelligence.<br />
-                  <span className="text-[#2e6273]">Now it flies.</span>
+                <h2 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[1] mb-6" style={{ color: "#22180F", fontFamily: "var(--font-heading)" }}>
+                  The same intelligence.<br />Now it flies.
                 </h2>
               </ScrollFade>
-              <ScrollFade delay={180}>
-                <p className="text-white/60 text-base md:text-lg leading-relaxed mb-8 max-w-lg font-serif">
-                  MiniUAV Guardian is a security quadrotor built on the same fraud-detection databases and threat intelligence that power ShopSherpa. It brings that software layer into the physical world — patrolling spaces, detecting intrusions, and logging threats in real time.
+              <ScrollFade delay={100}>
+                <p className="text-sm leading-relaxed mb-6 max-w-md" style={{ color: "#22180F80", fontFamily: "var(--font-serif)" }}>
+                  MiniUAV Guardian is a security quadrotor that Anghelo co-designed alongside tech co-founder Prithvi Gupta. It runs on the same threat-detection databases and software layer that power ShopSherpa — bringing digital fraud intelligence into physical space.
                 </p>
               </ScrollFade>
-              <ScrollFade delay={250}>
-                <p className="text-white/60 text-base leading-relaxed mb-10 max-w-lg font-serif">
-                  One platform. Two products. Whether you are shopping from a screen or securing a room, ShopSherpa knows what does not belong.
+              <ScrollFade delay={160}>
+                <p className="text-sm leading-relaxed mb-10 max-w-md" style={{ color: "#22180F80", fontFamily: "var(--font-serif)" }}>
+                  One platform. Two products. Whether the threat is a spoofed checkout domain or an intruder in a room, ShopSherpa knows what does not belong.
                 </p>
               </ScrollFade>
 
-              {/* Feature pills */}
-              <ScrollFade delay={320}>
-                <div className="flex flex-wrap gap-3 mb-10">
+              {/* Spec table — blueprint style */}
+              <ScrollFade delay={220}>
+                <div className="mb-10" style={{ border: "1px solid #22180F40" }}>
                   {[
-                    "ShopSherpa threat DB",
-                    "ESP32 dual-core",
-                    "PIR motion sensing",
-                    "Wi-Fi real-time logs",
-                    "Custom 80×80mm PCB",
-                    "Autonomous patrol",
-                  ].map((f) => (
-                    <span key={f} className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-white/60">
-                      {f}
-                    </span>
+                    ["PROCESSOR",  "ESP32 · Dual-core 240MHz"],
+                    ["SENSING",    "PIR · 10ft body-heat detection"],
+                    ["PCB",        "Custom 80×80mm dual-layer"],
+                    ["COMMS",      "Wi-Fi · Real-time event logging"],
+                    ["PATROL",     "Autonomous · No pilot required"],
+                    ["SOFTWARE",   "ShopSherpa threat DB + firmware"],
+                  ].map(([label, value], i) => (
+                    <div
+                      key={label}
+                      className="flex items-center px-4 py-2.5"
+                      style={{
+                        borderTop: i > 0 ? "1px solid #22180F20" : undefined,
+                      }}
+                    >
+                      <span className="text-[9px] font-mono w-24 shrink-0 uppercase tracking-wider" style={{ color: "#AD2010" }}>{label}</span>
+                      <span className="text-xs font-mono" style={{ color: "#22180F" }}>{value}</span>
+                    </div>
                   ))}
                 </div>
               </ScrollFade>
 
-              <ScrollFade delay={380}>
+              <ScrollFade delay={280}>
                 <a
                   href="/product"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2e6273] text-white text-sm font-medium hover:bg-[#3d7a8a] transition active:scale-[0.98]"
+                  className="inline-flex items-center gap-3 px-6 py-3 text-sm font-mono transition"
+                  style={{ border: "1px solid #22180F", color: "#22180F", background: "transparent" }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#22180F"; (e.currentTarget as HTMLElement).style.color = "#CAAF98"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "transparent"; (e.currentTarget as HTMLElement).style.color = "#22180F"; }}
                 >
-                  Learn about MiniUAV Guardian
-                  <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  VIEW_FULL_SCHEMATIC
+                  <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </a>
               </ScrollFade>
             </div>
 
-            {/* Right — drone wireframe card */}
+            {/* Right — engineering blueprint card */}
             <ScrollFade delay={150} className="w-full lg:w-auto shrink-0">
-              <div className="w-full lg:w-[380px] aspect-square rounded-3xl bg-gradient-to-b from-[#0d2b35] to-[#061419] border border-white/8 flex flex-col items-center justify-center p-8 relative shadow-[0_0_80px_rgba(46,98,115,0.15)]">
-                {/* Top accent line */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2e6273]/60 to-transparent" />
+              <div
+                className="w-full lg:w-[400px] relative p-8"
+                style={{ border: "1px solid #22180F40", background: "#C4A48C" }}
+              >
+                {/* Corner marks — engineering drawing style */}
+                {[["top-0 left-0","border-t border-l"],["top-0 right-0","border-t border-r"],["bottom-0 left-0","border-b border-l"],["bottom-0 right-0","border-b border-r"]].map(([pos, borders]) => (
+                  <div key={pos} className={`absolute ${pos} w-4 h-4 ${borders}`} style={{ borderColor: "#22180F60", margin: "4px" }} />
+                ))}
 
-                {/* Drone wireframe SVG */}
-                <svg viewBox="0 0 200 160" className="w-48 text-[#2e6273] mb-6" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="75" y="65" width="50" height="35" rx="8" fill="#1d9e75" fillOpacity="0.12" stroke="#1d9e75" strokeWidth="1.5" />
-                  <line x1="75" y1="72" x2="30" y2="45" strokeOpacity="0.5" />
-                  <line x1="125" y1="72" x2="170" y2="45" strokeOpacity="0.5" />
-                  <line x1="75" y1="93" x2="30" y2="118" strokeOpacity="0.5" />
-                  <line x1="125" y1="93" x2="170" y2="118" strokeOpacity="0.5" />
-                  <ellipse cx="30" cy="45" rx="22" ry="6" strokeOpacity="0.4" />
-                  <ellipse cx="170" cy="45" rx="22" ry="6" strokeOpacity="0.4" />
-                  <ellipse cx="30" cy="118" rx="22" ry="6" strokeOpacity="0.4" />
-                  <ellipse cx="170" cy="118" rx="22" ry="6" strokeOpacity="0.4" />
-                  <circle cx="30" cy="45" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                  <circle cx="170" cy="45" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                  <circle cx="30" cy="118" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                  <circle cx="170" cy="118" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                  <circle cx="100" cy="90" r="5" fill="#2e6273" stroke="#2e6273" strokeWidth="1" />
-                  <line x1="83" y1="75" x2="83" y2="92" strokeOpacity="0.25" strokeWidth="0.8" />
-                  <line x1="91" y1="75" x2="91" y2="92" strokeOpacity="0.25" strokeWidth="0.8" />
-                  <line x1="109" y1="75" x2="109" y2="92" strokeOpacity="0.25" strokeWidth="0.8" />
-                  <line x1="117" y1="75" x2="117" y2="92" strokeOpacity="0.25" strokeWidth="0.8" />
-                </svg>
+                {/* Blueprint drone — right-angle annotations */}
+                <div className="relative">
+                  <svg viewBox="0 0 280 220" className="w-full" fill="none">
+                    {/* Grid guide lines */}
+                    {[40,80,120,160,200,240].map(x => (
+                      <line key={`v${x}`} x1={x} y1="0" x2={x} y2="220" stroke="#22180F" strokeOpacity="0.08" strokeWidth="0.5" />
+                    ))}
+                    {[40,80,120,160].map(y => (
+                      <line key={`h${y}`} x1="0" y1={y} x2="280" y2={y} stroke="#22180F" strokeOpacity="0.08" strokeWidth="0.5" />
+                    ))}
 
-                {/* Status */}
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="relative flex size-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1d9e75] opacity-60" />
-                    <span className="relative inline-flex size-2 rounded-full bg-[#1d9e75]" />
-                  </span>
-                  <span className="text-xs font-mono text-[#1d9e75]">Phase 3 — Flight integration</span>
+                    {/* Body */}
+                    <rect x="100" y="85" width="80" height="50" fill="#22180F" fillOpacity="0.06" stroke="#22180F" strokeWidth="1" />
+
+                    {/* Arms — sharp right angles */}
+                    <polyline points="100,92 60,92 60,60" stroke="#22180F" strokeWidth="1" strokeOpacity="0.6" />
+                    <polyline points="180,92 220,92 220,60" stroke="#22180F" strokeWidth="1" strokeOpacity="0.6" />
+                    <polyline points="100,123 60,123 60,155" stroke="#22180F" strokeWidth="1" strokeOpacity="0.6" />
+                    <polyline points="180,123 220,123 220,155" stroke="#22180F" strokeWidth="1" strokeOpacity="0.6" />
+
+                    {/* Rotors — as squares not ellipses */}
+                    <rect x="40" y="44" width="40" height="16" stroke="#22180F" strokeWidth="1" strokeOpacity="0.5" fill="none" />
+                    <rect x="200" y="44" width="40" height="16" stroke="#22180F" strokeWidth="1" strokeOpacity="0.5" fill="none" />
+                    <rect x="40" y="148" width="40" height="16" stroke="#22180F" strokeWidth="1" strokeOpacity="0.5" fill="none" />
+                    <rect x="200" y="148" width="40" height="16" stroke="#22180F" strokeWidth="1" strokeOpacity="0.5" fill="none" />
+
+                    {/* Motor hubs */}
+                    <rect x="57" y="49" width="6" height="6" fill="#AD2010" />
+                    <rect x="217" y="49" width="6" height="6" fill="#AD2010" />
+                    <rect x="57" y="153" width="6" height="6" fill="#AD2010" />
+                    <rect x="217" y="153" width="6" height="6" fill="#AD2010" />
+
+                    {/* PIR sensor */}
+                    <rect x="135" y="103" width="10" height="10" fill="#AD2010" fillOpacity="0.8" stroke="#AD2010" strokeWidth="1" />
+
+                    {/* Annotation lines — right angles to labels */}
+                    <polyline points="60,52 30,52 30,18" stroke="#AD2010" strokeWidth="0.75" strokeOpacity="0.6" />
+                    <polyline points="220,52 250,52 250,18" stroke="#AD2010" strokeWidth="0.75" strokeOpacity="0.6" />
+                    <polyline points="140,108 140,200" stroke="#AD2010" strokeWidth="0.75" strokeOpacity="0.6" />
+
+                    {/* Labels */}
+                    <text x="8" y="16" fontSize="7" fill="#AD2010" fontFamily="monospace">ROTOR_01</text>
+                    <text x="218" y="16" fontSize="7" fill="#AD2010" fontFamily="monospace">ROTOR_02</text>
+                    <text x="100" y="208" fontSize="7" fill="#AD2010" fontFamily="monospace">PIR_SENSOR · 10ft</text>
+
+                    {/* Dimension markers */}
+                    <line x1="100" y1="210" x2="180" y2="210" stroke="#22180F" strokeWidth="0.5" strokeOpacity="0.4" />
+                    <text x="115" y="218" fontSize="6" fill="#22180F" fontFamily="monospace" fillOpacity="0.4">80mm PCB</text>
+                  </svg>
                 </div>
 
-                <p className="text-xs font-mono text-white/30 text-center">MiniUAV Guardian · In development</p>
-
-                {/* Powered-by badge */}
-                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
-                  <svg className="size-3 text-[#1d9e75]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span className="text-[10px] font-mono text-white/40">Powered by ShopSherpa</span>
+                {/* Status footer */}
+                <div className="flex items-center justify-between mt-4 pt-4" style={{ borderTop: "1px solid #22180F30" }}>
+                  <div className="flex items-center gap-2">
+                    <span className="size-1.5 inline-block" style={{ background: "#AD2010" }} />
+                    <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color: "#AD2010" }}>PHASE_03 · FLIGHT_INTEGRATION</span>
+                  </div>
+                  <span className="text-[9px] font-mono" style={{ color: "#22180F50" }}>IN_DEV</span>
                 </div>
               </div>
             </ScrollFade>
@@ -618,58 +628,119 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── FOUNDER ───────────────────────────────────────────────────────────
-          Centered layout: photo + name badge above, story text below.
+      {/* ─── CASE FILE: 001 ────────────────────────────────────────────────────
+          Archival record format. Two-column classified document layout.
+          No centered blob. Sharp borders, column rules, accurate bio.
       ────────────────────────────────────────────────────────────────────── */}
-      <section id="founder" className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32">
-        <div className="max-w-2xl mx-auto text-center">
+      <section id="founder" style={{ background: "#22180F", color: "#CAAF98" }} className="relative overflow-hidden">
+        {/* File header bar */}
+        <div className="border-b px-6 md:px-8 py-3 flex items-center justify-between" style={{ borderColor: "#CAAF9820" }}>
+          <p className="text-[9px] uppercase tracking-[0.2em] font-mono" style={{ color: "#AD2010" }}>
+            ARCHIVAL_RECORD · CASE_FILE_001 · ORIGIN_STORY
+          </p>
+          <p className="text-[9px] font-mono" style={{ color: "#CAAF9840" }}>
+            CLASSIFICATION: PUBLIC · DATE: 2026
+          </p>
+        </div>
 
-          {/* Photo centered */}
+        <div className="max-w-6xl mx-auto px-6 md:px-8 py-20 md:py-28">
+
+          {/* Top — wide headline */}
           <ScrollFade>
-            <div className="flex flex-col items-center gap-4 mb-10">
-              <div className="w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden bg-[#142736] ring-4 ring-white/10">
-                <Image
-                  src="/founder.png"
-                  alt="Anghelo Araujo, founder of ShopSherpa"
-                  width={160}
-                  height={160}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              {/* Badge sits below photo with comfortable spacing */}
-              <div className="bg-[#1d9e75] text-white text-xs font-mono px-3 py-2 rounded-lg leading-snug text-center">
-                <span className="block font-medium">Anghelo, 16</span>
-                <span className="text-white/80">Nashua, NH</span>
-              </div>
-            </div>
-          </ScrollFade>
-
-          <ScrollFade delay={100}>
-            <p className="text-xs uppercase tracking-wider text-[#1d9e75] mb-5 font-mono">The story</p>
-          </ScrollFade>
-          <ScrollFade delay={200}>
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tighter leading-[1.05] mb-8">
-              His mom lost $600 to a fake puppy listing.<br />That&apos;s why this exists.
+            <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-semibold tracking-tighter leading-[1] mb-12" style={{ color: "#CAAF98", fontFamily: "var(--font-heading)" }}>
+              His mother lost $600<br />to a puppy that never existed.
             </h2>
           </ScrollFade>
-          <ScrollFade delay={300}>
-            <div className="font-serif space-y-5 text-white/70 text-base md:text-lg leading-relaxed text-left max-w-xl mx-auto">
-              <p>
-                After weeks of begging for a dog, the money was wired and the seller vanished. The puppy never existed. That emotional toll turned into a mission.
-              </p>
-              <p>
-                At 16, Anghelo has completed Harvard&apos;s CS50 curricula and MIT Beaver Works programs in Quantum Software and Microelectronics. He co-developed the MiniUAV Guardian, a security quadrotor with custom PCB architecture, interned at Rayfield Systems, and competes in DECA and Track.
-              </p>
-              <p>
-                ShopSherpa is his answer: an AI-powered shield that stops marketplace fraud before it hits your wallet, so no other family goes through what his did.
-              </p>
-            </div>
-          </ScrollFade>
-          <ScrollFade delay={400}>
-            <div className="mt-8 pt-8 border-t border-white/10 text-center">
-              <p className="text-sm text-white/40 font-mono">Anghelo Araujo, Founder of ShopSherpa</p>
-            </div>
-          </ScrollFade>
+
+          {/* Two-column document layout */}
+          <div className="grid md:grid-cols-2 gap-0" style={{ border: "1px solid #CAAF9820" }}>
+
+            {/* Left col — photo + metadata */}
+            <ScrollFade>
+              <div className="p-8 border-b md:border-b-0 md:border-r" style={{ borderColor: "#CAAF9820" }}>
+
+                {/* Photo — square crop, no rounding */}
+                <div className="mb-6 overflow-hidden" style={{ width: "140px", height: "140px", border: "1px solid #CAAF9830" }}>
+                  <Image
+                    src="/founder.png"
+                    alt="Anghelo Araujo Lazaro"
+                    width={140}
+                    height={140}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+
+                {/* Metadata table */}
+                <div style={{ border: "1px solid #CAAF9820" }}>
+                  {[
+                    ["SUBJECT",  "Anghelo Araujo Lazaro"],
+                    ["AGE",      "16"],
+                    ["LOCATION", "Nashua, NH"],
+                    ["ROLE",     "Founder & CEO, ShopSherpa"],
+                    ["SCHOOL",   "Nashua High School South"],
+                    ["INTERN",   "Rayfield Systems (front-end)"],
+                    ["COMPETE",  "DECA · Track · Cross Country"],
+                  ].map(([k, v], i) => (
+                    <div
+                      key={k}
+                      className="flex px-4 py-2"
+                      style={{ borderTop: i > 0 ? "1px solid #CAAF9815" : undefined }}
+                    >
+                      <span className="text-[9px] font-mono uppercase tracking-wider w-20 shrink-0 mt-0.5" style={{ color: "#AD2010" }}>{k}</span>
+                      <span className="text-xs font-mono" style={{ color: "#CAAF98CC" }}>{v}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Credentials — accurate */}
+                <div className="mt-6" style={{ border: "1px solid #CAAF9820" }}>
+                  <div className="px-4 py-2" style={{ borderBottom: "1px solid #CAAF9820" }}>
+                    <p className="text-[9px] font-mono uppercase tracking-wider mb-1" style={{ color: "#AD2010" }}>ACADEMIC_CREDENTIALS</p>
+                  </div>
+                  <div className="px-4 py-3 space-y-2">
+                    <p className="text-xs font-mono" style={{ color: "#CAAF98CC" }}>Harvard CS50 · Completed online curriculum</p>
+                    <p className="text-xs font-mono" style={{ color: "#CAAF98CC" }}>MIT Beaver Works · Online prerequisites + program coursework · Deep interest in Microelectronics and Quantum Software</p>
+                    <p className="text-xs font-mono" style={{ color: "#CAAF98CC" }}>FIRST Robotics · Interact Rotary · Harvard Undergraduate Ventures</p>
+                  </div>
+                </div>
+
+              </div>
+            </ScrollFade>
+
+            {/* Right col — narrative in column format */}
+            <ScrollFade delay={120}>
+              <div className="p-8">
+                <p className="text-[9px] uppercase tracking-[0.18em] font-mono mb-6" style={{ color: "#CAAF9840" }}>INCIDENT_NARRATIVE</p>
+
+                <div className="space-y-5 text-sm leading-relaxed" style={{ color: "#CAAF98AA", fontFamily: "var(--font-serif)" }}>
+                  <p>
+                    He had begged for weeks. Day and night. For a dog. His mother, wanting to make him happy, found what looked like a real listing: photos, a contract, a professional seller. She wired $600. The seller vanished. The puppy was never real.
+                  </p>
+                  <p>
+                    The emotional weight of that moment did not leave him. He watched the same thing happen to people around him — fake storefronts built in an afternoon, phishing emails that looked exactly like his bank, review scores manufactured by bots.
+                  </p>
+                  <p>
+                    At 16, Anghelo decided to build the tool that would have protected his family. Not a report button. Not a checklist. An always-on shield that reads the threat before you do and stops it before any money moves.
+                  </p>
+                  <p>
+                    ShopSherpa is that answer. One pre-order. Lifetime protection. Built by the kid who saw what losing $600 does to a family.
+                  </p>
+                </div>
+
+                {/* Pull quote */}
+                <div className="mt-8 pt-6" style={{ borderTop: "1px solid #CAAF9820" }}>
+                  <p className="text-xs font-mono italic" style={{ color: "#CAAF9860" }}>
+                    &quot;No other family should go through what mine did.&quot;
+                  </p>
+                  <p className="text-[9px] font-mono mt-2 uppercase tracking-wider" style={{ color: "#AD2010" }}>
+                    — Anghelo Araujo Lazaro · Founder, ShopSherpa
+                  </p>
+                </div>
+
+              </div>
+            </ScrollFade>
+
+          </div>
         </div>
       </section>
 
