@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ScrollFade } from "@/components/ScrollFade";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { CinematicHero } from "@/components/ui/cinematic-landing-hero";
 
 export const metadata: Metadata = {
   title: "MiniUAV Guardian | ShopSherpa",
@@ -35,6 +36,20 @@ export default function ProductPage() {
           </a>
         </div>
       </header>
+
+      {/* ─── CINEMATIC INTRO ─── */}
+      <CinematicHero
+        tagline1="Security from"
+        tagline2="a new angle."
+        cardHeading="Autonomous. Precise."
+        cardDescription={
+          <>
+            <span className="font-semibold text-white">MiniUAV Guardian</span> is a security quadrotor powered by ShopSherpa&apos;s threat intelligence. It patrols on its own, detects motion with PIR sensing, and logs events in real time — no pilot, no cloud, no compromise.
+          </>
+        }
+        ctaHeading="Early access open."
+        ctaDescription="MiniUAV Guardian is in active development. Request early access and be first to know when we ship."
+      />
 
       {/* ─── HERO ─── */}
       <section className="relative flex flex-col items-center justify-center min-h-[95vh] px-6 text-center overflow-hidden">

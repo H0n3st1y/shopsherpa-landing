@@ -8,7 +8,6 @@ import { InteractiveField } from "@/components/InteractiveField";
 import { StoryCard } from "@/components/StoryCard";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
-import { CinematicHero } from "@/components/ui/cinematic-landing-hero";
 
 export default function Page() {
   return (
@@ -36,12 +35,6 @@ export default function Page() {
           </div>
         </div>
       </header>
-
-      {/* ─── CINEMATIC INTRO ─────────────────────────────────────────────────────
-          GSAP scroll sequence, pinned for ~7000px. The sticky nav above
-          stays visible throughout the entire cinematic + regular page scroll.
-      ────────────────────────────────────────────────────────────────────────── */}
-      <CinematicHero />
 
       {/* ─── HERO ────────────────────────────────────────────────────────────── */}
       <section className="px-6 md:px-8 pt-20 md:pt-32 pb-20 md:pb-28 relative overflow-hidden">
@@ -507,6 +500,120 @@ export default function Page() {
                 city="Phoenix, AZ"
               />
             </ScrollFade>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── MINUAV GUARDIAN ──────────────────────────────────────────────────── */}
+      <section className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32 relative overflow-hidden">
+        {/* Ambient glow */}
+        <div aria-hidden className="absolute top-1/2 right-0 size-[500px] rounded-full bg-[#2e6273]/10 blur-[100px] pointer-events-none -translate-y-1/2" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+
+            {/* Left — text */}
+            <div className="flex-1">
+              <ScrollFade>
+                <p className="text-xs uppercase tracking-[0.2em] text-[#1d9e75] mb-5 font-mono">ShopSherpa Hardware</p>
+              </ScrollFade>
+              <ScrollFade delay={100}>
+                <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter leading-[1] mb-6">
+                  The same intelligence.<br />
+                  <span className="text-[#2e6273]">Now it flies.</span>
+                </h2>
+              </ScrollFade>
+              <ScrollFade delay={180}>
+                <p className="text-white/60 text-base md:text-lg leading-relaxed mb-8 max-w-lg font-serif">
+                  MiniUAV Guardian is a security quadrotor built on the same fraud-detection databases and threat intelligence that power ShopSherpa. It brings that software layer into the physical world — patrolling spaces, detecting intrusions, and logging threats in real time.
+                </p>
+              </ScrollFade>
+              <ScrollFade delay={250}>
+                <p className="text-white/60 text-base leading-relaxed mb-10 max-w-lg font-serif">
+                  One platform. Two products. Whether you are shopping from a screen or securing a room, ShopSherpa knows what does not belong.
+                </p>
+              </ScrollFade>
+
+              {/* Feature pills */}
+              <ScrollFade delay={320}>
+                <div className="flex flex-wrap gap-3 mb-10">
+                  {[
+                    "ShopSherpa threat DB",
+                    "ESP32 dual-core",
+                    "PIR motion sensing",
+                    "Wi-Fi real-time logs",
+                    "Custom 80×80mm PCB",
+                    "Autonomous patrol",
+                  ].map((f) => (
+                    <span key={f} className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-white/60">
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </ScrollFade>
+
+              <ScrollFade delay={380}>
+                <a
+                  href="/product"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2e6273] text-white text-sm font-medium hover:bg-[#3d7a8a] transition active:scale-[0.98]"
+                >
+                  Learn about MiniUAV Guardian
+                  <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </ScrollFade>
+            </div>
+
+            {/* Right — drone wireframe card */}
+            <ScrollFade delay={150} className="w-full lg:w-auto shrink-0">
+              <div className="w-full lg:w-[380px] aspect-square rounded-3xl bg-gradient-to-b from-[#0d2b35] to-[#061419] border border-white/8 flex flex-col items-center justify-center p-8 relative shadow-[0_0_80px_rgba(46,98,115,0.15)]">
+                {/* Top accent line */}
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2e6273]/60 to-transparent" />
+
+                {/* Drone wireframe SVG */}
+                <svg viewBox="0 0 200 160" className="w-48 text-[#2e6273] mb-6" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="75" y="65" width="50" height="35" rx="8" fill="#1d9e75" fillOpacity="0.12" stroke="#1d9e75" strokeWidth="1.5" />
+                  <line x1="75" y1="72" x2="30" y2="45" strokeOpacity="0.5" />
+                  <line x1="125" y1="72" x2="170" y2="45" strokeOpacity="0.5" />
+                  <line x1="75" y1="93" x2="30" y2="118" strokeOpacity="0.5" />
+                  <line x1="125" y1="93" x2="170" y2="118" strokeOpacity="0.5" />
+                  <ellipse cx="30" cy="45" rx="22" ry="6" strokeOpacity="0.4" />
+                  <ellipse cx="170" cy="45" rx="22" ry="6" strokeOpacity="0.4" />
+                  <ellipse cx="30" cy="118" rx="22" ry="6" strokeOpacity="0.4" />
+                  <ellipse cx="170" cy="118" rx="22" ry="6" strokeOpacity="0.4" />
+                  <circle cx="30" cy="45" r="4" fill="#1d9e75" stroke="#1d9e75" />
+                  <circle cx="170" cy="45" r="4" fill="#1d9e75" stroke="#1d9e75" />
+                  <circle cx="30" cy="118" r="4" fill="#1d9e75" stroke="#1d9e75" />
+                  <circle cx="170" cy="118" r="4" fill="#1d9e75" stroke="#1d9e75" />
+                  <circle cx="100" cy="90" r="5" fill="#2e6273" stroke="#2e6273" strokeWidth="1" />
+                  <line x1="83" y1="75" x2="83" y2="92" strokeOpacity="0.25" strokeWidth="0.8" />
+                  <line x1="91" y1="75" x2="91" y2="92" strokeOpacity="0.25" strokeWidth="0.8" />
+                  <line x1="109" y1="75" x2="109" y2="92" strokeOpacity="0.25" strokeWidth="0.8" />
+                  <line x1="117" y1="75" x2="117" y2="92" strokeOpacity="0.25" strokeWidth="0.8" />
+                </svg>
+
+                {/* Status */}
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="relative flex size-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1d9e75] opacity-60" />
+                    <span className="relative inline-flex size-2 rounded-full bg-[#1d9e75]" />
+                  </span>
+                  <span className="text-xs font-mono text-[#1d9e75]">Phase 3 — Flight integration</span>
+                </div>
+
+                <p className="text-xs font-mono text-white/30 text-center">MiniUAV Guardian · In development</p>
+
+                {/* Powered-by badge */}
+                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+                  <svg className="size-3 text-[#1d9e75]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span className="text-[10px] font-mono text-white/40">Powered by ShopSherpa</span>
+                </div>
+              </div>
+            </ScrollFade>
+
           </div>
         </div>
       </section>
