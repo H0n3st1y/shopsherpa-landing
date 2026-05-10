@@ -88,25 +88,25 @@ export default function TeamPage() {
             <div className="flex-1">
               <ScrollFade delay={100}>
                 <h2 className="text-3xl md:text-4xl font-medium tracking-tighter leading-[1.1] mb-6">
-                  He almost lost $600 to a fake puppy listing. That&apos;s why ShopSherpa exists.
+                  He watched his mom lose $600 to a fake puppy listing. That&apos;s why ShopSherpa exists.
                 </h2>
               </ScrollFade>
               <ScrollFade delay={200}>
                 <div className="space-y-4 text-[#1a1a1a]/65 text-base leading-relaxed font-serif">
                   <p>
-                    When Anghelo was young, he found what looked like the perfect puppy listing online. The photos were real. The seller sent a contract. He nearly wired $600 before something felt off. The puppy never existed. The seller vanished.
+                    After weeks of begging for a dog, the money was wired and the seller vanished. That emotional toll turned into a mission: building ShopSherpa, an AI-powered shield that stops marketplace fraud before it hits your wallet.
                   </p>
                   <p>
-                    That experience stuck. At 16, Anghelo is a self-taught developer and student at Nashua High School South. He completed Harvard John A. Paulson School of Engineering&apos;s CS50 curriculum and attended MIT Beaver Works Summer Institute, where he built MiniUAV Guardian, an autonomous indoor drone with ESP32, PIR sensing, and real-time threat detection.
+                    At 16, Anghelo is a multidisciplinary developer at Nashua High School South. He has completed Harvard&apos;s CS50 curricula and MIT Beaver Works programs, specializing in Quantum Software and Microelectronics. His technical portfolio ranges from financial modeling to autonomous hardware, most notably co-developing the MiniUAV Guardian, a security quadrotor with custom PCB architecture and real-time threat detection.
                   </p>
                   <p>
-                    He competed in DECA at the district and state levels, participated in FIRST Robotics, served as an officer in Interact Rotary, and interned with Harvard Undergraduate Ventures. ShopSherpa is his answer: a quiet, always-on shield that catches the scam before you pay.
+                    A state-level DECA competitor and former front-end intern at Rayfield Systems, Anghelo also holds leadership roles in Interact Rotary and competes in Track and Cross Country. He combines the grit of a student-athlete with the technical depth of an engineer to ensure no other family gets scammed online.
                   </p>
                 </div>
               </ScrollFade>
               <ScrollFade delay={300}>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  {["Browser Extensions", "Fraud Detection", "ESP32 / Embedded", "DECA", "FIRST Robotics", "Interact Rotary"].map((tag) => (
+                  {["Fraud Detection", "MIT Beaver Works", "MiniUAV Guardian", "DECA", "Rayfield Systems", "Interact Rotary", "Track & XC"].map((tag) => (
                     <span key={tag} className="px-3 py-1.5 rounded-full bg-[#FAF8F4] border border-[#2e6273]/15 text-xs font-mono text-[#2e6273]">
                       {tag}
                     </span>

@@ -535,19 +535,19 @@ export default function Page() {
           </ScrollFade>
           <ScrollFade delay={200}>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tighter leading-[1.05] mb-8">
-              He almost lost $600 to a fake puppy.<br />That's why this exists.
+              His mom lost $600 to a fake puppy listing.<br />That&apos;s why this exists.
             </h2>
           </ScrollFade>
           <ScrollFade delay={300}>
             <div className="font-serif space-y-5 text-white/70 text-base md:text-lg leading-relaxed text-left max-w-xl mx-auto">
               <p>
-                When Anghelo was young, he found a puppy listing online. The photos looked real. The seller sent a contract. He almost wired $600 before something felt off.
+                After weeks of begging for a dog, the money was wired and the seller vanished. The puppy never existed. That emotional toll turned into a mission.
               </p>
               <p>
-                The puppy never existed. The seller vanished.
+                At 16, Anghelo has completed Harvard&apos;s CS50 curricula and MIT Beaver Works programs in Quantum Software and Microelectronics. He co-developed the MiniUAV Guardian, a security quadrotor with custom PCB architecture, interned at Rayfield Systems, and competes in DECA and Track.
               </p>
               <p>
-                He spent years thinking about how easy it is to get fooled. Then he built ShopSherpa so it doesn't happen to you.
+                ShopSherpa is his answer: an AI-powered shield that stops marketplace fraud before it hits your wallet, so no other family goes through what his did.
               </p>
             </div>
           </ScrollFade>
