@@ -538,10 +538,7 @@ export default function Page() {
               <ScrollFade delay={280}>
                 <a
                   href="/product"
-                  className="inline-flex items-center gap-3 px-6 py-3 text-sm font-mono transition"
-                  style={{ border: "1px solid #22180F", color: "#22180F", background: "transparent" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#22180F"; (e.currentTarget as HTMLElement).style.color = "#CAAF98"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "transparent"; (e.currentTarget as HTMLElement).style.color = "#22180F"; }}
+                  className="blueprint-btn inline-flex items-center gap-3 px-6 py-3 text-sm font-mono"
                 >
                   VIEW_FULL_SCHEMATIC
                   <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
