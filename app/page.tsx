@@ -119,9 +119,9 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── LIVE PRODUCT MOMENT ───────────────────────────────────────────────
+      {/* ─── DEMO ─────────────────────────────────────────────────────────────────
           ContainerScroll: email window tilts in on scroll like a laptop opening.
-      ────────────────────────────────────────────────────────────────────── */}
+      ────────────────────────────────────────────────────────────────────────── */}
       <section id="demo" className="bg-[#0d1f2d] text-white relative overflow-hidden">
         <ContainerScroll
           titleComponent={
@@ -147,21 +147,20 @@ export default function Page() {
             </div>
             {/* Email content */}
             <div className="flex-1 p-6 md:p-10 relative overflow-hidden">
-              {/* Sender row + FLAGGED badge in same row so they never overlap */}
-              <div className="flex items-start justify-between gap-3 mb-6">
-                <div className="flex items-start gap-3 min-w-0">
-                  <div className="size-9 rounded-full bg-[#2e6273] flex items-center justify-center text-xs font-bold text-white shrink-0">A</div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-white/90">Amazon</p>
-                    <p className="text-xs font-mono text-red-400 truncate">tracking@am4z0n-delivery.shop</p>
-                  </div>
+              {/* FLAGGED badge */}
+              <span className="absolute top-6 right-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 text-white text-xs font-mono font-medium tracking-wider uppercase shadow-lg shadow-red-500/40">
+                <span className="size-1.5 rounded-full bg-white animate-pulse" />
+                Flagged
+              </span>
+              {/* Sender row */}
+              <div className="flex items-start gap-3 mb-6">
+                <div className="size-9 rounded-full bg-[#2e6273] flex items-center justify-center text-xs font-bold text-white shrink-0">A</div>
+                <div>
+                  <p className="text-sm font-medium text-white/90">Amazon</p>
+                  <p className="text-xs font-mono text-red-400">tracking@am4z0n-delivery.shop</p>
                 </div>
-                <span className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-500 text-white text-xs font-mono font-medium tracking-wider uppercase shadow-lg shadow-red-500/40">
-                  <span className="size-1.5 rounded-full bg-white animate-pulse" />
-                  Flagged
-                </span>
               </div>
-              <p className="text-lg md:text-2xl font-medium text-white leading-snug mb-4">
+              <p className="text-lg md:text-2xl font-medium text-white leading-snug mb-4 pr-24">
                 Your package needs a redelivery fee. Confirm now.
               </p>
               <p className="text-sm text-white/50 leading-relaxed mb-6">
@@ -190,18 +189,18 @@ export default function Page() {
                 label="Without ShopSherpa"
                 variant="before"
                 items={[
-                  "Opens the email.",
-                  "Clicks the link. Enters her card.",
-                  "Loses $312 to a scammer.",
+                  "Visits seller page. Sees 4.9 stars.",
+                  "Pays $89. Gets a counterfeit.",
+                  "Files dispute. Weeks of stress.",
                 ]}
               />
               <BeforeAfterCard
                 label="With ShopSherpa"
                 variant="after"
                 items={[
-                  "Email arrives. ShopSherpa scans it.",
-                  "A FLAGGED badge slides in.",
-                  "Maria deletes it. Keeps her $312.",
+                  "Page loads. ShopSherpa scans.",
+                  "Sees 'fake reviews detected' alert.",
+                  "Leaves. Finds a real seller in 60 seconds.",
                 ]}
               />
             </div>
@@ -209,11 +208,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── INTERACTIVE FIELD ─────────────────────────────────────────────────
-          A quiet moment between the demo and the pricing pitch.
-          Shows the product's personality: calm, not alarming.
-          StoryCards below reinforce with real examples.
-      ────────────────────────────────────────────────────────────────────── */}
+      {/* ─── INTERACTIVE FIELD ────────────────────────────────────────────────── */}
       <section className="bg-[#0d1f2d] text-white px-6 md:px-10 py-24 md:py-40 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <ScrollFade>
@@ -504,7 +499,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── MINUAV GUARDIAN ──────────────────────────────────────────────────── */}
+      {/* ─── MINUAV GUARDIAN ─────────────────────────────────────────────────────── */}
       <section className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32 relative overflow-hidden">
         {/* Ambient glow */}
         <div aria-hidden className="absolute top-1/2 right-0 size-[500px] rounded-full bg-[#2e6273]/10 blur-[100px] pointer-events-none -translate-y-1/2" />
@@ -618,9 +613,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── FOUNDER ───────────────────────────────────────────────────────────
-          Centered layout: photo + name badge above, story text below.
-      ────────────────────────────────────────────────────────────────────── */}
+      {/* ─── FOUNDER ───────────────────────────────────────────────────────────── */}
       <section id="founder" className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-2xl mx-auto text-center">
 
