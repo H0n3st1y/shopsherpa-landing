@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { blogPosts } from "@/lib/blog-posts";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Shopping Guides | ShopSherpa",
@@ -26,26 +27,7 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
 
-      {/* NAV */}
-      <header className="sticky top-0 z-40 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">
-        <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition">
-            <Logo />
-            <span className="font-semibold text-base tracking-tight">ShopSherpa</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/#cta" className="text-sm text-[#1a1a1a]/60 hover:text-[#1a1a1a] transition">
-              Join waitlist
-            </Link>
-            <Link
-              href="/"
-              className="px-4 py-2 rounded-full bg-[#1a1a1a] text-white text-sm font-medium hover:bg-[#2e6273] transition active:scale-[0.98]"
-            >
-              Back to home
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader active="blog" cta="home" />
 
       {/* HEADER */}
       <section className="px-6 md:px-8 pt-20 pb-16 border-b border-[#2e6273]/10">
@@ -132,6 +114,7 @@ export default function BlogPage() {
             <a href="#" className="hover:text-white transition">Privacy</a>
             <a href="#" className="hover:text-white transition">Security</a>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
+            <Link href="/lab" className="hover:text-white transition">Lab</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>
             <Link href="/product" className="hover:text-white transition">MiniUAV</Link>
           </div>

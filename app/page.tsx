@@ -7,35 +7,14 @@ import { WaitlistForm } from "@/components/WaitlistForm";
 import { InteractiveField } from "@/components/InteractiveField";
 import { StoryCard } from "@/components/StoryCard";
 import { ScamCheckDemo } from "@/components/ScamCheckDemo";
+import { SiteHeader } from "@/components/SiteHeader";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export default function Page() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased overflow-x-hidden">
 
-      {/* NAV — sticky z-50 so it floats above the cinematic section */}
-      <header className="sticky top-0 z-50 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">
-        <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <Logo />
-            <span className="font-semibold text-base tracking-tight">ShopSherpa</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-7 text-sm text-[#1a1a1a]/70">
-            <a href="#how-it-works" className="hover:text-[#1a1a1a] transition">How it works</a>
-            <a href="#roadmap" className="hover:text-[#1a1a1a] transition">Roadmap</a>
-            <a href="#pricing" className="hover:text-[#1a1a1a] transition">Pricing</a>
-            <a href="/lab" className="hover:text-[#1a1a1a] transition">Lab</a>
-            <a href="/team" className="hover:text-[#1a1a1a] transition">Team</a>
-            <a href="/product" className="hover:text-[#1a1a1a] transition">MiniUAV</a>
-          </nav>
-          <div className="flex items-center gap-3">
-            <a href="#cta" className="hidden sm:inline text-sm text-[#1a1a1a]/60 hover:text-[#1a1a1a] transition">
-              Join waitlist
-            </a>
-            <PreorderButton size="sm" />
-          </div>
-        </div>
-      </header>
+      <SiteHeader active="home" cta="preorder" />
 
       {/* ─── HERO ────────────────────────────────────────────────────────────── */}
       <section className="px-6 md:px-8 pt-20 md:pt-32 pb-20 md:pb-28 relative overflow-hidden">

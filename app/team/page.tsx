@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ScrollFade } from "@/components/ScrollFade";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Team | ShopSherpa",
@@ -12,28 +13,7 @@ export default function TeamPage() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
 
-      {/* NAV */}
-      <header className="sticky top-0 z-40 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">
-        <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition">
-            <Logo />
-            <span className="font-semibold text-base tracking-tight">ShopSherpa</span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-7 text-sm text-[#1a1a1a]/70">
-            <Link href="/#how-it-works" className="hover:text-[#1a1a1a] transition">How it works</Link>
-            <Link href="/#roadmap" className="hover:text-[#1a1a1a] transition">Roadmap</Link>
-            <Link href="/lab" className="hover:text-[#1a1a1a] transition">Lab</Link>
-            <Link href="/team" className="text-[#2e6273] font-medium">Team</Link>
-            <Link href="/blog" className="hover:text-[#1a1a1a] transition">Blog</Link>
-          </nav>
-          <Link
-            href="/#cta"
-            className="px-4 py-2 rounded-full bg-[#1a1a1a] text-white text-sm font-medium hover:bg-[#2e6273] transition active:scale-[0.98]"
-          >
-            Pre-order $9.99
-          </Link>
-        </div>
-      </header>
+      <SiteHeader active="team" cta="preorder" />
 
       {/* HERO */}
       <section className="px-6 md:px-8 pt-24 pb-16 border-b border-[#2e6273]/10">

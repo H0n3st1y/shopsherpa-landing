@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollFade } from "@/components/ScrollFade";
+import { SiteHeader } from "@/components/SiteHeader";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { CinematicHero } from "@/components/ui/cinematic-landing-hero";
@@ -15,28 +16,7 @@ export default function ProductPage() {
   return (
     <main className="min-h-screen bg-[#000] text-white antialiased overflow-x-hidden">
 
-      {/* NAV — dark, Apple-style */}
-      <header className="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-white/8">
-        <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 hover:opacity-70 transition">
-            <Logo />
-            <span className="font-semibold text-base tracking-tight text-white">ShopSherpa</span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-7 text-sm text-white/60">
-            <Link href="/#how-it-works" className="hover:text-white transition">How it works</Link>
-            <Link href="/team" className="hover:text-white transition">Team</Link>
-            <Link href="/blog" className="hover:text-white transition">Blog</Link>
-            <Link href="/lab" className="hover:text-white transition">Lab</Link>
-            <Link href="/product" className="text-white font-medium">MiniUAV</Link>
-          </nav>
-          <a
-            href="mailto:hello@shopsherpa.org"
-            className="px-4 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-white/90 transition active:scale-[0.98]"
-          >
-            Contact us
-          </a>
-        </div>
-      </header>
+      <SiteHeader active="product" variant="dark" cta="access" />
 
       {/* ─── CINEMATIC INTRO ─── */}
       <CinematicHero

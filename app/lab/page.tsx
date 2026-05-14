@@ -2,36 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollFade } from "@/components/ScrollFade";
 import { SherpaWorkflowDemo } from "@/components/SherpaWorkflowDemo";
+import { SiteHeader } from "@/components/SiteHeader";
+import FUIBentoGridDark from "@/components/ui/bento";
 
 export const metadata: Metadata = {
   title: "ShopSherpa Lab | One-Click Business Agents",
   description:
     "ShopSherpa Lab builds one-click agents for business workflows, starting with Sherpa: an internet research agent that finds the best deals and drafts them into a spreadsheet.",
 };
-
-const AGENTS = [
-  {
-    name: "Sherpa",
-    status: "First build",
-    promise: "Finds the best business deals and drafts the comparison sheet.",
-    detail: "Procurement teams describe what they need once. Sherpa searches vendors, compares total landed cost, checks trust signals, and returns a clean sheet with sources.",
-    accent: "text-[#1d9e75]",
-  },
-  {
-    name: "Finance Guru",
-    status: "Concept",
-    promise: "Turns messy business numbers into decisions.",
-    detail: "Upload exports, invoices, or bank activity. Finance Guru finds spend leaks, cash-flow risks, and simple next moves without making the user learn a dashboard first.",
-    accent: "text-[#2e6273]",
-  },
-  {
-    name: "Caddy",
-    status: "Concept",
-    promise: "A field agent for sales and customer follow-up.",
-    detail: "Caddy preps accounts, writes follow-ups, tracks buying signals, and keeps teams moving after calls instead of letting notes die in a CRM.",
-    accent: "text-[#c2410c]",
-  },
-];
 
 const USE_CASES = [
   "Office supplies and equipment buying",
@@ -45,27 +23,7 @@ const USE_CASES = [
 export default function LabPage() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased overflow-x-hidden">
-      <header className="sticky top-0 z-50 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">
-        <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition">
-            <Logo />
-            <span className="font-semibold text-base tracking-tight">ShopSherpa</span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-7 text-sm text-[#1a1a1a]/70">
-            <Link href="/#how-it-works" className="hover:text-[#1a1a1a] transition">How it works</Link>
-            <Link href="/#pricing" className="hover:text-[#1a1a1a] transition">Pricing</Link>
-            <Link href="/lab" className="text-[#2e6273] font-medium">Lab</Link>
-            <Link href="/team" className="hover:text-[#1a1a1a] transition">Team</Link>
-            <Link href="/product" className="hover:text-[#1a1a1a] transition">MiniUAV</Link>
-          </nav>
-          <a
-            href="mailto:hello@shopsherpa.org?subject=ShopSherpa%20Lab%20early%20access"
-            className="px-4 py-2 rounded-full bg-[#1a1a1a] text-white text-sm font-medium hover:bg-[#2e6273] transition active:scale-[0.98]"
-          >
-            Request access
-          </a>
-        </div>
-      </header>
+      <SiteHeader active="lab" cta="access" />
 
       <section className="relative overflow-hidden px-6 md:px-8 pt-20 md:pt-28 pb-20 md:pb-28">
         <div aria-hidden className="absolute -top-40 right-[-10%] size-[520px] rounded-full bg-[#2e6273]/8 blur-3xl blob-float" />
@@ -79,7 +37,7 @@ export default function LabPage() {
             </div>
           </ScrollFade>
           <ScrollFade delay={120}>
-            <h1 className="text-5xl md:text-7xl lg:text-[5.6rem] font-semibold tracking-tighter leading-[0.98] max-w-4xl">
+            <h1 className="lab-hero-bezel text-5xl md:text-7xl lg:text-[5.6rem] font-semibold tracking-tighter leading-[0.98] max-w-4xl">
               Agents that return work,{" "}
               <span className="text-[#2e6273] sketch-underline">not chat.</span>
             </h1>
@@ -160,22 +118,17 @@ export default function LabPage() {
           </ScrollFade>
           <ScrollFade delay={120}>
             <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-2xl">
-              One brand.<br />Three useful agents.
+              One Lab.<br />Four product bets.
             </h2>
           </ScrollFade>
           <ScrollFade delay={200}>
             <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-14 max-w-xl leading-relaxed">
-              The Lab lets each idea have a clear job. ShopSherpa protects shoppers. Sherpa, Finance Guru, and Caddy help businesses get work done.
+              The Lab lets each idea have a clear job. ShopSherpa protects shoppers. Sherpa, Finance Guru, Caddy, and MiniUAV explore what practical agents and safety tools can become.
             </p>
           </ScrollFade>
-
-          <div className="grid lg:grid-cols-3 gap-5">
-            {AGENTS.map((agent, index) => (
-              <ScrollFade key={agent.name} delay={100 + index * 110}>
-                <AgentCard {...agent} />
-              </ScrollFade>
-            ))}
-          </div>
+          <ScrollFade delay={280}>
+            <FUIBentoGridDark />
+          </ScrollFade>
         </div>
       </section>
 
@@ -276,34 +229,6 @@ function HeroStat({ value, label }: { value: string; label: string }) {
     <div className="rounded-2xl border border-[#2e6273]/10 bg-white p-5 shadow-[var(--shadow-soft)]">
       <p className="text-3xl font-medium tracking-tight text-[#0d1f2d]">{value}</p>
       <p className="mt-1 text-xs font-mono text-[#1a1a1a]/45">{label}</p>
-    </div>
-  );
-}
-
-function AgentCard({
-  name,
-  status,
-  promise,
-  detail,
-  accent,
-}: {
-  name: string;
-  status: string;
-  promise: string;
-  detail: string;
-  accent: string;
-}) {
-  return (
-    <div className="card-hover h-full rounded-2xl border border-[#2e6273]/10 bg-[#FAF8F4] p-7 flex flex-col">
-      <div className="mb-8 flex items-center justify-between gap-3">
-        <div className="size-11 rounded-xl bg-white border border-[#2e6273]/10 grid place-items-center">
-          <span className={`font-mono text-lg ${accent}`}>{name.charAt(0)}</span>
-        </div>
-        <span className="rounded-full bg-white border border-[#2e6273]/10 px-3 py-1 text-xs font-mono text-[#1a1a1a]/45">{status}</span>
-      </div>
-      <h3 className="text-3xl font-medium tracking-tight mb-4">{name}</h3>
-      <p className="text-lg leading-snug text-[#1a1a1a]/85 mb-4">{promise}</p>
-      <p className="text-sm leading-relaxed text-[#1a1a1a]/58 flex-1">{detail}</p>
     </div>
   );
 }
