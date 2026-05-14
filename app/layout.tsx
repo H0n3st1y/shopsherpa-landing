@@ -69,14 +69,14 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName,
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ShopSherpa — Online Shopping Safety Layer" }],
+    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "ShopSherpa — Online Shopping Safety Layer" }],
   },
 
   twitter: {
     card: "summary_large_image",
     title: "ShopSherpa — Stop Scams Before You Pay",
     description: "Phishing shield + fake review detector + masked cards. One-time $9.99 pre-order.",
-    images: ["/og-image.png"],
+    images: ["/og-image.svg"],
   },
 
   robots: {

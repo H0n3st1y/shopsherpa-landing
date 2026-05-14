@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shopsherpa.org";
 export const siteName = "ShopSherpa";
 export const spacedSiteName = "Shop Sherpa";
-export const defaultOgImage = "/og-image.png";
+export const defaultOgImage = "/og-image.svg";
 
 export function absoluteUrl(path = "/") {
   return new URL(path, siteUrl).toString();

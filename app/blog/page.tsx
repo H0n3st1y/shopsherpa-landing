@@ -170,7 +170,7 @@ function ArticleCard({
     >
       <div className="relative overflow-hidden bg-[#F4F0E8]">
         <Image
-          src={post.thumbnail ?? "/og-image.png"}
+          src={post.thumbnail ?? "/og-image.svg"}
           alt={post.thumbnailAlt ?? post.title}
           width={1200}
           height={750}

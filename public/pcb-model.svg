@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 980" role="img" aria-labelledby="title desc">
+  <title id="title">MiniUAV Guardian 3D PCB model</title>
+  <desc id="desc">An isometric 3D-style MiniUAV Guardian flight controller PCB with ESP32 module, PIR sensor header, motor pads, power rails, vias, copper traces, and mounting holes.</desc>
+  <defs>
+    <linearGradient id="scene" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#071621"/>
+      <stop offset=".58" stop-color="#061419"/>
+      <stop offset="1" stop-color="#02080d"/>
+    </linearGradient>
+    <linearGradient id="boardTop" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#29bd8c"/>
+      <stop offset=".48" stop-color="#13765e"/>
+      <stop offset="1" stop-color="#0d2b35"/>
+    </linearGradient>
+    <linearGradient id="boardEdge" x1="0" x2="1">
+      <stop offset="0" stop-color="#073a36"/>
+      <stop offset=".55" stop-color="#0b5a49"/>
+      <stop offset="1" stop-color="#031b21"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="0" x2="1">
+      <stop offset="0" stop-color="#e8d5b0"/>
+      <stop offset=".52" stop-color="#fff0cb"/>
+      <stop offset="1" stop-color="#b98944"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#243b4a"/>
+      <stop offset="1" stop-color="#071019"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" x2="1">
+      <stop offset="0" stop-color="#d8efe5"/>
+      <stop offset=".5" stop-color="#7fa59c"/>
+      <stop offset="1" stop-color="#f7fff9"/>
+    </linearGradient>
+    <filter id="drop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="36" stdDeviation="34" flood-color="#01070b" flood-opacity=".65"/>
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="980" fill="url(#scene)"/>
+  <ellipse cx="704" cy="810" rx="500" ry="86" fill="#000" opacity=".42"/>
+  <ellipse cx="708" cy="760" rx="430" ry="58" fill="#1d9e75" opacity=".10"/>
+
+  <g filter="url(#drop)" transform="translate(178 66) rotate(-8 520 420)">
+    <path d="M88 66h866c48 0 88 40 88 88v568c0 48-40 88-88 88H88c-48 0-88-40-88-88V154c0-48 40-88 88-88Z" fill="url(#boardEdge)" transform="translate(34 42)"/>
+    <path d="M88 0h866c48 0 88 40 88 88v568c0 48-40 88-88 88H88c-48 0-88-40-88-88V88C0 40 40 0 88 0Z" fill="url(#boardTop)" stroke="#98ffe0" stroke-opacity=".36" stroke-width="7"/>
+
+    <g opacity=".16" stroke="#d8efe5" stroke-width="1.4">
+      <path d="M110 112h820M92 214h858M92 316h858M92 418h858M92 520h858M110 622h820"/>
+      <path d="M146 72v604M250 54v636M354 54v636M458 54v636M562 54v636M666 54v636M770 54v636M874 72v604"/>
+    </g>
+
+    <g fill="#061419" stroke="url(#silver)" stroke-width="9">
+      <circle cx="96" cy="96" r="34"/>
+      <circle cx="946" cy="96" r="34"/>
+      <circle cx="96" cy="648" r="34"/>
+      <circle cx="946" cy="648" r="34"/>
+    </g>
+    <g fill="#b9f6df" opacity=".9">
+      <circle cx="96" cy="96" r="12"/>
+      <circle cx="946" cy="96" r="12"/>
+      <circle cx="96" cy="648" r="12"/>
+      <circle cx="946" cy="648" r="12"/>
+    </g>
+
+    <g stroke="url(#copper)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M170 155h172c44 0 66 20 66 60v80"/>
+      <path d="M872 154H692c-42 0-64 22-64 64v86"/>
+      <path d="M172 584h206c50 0 74-24 74-72v-84"/>
+      <path d="M870 584H666c-52 0-76-24-76-76v-84"/>
+      <path d="M280 262h112l48 42"/>
+      <path d="M762 262H652l-54 44"/>
+      <path d="M228 376h222"/>
+      <path d="M812 376H592"/>
+      <path d="M522 486v122"/>
+      <path d="M522 284V154"/>
+      <path d="M420 644h206"/>
+    </g>
+    <g stroke="#8ff4d0" stroke-width="4" stroke-linecap="round" opacity=".56" fill="none">
+      <path d="M154 230h108v70h82"/>
+      <path d="M888 230H780v70h-84"/>
+      <path d="M154 516h118v-68h92"/>
+      <path d="M888 516H768v-68h-90"/>
+      <path d="M522 154h-68v86"/>
+      <path d="M522 608h72v-86"/>
+      <path d="M350 120v64h-72"/>
+      <path d="M694 120v64h72"/>
+    </g>
+
+    <g>
+      <rect x="386" y="248" width="270" height="210" rx="22" fill="#102a3a" stroke="#d8efe5" stroke-opacity=".48" stroke-width="5"/>
+      <rect x="424" y="286" width="194" height="134" rx="14" fill="url(#chip)" stroke="#1d9e75" stroke-width="4"/>
+      <text x="522" y="352" text-anchor="middle" fill="#d8efe5" font-family="Arial, sans-serif" font-size="28" font-weight="700">ESP32</text>
+      <text x="522" y="386" text-anchor="middle" fill="#8ff4d0" font-family="monospace" font-size="15">FLIGHT CORE</text>
+      <g fill="url(#silver)">
+        <rect x="374" y="276" width="22" height="18" rx="3"/><rect x="374" y="314" width="22" height="18" rx="3"/><rect x="374" y="352" width="22" height="18" rx="3"/><rect x="374" y="390" width="22" height="18" rx="3"/>
+        <rect x="648" y="276" width="22" height="18" rx="3"/><rect x="648" y="314" width="22" height="18" rx="3"/><rect x="648" y="352" width="22" height="18" rx="3"/><rect x="648" y="390" width="22" height="18" rx="3"/>
+      </g>
+    </g>
+
+    <g>
+      <rect x="102" y="176" width="126" height="86" rx="16" fill="#071621" stroke="#d8efe5" stroke-opacity=".32" stroke-width="4"/>
+      <rect x="814" y="176" width="126" height="86" rx="16" fill="#071621" stroke="#d8efe5" stroke-opacity=".32" stroke-width="4"/>
+      <rect x="102" y="486" width="126" height="86" rx="16" fill="#071621" stroke="#d8efe5" stroke-opacity=".32" stroke-width="4"/>
+      <rect x="814" y="486" width="126" height="86" rx="16" fill="#071621" stroke="#d8efe5" stroke-opacity=".32" stroke-width="4"/>
+      <text x="165" y="228" text-anchor="middle" fill="#d8efe5" font-family="monospace" font-size="18">M1 ESC</text>
+      <text x="877" y="228" text-anchor="middle" fill="#d8efe5" font-family="monospace" font-size="18">M2 ESC</text>
+      <text x="165" y="538" text-anchor="middle" fill="#d8efe5" font-family="monospace" font-size="18">M3 ESC</text>
+      <text x="877" y="538" text-anchor="middle" fill="#d8efe5" font-family="monospace" font-size="18">M4 ESC</text>
+    </g>
+
+    <g fill="url(#copper)">
+      <rect x="198" y="116" width="128" height="38" rx="10"/>
+      <rect x="720" y="116" width="128" height="38" rx="10"/>
+      <rect x="188" y="596" width="154" height="40" rx="11"/>
+      <rect x="704" y="596" width="154" height="40" rx="11"/>
+      <rect x="442" y="636" width="160" height="38" rx="10"/>
+      <rect x="704" y="340" width="160" height="76" rx="14"/>
+      <rect x="180" y="340" width="160" height="76" rx="14"/>
+    </g>
+
+    <g>
+      <rect x="726" y="346" width="116" height="64" rx="12" fill="#0d1f2d" stroke="#061419" stroke-width="4"/>
+      <circle cx="762" cy="378" r="15" fill="#1d9e75" filter="url(#glow)"/>
+      <circle cx="806" cy="378" r="15" fill="#2e6273"/>
+      <text x="784" y="448" text-anchor="middle" fill="#d8efe5" font-family="monospace" font-size="16">PIR</text>
+    </g>
+
+    <g>
+      <rect x="210" y="346" width="100" height="64" rx="12" fill="#0d1f2d" stroke="#061419" stroke-width="4"/>
+      <path d="M234 380h52" stroke="#f7e8c7" stroke-width="8" stroke-linecap="round"/>
+      <path d="M260 354v52" stroke="#f7e8c7" stroke-width="8" stroke-linecap="round"/>
+      <text x="260" y="448" text-anchor="middle" fill="#d8efe5" font-family="monospace" font-size="16">5V BUS</text>
+    </g>
+
+    <g fill="#d8efe5">
+      <circle cx="408" cy="216" r="10"/><circle cx="628" cy="218" r="10"/><circle cx="452" cy="458" r="10"/><circle cx="590" cy="458" r="10"/>
+      <circle cx="280" cy="262" r="8"/><circle cx="762" cy="262" r="8"/><circle cx="452" cy="512" r="8"/><circle cx="590" cy="512" r="8"/>
+      <circle cx="522" cy="154" r="8"/><circle cx="522" cy="608" r="8"/><circle cx="350" cy="120" r="7"/><circle cx="694" cy="120" r="7"/>
+    </g>
+
+    <g fill="#0d1f2d" stroke="#d8efe5" stroke-opacity=".38" stroke-width="3">
+      <rect x="386" y="106" width="78" height="42" rx="10"/>
+      <rect x="580" y="106" width="78" height="42" rx="10"/>
+      <rect x="370" y="594" width="82" height="42" rx="10"/>
+      <rect x="592" y="594" width="82" height="42" rx="10"/>
+    </g>
+
+    <g font-family="monospace" font-size="22" fill="#d8efe5" fill-opacity=".72">
+      <text x="522" y="718" text-anchor="middle">MiniUAV Guardian · 80x80mm PCB · Rev A</text>
+      <text x="92" y="718" fill-opacity=".42">GPIO</text>
+      <text x="884" y="718" fill-opacity=".42">WIFI LOG</text>
+    </g>
+  </g>
+</svg>

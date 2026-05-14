@@ -25,7 +25,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.preview,
     path: `/blog/${post.slug}`,
-    image: post.thumbnail ?? "/og-image.png",
+    image: post.thumbnail ?? "/og-image.svg",
     imageAlt: post.thumbnailAlt ?? post.title,
     type: "article",
     keywords: [post.keyword, `ShopSherpa ${post.keyword}`, `Shop Sherpa ${post.keyword}`],
@@ -43,7 +43,7 @@ export async function generateMetadata({
       modifiedTime: isoDate,
       images: [
         {
-          url: post.thumbnail ?? "/og-image.png",
+          url: post.thumbnail ?? "/og-image.svg",
           width: 1200,
           height: 630,
           alt: post.thumbnailAlt ?? post.title,
@@ -259,7 +259,7 @@ export default async function BlogPostPage({
         "author": { "@type": "Person", "name": "Anghelo Araujo Lazaro", "url": `${siteUrl}/team` },
         "publisher": { "@id": `${siteUrl}/#organization` },
         "mainEntityOfPage": absoluteUrl(`/blog/${post.slug}`),
-        "image": [post.thumbnail ? absoluteUrl(post.thumbnail) : absoluteUrl("/og-image.png")],
+        "image": [post.thumbnail ? absoluteUrl(post.thumbnail) : absoluteUrl("/og-image.svg")],
       },
       ...(faqs.length
         ? [
@@ -312,7 +312,7 @@ export default async function BlogPostPage({
       <section className="px-6 md:px-8 pt-8">
         <div className="max-w-5xl mx-auto overflow-hidden rounded-[2rem] border border-[#2e6273]/10 bg-white shadow-[var(--shadow-soft)]">
           <Image
-            src={post.thumbnail ?? "/og-image.png"}
+            src={post.thumbnail ?? "/og-image.svg"}
             alt={post.thumbnailAlt ?? post.title}
             width={1200}
             height={525}
