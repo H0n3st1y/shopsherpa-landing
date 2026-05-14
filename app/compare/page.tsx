@@ -61,6 +61,16 @@ const FAQS = [
   ],
 ] as const;
 
+const ALTERNATIVE_FEATURES = [
+  ["Fake review detection", "✓", "✓", "✓", "✗", "✗"],
+  ["Fake seller detection", "✓", "✓", "✗", "✗", "✗"],
+  ["Phishing email detection", "✗", "✓", "✗", "✗", "Partial"],
+  ["Masked card numbers", "✗", "✓", "✗", "✗", "✗"],
+  ["Password vault", "✗", "✓", "✗", "✗", "✗"],
+  ["Real-time checkout alerts", "✓", "✓", "✗", "✗", "✓"],
+  ["Price", "Free", "$9.99 lifetime", "Free", "Free", "Free"],
+] as const;
+
 export default function ComparePage() {
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -140,6 +150,37 @@ export default function ComparePage() {
               </p>
               <PreorderButton variant="white" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white border-y border-[#2e6273]/10 px-6 md:px-8 py-16 md:py-24">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">Alternatives</p>
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tighter leading-[1] mb-10 max-w-2xl">
+            How ShopSherpa compares with other tools.
+          </h2>
+          <div className="overflow-x-auto rounded-2xl border border-[#2e6273]/10 bg-white shadow-[var(--shadow-soft)]">
+            <table aria-label="ShopSherpa comparison with alternatives" className="w-full min-w-[860px] border-collapse text-sm">
+              <thead className="bg-[#F4F0E8] text-xs uppercase tracking-wider text-[#1a1a1a]/50 font-mono">
+                <tr>
+                  {["Feature", "ShopSherpa (Free)", "ShopSherpa Plus", "Fakespot", "Honey", "McAfee WebAdvisor"].map((heading) => (
+                    <th key={heading} className="px-5 py-4 text-left font-medium">{heading}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {ALTERNATIVE_FEATURES.map((row) => (
+                  <tr key={row[0]} className="border-t border-[#2e6273]/10">
+                    {row.map((cell, index) => (
+                      <td key={`${row[0]}-${index}`} className={`px-5 py-4 ${index === 0 ? "font-medium text-[#1a1a1a]" : "text-[#1a1a1a]/65"}`}>
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

@@ -87,6 +87,17 @@ export default function Page() {
         <div aria-hidden className="blob-float-slow absolute -bottom-24 -left-24 size-80 rounded-full bg-[#1d9e75]/5 blur-3xl pointer-events-none" />
       </section>
 
+      <section id="what-is-shopsherpa" aria-label="What is ShopSherpa" className="sr-only">
+        <p>
+          ShopSherpa is a free browser extension that protects online shoppers from fraud.
+          It automatically scans websites for 1,800+ fraud patterns, detects fake reviews,
+          flags counterfeit sellers, and identifies phishing emails in your inbox before you
+          interact with them. A paid Plus tier adds masked virtual credit card numbers, a
+          password vault with breach alerts, and advanced phishing shields for Gmail and
+          Outlook — available as a one-time $9.99 lifetime pre-order.
+        </p>
+      </section>
+
       {/* ─── INSTALL PATH ───────────────────────────────────────────────────── */}
       <section className="bg-[#F4F0E8] px-6 md:px-8 py-14 border-y border-[#2e6273]/10">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-center">
@@ -146,17 +157,23 @@ export default function Page() {
             </p>
           </ScrollFade>
 
-          <div className="grid md:grid-cols-3 gap-10 md:gap-16">
-            <ScrollFade delay={100}>
-              <Step n={1} title="Add the extension." copy="Takes 60 seconds. Works in Chrome, Firefox, and Safari. On mobile, download the app." />
-            </ScrollFade>
-            <ScrollFade delay={200}>
-              <Step n={2} title="Shop like you normally would." copy="ShopSherpa checks sellers and reviews automatically while you browse. You don't have to do anything." />
-            </ScrollFade>
-            <ScrollFade delay={300}>
-              <Step n={3} title="Get a quiet alert when it matters." copy="Fake reviews. Sketchy sellers. Wrong checkout domain. You'll know before you pay." />
-            </ScrollFade>
-          </div>
+          <ol className="grid md:grid-cols-3 gap-10 md:gap-16" style={{ listStyle: "none", margin: 0, padding: 0 }}>
+            <li data-step="1">
+              <ScrollFade delay={100}>
+                <Step n={1} title="Add the extension." copy="Takes 60 seconds. Works in Chrome, Firefox, and Safari. On mobile, download the app." />
+              </ScrollFade>
+            </li>
+            <li data-step="2">
+              <ScrollFade delay={200}>
+                <Step n={2} title="Shop like you normally would." copy="ShopSherpa checks sellers and reviews automatically while you browse. You don't have to do anything." />
+              </ScrollFade>
+            </li>
+            <li data-step="3">
+              <ScrollFade delay={300}>
+                <Step n={3} title="Get a quiet alert when it matters." copy="Fake reviews. Sketchy sellers. Wrong checkout domain. You'll know before you pay." />
+              </ScrollFade>
+            </li>
+          </ol>
         </div>
       </section>
 

@@ -262,6 +262,40 @@ const jsonLd = {
         },
       ],
     },
+
+    {
+      "@type": "HowTo",
+      "@id": `${siteUrl}/#howto-detect-scam`,
+      "name": "How to detect if an online store is a scam",
+      "description": "Step-by-step guide to identifying fraudulent online stores before you pay.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Check the domain age and registration",
+          "text": "Newly registered domains (less than 6 months old) are a strong scam signal. Use a WHOIS lookup or install ShopSherpa, which checks this automatically.",
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Look for missing or fake contact information",
+          "text": "Scam stores typically have no phone number, a generic Gmail address, or a copied privacy policy. Legitimate stores have verifiable contact pages.",
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Analyze the reviews for bot-like patterns",
+          "text": "Fake reviews use repetitive language, post in clusters, and often have no purchase history. ShopSherpa scans 1,800+ fraud patterns to detect these automatically.",
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Verify the checkout domain matches the store",
+          "text": "If the URL changes to an unfamiliar domain at checkout, leave immediately. ShopSherpa alerts you when checkout domains do not match the store you are browsing.",
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Use a masked card number for first purchases",
+          "text": "For new stores you are unsure about, use a virtual or masked card number so your real card details are never exposed. ShopSherpa Plus provides one masked number per store.",
+        },
+      ],
+    },
   ],
 };
 

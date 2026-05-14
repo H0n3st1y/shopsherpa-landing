@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shopsherpa.org";
+const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shopsherpa.org";
+
+export const siteUrl = rawSiteUrl.trim().replace(/\/+$/, "");
 export const siteName = "ShopSherpa";
 export const spacedSiteName = "Shop Sherpa";
 export const defaultOgImage = "/og-image.svg";
