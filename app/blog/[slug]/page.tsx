@@ -27,6 +27,14 @@ export async function generateMetadata({
       description: post.preview,
       type: "article",
       publishedTime: post.date,
+      images: [
+        {
+          url: post.thumbnail ?? "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: post.thumbnailAlt ?? post.title,
+        },
+      ],
     },
   };
 }
@@ -211,14 +219,24 @@ export default async function BlogPostPage({
           <h1 className="text-4xl md:text-5xl font-medium tracking-tighter leading-[1.05] mb-6">
             {post.title}
           </h1>
-          <p className="text-[#1a1a1a]/60 text-lg leading-relaxed mb-8 max-w-2xl">
+          <p className="text-readable type-body mb-8">
             {post.preview}
           </p>
-          <div className="flex items-center gap-4 text-sm text-[#1a1a1a]/40 font-mono">
+          <div className="flex items-center gap-4 text-sm text-[#1a1a1a]/65 font-mono">
             <span>{post.date}</span>
             <span>·</span>
             <span>{post.read}</span>
           </div>
+        </div>
+      </section>
+
+      <section className="px-6 md:px-8 pt-8">
+        <div className="max-w-5xl mx-auto overflow-hidden rounded-[2rem] border border-[#2e6273]/10 bg-white shadow-[var(--shadow-soft)]">
+          <img
+            src={post.thumbnail}
+            alt={post.thumbnailAlt}
+            className="aspect-[16/7] w-full object-cover"
+          />
         </div>
       </section>
 
@@ -236,7 +254,7 @@ export default async function BlogPostPage({
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-3">
             ShopSherpa scans while you shop.
           </h2>
-          <p className="text-white/55 text-sm leading-relaxed mb-6 max-w-lg">
+          <p className="text-readable-dark text-base leading-relaxed mb-6 max-w-lg">
             Fake reviews, sketchy sellers, phishing emails — ShopSherpa flags them automatically. Free for Chrome, Firefox, and Safari.
           </p>
           <Link
@@ -263,9 +281,9 @@ export default async function BlogPostPage({
                   href={`/blog/${r.slug}`}
                   className="group bg-white rounded-xl p-5 border border-[#2e6273]/10 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_-4px_rgba(46,98,115,0.12)] transition-[transform,box-shadow] duration-200"
                 >
-                  <p className="text-xs font-mono text-[#2e6273]/60 uppercase tracking-wider mb-2">{r.tag}</p>
+                  <p className="text-xs font-mono text-[#2e6273] uppercase tracking-wider mb-2">{r.tag}</p>
                   <p className="text-sm font-medium leading-snug tracking-tight mb-3">{r.title}</p>
-                  <p className="text-xs text-[#1a1a1a]/40 font-mono">{r.read}</p>
+                  <p className="text-xs text-[#1a1a1a]/65 font-mono">{r.read}</p>
                 </Link>
               ))}
             </div>

@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+:root {
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 2.5rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+  --space-10: 5rem;
+  --type-display: clamp(3.5rem, 8vw, 6.5rem);
+  --type-heading: clamp(2.25rem, 5vw, 4.5rem);
+  --type-body: 1rem;
+  --type-caption: 0.8125rem;
+  --leading-body: 1.7;
+  --measure: 70ch;
+}
+
 @theme {
   /* ── Fonts ─────────────────────────────────────────────── */
   --font-sans:    "Barlow", system-ui, -apple-system, sans-serif;
@@ -65,8 +82,8 @@ section[id] {
 
 body {
   font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.65;                /* Barlow reads better with more room */
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -83,6 +100,57 @@ h1, h2, h3, h4, h5 {
 /* Utility classes for font switching */
 .font-heading { font-family: var(--font-heading); }
 .font-serif   { font-family: var(--font-serif); }
+
+.type-display {
+  font-size: var(--type-display);
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.type-heading {
+  font-size: var(--type-heading);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.type-body {
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+  max-width: var(--measure);
+}
+
+.type-caption {
+  font-size: var(--type-caption);
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+}
+
+.text-readable {
+  color: rgba(28, 26, 24, 0.72);
+}
+
+.text-readable-dark {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.prose-custom {
+  max-width: var(--measure);
+}
+
+.prose-custom p,
+.prose-custom li {
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.image-lift {
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), filter 260ms ease;
+}
+
+.group:hover .image-lift {
+  transform: scale(1.035);
+  filter: saturate(1.05) contrast(1.02);
+}
 
 ::selection {
   background: var(--color-teal);
@@ -204,6 +272,28 @@ html.dark .lab-hero-bezel::before {
 html.dark .sketch-underline::after {
   opacity: 0.9;
   filter: brightness(1.8) saturate(0.8);
+}
+
+html.dark .text-readable {
+  color: rgba(237, 233, 228, 0.76);
+}
+
+[class*="text-[#1a1a1a]/30"],
+[class*="text-[#1a1a1a]/35"],
+[class*="text-[#1a1a1a]/40"],
+[class*="text-[#1a1a1a]/45"],
+[class*="text-[#1a1a1a]/50"],
+[class*="text-[#1a1a1a]/55"] {
+  color: rgba(26, 26, 26, 0.68) !important;
+}
+
+[class*="text-white/30"],
+[class*="text-white/35"],
+[class*="text-white/40"],
+[class*="text-white/45"],
+[class*="text-white/50"],
+[class*="text-white/55"] {
+  color: rgba(255, 255, 255, 0.72) !important;
 }
 
 /* ─────────────────────────────────────────────────────────── */
@@ -544,6 +634,10 @@ body[data-cta-focused="true"] .cta-section {
     transition: none !important;
     transform: none !important;
     animation: none !important;
+  }
+  .image-lift {
+    transition: none !important;
+    transform: none !important;
   }
   .hero-word  { opacity: 1 !important; }
   .scroll-fade { opacity: 1 !important; }

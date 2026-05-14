@@ -19,7 +19,8 @@ export default function Page() {
       {/* ─── HERO ────────────────────────────────────────────────────────────── */}
       <section className="px-6 md:px-8 pt-20 md:pt-32 pb-20 md:pb-28 relative overflow-hidden">
         <HeroShapes />
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-[0.98fr_0.82fr] gap-12 lg:gap-16 items-center">
+          <div>
 
           <ScrollFade>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2e6273]/15 bg-white text-xs font-mono text-[#2e6273] mb-8">
@@ -54,10 +55,28 @@ export default function Page() {
           </ScrollFade>
 
           <ScrollFade delay={480}>
-            <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-[#1a1a1a]/60">
+            <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-readable">
               <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
               <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
               <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />Public launch Q3 2026</div>
+            </div>
+          </ScrollFade>
+          </div>
+
+          <ScrollFade delay={240}>
+            <div className="group relative overflow-hidden rounded-[2rem] border border-[#2e6273]/15 bg-white shadow-[var(--shadow-lift)]">
+              <img
+                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80"
+                alt="ShopSherpa browser extension scanning a secure online checkout for scam protection"
+                className="image-lift aspect-[4/5] w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f2d]/78 via-[#0d1f2d]/18 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7 text-white">
+                <p className="type-caption font-mono uppercase text-[#1d9e75] mb-2">Live shopping shield</p>
+                <p className="text-2xl md:text-3xl font-medium tracking-tight leading-tight max-w-sm">
+                  Review patterns, seller signals, and checkout domains in one calm alert.
+                </p>
+              </div>
             </div>
           </ScrollFade>
         </div>

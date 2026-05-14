@@ -36,7 +36,7 @@ export default function BlogPage() {
           <h1 className="text-5xl md:text-6xl font-medium tracking-tighter leading-[1] mb-5 max-w-2xl">
             Buy smarter.<br />Avoid scams.
           </h1>
-          <p className="text-[#1a1a1a]/60 text-lg max-w-xl leading-relaxed mb-8">
+          <p className="text-readable type-body mb-8">
             {blogPosts.length} guides on online scam protection, AI shopping tools, price tracking, and product research — everything you need to shop with confidence.
           </p>
           {/* Tag filters — visual only, no JS needed */}
@@ -85,7 +85,7 @@ export default function BlogPage() {
             <h3 className="text-2xl md:text-3xl font-medium tracking-tighter mb-2">
               New scam guides every week.
             </h3>
-            <p className="text-white/55 text-sm leading-relaxed max-w-sm">
+            <p className="text-readable-dark text-base leading-relaxed max-w-sm">
               We publish one guide a week. No product emails unless you ask.
             </p>
           </div>
@@ -130,34 +130,45 @@ function ArticleCard({
   post,
   featured = false,
 }: {
-  post: { slug: string; tag: string; title: string; preview: string; read: string; date: string };
+  post: { slug: string; tag: string; title: string; preview: string; read: string; date: string; thumbnail?: string; thumbnailAlt?: string };
   featured?: boolean;
 }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group bg-white rounded-2xl p-7 border border-[#2e6273]/10 h-full flex flex-col hover:-translate-y-1 hover:shadow-[0_8px_24px_-4px_rgba(46,98,115,0.12)] transition-[transform,box-shadow] duration-200"
+      className="group bg-white rounded-2xl border border-[#2e6273]/10 h-full flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_24px_-4px_rgba(46,98,115,0.12)] transition-[transform,box-shadow] duration-200"
     >
-      <p className={`text-xs font-mono uppercase tracking-wider mb-4 ${TAG_COLORS[post.tag] ?? "text-[#2e6273]/60"}`}>
-        {post.tag}
-      </p>
-      <h2 className={`font-medium leading-snug tracking-tight mb-4 flex-1 ${featured ? "text-xl" : "text-lg"}`}>
-        {post.title}
-      </h2>
-      <p className="text-sm text-[#1a1a1a]/55 leading-relaxed mb-6 line-clamp-3">
-        {post.preview}
-      </p>
-      <div className="flex items-center justify-between pt-5 border-t border-[#2e6273]/10 mt-auto">
-        <div>
-          <p className="text-xs text-[#1a1a1a]/40 font-mono">{post.read}</p>
-          <p className="text-xs text-[#1a1a1a]/30 font-mono mt-0.5">{post.date}</p>
+      <div className="relative overflow-hidden bg-[#F4F0E8]">
+        <img
+          src={post.thumbnail}
+          alt={post.thumbnailAlt}
+          loading="lazy"
+          className="image-lift aspect-[16/10] w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f2d]/34 to-transparent" />
+      </div>
+      <div className="flex flex-1 flex-col p-7">
+        <p className={`text-xs font-mono uppercase tracking-wider mb-4 ${TAG_COLORS[post.tag] ?? "text-[#2e6273]/80"}`}>
+          {post.tag}
+        </p>
+        <h2 className={`font-medium leading-snug tracking-tight mb-4 flex-1 ${featured ? "text-xl" : "text-lg"}`}>
+          {post.title}
+        </h2>
+        <p className="text-base text-readable leading-relaxed mb-6 line-clamp-3">
+          {post.preview}
+        </p>
+        <div className="flex items-center justify-between pt-5 border-t border-[#2e6273]/10 mt-auto">
+          <div>
+            <p className="text-xs text-[#1a1a1a]/65 font-mono">{post.read}</p>
+            <p className="text-xs text-[#1a1a1a]/60 font-mono mt-0.5">{post.date}</p>
+          </div>
+          <span className="text-xs text-[#2e6273] font-medium group-hover:text-[#1d9e75] transition flex items-center gap-1.5">
+            Read
+            <svg className="size-3.5 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
         </div>
-        <span className="text-xs text-[#2e6273] font-medium group-hover:text-[#1d9e75] transition flex items-center gap-1.5">
-          Read
-          <svg className="size-3.5 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
       </div>
     </Link>
   );
