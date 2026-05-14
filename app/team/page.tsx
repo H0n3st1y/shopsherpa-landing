@@ -22,6 +22,7 @@ export default function TeamPage() {
           <nav className="hidden md:flex items-center gap-7 text-sm text-[#1a1a1a]/70">
             <Link href="/#how-it-works" className="hover:text-[#1a1a1a] transition">How it works</Link>
             <Link href="/#roadmap" className="hover:text-[#1a1a1a] transition">Roadmap</Link>
+            <Link href="/lab" className="hover:text-[#1a1a1a] transition">Lab</Link>
             <Link href="/team" className="text-[#2e6273] font-medium">Team</Link>
             <Link href="/blog" className="hover:text-[#1a1a1a] transition">Blog</Link>
           </nav>
@@ -204,6 +205,7 @@ export default function TeamPage() {
             <a href="#" className="hover:text-white transition">Privacy</a>
             <a href="#" className="hover:text-white transition">Security</a>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
+            <Link href="/lab" className="hover:text-white transition">Lab</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>
             <Link href="/product" className="hover:text-white transition">MiniUAV</Link>
             <a href="#" className="hover:text-white transition">Twitter</a>

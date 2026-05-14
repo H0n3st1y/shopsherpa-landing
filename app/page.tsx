@@ -6,8 +6,8 @@ import { PreorderButton } from "@/components/PreorderButton";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { InteractiveField } from "@/components/InteractiveField";
 import { StoryCard } from "@/components/StoryCard";
+import { ScamCheckDemo } from "@/components/ScamCheckDemo";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { WebGLShader } from "@/components/ui/web-gl-shader";
 
 export default function Page() {
   return (
@@ -24,6 +24,7 @@ export default function Page() {
             <a href="#how-it-works" className="hover:text-[#1a1a1a] transition">How it works</a>
             <a href="#roadmap" className="hover:text-[#1a1a1a] transition">Roadmap</a>
             <a href="#pricing" className="hover:text-[#1a1a1a] transition">Pricing</a>
+            <a href="/lab" className="hover:text-[#1a1a1a] transition">Lab</a>
             <a href="/team" className="hover:text-[#1a1a1a] transition">Team</a>
             <a href="/product" className="hover:text-[#1a1a1a] transition">MiniUAV</a>
           </nav>
@@ -116,6 +117,28 @@ export default function Page() {
               <Step n={3} title="Get a quiet alert when it matters." copy="Fake reviews. Sketchy sellers. Wrong checkout domain. You'll know before you pay." />
             </ScrollFade>
           </div>
+        </div>
+      </section>
+
+      {/* ─── INSTANT SCAM CHECK ──────────────────────────────────────────────── */}
+      <section className="bg-[#FAF8F4] px-6 md:px-8 py-24 md:py-32">
+        <div className="max-w-6xl mx-auto">
+          <ScrollFade>
+            <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">New beta feature</p>
+          </ScrollFade>
+          <ScrollFade delay={120}>
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-2xl">
+              A scam gut-check<br />before you trust it.
+            </h2>
+          </ScrollFade>
+          <ScrollFade delay={200}>
+            <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-12 max-w-xl leading-relaxed">
+              Paste a seller message, store link, email sender, or review. ShopSherpa turns vague suspicion into a clear risk readout.
+            </p>
+          </ScrollFade>
+          <ScrollFade delay={280}>
+            <ScamCheckDemo />
+          </ScrollFade>
         </div>
       </section>
 
@@ -720,6 +743,7 @@ export default function Page() {
             <a href="#" className="hover:text-white transition">Privacy</a>
             <a href="#" className="hover:text-white transition">Security</a>
             <a href="/blog" className="hover:text-white transition">Blog</a>
+            <a href="/lab" className="hover:text-white transition">Lab</a>
             <a href="/team" className="hover:text-white transition">Team</a>
             <a href="/product" className="hover:text-white transition">MiniUAV</a>
             <a href="#" className="hover:text-white transition">Twitter</a>

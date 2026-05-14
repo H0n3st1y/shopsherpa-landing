@@ -26,6 +26,7 @@ export default function ProductPage() {
             <Link href="/#how-it-works" className="hover:text-white transition">How it works</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
+            <Link href="/lab" className="hover:text-white transition">Lab</Link>
             <Link href="/product" className="text-white font-medium">MiniUAV</Link>
           </nav>
           <a
