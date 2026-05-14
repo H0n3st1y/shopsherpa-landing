@@ -281,8 +281,8 @@ export default async function BlogPostPage({
             <span className="font-medium text-white">ShopSherpa</span>
           </Link>
           <div className="flex flex-wrap gap-6 text-sm">
-            <a href="#" className="hover:text-white transition">Privacy</a>
-            <a href="#" className="hover:text-white transition">Security</a>
+            <Link href="/privacy" className="hover:text-white transition">Privacy</Link>
+            <Link href="/security" className="hover:text-white transition">Security</Link>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
             <Link href="/lab" className="hover:text-white transition">Lab</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { PreorderButton } from "@/components/PreorderButton";
+import { ThemeToggle } from "@/components/ui/curtain-theme-toggle";
 
 type HeaderVariant = "light" | "dark";
 type ActivePage = "home" | "lab" | "team" | "blog" | "product";
@@ -54,7 +55,10 @@ export function SiteHeader({
           </NavLink>
         </nav>
 
-        <HeaderCta cta={cta} dark={dark} />
+        <div className="flex items-center gap-3">
+          <ThemeToggle variant="icon" defaultTheme={dark ? "dark" : "light"} duration={600} buttonSize={34} />
+          <HeaderCta cta={cta} dark={dark} />
+        </div>
       </div>
     </header>
   );

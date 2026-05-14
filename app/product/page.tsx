@@ -315,6 +315,8 @@ export default function ProductPage() {
             <span className="font-medium text-white">ShopSherpa</span>
           </Link>
           <div className="flex flex-wrap gap-6 text-sm">
+            <Link href="/privacy" className="hover:text-white transition">Privacy</Link>
+            <Link href="/security" className="hover:text-white transition">Security</Link>
             <Link href="/" className="hover:text-white transition">ShopSherpa</Link>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>

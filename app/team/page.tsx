@@ -182,13 +182,13 @@ export default function TeamPage() {
             <span className="font-medium text-white">ShopSherpa</span>
           </Link>
           <div className="flex flex-wrap gap-6 text-sm">
-            <a href="#" className="hover:text-white transition">Privacy</a>
-            <a href="#" className="hover:text-white transition">Security</a>
+            <a href="/privacy" className="hover:text-white transition">Privacy</a>
+            <a href="/security" className="hover:text-white transition">Security</a>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
             <Link href="/lab" className="hover:text-white transition">Lab</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>
             <Link href="/product" className="hover:text-white transition">MiniUAV</Link>
-            <a href="#" className="hover:text-white transition">Twitter</a>
+            <a href="https://twitter.com/shopsherpa" className="hover:text-white transition">Twitter</a>
           </div>
           <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
         </div>

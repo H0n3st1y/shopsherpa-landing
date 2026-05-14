@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog`,           lastModified: now, changeFrequency: "daily",   priority: 0.9  },
     { url: `${base}/product`,        lastModified: now, changeFrequency: "monthly", priority: 0.7  },
     { url: `${base}/lab`,            lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${base}/privacy`,        lastModified: now, changeFrequency: "monthly", priority: 0.5  },
+    { url: `${base}/security`,       lastModified: now, changeFrequency: "monthly", priority: 0.5  },
 
     // Landing page anchors — treated as separate signals
     { url: `${base}/#how-it-works`,  changeFrequency: "monthly", priority: 0.7 },
