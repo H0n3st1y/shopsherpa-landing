@@ -2,14 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PreorderButton } from "@/components/PreorderButton";
+import { pageMetadata, siteUrl } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Compare Free vs Plus | ShopSherpa",
-  },
-  description:
-    "Compare the ShopSherpa free browser extension with ShopSherpa Plus, including phishing protection, password alerts, masked cards, pricing, and launch timing.",
-};
+const pageDescription =
+  "Compare the ShopSherpa free browser extension with ShopSherpa Plus, including phishing protection, password alerts, masked cards, pricing, and launch timing.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Compare Free vs Plus",
+  description: pageDescription,
+  path: "/compare",
+  keywords: ["ShopSherpa vs Fakespot", "Shop Sherpa Plus", "ShopSherpa pricing", "shopping scam protection comparison"],
+});
 
 const FEATURES = [
   ["Real-time review scanning", "Flags suspicious review patterns before you trust the rating.", true, true],
@@ -59,8 +62,23 @@ const FAQS = [
 ] as const;
 
 export default function ComparePage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${siteUrl}/compare#faq`,
+    "mainEntity": FAQS.map(([question, answer]) => ({
+      "@type": "Question",
+      "name": question,
+      "acceptedAnswer": { "@type": "Answer", "text": answer },
+    })),
+  };
+
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <SiteHeader active="compare" cta="preorder" />
 
       <section className="px-6 md:px-8 pt-20 pb-16 border-b border-[#2e6273]/10">

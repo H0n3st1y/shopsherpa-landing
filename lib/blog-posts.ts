@@ -40,6 +40,49 @@ const THUMBNAILS = [
   "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80",
 ];
 
+const FEATURED_THUMBNAILS: Record<number, string> = {
+  2: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80",
+  10: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
+  22: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+  28: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80",
+};
+
+const PREVIEW_OVERRIDES: Record<string, string> = {
+  "fake-sellers": "Fake sellers use copied photos, urgent payment requests, and manipulated reviews to look safe. Learn the checks that matter before you pay.",
+  "best-ai-shopping-assistants": "Compare AI shopping assistants by what they actually do: research products, compare prices, evaluate sellers, and reduce checkout risk.",
+  "ai-shopping-tools": "A practical look at AI shopping tools for research, price comparison, fake review detection, and safer purchases across marketplaces.",
+  "best-automated-shopping-apps": "The best automated shopping apps save time, but the safest ones also verify sellers, reviews, checkout links, and payment risk.",
+  "brand-discovery": "Brand discovery should help shoppers find new stores without ignoring trust signals, seller history, reviews, and checkout safety.",
+  "buying-guides": "Buying guides are most useful when they combine product fit with seller checks, review quality, price context, and safe checkout habits.",
+  "curated-product-discovery": "Curated product discovery can simplify shopping, but buyers still need to verify sellers, reviews, and unfamiliar storefronts before checkout.",
+  "detailed-product-comparisons": "Detailed product comparisons help shoppers judge tradeoffs beyond price, including warranty, seller trust, reviews, and return policies.",
+  "expert-product-recommendations": "Expert recommendations are strongest when they explain criteria, disclose tradeoffs, and point shoppers toward trustworthy sellers.",
+  "expert-shopping-advice": "Good shopping advice slows down risky purchases by checking seller history, payment methods, review patterns, and checkout domains.",
+  "niche-gift-discovery-ideas": "Niche gifts often come from unfamiliar stores. Use this guide to find unusual ideas while avoiding fake sellers and risky payment asks.",
+  "personalized-product-suggestions": "Personalized product suggestions can save time, but they still need safety checks for seller legitimacy, reviews, and checkout links.",
+  "personal-shopping-concierge": "A personal shopping concierge helps with product research, vendor checks, and purchase decisions when the marketplace feels noisy.",
+  "best-personal-shopping-services": "Compare personal shopping services by fit, sourcing quality, transparency, seller vetting, and how much purchase risk they remove.",
+  "price-comparison": "Price comparison works best when the lowest price is checked against seller reputation, shipping terms, return policy, and checkout safety.",
+  "best-price-comparison-tools": "The best price comparison tools show more than a cheaper listing. They help shoppers judge trust, timing, history, and seller risk.",
+  "price-drop-alerts": "Price drop alerts can help you buy at the right time, but unfamiliar sellers and too-good discounts still deserve a closer look.",
+  "product-comparison-page": "A strong product comparison page helps buyers scan differences, trust claims, and choose confidently without hiding important tradeoffs.",
+  "what-is-product-discovery": "Product discovery is how shoppers find new options. In 2026, trust signals and seller safety matter as much as relevance.",
+  "product-feature-research": "Product feature research turns vague preferences into clear criteria so teams and shoppers can compare what actually matters.",
+  "product-quality-verification": "Product quality verification checks whether an item matches claims, standards, reviews, and seller promises before money changes hands.",
+  "product-research-sites": "Product research sites reveal demand, trends, and alternatives, but buyers should still verify sellers, reviews, and checkout paths.",
+  "retail-price-comparison": "Retail price comparison helps shoppers spot fair deals while avoiding fake discounts, suspicious sellers, and mismatched checkout domains.",
+  "shopping-assistant-features": "Shopping assistant features are useful when they reduce real friction: comparisons, alerts, review checks, seller checks, and safer checkout.",
+  "best-shopping-deal-apps": "Deal apps can surface savings, but safer shopping means checking the store, seller, return policy, and payment method before acting.",
+  "what-is-shopsherpa": "ShopSherpa, also searched as Shop Sherpa, is a shopping safety layer for fake reviews, bad sellers, phishing emails, and risky checkouts.",
+};
+
+const DATE_OVERRIDES: Record<string, string> = {
+  "retail-price-comparison": "May 6, 2026",
+  "shopping-assistant-features": "May 8, 2026",
+  "best-shopping-deal-apps": "May 10, 2026",
+  "what-is-shopsherpa": "May 12, 2026",
+};
+
 export const blogPosts: BlogPost[] = sourcePosts.map(restorePost);
 
 export function getPost(slug: string): BlogPost | undefined {
@@ -72,18 +115,25 @@ function hasDraftCopy(post: Pick<BlogPost, "content" | "preview">): boolean {
 }
 
 function restorePost(post: SourceBlogPost, index: number): BlogPost {
-  const thumbnail = post.thumbnail ?? THUMBNAILS[index % THUMBNAILS.length];
+  const thumbnail = post.thumbnail ?? FEATURED_THUMBNAILS[index + 1] ?? THUMBNAILS[index % THUMBNAILS.length];
   const thumbnailAlt =
     post.thumbnailAlt ??
     `${post.title} guide from ShopSherpa about ${post.keyword || post.tag}`.replace(/\s+/g, " ");
 
   if (isPublishReady({ ...post, thumbnail, thumbnailAlt })) {
-    return { ...post, thumbnail, thumbnailAlt };
+    return {
+      ...post,
+      date: DATE_OVERRIDES[post.slug] ?? post.date,
+      preview: PREVIEW_OVERRIDES[post.slug] ?? post.preview,
+      thumbnail,
+      thumbnailAlt,
+    };
   }
 
   return {
     ...post,
-    preview: buildPreview(post),
+    date: DATE_OVERRIDES[post.slug] ?? post.date,
+    preview: PREVIEW_OVERRIDES[post.slug] ?? buildPreview(post),
     content: buildRestoredContent(post),
     thumbnail,
     thumbnailAlt,

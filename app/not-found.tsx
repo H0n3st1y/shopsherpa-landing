@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Page Not Found | ShopSherpa",
+export const metadata: Metadata = pageMetadata({
+  title: "Page Not Found",
   description:
     "The ShopSherpa page you requested could not be found. Return to the homepage for scam protection, pricing, guides, and product information.",
-};
+  path: "/404",
+});
 
 export default function NotFound() {
   return (

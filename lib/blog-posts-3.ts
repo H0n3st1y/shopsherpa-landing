@@ -233,7 +233,7 @@ Explain the importance of scanning sellers and reviews before checkout rather th
 Describe the “quiet by default” approach, where there are no interruptions unless something looks wrong. Use ShopSherpa’s alert style as an example.
 
 ### Payment Privacy With Masked Cards
-Introduce the concept of masked card numbers, one per store, and explain how this limits fraud exposure. Note that this is a Plus-tier feature launching Q3 2026.
+Introduce the concept of masked card numbers, one per store, and explain how this limits fraud exposure. Note that this is a Plus-tier feature available in early access.
 
 ---
 

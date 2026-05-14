@@ -7,7 +7,7 @@ const items = [
   },
   {
     q: "When does Plus launch?",
-    a: "Beta access for pre-order users starts July 2026. Public launch is Q3 2026.",
+    a: "Public access is opening through GitHub and the waitlist.",
   },
   {
     q: "How is this different from 1Password or LifeLock?",

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getPost } from "@/lib/blog-posts";
+import { absoluteUrl, brandedTitle, isoDateFromPostDate, pageMetadata, siteUrl } from "@/lib/seo";
 import { SiteHeader } from "@/components/SiteHeader";
 
 /* ── Static params for all 25 posts ─────────────────────────── */
@@ -18,15 +20,27 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
-  return {
-    title: `${post.title} | ShopSherpa`,
+  const isoDate = isoDateFromPostDate(post.date);
+  const base = pageMetadata({
+    title: post.title,
     description: post.preview,
-    keywords: post.keyword,
+    path: `/blog/${post.slug}`,
+    image: post.thumbnail ?? "/og-image.png",
+    imageAlt: post.thumbnailAlt ?? post.title,
+    type: "article",
+    keywords: [post.keyword, `ShopSherpa ${post.keyword}`, `Shop Sherpa ${post.keyword}`],
+  });
+
+  return {
+    ...base,
     openGraph: {
-      title: post.title,
+      ...base.openGraph,
+      title: brandedTitle(post.title),
       description: post.preview,
       type: "article",
-      publishedTime: post.date,
+      url: absoluteUrl(`/blog/${post.slug}`),
+      publishedTime: isoDate,
+      modifiedTime: isoDate,
       images: [
         {
           url: post.thumbnail ?? "/og-image.png",
@@ -37,6 +51,35 @@ export async function generateMetadata({
       ],
     },
   };
+}
+
+function extractFaqs(content: string) {
+  const section = content.split("## Frequently asked questions")[1];
+  if (!section) return [];
+
+  const lines = section.split("\n");
+  const faqs: { question: string; answer: string }[] = [];
+  let currentQuestion = "";
+  let currentAnswer: string[] = [];
+
+  for (const line of lines) {
+    if (line.startsWith("## ") && !line.startsWith("### ")) break;
+    if (line.startsWith("### ")) {
+      if (currentQuestion && currentAnswer.length) {
+        faqs.push({ question: currentQuestion, answer: currentAnswer.join(" ").trim() });
+      }
+      currentQuestion = line.replace(/^### /, "").trim();
+      currentAnswer = [];
+    } else if (currentQuestion && line.trim()) {
+      currentAnswer.push(line.trim());
+    }
+  }
+
+  if (currentQuestion && currentAnswer.length) {
+    faqs.push({ question: currentQuestion, answer: currentAnswer.join(" ").trim() });
+  }
+
+  return faqs.slice(0, 8);
 }
 
 /* ── Lightweight markdown → JSX renderer ────────────────────── */
@@ -201,9 +244,45 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const related = blogPosts.filter((p) => p.slug !== slug && p.tag === post.tag).slice(0, 3);
+  const published = isoDateFromPostDate(post.date);
+  const faqs = extractFaqs(post.content);
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${siteUrl}/blog/${post.slug}#article`,
+        "headline": post.title,
+        "description": post.preview,
+        "datePublished": published,
+        "dateModified": published,
+        "author": { "@type": "Person", "name": "Anghelo Araujo Lazaro", "url": `${siteUrl}/team` },
+        "publisher": { "@id": `${siteUrl}/#organization` },
+        "mainEntityOfPage": absoluteUrl(`/blog/${post.slug}`),
+        "image": [post.thumbnail ? absoluteUrl(post.thumbnail) : absoluteUrl("/og-image.png")],
+      },
+      ...(faqs.length
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${siteUrl}/blog/${post.slug}#faq`,
+              "mainEntity": faqs.map((faq) => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
+              })),
+            },
+          ]
+        : []),
+    ],
+  };
 
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
 
       <SiteHeader active="blog" cta="waitlist" />
 
@@ -232,9 +311,12 @@ export default async function BlogPostPage({
 
       <section className="px-6 md:px-8 pt-8">
         <div className="max-w-5xl mx-auto overflow-hidden rounded-[2rem] border border-[#2e6273]/10 bg-white shadow-[var(--shadow-soft)]">
-          <img
-            src={post.thumbnail}
-            alt={post.thumbnailAlt}
+          <Image
+            src={post.thumbnail ?? "/og-image.png"}
+            alt={post.thumbnailAlt ?? post.title}
+            width={1200}
+            height={525}
+            priority
             className="aspect-[16/7] w-full object-cover"
           />
         </div>

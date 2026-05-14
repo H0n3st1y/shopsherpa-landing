@@ -10,8 +10,9 @@ const PRODUCTS = [
     title: "Sherpa finds the best deal and drafts the sheet.",
     description:
       "Give it a buying brief. Sherpa searches vendors, compares total landed cost, checks trust signals, and returns a spreadsheet with source links.",
-    graphic:
-      "radial-gradient(circle at 18% 20%, rgba(29,158,117,.55), transparent 28%), linear-gradient(135deg, #0d1f2d 0%, #203d4a 46%, #f4f0e8 100%)",
+    image:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Business procurement spreadsheet and vendor deal research for the Sherpa agent",
     className: "max-lg:rounded-t-[2rem] lg:col-span-3 lg:rounded-tl-[2rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
@@ -20,8 +21,9 @@ const PRODUCTS = [
     title: "Finance Guru turns messy numbers into decisions.",
     description:
       "Upload exports, invoices, or spend data. It summarizes cash-flow risks, spend leaks, and practical next moves in plain English.",
-    graphic:
-      "radial-gradient(circle at 78% 18%, rgba(46,98,115,.7), transparent 26%), linear-gradient(150deg, #132634 0%, #2e6273 48%, #d8efe5 100%)",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Finance dashboard charts for Finance Guru business agent analysis",
     className: "lg:col-span-3 lg:rounded-tr-[2rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
@@ -30,8 +32,9 @@ const PRODUCTS = [
     title: "Caddy keeps follow-up moving after the call.",
     description:
       "Prep accounts, draft follow-ups, and turn scattered notes into the next action so customer work does not stall in the CRM.",
-    graphic:
-      "radial-gradient(circle at 22% 72%, rgba(250,248,244,.55), transparent 24%), linear-gradient(155deg, #102534 0%, #1d9e75 56%, #0d1f2d 100%)",
+    image:
+      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Sales team workflow for Caddy follow-up automation agent",
     className: "lg:col-span-2 lg:rounded-bl-[2rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
@@ -40,8 +43,9 @@ const PRODUCTS = [
     title: "MiniUAV Guardian brings threat detection into a room.",
     description:
       "An autonomous indoor security quadrotor with ESP32 control, PIR motion sensing, and real-time Wi-Fi logs.",
-    graphic:
-      "radial-gradient(circle at 50% 34%, rgba(244,240,232,.72), transparent 18%), linear-gradient(145deg, #091721 0%, #2e6273 44%, #0d1f2d 100%)",
+    image:
+      "https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Drone hardware concept for MiniUAV Guardian indoor security",
     className: "lg:col-span-2",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
@@ -50,8 +54,9 @@ const PRODUCTS = [
     title: "ShopSherpa stays focused on scam protection.",
     description:
       "The main product remains the free browser extension for fake sellers, fake reviews, phishing emails, and bad checkout domains.",
-    graphic:
-      "radial-gradient(circle at 72% 24%, rgba(29,158,117,.62), transparent 20%), linear-gradient(160deg, #0d1f2d 0%, #2e6273 52%, #faf8f4 100%)",
+    image:
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Secure online checkout protection for the ShopSherpa browser extension",
     className: "max-lg:rounded-b-[2rem] lg:col-span-2 lg:rounded-br-[2rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
@@ -68,9 +73,11 @@ export default function FUIBentoGridDark() {
             title={product.title}
             description={product.description}
             graphic={
-              <div
-                className="absolute inset-0 transition duration-700 group-hover:scale-[1.04]"
-                style={{ background: product.graphic }}
+              <img
+                src={product.image}
+                alt={product.imageAlt}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
               />
             }
             className={product.className}

@@ -105,7 +105,7 @@ export const blogPostsPart4: BlogPost[] = [
 - Fake email looks like a real retailer.
 - You click a link and enter payment info on a spoofed checkout page.
 
-**With ShopSherpa Plus (coming Q3 2026):**
+**With ShopSherpa Plus (coming through early access):**
 - Phishing Shield flags spoofed domains before you open the email.
 - Clear warning: “Spoofed domain detected. Do not click any links.”
 

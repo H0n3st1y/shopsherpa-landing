@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | ShopSherpa",
+export const metadata: Metadata = pageMetadata({
+  title: "Privacy Policy",
   description:
     "ShopSherpa's privacy policy explains what data we collect, what stays on your device, and how we handle account, email, payment, and waitlist information.",
-};
+  path: "/privacy",
+});
 
 const SECTIONS = [
   {

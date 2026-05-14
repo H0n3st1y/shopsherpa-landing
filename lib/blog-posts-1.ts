@@ -34,7 +34,7 @@ A traditional chatbot mainly follows scripted responses, while an AI shopping as
 These tools range from marketplace-specific assistants to browser extensions that help protect and guide you across many sites.
 
 ### ShopSherpa
-Browser extension for Chrome, Firefox, and Safari focused on scam and fraud detection rather than just product discovery. Scans reviews in real time, flags fake sellers, and alerts you when a checkout domain looks wrong or suspicious. Quiet by default, surfacing warnings only when something appears off. Free tier is live now, and a Plus tier with Phishing Shield and masked cards is coming in Q3 2026.
+Browser extension for Chrome, Firefox, and Safari focused on scam and fraud detection rather than just product discovery. Scans reviews in real time, flags fake sellers, and alerts you when a checkout domain looks wrong or suspicious. Quiet by default, surfacing warnings only when something appears off. Free tier is live now, and a Plus tier with Phishing Shield and masked cards is coming in early access.
 
 ### Amazon Rufus
 AI-powered shopping assistant built into the Amazon app and website. Designed for more complex shopping queries such as “what do I need for camping in cold weather,” and synthesizes reviews and product details to answer questions directly.
@@ -356,7 +356,7 @@ Coverage depends on the tool. Marketplace-specific assistants like Rufus and Spa
 - Soft CTA
 - Position ShopSherpa as the next step for readers who want fraud protection alongside AI shopping convenience
 - Recap ShopSherpa's unique value: Catches scams before you pay, protects your inbox, keeps your card details private
-- Mention: Free tier live now (Chrome, Firefox, Safari); Plus tier launching Q3 2026 with phishing shield, password vault, masked cards
+- Mention: Free tier live now (Chrome, Firefox, Safari); Plus tier available in early access with phishing shield, password vault, masked cards
 - Include proof points: Installs in 60 seconds, no tracking, no subscription for free tier
 - CTA: [Join the waitlist](https://shopsherpa.org/#cta) to lock in $9.99 lifetime access before pricing changes
 
@@ -455,7 +455,7 @@ Mention that most require no manual setup after installation.
 Here are the top apps across deal-finding, AI assistance, and fraud protection. Include a comparison table after the listicle with columns: App Name | Best For | Free Tier | Browser/Mobile
 
 ### ShopSherpa
-Position first as the fraud-prevention pick. Cover real-time fake review scanning, seller verification, and wrong checkout domain alerts. Note it's free, works on Chrome/Firefox/Safari, and requires no setup. Mention Plus tier coming Q3 2026 with phishing shield and masked cards.
+Position first as the fraud-prevention pick. Cover real-time fake review scanning, seller verification, and wrong checkout domain alerts. Note it's free, works on Chrome/Firefox/Safari, and requires no setup. Mention Plus tier coming through early access with phishing shield and masked cards.
 
 ### Amazon Rufus
 Amazon's built-in AI shopping assistant. Helps with product discovery, answers questions about items, and compares products within Amazon. Note it's exclusive to Amazon's ecosystem.

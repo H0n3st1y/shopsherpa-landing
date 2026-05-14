@@ -3,11 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { ScrollFade } from "@/components/ScrollFade";
 import { SiteHeader } from "@/components/SiteHeader";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Team | ShopSherpa",
-  description: "Meet the people building ShopSherpa — the safety layer for online shopping.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Team",
+  description: "Meet the people building ShopSherpa, also searched as Shop Sherpa, the safety layer for online shopping.",
+  path: "/team",
+  keywords: ["ShopSherpa team", "Shop Sherpa team", "Anghelo Araujo Lazaro"],
+});
 
 export default function TeamPage() {
   return (

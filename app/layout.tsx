@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow, Barlow_Semi_Condensed, Lora, DM_Mono } from "next/font/google";
 import { SmoothHashLinks } from "@/components/SmoothHashLinks";
+import { siteName, siteUrl, spacedSiteName } from "@/lib/seo";
 import "./globals.css";
 
 /* Body text — Barlow Regular/Medium/SemiBold */
@@ -36,15 +37,12 @@ const mono = DM_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shopsherpa.org";
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-  // Keyword-rich title targeting "best browser extension" queries
   title: {
     default: "ShopSherpa — Browser Extension for Scam Detection & Phishing Protection",
-    template: "%s | ShopSherpa",
+    template: "%s",
   },
 
   // First 50 words follow the Direct Answer Box pattern for AI Overview eligibility
@@ -52,35 +50,24 @@ export const metadata: Metadata = {
     "ShopSherpa detects fake sellers, phishing emails, and fraudulent listings before you pay. It scans 1,800+ fraud patterns in 60 seconds — free browser extension, one-time $9.99 lifetime pre-order.",
 
   keywords: [
-    // High-intent from AEO report
-    "is this store legit",
-    "how to spot fake online store",
-    "best browser extension for fake reviews 2026",
-    "amazon redelivery fee scam email",
-    "how to spot fake puppy listing",
-    "ShopSherpa vs Fakespot",
-    "are TikTok shop sellers safe",
-    "how to report phishing site",
-    "online shopping safety checklist 2026",
-    "how to get money back from fake website",
-    // Core product terms
+    "ShopSherpa",
+    "Shop Sherpa",
+    "shopping scam protection",
+    "fake seller detection",
     "phishing protection browser extension",
-    "scam detection extension",
-    "fake review detector",
-    "masked credit card extension",
-    "online shopping security",
-    "fraud prevention tool",
-    "data breach alerts",
   ],
 
   authors: [{ name: "Anghelo Araujo Lazaro", url: `${siteUrl}/team` }],
+  alternates: {
+    canonical: siteUrl,
+  },
 
   openGraph: {
     title: "ShopSherpa — Stop Scams Before You Pay",
     description:
       "Detects phishing emails, flags fake sellers, and masks your card number. Free browser extension. One-time $9.99 lifetime pre-order.",
     url: siteUrl,
-    siteName: "ShopSherpa",
+    siteName,
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "ShopSherpa — Online Shopping Safety Layer" }],
   },
@@ -121,6 +108,7 @@ const jsonLd = {
       "@type": "SoftwareApplication",
       "@id": `${siteUrl}/#software`,
       "name": "ShopSherpa",
+      "alternateName": ["Shop Sherpa"],
       "url": siteUrl,
       "description":
         "ShopSherpa is a browser extension that detects phishing emails, flags fake sellers and fraudulent marketplace listings, and masks your credit card number so it is never exposed to untrusted merchants.",
@@ -141,6 +129,7 @@ const jsonLd = {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
       "name": "ShopSherpa",
+      "alternateName": [spacedSiteName],
       "url": siteUrl,
       "logo": {
         "@type": "ImageObject",
@@ -158,6 +147,20 @@ const jsonLd = {
       "sameAs": [
         "https://x.com/shop_sherpa",
       ],
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "name": siteName,
+      "alternateName": spacedSiteName,
+      "url": siteUrl,
+      "publisher": { "@id": `${siteUrl}/#organization` },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": `${siteUrl}/blog?query={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
     },
 
     {

@@ -139,7 +139,7 @@ export const blogPostsPart2: BlogPost[] = [
 - This is the CTA section.
 - Explain that curated discovery only works when you can trust what you find.
 - ShopSherpa runs in the background to scan for fake reviews, risky sellers, and wrong checkout domains—so you can shop curated surfaces with confidence.
-- Mention free tier (Chrome, Firefox, Safari), Plus tier coming Q3 2026 with phishing shield, password vault, and masked cards.
+- Mention free tier (Chrome, Firefox, Safari), Plus tier coming through early access with phishing shield, password vault, and masked cards.
 - End with: [Join the waitlist](https://shopsherpa.org/#cta)
 
 ## Frequently Asked Questions About Curated Product Discovery
@@ -471,7 +471,7 @@ Before entering payment details, confirm the checkout URL matches the expected s
 ### Step 5: Use masked payment details
 Protect your real card number by using a unique card number per store. Reduces blast radius if something goes wrong.
 
-Mention ShopSherpa naturally here—real-time review scanning, fake seller detection, and wrong checkout domain alerts run quietly in the background. Masked Cards (coming Q3 2026) generate a unique number per store.
+Mention ShopSherpa naturally here—real-time review scanning, fake seller detection, and wrong checkout domain alerts run quietly in the background. Masked Cards (coming through early access) generate a unique number per store.
 
 ---
 
@@ -902,7 +902,7 @@ Explain that readers should file a complaint with the FTC at ReportFraud.ftc.gov
 
 ### 4. Pay with a masked card on first time stores
 - Define masked cards briefly as unique card numbers per store that protect your real card if the seller is compromised.
-- Mention ShopSherpa Plus offers this feature, launching Q3 2026.
+- Mention ShopSherpa Plus offers this feature, available in early access.
 
 ---
 

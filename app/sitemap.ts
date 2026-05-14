@@ -1,8 +1,16 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog-posts";
+import { isoDateFromPostDate } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = process.env.NEXT_PUBLIC_SITE_URL || "https://shopsherpa.org";
   const now = new Date();
+  const blogUrls = blogPosts.map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: new Date(isoDateFromPostDate(post.date)),
+    changeFrequency: "monthly" as const,
+    priority: post.slug === "fake-sellers" ? 0.85 : 0.72,
+  }));
 
   return [
     // Core pages
@@ -14,11 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/lab`,            lastModified: now, changeFrequency: "monthly", priority: 0.75 },
     { url: `${base}/privacy`,        lastModified: now, changeFrequency: "monthly", priority: 0.5  },
     { url: `${base}/security`,       lastModified: now, changeFrequency: "monthly", priority: 0.5  },
-
-    // Landing page anchors — treated as separate signals
-    { url: `${base}/#how-it-works`,  changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/#pricing`,       changeFrequency: "weekly",  priority: 0.85 },
-    { url: `${base}/#roadmap`,       changeFrequency: "weekly",  priority: 0.6  },
-    { url: `${base}/#cta`,           changeFrequency: "weekly",  priority: 0.75 },
+    ...blogUrls,
   ];
 }

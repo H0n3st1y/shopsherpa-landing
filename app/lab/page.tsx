@@ -4,12 +4,15 @@ import { ScrollFade } from "@/components/ScrollFade";
 import { SherpaWorkflowDemo } from "@/components/SherpaWorkflowDemo";
 import { SiteHeader } from "@/components/SiteHeader";
 import FUIBentoGridDark from "@/components/ui/bento";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "ShopSherpa Lab | One-Click Business Agents",
   description:
-    "ShopSherpa Lab builds one-click agents for business workflows, starting with Sherpa: an internet research agent that finds the best deals and drafts them into a spreadsheet.",
-};
+    "ShopSherpa Lab, also written Shop Sherpa Lab, builds one-click agents for business workflows, starting with Sherpa: an internet research agent for deal research.",
+  path: "/lab",
+  keywords: ["ShopSherpa Lab", "Shop Sherpa Lab", "one-click business agents", "Sherpa research agent"],
+});
 
 const USE_CASES = [
   "Office supplies and equipment buying",

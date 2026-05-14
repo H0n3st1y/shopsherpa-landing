@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Plus Pre-Order Confirmed | ShopSherpa",
+export const metadata: Metadata = pageMetadata({
+  title: "Plus Pre-Order Confirmed",
   description:
     "Your ShopSherpa Plus lifetime pre-order is confirmed. Beta access opens in 2026 with phishing protection, masked cards, and priority support.",
-};
+  path: "/success",
+});
 
 export default function SuccessPage() {
   return (

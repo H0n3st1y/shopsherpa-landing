@@ -1,12 +1,38 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/lib/blog-posts";
+import { absoluteUrl, pageMetadata, siteUrl } from "@/lib/seo";
 import { SiteHeader } from "@/components/SiteHeader";
 
-export const metadata: Metadata = {
-  title: "Shopping Guides | ShopSherpa",
-  description:
-    "Guides on AI shopping tools, scam protection, price comparison, and smarter online buying. Updated weekly by the ShopSherpa team.",
+const pageDescription =
+  "Read ShopSherpa guides on fake sellers, phishing emails, fake reviews, safer marketplaces, AI shopping tools, and smarter online buying decisions.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Shopping Guides",
+  description: pageDescription,
+  path: "/blog",
+  keywords: ["ShopSherpa guides", "Shop Sherpa guides", "online shopping safety guides", "fake seller guide"],
+});
+
+const blogJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": `${siteUrl}/blog#blog`,
+  "name": "ShopSherpa Shopping Guides",
+  "alternateName": "Shop Sherpa Shopping Guides",
+  "url": `${siteUrl}/blog`,
+  "description": pageDescription,
+  "publisher": { "@id": `${siteUrl}/#organization` },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": blogPosts.map((post, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": absoluteUrl(`/blog/${post.slug}`),
+      "name": post.title,
+    })),
+  },
 };
 
 const TAG_COLORS: Record<string, string> = {
@@ -26,6 +52,10 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
 
       <SiteHeader active="blog" cta="home" />
 
@@ -139,9 +169,11 @@ function ArticleCard({
       className="group bg-white rounded-2xl border border-[#2e6273]/10 h-full flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_24px_-4px_rgba(46,98,115,0.12)] transition-[transform,box-shadow] duration-200"
     >
       <div className="relative overflow-hidden bg-[#F4F0E8]">
-        <img
-          src={post.thumbnail}
-          alt={post.thumbnailAlt}
+        <Image
+          src={post.thumbnail ?? "/og-image.png"}
+          alt={post.thumbnailAlt ?? post.title}
+          width={1200}
+          height={750}
           loading="lazy"
           className="image-lift aspect-[16/10] w-full object-cover"
         />

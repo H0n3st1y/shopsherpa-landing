@@ -275,9 +275,9 @@ export function CinematicHero({
         <h1 className="text-track gsap-reveal cinematic-heading text-5xl md:text-7xl lg:text-[6rem] font-semibold mb-1">
           {tagline1}
         </h1>
-        <h1 className="text-days gsap-reveal cinematic-heading-muted text-5xl md:text-7xl lg:text-[6rem] font-semibold">
+        <div className="text-days gsap-reveal cinematic-heading-muted text-5xl md:text-7xl lg:text-[6rem] font-semibold" aria-hidden="false">
           {tagline2}
-        </h1>
+        </div>
       </div>
 
       {/* CTA — appears at the end of the scroll sequence */}

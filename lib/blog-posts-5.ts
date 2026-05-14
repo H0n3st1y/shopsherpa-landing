@@ -320,7 +320,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 - Explain that comparing prices is only smart if you're buying from a legitimate seller
 - Use a **Without ShopSherpa** vs **With ShopSherpa** side-by-side format
 - Describe free tier features: real-time review scanning, fake seller detection, wrong checkout domain alerts
-- Mention Plus tier (Q3 2026): phishing shield, password vault, masked cards
+- Mention Plus tier (early access): phishing shield, password vault, masked cards
 - CTA: Join the waitlist at https://shopsherpa.org/#cta
 
 ## Frequently asked questions about retail price comparison
@@ -514,7 +514,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 | Masked card numbers | — | ✓ |
 | Mobile app | — | ✓ |
 
-- Note: ShopSherpa's free tier is live now; Plus tier launches Q3 2026.
+- Note: ShopSherpa's free tier is live now; Plus tier opens in early access.
 
 ---
 
@@ -849,7 +849,7 @@ Use a comparison table to show what’s included in each tier.
 | Mobile app (iOS/Android) | — | ✓ |
 
 ## What's Inside ShopSherpa Plus
-Open with one sentence introducing Plus as the full shield, launching Q3 2026. Then break into the three core features below.
+Open with one sentence introducing Plus as the full shield, available in early access. Then break into the three core features below.
 
 ### Phishing Shield for Gmail and Outlook
 Explain that it reads your inbox to flag fake emails before you open them and detects spoofed domains and fake tracking notifications.
@@ -866,7 +866,7 @@ Explain that it generates a unique card number per merchant so if one store is c
 Explain that the Free tier is live now on all three browsers with one-click install from each browser’s extension store.
 
 ### iOS and Android app
-Explain that the mobile app launches with Plus tier in Q3 2026 and extends protection beyond desktop browsing.
+Explain that the mobile app launches with Plus tier in early access and extends protection beyond desktop browsing.
 
 ## The Lifetime Pre-Order Offer
 Explain the early adopter deal: pay once, yours forever. Mention that limited spots are available at the lower price point, pricing increases to a monthly subscription at launch, and include a CTA to lock in the lifetime rate.
@@ -890,7 +890,7 @@ Use this as the closing CTA section. Reinforce the core value: browse, check out
 **Answer:** No, ShopSherpa operates without tracking your browsing activity and never sells your data.
 
 ### When does ShopSherpa Plus launch?
-**Answer:** ShopSherpa Plus launches in Q3 2026 with Phishing Shield, Password Vault, Masked Cards, and mobile apps for iOS and Android.
+**Answer:** ShopSherpa Plus launches in early access with Phishing Shield, Password Vault, Masked Cards, and mobile apps for iOS and Android.
 
 ### How is ShopSherpa different from Fakespot or Norton?
 **Answer:** ShopSherpa combines review scanning, seller detection, phishing protection, and payment masking in one tool built specifically for online shopping safety rather than general antivirus or review analysis.

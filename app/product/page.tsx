@@ -5,16 +5,46 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { CinematicHero } from "@/components/ui/cinematic-landing-hero";
+import { pageMetadata, siteUrl } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "MiniUAV Guardian | ShopSherpa",
-  description:
-    "An autonomous security quadrotor designed for indoor patrol. ESP32-powered, PIR motion detection, real-time Wi-Fi logging.",
-};
+const pageDescription =
+  "MiniUAV Guardian is an autonomous indoor security quadrotor from ShopSherpa Lab with ESP32 controls, PIR motion detection, and real-time Wi-Fi logging.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "MiniUAV Guardian",
+  description: pageDescription,
+  path: "/product",
+  image: "/pcb-model.svg",
+  imageAlt: "MiniUAV Guardian PCB and security quadrotor prototype",
+  keywords: ["MiniUAV Guardian", "ShopSherpa Lab", "Shop Sherpa Lab", "autonomous security quadrotor"],
+});
 
 export default function ProductPage() {
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${siteUrl}/product#product`,
+    "name": "MiniUAV Guardian",
+    "description": pageDescription,
+    "brand": { "@id": `${siteUrl}/#organization` },
+    "category": "Autonomous security hardware",
+    "image": `${siteUrl}/pcb-model.svg`,
+    "offers": {
+      "@type": "Offer",
+      "url": `${siteUrl}/product`,
+      "price": "9.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/PreOrder",
+      "itemCondition": "https://schema.org/NewCondition",
+    },
+  };
+
   return (
     <main className="min-h-screen bg-[#000] text-white antialiased overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
 
       <SiteHeader active="product" variant="dark" cta="access" />
 
@@ -49,12 +79,12 @@ export default function ProductPage() {
           <p className="text-xs uppercase tracking-[0.2em] text-[#1d9e75] mb-6 font-mono">MiniUAV Guardian</p>
         </ScrollFade>
         <ScrollFade delay={100}>
-          <h1 className="text-5xl sm:text-7xl md:text-[6rem] lg:text-[7rem] font-semibold tracking-tighter leading-[0.95] max-w-5xl mb-8">
+          <h2 className="text-5xl sm:text-7xl md:text-[6rem] lg:text-[7rem] font-semibold tracking-tighter leading-[0.95] max-w-5xl mb-8">
             Security from<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2e6273] via-[#1d9e75] to-[#2e6273]">
               a new angle.
             </span>
-          </h1>
+          </h2>
         </ScrollFade>
         <ScrollFade delay={200}>
           <p className="text-white/55 text-lg md:text-xl max-w-xl leading-relaxed mb-12">

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Security | ShopSherpa",
+export const metadata: Metadata = pageMetadata({
+  title: "Security",
   description:
     "ShopSherpa's security page explains the product's safety principles, planned controls for Plus features, vulnerability reporting, and responsible disclosure process.",
-};
+  path: "/security",
+});
 
 const PRINCIPLES = [
   {
