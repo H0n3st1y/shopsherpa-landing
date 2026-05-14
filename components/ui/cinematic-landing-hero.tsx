@@ -145,6 +145,29 @@ const INJECTED_STYLES = `
   }
   .btn-sherpa-teal:active { transform: translateY(0); }
 
+  .cinematic-stage {
+    min-height: 100svh;
+  }
+
+  @media (max-width: 767px) {
+    .cinematic-card-layout {
+      justify-content: center;
+      gap: clamp(0.75rem, 2.5vh, 1.35rem);
+      padding-top: clamp(1.25rem, 5vh, 2rem);
+      padding-bottom: clamp(1.25rem, 5vh, 2rem);
+    }
+
+    .cinematic-phone-wrap {
+      height: min(43vh, 330px);
+      min-height: 260px;
+    }
+
+    .cinematic-card-copy {
+      max-width: 18rem;
+      margin-inline: auto;
+    }
+  }
+
   .progress-ring {
     transform: rotate(-90deg);
     transform-origin: center;
@@ -262,7 +285,7 @@ export function CinematicHero({
   return (
     <div
       ref={containerRef}
-      className={cn("relative w-screen h-screen overflow-hidden flex items-center justify-center bg-[#FAF8F4]", className)}
+      className={cn("cinematic-stage relative w-screen h-screen overflow-hidden flex items-center justify-center bg-[#FAF8F4]", className)}
       style={{ perspective: "1500px" }}
       {...props}
     >
@@ -313,7 +336,7 @@ export function CinematicHero({
         >
           <div className="card-sheen-sherpa" aria-hidden="true" />
 
-          <div className="relative w-full h-full max-w-7xl mx-auto px-4 lg:px-12 flex flex-col justify-evenly lg:grid lg:grid-cols-3 items-center lg:gap-8 z-10 py-6 lg:py-0">
+          <div className="cinematic-card-layout relative w-full h-full max-w-7xl mx-auto px-4 lg:px-12 flex flex-col justify-evenly lg:grid lg:grid-cols-3 items-center lg:gap-8 z-10 py-6 lg:py-0">
 
             {/* Brand — top mobile / right desktop */}
             <div className="card-right-text gsap-reveal order-1 lg:order-3 flex justify-center lg:justify-end z-20 w-full">
@@ -326,7 +349,7 @@ export function CinematicHero({
             </div>
 
             {/* iPhone mockup — center */}
-            <div className="mockup-scroll-wrapper order-2 lg:order-2 relative w-full h-[380px] lg:h-[600px] flex items-center justify-center z-10" style={{ perspective: "1000px" }}>
+            <div className="mockup-scroll-wrapper cinematic-phone-wrap order-2 lg:order-2 relative w-full h-[380px] lg:h-[600px] flex items-center justify-center z-10" style={{ perspective: "1000px" }}>
               <div className="relative w-full h-full flex items-center justify-center transform scale-[0.65] md:scale-[0.85] lg:scale-100">
                 <div
                   ref={mockupRef}
@@ -434,7 +457,7 @@ export function CinematicHero({
             </div>
 
             {/* Description — bottom mobile / left desktop */}
-            <div className="card-left-text gsap-reveal order-3 lg:order-1 flex flex-col justify-center text-center lg:text-left z-20 w-full px-4 lg:px-0">
+            <div className="card-left-text cinematic-card-copy gsap-reveal order-3 lg:order-1 flex flex-col justify-center text-center lg:text-left z-20 w-full px-4 lg:px-0">
               <h3 className="card-heading-plain text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 lg:mb-5">
                 {cardHeading}
               </h3>

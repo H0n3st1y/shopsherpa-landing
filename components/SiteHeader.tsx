@@ -4,7 +4,7 @@ import { PreorderButton } from "@/components/PreorderButton";
 import { ThemeToggle } from "@/components/ui/curtain-theme-toggle";
 
 type HeaderVariant = "light" | "dark";
-type ActivePage = "home" | "compare" | "lab" | "team" | "blog" | "product";
+type ActivePage = "home" | "compare" | "lab" | "team" | "blog" | "product" | "aeo";
 
 export function SiteHeader({
   active = "home",
@@ -49,6 +49,9 @@ export function SiteHeader({
           </NavLink>
           <NavLink href="/blog" active={active === "blog"} className={`${active === "blog" ? activeText : hoverText}`}>
             Blog
+          </NavLink>
+          <NavLink href="/aeo" active={active === "aeo"} className={`${active === "aeo" ? activeText : hoverText}`}>
+            AEO
           </NavLink>
           <NavLink href="/product" active={active === "product"} className={`${active === "product" ? activeText : hoverText}`}>
             MiniUAV

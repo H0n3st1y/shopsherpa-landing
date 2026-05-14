@@ -69,7 +69,7 @@ export default function ProductPage() {
       </div>
 
       {/* ─── HERO ─── */}
-      <section className="relative flex flex-col items-center justify-center min-h-[95vh] px-6 text-center overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center min-h-[78vh] px-6 py-28 text-center overflow-hidden">
         {/* WebGL wave shader — fills the hero */}
         <WebGLShader className="absolute inset-0 w-full h-full block opacity-40" />
         {/* Dark overlay so text stays readable */}
@@ -108,52 +108,6 @@ export default function ProductPage() {
             >
               View specs
             </a>
-          </div>
-        </ScrollFade>
-
-        {/* PCB model */}
-        <ScrollFade delay={400}>
-          <div className="mt-20 relative">
-            <div className="w-[320px] md:w-[520px] rounded-3xl bg-gradient-to-b from-[#1a2a35] to-[#0d1f2d] border border-white/10 p-4 shadow-[0_0_120px_rgba(46,98,115,0.25)]">
-              <img
-                src="/pcb-model.svg"
-                alt="MiniUAV Guardian printed circuit board model with ESP32 controls and sensor routing"
-                className="w-full rounded-2xl border border-white/10"
-              />
-              {/* Drone wireframe SVG */}
-              <svg viewBox="0 0 200 160" className="absolute left-1/2 top-1/2 w-44 md:w-60 -translate-x-1/2 -translate-y-1/2 text-[#d8efe5] drop-shadow-[0_0_22px_rgba(29,158,117,.55)]" fill="none" stroke="currentColor" strokeWidth="1.5">
-                {/* Body */}
-                <rect x="75" y="65" width="50" height="35" rx="8" fill="#1d9e75" fillOpacity="0.15" stroke="#1d9e75" strokeWidth="1.5" />
-                {/* Arms */}
-                <line x1="75" y1="72" x2="30" y2="45" strokeOpacity="0.6" />
-                <line x1="125" y1="72" x2="170" y2="45" strokeOpacity="0.6" />
-                <line x1="75" y1="93" x2="30" y2="118" strokeOpacity="0.6" />
-                <line x1="125" y1="93" x2="170" y2="118" strokeOpacity="0.6" />
-                {/* Rotors */}
-                <ellipse cx="30" cy="45" rx="22" ry="6" strokeOpacity="0.5" />
-                <ellipse cx="170" cy="45" rx="22" ry="6" strokeOpacity="0.5" />
-                <ellipse cx="30" cy="118" rx="22" ry="6" strokeOpacity="0.5" />
-                <ellipse cx="170" cy="118" rx="22" ry="6" strokeOpacity="0.5" />
-                {/* Motor hubs */}
-                <circle cx="30" cy="45" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                <circle cx="170" cy="45" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                <circle cx="30" cy="118" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                <circle cx="170" cy="118" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                {/* Camera / PIR sensor */}
-                <circle cx="100" cy="90" r="5" fill="#2e6273" stroke="#2e6273" strokeWidth="1" />
-                {/* PCB grid inside body */}
-                <line x1="83" y1="75" x2="83" y2="92" strokeOpacity="0.3" strokeWidth="0.8" />
-                <line x1="91" y1="75" x2="91" y2="92" strokeOpacity="0.3" strokeWidth="0.8" />
-                <line x1="109" y1="75" x2="109" y2="92" strokeOpacity="0.3" strokeWidth="0.8" />
-                <line x1="117" y1="75" x2="117" y2="92" strokeOpacity="0.3" strokeWidth="0.8" />
-              </svg>
-              <p className="text-xs font-mono text-white/70 mt-4">PCB model · flight controller prototype</p>
-              <div className="absolute -top-2 -right-2 bg-[#1d9e75] text-white text-[10px] font-mono px-2 py-1 rounded-lg">
-                In development
-              </div>
-            </div>
-            {/* Ground shadow */}
-            <div aria-hidden className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 h-6 bg-[#2e6273]/20 blur-xl rounded-full" />
           </div>
         </ScrollFade>
 
