@@ -188,7 +188,7 @@ export default function TeamPage() {
             <Link href="/lab" className="hover:text-white transition">Lab</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>
             <Link href="/product" className="hover:text-white transition">MiniUAV</Link>
-            <a href="https://twitter.com/shopsherpa" className="hover:text-white transition">Twitter</a>
+            <a href="https://x.com/shop_sherpa" className="hover:text-white transition">X</a>
           </div>
           <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
         </div>

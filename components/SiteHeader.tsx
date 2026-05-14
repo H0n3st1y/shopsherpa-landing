@@ -4,7 +4,7 @@ import { PreorderButton } from "@/components/PreorderButton";
 import { ThemeToggle } from "@/components/ui/curtain-theme-toggle";
 
 type HeaderVariant = "light" | "dark";
-type ActivePage = "home" | "lab" | "team" | "blog" | "product";
+type ActivePage = "home" | "compare" | "lab" | "team" | "blog" | "product";
 
 export function SiteHeader({
   active = "home",
@@ -32,7 +32,7 @@ export function SiteHeader({
           <NavLink href="/#how-it-works" active={active === "home"} className={`${active === "home" ? activeText : hoverText}`}>
             How it works
           </NavLink>
-          <NavLink href="/compare" className={hoverText}>
+          <NavLink href="/compare" active={active === "compare"} className={`${active === "compare" ? activeText : hoverText}`}>
             Compare
           </NavLink>
           <NavLink href="/#pricing" className={hoverText}>
@@ -111,7 +111,7 @@ function HeaderCta({ cta, dark }: { cta: "preorder" | "access" | "waitlist" | "h
         href="/#cta"
         className={`px-4 py-2 rounded-full text-sm font-medium transition active:scale-[0.98] ${dark ? "bg-white text-[#0d1f2d] hover:bg-[#F4F0E8]" : "bg-[#1a1a1a] text-white hover:bg-[#2e6273]"}`}
       >
-        Join waitlist
+        Join free waitlist
       </Link>
     );
   }

@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Plus Pre-Order Confirmed | ShopSherpa",
+  description:
+    "Your ShopSherpa Plus lifetime pre-order is confirmed. Beta access opens in 2026 with phishing protection, masked cards, and priority support.",
+};
+
 export default function SuccessPage() {
   return (
     <main className="min-h-screen flex items-center justify-center px-6">

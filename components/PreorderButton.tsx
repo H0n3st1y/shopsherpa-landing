@@ -40,7 +40,7 @@ export function PreorderButton({
       disabled={loading}
       className={`rounded-full font-medium transition-[transform,background-color] duration-150 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap ${sizeClasses} ${colorClasses}`}
     >
-      {loading ? "Redirecting..." : "Pre-order for $9.99"}
+      {loading ? "Redirecting..." : "Pre-order Plus"}
     </button>
   );
 }

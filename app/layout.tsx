@@ -156,7 +156,7 @@ const jsonLd = {
       },
       "founder": { "@id": `${siteUrl}/#founder` },
       "sameAs": [
-        "https://twitter.com/shopsherpa",
+        "https://x.com/shop_sherpa",
       ],
     },
 

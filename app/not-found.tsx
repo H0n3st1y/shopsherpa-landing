@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Page Not Found | ShopSherpa",
+  description:
+    "The ShopSherpa page you requested could not be found. Return to the homepage for scam protection, pricing, guides, and product information.",
+};
+
 export default function NotFound() {
   return (
     <main className="min-h-screen flex items-center justify-center px-6">

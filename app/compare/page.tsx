@@ -4,26 +4,64 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { PreorderButton } from "@/components/PreorderButton";
 
 export const metadata: Metadata = {
-  title: "Compare Free vs Plus | ShopSherpa",
+  title: {
+    absolute: "Compare Free vs Plus | ShopSherpa",
+  },
   description:
     "Compare the ShopSherpa free browser extension with ShopSherpa Plus, including phishing protection, password alerts, masked cards, pricing, and launch timing.",
 };
 
 const FEATURES = [
-  ["Real-time review scanning", true, true],
-  ["Fake seller detection", true, true],
-  ["Wrong checkout domain alerts", true, true],
-  ["Chrome, Firefox, Safari support", true, true],
-  ["Phishing Shield for Gmail and Outlook", false, true],
-  ["Password Vault with breach alerts", false, true],
-  ["One masked card number per store", false, true],
-  ["Priority support", false, true],
+  ["Real-time review scanning", "Flags suspicious review patterns before you trust the rating.", true, true],
+  ["Fake seller detection", "Checks seller age, profile signals, marketplace behavior, and known fraud patterns.", true, true],
+  ["Wrong checkout domain alerts", "Warns when checkout moves to a suspicious or mismatched domain.", true, true],
+  ["Chrome, Firefox, Safari support", "Works across the browsers ShopSherpa plans to support at launch.", true, true],
+  ["Phishing Shield for Gmail and Outlook", "Scans shopping-related emails for fake delivery notices and spoofed brands.", false, true],
+  ["Password Vault with breach alerts", "Stores account credentials and warns when reused or exposed passwords create risk.", false, true],
+  ["One masked card number per store", "Keeps your real card number away from unfamiliar merchants.", false, true],
+  ["Priority support", "Gets faster help when a purchase, email, or seller looks risky.", false, true],
+] as const;
+
+const USE_CASES = [
+  {
+    tier: "Free extension",
+    title: "Best for everyday shopping checks",
+    copy:
+      "Use Free when you mainly want help on product pages: fake reviews, bad seller signals, and checkout-domain warnings while you shop normally.",
+  },
+  {
+    tier: "ShopSherpa Plus",
+    title: "Best for account and payment protection",
+    copy:
+      "Use Plus when you want the extra layers around shopping emails, passwords, masked cards, and faster support after something suspicious happens.",
+  },
+  {
+    tier: "Private beta",
+    title: "Best path before launch",
+    copy:
+      "Join the free waitlist if you want access as the extension opens. Pre-order Plus if you want the lifetime launch bundle locked in early.",
+  },
+];
+
+const FAQS = [
+  [
+    "Is the free tier actually free?",
+    "Yes. The free extension is meant to cover the core shopping-page protection: review scanning, seller checks, checkout-domain alerts, and browser support.",
+  ],
+  [
+    "Why does Plus cost money?",
+    "Plus adds higher-cost protection layers like email scanning, breach alerts, masked cards, and priority support. The lifetime pre-order is $9.99 before the monthly launch price.",
+  ],
+  [
+    "Can I start free and upgrade later?",
+    "Yes. The cleanest path is to join the free waitlist first, then pre-order Plus if the email, password, and card protection matters to you.",
+  ],
 ] as const;
 
 export default function ComparePage() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
-      <SiteHeader active="home" cta="preorder" />
+      <SiteHeader active="compare" cta="preorder" />
 
       <section className="px-6 md:px-8 pt-20 pb-16 border-b border-[#2e6273]/10">
         <div className="max-w-6xl mx-auto">
@@ -40,20 +78,23 @@ export default function ComparePage() {
       <section className="px-6 md:px-8 py-16 md:py-24">
         <div className="max-w-6xl mx-auto">
           <div className="overflow-hidden rounded-2xl border border-[#2e6273]/10 bg-white shadow-[var(--shadow-soft)]">
-            <div className="grid grid-cols-[1.3fr_0.8fr_0.9fr] bg-[#F4F0E8] px-5 py-4 text-xs uppercase tracking-wider text-[#1a1a1a]/50 font-mono">
+            <div className="grid grid-cols-[1.35fr_1.25fr_0.65fr_0.7fr] bg-[#F4F0E8] px-5 py-4 text-xs uppercase tracking-wider text-[#1a1a1a]/50 font-mono max-md:hidden">
               <span>Feature</span>
+              <span>What it does</span>
               <span>Free extension</span>
               <span>ShopSherpa Plus</span>
             </div>
-            {FEATURES.map(([feature, free, plus]) => (
-              <div key={feature} className="grid grid-cols-[1.3fr_0.8fr_0.9fr] items-center border-t border-[#2e6273]/10 px-5 py-4 text-sm">
-                <span className="font-medium">{feature}</span>
-                <PlanMark included={free} />
-                <PlanMark included={plus} />
+            {FEATURES.map(([feature, detail, free, plus]) => (
+              <div key={feature} className="grid gap-3 md:grid-cols-[1.35fr_1.25fr_0.65fr_0.7fr] md:items-center border-t border-[#2e6273]/10 px-5 py-4 text-sm">
+                <span className="font-medium text-[#1a1a1a]">{feature}</span>
+                <span className="text-[#1a1a1a]/58 leading-relaxed">{detail}</span>
+                <PlanMark label="Free" included={free} />
+                <PlanMark label="Plus" included={plus} />
               </div>
             ))}
-            <div className="grid grid-cols-[1.3fr_0.8fr_0.9fr] items-center border-t border-[#2e6273]/10 px-5 py-4 text-sm">
+            <div className="grid gap-3 md:grid-cols-[1.35fr_1.25fr_0.65fr_0.7fr] md:items-center border-t border-[#2e6273]/10 px-5 py-4 text-sm">
               <span className="font-medium">Cost</span>
+              <span className="text-[#1a1a1a]/58">Simple pricing before Q3 2026 launch.</span>
               <span>Free</span>
               <span>$9.99 lifetime pre-order</span>
             </div>
@@ -84,13 +125,46 @@ export default function ComparePage() {
           </div>
         </div>
       </section>
+
+      <section className="bg-white border-y border-[#2e6273]/10 px-6 md:px-8 py-16 md:py-24">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">Which plan fits?</p>
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tighter leading-[1] mb-10 max-w-2xl">
+            Choose by the risk you want covered.
+          </h2>
+          <div className="grid md:grid-cols-3 gap-5">
+            {USE_CASES.map((item) => (
+              <div key={item.title} className="rounded-2xl border border-[#2e6273]/10 bg-[#FAF8F4] p-6">
+                <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-3 font-mono">{item.tier}</p>
+                <h3 className="text-2xl font-medium tracking-tight mb-3">{item.title}</h3>
+                <p className="text-sm leading-6 text-[#1a1a1a]/62">{item.copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 md:px-8 py-16 md:py-24">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">Plan FAQ</p>
+          <div className="divide-y divide-[#2e6273]/10 rounded-2xl border border-[#2e6273]/10 bg-white">
+            {FAQS.map(([question, answer]) => (
+              <div key={question} className="p-6 md:p-7">
+                <h2 className="text-xl font-medium tracking-tight mb-2">{question}</h2>
+                <p className="text-[#1a1a1a]/62 leading-relaxed">{answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
 
-function PlanMark({ included }: { included: boolean }) {
+function PlanMark({ label, included }: { label: string; included: boolean }) {
   return (
     <span className={included ? "text-[#1d9e75] font-medium" : "text-[#1a1a1a]/35"}>
+      <span className="md:hidden text-[#1a1a1a]/45">{label}: </span>
       {included ? "Included" : "Not included"}
     </span>
   );
