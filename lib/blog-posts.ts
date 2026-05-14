@@ -3,6 +3,7 @@ import { blogPostsPart2 } from "./blog-posts-2";
 import { blogPostsPart3 } from "./blog-posts-3";
 import { blogPostsPart4 } from "./blog-posts-4";
 import { blogPostsPart5 } from "./blog-posts-5";
+import { blogPostsPart6 } from "./blog-posts-6";
 
 export type BlogPost = {
   slug: string;
@@ -16,6 +17,7 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  ...blogPostsPart6,
   ...blogPostsPart1,
   ...blogPostsPart2,
   ...blogPostsPart3,
