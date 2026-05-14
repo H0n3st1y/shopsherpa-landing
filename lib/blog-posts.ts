@@ -23,8 +23,29 @@ export const blogPosts: BlogPost[] = [
   ...blogPostsPart3,
   ...blogPostsPart4,
   ...blogPostsPart5,
-];
+].filter(isPublishReady);
 
 export function getPost(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
+}
+
+function isPublishReady(post: BlogPost): boolean {
+  const draftPatterns = [
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Notes:?/im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Define /im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Explain /im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Mention /im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Use (?:a |bullet|this|numbered)/im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Cover /im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Introduce /im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Open with /im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Brief intro/im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Set the scene/im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?Conclusion section/im,
+    /^\s*(?:[-*]\s*)?(?:\*\*)?CTA section/im,
+    /\*[^*]*(?:Define|Explain|Mention|Use this section|Keep this section|Conclusion)[^*]*\*/i,
+    /preview:\s*"Define /i,
+  ];
+
+  return !draftPatterns.some((pattern) => pattern.test(post.content) || pattern.test(post.preview));
 }

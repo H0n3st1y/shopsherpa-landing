@@ -272,7 +272,7 @@ export default function Page() {
                 title="For everyday shopping"
                 price="Free"
                 note="No credit card for the free tier"
-                cta="Get free protection"
+                cta="Join free waitlist"
                 href="#cta"
                 features={[
                   "Real-time review scanning",

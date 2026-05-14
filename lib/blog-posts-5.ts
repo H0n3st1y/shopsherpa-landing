@@ -377,7 +377,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
     keyword: "shopping assistant features",
     tag: "Shopping Tools",
     read: "6 min read",
-    date: "May 15, 2026",
+    date: "May 14, 2026",
     preview: "",
     content: `# 11 Shopping Assistant Features That Actually Change How You Shop
 
@@ -583,7 +583,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
     keyword: "shopping deal apps",
     tag: "Price Tracking",
     read: "7 min read",
-    date: "May 16, 2026",
+    date: "May 14, 2026",
     preview: "",
     content: `# 15 Best Shopping Deal Apps to Save Money in 2026
 *Include “Best shopping apps” in the title and use related terms naturally throughout, including “discount shopping apps.”*
@@ -792,7 +792,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
     keyword: "What is ShopSherpa>?",
     tag: "Shopping Guide",
     read: "5 min read",
-    date: "May 17, 2026",
+    date: "May 14, 2026",
     preview: "Define ShopSherpa as a browser-based shopping safety shield that scans stores for fake reviews, bad sellers, and suspicious checkout domains. Focus on answering the primary qu...",
     content: `# ShopSherpa at a Glance
 
