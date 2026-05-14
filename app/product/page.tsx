@@ -32,6 +32,12 @@ export default function ProductPage() {
         ctaDescription="MiniUAV Guardian is in active development. Request early access and be first to know when we ship."
       />
 
+      <div className="relative h-28 overflow-hidden bg-black">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#1d9e75]/70 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(29,158,117,.18),transparent_56%)]" />
+        <div className="absolute left-1/2 top-1/2 h-16 w-[min(760px,80vw)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-white/[0.03] blur-sm" />
+      </div>
+
       {/* ─── HERO ─── */}
       <section className="relative flex flex-col items-center justify-center min-h-[95vh] px-6 text-center overflow-hidden">
         {/* WebGL wave shader — fills the hero */}
@@ -75,12 +81,17 @@ export default function ProductPage() {
           </div>
         </ScrollFade>
 
-        {/* 3D render placeholder */}
+        {/* PCB model */}
         <ScrollFade delay={400}>
           <div className="mt-20 relative">
-            <div className="w-[320px] h-[320px] md:w-[480px] md:h-[480px] rounded-3xl bg-gradient-to-b from-[#1a2a35] to-[#0d1f2d] border border-white/10 flex flex-col items-center justify-center shadow-[0_0_120px_rgba(46,98,115,0.25)]">
+            <div className="w-[320px] md:w-[520px] rounded-3xl bg-gradient-to-b from-[#1a2a35] to-[#0d1f2d] border border-white/10 p-4 shadow-[0_0_120px_rgba(46,98,115,0.25)]">
+              <img
+                src="/pcb-model.svg"
+                alt="MiniUAV Guardian printed circuit board model with ESP32 controls and sensor routing"
+                className="w-full rounded-2xl border border-white/10"
+              />
               {/* Drone wireframe SVG */}
-              <svg viewBox="0 0 200 160" className="w-48 md:w-64 text-[#2e6273]" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <svg viewBox="0 0 200 160" className="absolute left-1/2 top-1/2 w-44 md:w-60 -translate-x-1/2 -translate-y-1/2 text-[#d8efe5] drop-shadow-[0_0_22px_rgba(29,158,117,.55)]" fill="none" stroke="currentColor" strokeWidth="1.5">
                 {/* Body */}
                 <rect x="75" y="65" width="50" height="35" rx="8" fill="#1d9e75" fillOpacity="0.15" stroke="#1d9e75" strokeWidth="1.5" />
                 {/* Arms */}
@@ -106,7 +117,7 @@ export default function ProductPage() {
                 <line x1="109" y1="75" x2="109" y2="92" strokeOpacity="0.3" strokeWidth="0.8" />
                 <line x1="117" y1="75" x2="117" y2="92" strokeOpacity="0.3" strokeWidth="0.8" />
               </svg>
-              <p className="text-xs font-mono text-white/30 mt-6">3D render · WIP</p>
+              <p className="text-xs font-mono text-white/70 mt-4">PCB model · flight controller prototype</p>
               <div className="absolute -top-2 -right-2 bg-[#1d9e75] text-white text-[10px] font-mono px-2 py-1 rounded-lg">
                 In development
               </div>

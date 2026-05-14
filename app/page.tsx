@@ -25,7 +25,7 @@ export default function Page() {
           <ScrollFade>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2e6273]/15 bg-white text-xs font-mono text-[#2e6273] mb-8">
               <span className="size-1.5 rounded-full bg-[#1d9e75] pulse-dot" />
-              Private beta · Q3 2026 launch
+              Open-source install · early access
             </div>
           </ScrollFade>
 
@@ -58,7 +58,7 @@ export default function Page() {
             <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-readable">
               <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
               <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
-              <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />Public launch Q3 2026</div>
+              <a href="https://github.com/H0n3st1y/shopsherpa-landing" className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5 hover:border-[#1d9e75]/40 transition"><CheckIcon />Install from GitHub</a>
             </div>
           </ScrollFade>
           </div>
@@ -72,10 +72,12 @@ export default function Page() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f2d]/78 via-[#0d1f2d]/18 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7 text-white">
-                <p className="type-caption font-mono uppercase text-[#1d9e75] mb-2">Live shopping shield</p>
-                <p className="text-2xl md:text-3xl font-medium tracking-tight leading-tight max-w-sm">
-                  Review patterns, seller signals, and checkout domains in one calm alert.
-                </p>
+                <div className="live-shield-bubble max-w-sm">
+                  <p className="type-caption font-mono uppercase text-[#1d9e75] mb-2">Live shopping shield</p>
+                  <p className="text-2xl md:text-3xl font-medium tracking-tight leading-tight">
+                    Review patterns, seller signals, and checkout domains in one calm alert.
+                  </p>
+                </div>
               </div>
             </div>
           </ScrollFade>
@@ -83,6 +85,46 @@ export default function Page() {
 
         <div aria-hidden className="blob-float absolute -top-32 -right-32 size-[480px] rounded-full bg-[#2e6273]/5 blur-3xl pointer-events-none" />
         <div aria-hidden className="blob-float-slow absolute -bottom-24 -left-24 size-80 rounded-full bg-[#1d9e75]/5 blur-3xl pointer-events-none" />
+      </section>
+
+      {/* ─── INSTALL PATH ───────────────────────────────────────────────────── */}
+      <section className="bg-[#F4F0E8] px-6 md:px-8 py-14 border-y border-[#2e6273]/10">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-center">
+          <ScrollFade>
+            <div>
+              <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-3 font-mono">Easier install path</p>
+              <h2 className="text-3xl md:text-5xl font-medium tracking-tighter leading-[1] max-w-xl">
+                Make download feel like three clicks.
+              </h2>
+            </div>
+          </ScrollFade>
+          <ScrollFade delay={120}>
+            <div className="grid md:grid-cols-3 gap-3">
+              {[
+                ["1", "Open GitHub", "Use the public repo while store review is in progress."],
+                ["2", "Download build", "Grab the extension folder from the latest release."],
+                ["3", "Add to Chrome", "Open Extensions, enable Developer Mode, and load the folder."],
+              ].map(([n, title, copy]) => (
+                <div key={title} className="rounded-2xl border border-[#2e6273]/10 bg-white p-5">
+                  <p className="text-xs font-mono text-[#2e6273] mb-4">0{n}</p>
+                  <h3 className="text-xl font-medium tracking-tight mb-2">{title}</h3>
+                  <p className="text-sm leading-6 text-readable">{copy}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://github.com/H0n3st1y/shopsherpa-landing"
+                className="inline-flex items-center justify-center rounded-full bg-[#1a1a1a] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#2e6273] active:scale-[0.98]"
+              >
+                Install from GitHub
+              </a>
+              <p className="text-sm leading-6 text-readable max-w-md">
+                My recommendation: publish a Chrome Web Store listing next, then keep GitHub as the transparent developer install option.
+              </p>
+            </div>
+          </ScrollFade>
+        </div>
       </section>
 
       {/* ─── HOW IT WORKS ──────────────────────────────────────────────────────
@@ -307,7 +349,7 @@ export default function Page() {
                 eyebrow="ShopSherpa Plus"
                 title="For full account protection"
                 price="$9.99"
-                note="Lifetime pre-order · $14.99/mo at launch"
+                note="Lifetime pre-order · monthly pricing later"
                 cta="Pre-order Plus"
                 href="#pricing"
                 preorder
@@ -331,7 +373,7 @@ export default function Page() {
       <section id="pricing" className="bg-[#F4F0E8] px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
           <ScrollFade>
-            <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">ShopSherpa Plus · Coming Q3 2026</p>
+            <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">ShopSherpa Plus · Early access</p>
           </ScrollFade>
           <ScrollFade delay={120}>
             <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-2xl">
@@ -340,7 +382,7 @@ export default function Page() {
           </ScrollFade>
           <ScrollFade delay={200}>
             <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-16 max-w-xl leading-relaxed">
-              Pre-order now and lock in $9.99 for life. It goes to $14.99 a month at launch. The <a href="#compare" className="text-[#2e6273] font-medium hover:text-[#1d9e75] transition">free tier stays free</a>.
+              Pre-order now and lock in $9.99 for life. Monthly pricing comes later. The <a href="#compare" className="text-[#2e6273] font-medium hover:text-[#1d9e75] transition">free tier stays free</a>.
             </p>
           </ScrollFade>
 
@@ -363,7 +405,7 @@ export default function Page() {
                 <div className="flex items-baseline gap-3 mb-2">
                   <p className="text-6xl md:text-7xl font-medium tracking-tighter">$9.99</p>
                   <div>
-                    <p className="text-white/40 line-through text-sm">$14.99/mo at launch</p>
+                    <p className="text-white/40 line-through text-sm">future monthly plan</p>
                     <p className="text-white/50 text-sm">pay once, yours forever</p>
                   </div>
                 </div>
@@ -437,7 +479,7 @@ export default function Page() {
             </ScrollFade>
             <ScrollFade delay={200}>
               <RoadmapCard
-                phase="Q3 2026"
+                phase="Early access"
                 status="building"
                 title="Plus tier"
                 items={[
@@ -578,7 +620,7 @@ export default function Page() {
       </section>
 
       {/* ─── MINUAV GUARDIAN ─────────────────────────────────────────────────────── */}
-      <section id="miniuav" className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32 relative overflow-hidden">
+      <section id="miniuav" className="miniuav-transition bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32 relative overflow-hidden">
         {/* Ambient glow */}
         <div aria-hidden className="absolute top-1/2 right-0 size-[500px] rounded-full bg-[#2e6273]/10 blur-[100px] pointer-events-none -translate-y-1/2" />
 
@@ -638,14 +680,20 @@ export default function Page() {
               </ScrollFade>
             </div>
 
-            {/* Right — drone wireframe card */}
+            {/* Right — PCB + drone card */}
             <ScrollFade delay={150} className="w-full lg:w-auto shrink-0">
-              <div className="w-full lg:w-[380px] aspect-square rounded-3xl bg-gradient-to-b from-[#0d2b35] to-[#061419] border border-white/8 flex flex-col items-center justify-center p-8 relative shadow-[0_0_80px_rgba(46,98,115,0.15)]">
+              <div className="w-full lg:w-[420px] rounded-3xl bg-gradient-to-b from-[#0d2b35] to-[#061419] border border-white/8 p-5 relative shadow-[0_0_80px_rgba(46,98,115,0.15)] overflow-hidden">
                 {/* Top accent line */}
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2e6273]/60 to-transparent" />
+                <img
+                  src="/pcb-model.svg"
+                  alt="MiniUAV Guardian custom PCB model with ESP32 control traces and sensor pads"
+                  loading="lazy"
+                  className="w-full rounded-2xl border border-white/10 bg-[#061419]"
+                />
 
                 {/* Drone wireframe SVG */}
-                <svg viewBox="0 0 200 160" className="w-48 text-[#2e6273] mb-6" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <svg viewBox="0 0 200 160" className="absolute left-1/2 top-1/2 w-44 -translate-x-1/2 -translate-y-1/2 text-[#d8efe5] opacity-80 drop-shadow-[0_0_18px_rgba(29,158,117,0.45)]" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <rect x="75" y="65" width="50" height="35" rx="8" fill="#1d9e75" fillOpacity="0.12" stroke="#1d9e75" strokeWidth="1.5" />
                   <line x1="75" y1="72" x2="30" y2="45" strokeOpacity="0.5" />
                   <line x1="125" y1="72" x2="170" y2="45" strokeOpacity="0.5" />
@@ -667,7 +715,7 @@ export default function Page() {
                 </svg>
 
                 {/* Status */}
-                <div className="flex items-center gap-2 mb-4">
+                <div className="mt-5 flex items-center justify-center gap-2 mb-4">
                   <span className="relative flex size-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1d9e75] opacity-60" />
                     <span className="relative inline-flex size-2 rounded-full bg-[#1d9e75]" />
@@ -675,7 +723,7 @@ export default function Page() {
                   <span className="text-xs font-mono text-[#1d9e75]">Phase 3 — Flight integration</span>
                 </div>
 
-                <p className="text-xs font-mono text-white/30 text-center">MiniUAV Guardian · In development</p>
+                <p className="text-xs font-mono text-white/30 text-center">MiniUAV Guardian · PCB + flight integration</p>
 
                 {/* Powered-by badge */}
                 <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
@@ -944,7 +992,7 @@ function PlusCard({ icon, title, outcome }: { icon: ReactNode; title: string; ou
   return (
     <div className="card-hover bg-white rounded-2xl p-7 border border-[#2e6273]/10 h-full">
       <div className="size-10 rounded-xl bg-[#F4F0E8] flex items-center justify-center text-[#2e6273] mb-5">{icon}</div>
-      <p className="text-xs font-mono uppercase tracking-wider text-[#2e6273]/50 mb-2">Coming Q3 2026</p>
+      <p className="text-xs font-mono uppercase tracking-wider text-[#2e6273]/50 mb-2">Coming early access</p>
       <h3 className="text-xl font-medium tracking-tight mb-3">{title}</h3>
       <p className="text-sm text-[#1a1a1a]/60 leading-relaxed">{outcome}</p>
     </div>

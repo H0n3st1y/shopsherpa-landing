@@ -70,7 +70,7 @@ export default function ComparePage() {
             Free protection now. Plus when you want the full shield.
           </h1>
           <p className="text-[#1a1a1a]/60 text-lg max-w-2xl leading-relaxed">
-            ShopSherpa is in private beta. The free extension focuses on shopping-page protection. Plus adds email, password, card, and support features planned for Q3 2026.
+            ShopSherpa is in private beta. The free extension focuses on shopping-page protection. Plus adds email, password, card, and support features planned for early access.
           </p>
         </div>
       </section>
@@ -94,7 +94,7 @@ export default function ComparePage() {
             ))}
             <div className="grid gap-3 md:grid-cols-[1.35fr_1.25fr_0.65fr_0.7fr] md:items-center border-t border-[#2e6273]/10 px-5 py-4 text-sm">
               <span className="font-medium">Cost</span>
-              <span className="text-[#1a1a1a]/58">Simple pricing before Q3 2026 launch.</span>
+              <span className="text-[#1a1a1a]/58">Simple pricing before early access launch.</span>
               <span>Free</span>
               <span>$9.99 lifetime pre-order</span>
             </div>
