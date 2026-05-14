@@ -45,10 +45,10 @@ export default function Page() {
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <PreorderButton />
               <a
-                href="#cta"
+                href="#compare"
                 className="px-6 py-3.5 rounded-full bg-white text-[#1a1a1a] border border-[#2e6273]/15 font-medium text-sm hover:border-[#2e6273]/40 transition active:scale-[0.98] text-center"
               >
-                Join the free waitlist
+                Compare free vs Plus
               </a>
             </div>
           </ScrollFade>
@@ -81,7 +81,7 @@ export default function Page() {
           </ScrollFade>
           <ScrollFade delay={200}>
             <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-16 max-w-xl leading-relaxed">
-              No setup wizards. No manual scanning. ShopSherpa runs quietly and speaks up when something looks wrong.
+              No setup wizards. No manual scanning. ShopSherpa runs quietly and speaks up when something looks wrong. Want the full breakdown? <a href="#compare" className="text-[#2e6273] font-medium hover:text-[#1d9e75] transition">Compare the free tier and Plus</a>.
             </p>
           </ScrollFade>
 
@@ -248,6 +248,63 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ─── PLAN COMPARISON ─────────────────────────────────────────────────── */}
+      <section id="compare" className="bg-white border-y border-[#2e6273]/10 px-6 md:px-8 py-24 md:py-32">
+        <div className="max-w-6xl mx-auto">
+          <ScrollFade>
+            <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">Free vs Plus</p>
+          </ScrollFade>
+          <ScrollFade delay={120}>
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-2xl">
+              Start free.<br />Upgrade when you want the full shield.
+            </h2>
+          </ScrollFade>
+          <ScrollFade delay={200}>
+            <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-14 max-w-xl leading-relaxed">
+              The free extension covers everyday shopping scams. Plus adds the higher-risk layers: email, passwords, masked cards, and priority help.
+            </p>
+          </ScrollFade>
+
+          <div className="grid lg:grid-cols-2 gap-5">
+            <ScrollFade delay={100}>
+              <PlanCard
+                eyebrow="Free extension"
+                title="For everyday shopping"
+                price="Free"
+                note="No credit card for the free tier"
+                cta="Get free protection"
+                href="#cta"
+                features={[
+                  "Real-time review scanning",
+                  "Fake seller detection",
+                  "Wrong checkout domain alerts",
+                  "Chrome, Firefox, and Safari support",
+                ]}
+              />
+            </ScrollFade>
+            <ScrollFade delay={200}>
+              <PlanCard
+                featured
+                eyebrow="ShopSherpa Plus"
+                title="For full account protection"
+                price="$9.99"
+                note="Lifetime pre-order · $14.99/mo at launch"
+                cta="Pre-order Plus"
+                href="#pricing"
+                preorder
+                features={[
+                  "Everything in the free extension",
+                  "Phishing Shield for Gmail and Outlook",
+                  "Password vault with breach alerts",
+                  "One masked card number per store",
+                  "Priority support",
+                ]}
+              />
+            </ScrollFade>
+          </div>
+        </div>
+      </section>
+
       {/* ─── PLUS TIER ─────────────────────────────────────────────────────────
           Three feature cards as a visual roadmap. Scarcity progress bar.
           One CTA only per section.
@@ -264,7 +321,7 @@ export default function Page() {
           </ScrollFade>
           <ScrollFade delay={200}>
             <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-16 max-w-xl leading-relaxed">
-              Pre-order now and lock in $9.99 for life. It goes to $14.99 a month at launch.
+              Pre-order now and lock in $9.99 for life. It goes to $14.99 a month at launch. The <a href="#compare" className="text-[#2e6273] font-medium hover:text-[#1d9e75] transition">free tier stays free</a>.
             </p>
           </ScrollFade>
 
@@ -502,7 +559,7 @@ export default function Page() {
       </section>
 
       {/* ─── MINUAV GUARDIAN ─────────────────────────────────────────────────────── */}
-      <section className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32 relative overflow-hidden">
+      <section id="miniuav" className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32 relative overflow-hidden">
         {/* Ambient glow */}
         <div aria-hidden className="absolute top-1/2 right-0 size-[500px] rounded-full bg-[#2e6273]/10 blur-[100px] pointer-events-none -translate-y-1/2" />
 
@@ -522,12 +579,12 @@ export default function Page() {
               </ScrollFade>
               <ScrollFade delay={180}>
                 <p className="text-white/60 text-base md:text-lg leading-relaxed mb-8 max-w-lg font-serif">
-                  MiniUAV Guardian is a security quadrotor built on the same fraud-detection databases and threat intelligence that power ShopSherpa. It brings that software layer into the physical world — patrolling spaces, detecting intrusions, and logging threats in real time.
+                  <a href="/product" className="text-white hover:text-[#1d9e75] underline underline-offset-4 decoration-white/25 transition">MiniUAV Guardian</a> is a security quadrotor built on the same fraud-detection databases and threat intelligence that power ShopSherpa. It brings that software layer into the physical world — patrolling spaces, detecting intrusions, and logging threats in real time.
                 </p>
               </ScrollFade>
               <ScrollFade delay={250}>
                 <p className="text-white/60 text-base leading-relaxed mb-10 max-w-lg font-serif">
-                  One platform. Two products. Whether you are shopping from a screen or securing a room, ShopSherpa knows what does not belong.
+                  It now lives inside <a href="/lab" className="text-white hover:text-[#1d9e75] underline underline-offset-4 decoration-white/25 transition">ShopSherpa Lab</a>, alongside Sherpa, Finance Guru, and Caddy, so the main product can stay focused on shopping safety.
                 </p>
               </ScrollFade>
 
@@ -680,7 +737,7 @@ export default function Page() {
           </ScrollFade>
           <ScrollFade delay={150}>
             <p className="text-white/75 text-lg mb-10 leading-relaxed">
-              316 lifetime spots left at $9.99. Goes to $14.99 a month at launch this fall.
+              Join the free waitlist, or lock in Plus for $9.99 while lifetime spots are still available.
             </p>
           </ScrollFade>
           <ScrollFade delay={300}>
@@ -791,6 +848,75 @@ function BeforeAfterCard({ label, variant, items }: { label: string; variant: "b
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+function PlanCard({
+  eyebrow,
+  title,
+  price,
+  note,
+  cta,
+  href,
+  features,
+  featured = false,
+  preorder = false,
+}: {
+  eyebrow: string;
+  title: string;
+  price: string;
+  note: string;
+  cta: string;
+  href: string;
+  features: string[];
+  featured?: boolean;
+  preorder?: boolean;
+}) {
+  return (
+    <div className={`card-hover h-full rounded-2xl border p-7 md:p-8 ${featured ? "bg-[#0d1f2d] text-white border-[#0d1f2d]" : "bg-[#FAF8F4] border-[#2e6273]/10"}`}>
+      <div className="flex items-start justify-between gap-4 mb-8">
+        <div>
+          <p className={`text-xs font-mono uppercase tracking-wider mb-3 ${featured ? "text-[#1d9e75]" : "text-[#2e6273]"}`}>{eyebrow}</p>
+          <h3 className="text-3xl md:text-4xl font-medium tracking-tight">{title}</h3>
+        </div>
+        {featured && (
+          <span className="rounded-full bg-[#1d9e75]/15 border border-[#1d9e75]/25 px-3 py-1 text-xs font-mono text-[#1d9e75] shrink-0">
+            Best value
+          </span>
+        )}
+      </div>
+
+      <div className="mb-7">
+        <p className="text-5xl md:text-6xl font-medium tracking-tight">{price}</p>
+        <p className={`mt-2 text-sm ${featured ? "text-white/50" : "text-[#1a1a1a]/50"}`}>{note}</p>
+      </div>
+
+      <ul className="space-y-3 mb-8">
+        {features.map((feature) => (
+          <li key={feature} className={`flex items-start gap-2.5 text-sm ${featured ? "text-white/78" : "text-[#1a1a1a]/68"}`}>
+            <CheckIcon className="text-[#1d9e75] mt-0.5 shrink-0" />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+
+      {preorder ? (
+        <div className="[&>button]:w-full">
+          <PreorderButton variant={featured ? "white" : "default"} />
+        </div>
+      ) : (
+        <a
+          href={href}
+          className={`inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition active:scale-[0.98] ${
+            featured
+              ? "bg-white text-[#0d1f2d] hover:bg-[#F4F0E8]"
+              : "bg-[#1a1a1a] text-white hover:bg-[#2e6273]"
+          }`}
+        >
+          {cta}
+        </a>
+      )}
     </div>
   );
 }

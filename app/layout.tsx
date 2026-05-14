@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Barlow, Barlow_Semi_Condensed, Lora, DM_Mono } from "next/font/google";
+import { SmoothHashLinks } from "@/components/SmoothHashLinks";
 import "./globals.css";
 
 /* Body text — Barlow Regular/Medium/SemiBold */
@@ -273,7 +274,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-paper antialiased">{children}</body>
+      <body className="bg-paper antialiased">
+        <SmoothHashLinks />
+        {children}
+      </body>
     </html>
   );
 }

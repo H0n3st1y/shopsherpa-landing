@@ -31,6 +31,9 @@ export function SiteHeader({
           <NavLink href="/#how-it-works" active={active === "home"} className={`${active === "home" ? activeText : hoverText}`}>
             How it works
           </NavLink>
+          <NavLink href="/#compare" className={hoverText}>
+            Compare
+          </NavLink>
           <NavLink href="/#pricing" className={hoverText}>
             Pricing
           </NavLink>
@@ -80,7 +83,7 @@ function HeaderCta({ cta, dark }: { cta: "preorder" | "access" | "waitlist" | "h
     return (
       <div className="flex items-center gap-3">
         <Link href="/#cta" className={`hidden sm:inline text-sm transition ${dark ? "text-white/55 hover:text-white" : "text-[#1a1a1a]/60 hover:text-[#1a1a1a]"}`}>
-          Join waitlist
+          Get free protection
         </Link>
         <PreorderButton size="sm" />
       </div>

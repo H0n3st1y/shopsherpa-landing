@@ -54,8 +54,13 @@
 /* ── Base ────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
   background: var(--color-bg);
   color: var(--color-ink);
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
 }
 
 body {
