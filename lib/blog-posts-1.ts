@@ -134,7 +134,7 @@ Coverage depends on the tool. Marketplace-specific assistants like Rufus and Spa
 **Top Competitors:** 
 - [Top AI Shopping Assistants Revolutionizing eCommerce in ...](https://insiderone.com/ai-shopping-assistants/)
 - [6 best AI shopping assistants worth considering](https://www.ringly.io/blog/ai-shopping-assistants)
-- [Are AI shopping assistants just a gimmick — or do they fail ...](https://www.reddit.com/r/AI_Agents/comments/1ltck33/are_ai_shopping_assistants_just_a_gimmick_or_do/)
+- [Are AI shopping assistants just a gimmick - or do they fail ...](https://www.reddit.com/r/AI_Agents/comments/1ltck33/are_ai_shopping_assistants_just_a_gimmick_or_do/)
 
 **Keyword Gap:** 
 
@@ -181,7 +181,7 @@ Coverage depends on the tool. Marketplace-specific assistants like Rufus and Spa
 - Define AI shopping tools as intelligent assistants that help consumers find, compare, and purchase products through natural language and personalized recommendations
 - Define "AI shopping tools" in plain language for first-time readers
 - Explain the core functions: product discovery, price comparison, review summarization, and checkout assistance
-- Mention "agentic commerce"—AI that takes action on your behalf (adding to cart, purchasing)
+- Mention "agentic commerce"-AI that takes action on your behalf (adding to cart, purchasing)
 - Use bullet format:
   - **Product discovery:** Ask in plain language, get tailored results
   - **Price tracking:** AI monitors deals and alerts you when prices drop
@@ -209,13 +209,13 @@ Coverage depends on the tool. Marketplace-specific assistants like Rufus and Spa
 
 ### Fake Review and Seller Detection
 **Notes:**
-- AI analyzes review patterns to flag manipulation (ShopSherpa's core strength—mention subtly here)
+- AI analyzes review patterns to flag manipulation (ShopSherpa's core strength-mention subtly here)
 - Explain why this matters: fake reviews mislead buyers into bad purchases or scams
 
 ### Visual and Voice Search
 **Notes:**
 - Define visual search (upload a photo, find similar products) and voice search (ask Alexa, Siri, etc.)
-- Keep brief—these are emerging capabilities
+- Keep brief-these are emerging capabilities
 
 ### Agentic Checkout and Auto Reordering
 **Notes:**
@@ -228,7 +228,7 @@ Coverage depends on the tool. Marketplace-specific assistants like Rufus and Spa
 
 **Notes:**
 - Build trust by explaining selection criteria
-- Keep short—no tool descriptions here
+- Keep short-no tool descriptions here
 - Use bullet list for criteria:
   - **Consumer-focused:** Tools built for everyday shoppers, not e-commerce merchants
   - **Free or transparent pricing:** No hidden costs or enterprise-only tiers
@@ -366,7 +366,7 @@ Coverage depends on the tool. Marketplace-specific assistants like Rufus and Spa
 
 ### Which is the best AI tool for shopping?
 **Notes (1-2 sentences max):**
-The best AI shopping tool depends on your goal—ChatGPT and Perplexity excel at product research, while ShopSherpa focuses on catching scams and fake reviews before checkout.
+The best AI shopping tool depends on your goal-ChatGPT and Perplexity excel at product research, while ShopSherpa focuses on catching scams and fake reviews before checkout.
 
 ### Is there a ChatGPT for shopping?
 **Notes (1-2 sentences max):**
@@ -544,7 +544,7 @@ Conclusion section. Reinforce that the right automated shopping app runs quietly
 ## Frequently asked questions about automated shopping apps
 
 ### What is the best AI to help with shopping?
-Answer in 1-2 sentences: The best AI depends on your goal—Amazon Rufus and Perplexity Shopping help with product discovery, while ShopSherpa focuses on protecting you from scams and fake reviews before you pay.
+Answer in 1-2 sentences: The best AI depends on your goal-Amazon Rufus and Perplexity Shopping help with product discovery, while ShopSherpa focuses on protecting you from scams and fake reviews before you pay.
 
 ### Is there an AI that can order groceries automatically?
 Answer in 1-2 sentences: Yes, Instacart's agentic AI assistant can build shopping lists and place grocery orders based on your preferences and past purchases.

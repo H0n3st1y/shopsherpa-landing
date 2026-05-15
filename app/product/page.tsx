@@ -55,7 +55,7 @@ export default function ProductPage() {
         cardHeading="Autonomous. Precise."
         cardDescription={
           <>
-            <span className="font-semibold text-white">MiniUAV Guardian</span> is a security quadrotor powered by ShopSherpa&apos;s threat intelligence. It patrols on its own, detects motion with PIR sensing, and logs events in real time — no pilot, no cloud, no compromise.
+            <span className="font-semibold text-white">MiniUAV Guardian</span> is a security quadrotor powered by ShopSherpa&apos;s threat intelligence. It patrols on its own, detects motion with PIR sensing, and logs events in real time - no pilot, no cloud, no compromise.
           </>
         }
         ctaHeading="Early access open."
@@ -70,7 +70,7 @@ export default function ProductPage() {
 
       {/* ─── HERO ─── */}
       <section className="relative flex flex-col items-center justify-center min-h-[78vh] px-6 py-28 text-center overflow-hidden">
-        {/* WebGL wave shader — fills the hero */}
+        {/* WebGL wave shader - fills the hero */}
         <WebGLShader className="absolute inset-0 w-full h-full block opacity-40" />
         {/* Dark overlay so text stays readable */}
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black pointer-events-none" />
@@ -144,7 +144,7 @@ export default function ProductPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-            {/* Large card — PCB */}
+            {/* Large card - PCB */}
             <ScrollFade delay={100} className="md:col-span-2">
               <BentoCard accent="#2e6273" label="Custom Hardware">
                 <div className="flex flex-col h-full justify-between">
@@ -202,7 +202,7 @@ export default function ProductPage() {
                   <div>
                     <p className="text-2xl font-semibold tracking-tight mb-3">Audible + Wi-Fi</p>
                     <p className="text-white/55 text-sm leading-relaxed">
-                      Triggers a buzzer on detection and logs a timestamped event over Wi-Fi. No cloud required — works on your local network.
+                      Triggers a buzzer on detection and logs a timestamped event over Wi-Fi. No cloud required - works on your local network.
                     </p>
                   </div>
                   <div className="mt-6 flex items-center gap-3">
@@ -241,7 +241,7 @@ export default function ProductPage() {
           </ScrollFade>
           <ScrollFade delay={100}>
             <blockquote className="text-3xl md:text-5xl font-medium tracking-tight leading-[1.15] max-w-3xl text-white/90">
-              "Existing security cameras are passive. I wanted something that could move, think, and respond — without anyone controlling it."
+              "Existing security cameras are passive. I wanted something that could move, think, and respond - without anyone controlling it."
             </blockquote>
           </ScrollFade>
           <ScrollFade delay={200}>

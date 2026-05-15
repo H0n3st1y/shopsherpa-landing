@@ -94,7 +94,7 @@ export default function Page() {
           flags counterfeit sellers, and identifies phishing emails in your inbox before you
           interact with them. A paid Plus tier adds masked virtual credit card numbers, a
           password vault with breach alerts, and advanced phishing shields for Gmail and
-          Outlook — available as a one-time $9.99 lifetime pre-order.
+          Outlook - available as a one-time $9.99 lifetime pre-order.
         </p>
       </section>
 
@@ -223,7 +223,7 @@ export default function Page() {
               <span className="size-3 rounded-full bg-red-400" />
               <span className="size-3 rounded-full bg-yellow-400" />
               <span className="size-3 rounded-full bg-green-400" />
-              <span className="ml-3 text-xs font-mono text-white/30">Gmail — Inbox</span>
+              <span className="ml-3 text-xs font-mono text-white/30">Gmail - Inbox</span>
             </div>
             {/* Email content */}
             <div className="flex-1 p-6 md:p-10 relative overflow-hidden">
@@ -644,7 +644,7 @@ export default function Page() {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
 
-            {/* Left — text */}
+            {/* Left - text */}
             <div className="flex-1">
               <ScrollFade>
                 <p className="text-xs uppercase tracking-[0.2em] text-[#1d9e75] mb-5 font-mono">ShopSherpa Hardware</p>
@@ -657,7 +657,7 @@ export default function Page() {
               </ScrollFade>
               <ScrollFade delay={180}>
                 <p className="text-white/60 text-base md:text-lg leading-relaxed mb-8 max-w-lg font-serif">
-                  <a href="/product" className="text-white hover:text-[#1d9e75] underline underline-offset-4 decoration-white/25 transition">MiniUAV Guardian</a> is a security quadrotor built on the same fraud-detection databases and threat intelligence that power ShopSherpa. It brings that software layer into the physical world — patrolling spaces, detecting intrusions, and logging threats in real time.
+                  <a href="/product" className="text-white hover:text-[#1d9e75] underline underline-offset-4 decoration-white/25 transition">MiniUAV Guardian</a> is a security quadrotor built on the same fraud-detection databases and threat intelligence that power ShopSherpa. It brings that software layer into the physical world - patrolling spaces, detecting intrusions, and logging threats in real time.
                 </p>
               </ScrollFade>
               <ScrollFade delay={250}>
@@ -697,7 +697,7 @@ export default function Page() {
               </ScrollFade>
             </div>
 
-            {/* Right — PCB + drone card */}
+            {/* Right - PCB + drone card */}
             <ScrollFade delay={150} className="w-full lg:w-auto shrink-0">
               <div className="w-full lg:w-[420px] rounded-3xl bg-gradient-to-b from-[#0d2b35] to-[#061419] border border-white/8 p-5 relative shadow-[0_0_80px_rgba(46,98,115,0.15)] overflow-hidden">
                 {/* Top accent line */}
@@ -737,7 +737,7 @@ export default function Page() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1d9e75] opacity-60" />
                     <span className="relative inline-flex size-2 rounded-full bg-[#1d9e75]" />
                   </span>
-                  <span className="text-xs font-mono text-[#1d9e75]">Phase 3 — Flight integration</span>
+                  <span className="text-xs font-mono text-[#1d9e75]">Phase 3 - Flight integration</span>
                 </div>
 
                 <p className="text-xs font-mono text-white/30 text-center">MiniUAV Guardian · PCB + flight integration</p>
@@ -1016,7 +1016,7 @@ function PlusCard({ icon, title, outcome }: { icon: ReactNode; title: string; ou
   );
 }
 
-/* ─── Roadmap card — three states: live, building, planned ─── */
+/* ─── Roadmap card - three states: live, building, planned ─── */
 function RoadmapCard({
   phase,
   status,
@@ -1056,7 +1056,7 @@ function RoadmapCard({
   );
 }
 
-/* ─── Blog card — teaser only, links to /blog ─── */
+/* ─── Blog card - teaser only, links to /blog ─── */
 function BlogCard({ tag, title, read }: { tag: string; title: string; read: string }) {
   return (
     <a

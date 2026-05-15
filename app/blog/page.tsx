@@ -67,9 +67,9 @@ export default function BlogPage() {
             Buy smarter.<br />Avoid scams.
           </h1>
           <p className="text-readable type-body mb-8">
-            {blogPosts.length} guides on online scam protection, AI shopping tools, price tracking, and product research — everything you need to shop with confidence.
+            {blogPosts.length} guides on online scam protection, AI shopping tools, price tracking, and product research - everything you need to shop with confidence.
           </p>
-          {/* Tag filters — visual only, no JS needed */}
+          {/* Tag filters - visual only, no JS needed */}
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span
@@ -83,7 +83,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* FEATURED — top 3 large cards */}
+      {/* FEATURED - top 3 large cards */}
       <section className="px-6 md:px-8 pt-16 pb-8">
         <div className="max-w-6xl mx-auto">
           <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-6 font-mono">Featured</p>

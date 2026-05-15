@@ -54,7 +54,7 @@ const INJECTED_STYLES = `
     line-height: 1.0;
   }
 
-  /* Deep card — teal dark, no blue */
+  /* Deep card - teal dark, no blue */
   .premium-depth-card-sherpa {
     background: linear-gradient(145deg, #0d2b35 0%, #061419 100%);
     box-shadow:
@@ -293,7 +293,7 @@ export function CinematicHero({
       <div className="film-grain" aria-hidden="true" />
       <div className="bg-grid-sherpa absolute inset-0 z-0 pointer-events-none opacity-60" aria-hidden="true" />
 
-      {/* Hero text — plain, no gradient */}
+      {/* Hero text - plain, no gradient */}
       <div className="hero-text-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-6 will-change-transform">
         <h1 className="text-track gsap-reveal cinematic-heading text-5xl md:text-7xl lg:text-[6rem] font-semibold mb-1">
           {tagline1}
@@ -303,7 +303,7 @@ export function CinematicHero({
         </div>
       </div>
 
-      {/* CTA — appears at the end of the scroll sequence */}
+      {/* CTA - appears at the end of the scroll sequence */}
       <div className="cta-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-6 gsap-reveal pointer-events-auto will-change-transform">
         <p className="text-xs uppercase tracking-[0.18em] text-[#2e6273]/70 mb-5 font-mono">ShopSherpa</p>
         <h2 className="cinematic-heading text-[#1C1A18] text-4xl md:text-6xl lg:text-7xl font-semibold mb-5">
@@ -317,7 +317,7 @@ export function CinematicHero({
             <svg className="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            Pre-order — $9.99
+            Pre-order - $9.99
           </a>
           <a href="/#cta" className="btn-sherpa-teal flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm">
             Join the waitlist
@@ -338,7 +338,7 @@ export function CinematicHero({
 
           <div className="cinematic-card-layout relative w-full h-full max-w-7xl mx-auto px-4 lg:px-12 flex flex-col justify-evenly lg:grid lg:grid-cols-3 items-center lg:gap-8 z-10 py-6 lg:py-0">
 
-            {/* Brand — top mobile / right desktop */}
+            {/* Brand - top mobile / right desktop */}
             <div className="card-right-text gsap-reveal order-1 lg:order-3 flex justify-center lg:justify-end z-20 w-full">
               <div className="text-center lg:text-right">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#1d9e75]/60 font-mono mb-2">ShopSherpa</p>
@@ -348,7 +348,7 @@ export function CinematicHero({
               </div>
             </div>
 
-            {/* iPhone mockup — center */}
+            {/* iPhone mockup - center */}
             <div className="mockup-scroll-wrapper cinematic-phone-wrap order-2 lg:order-2 relative w-full h-[380px] lg:h-[600px] flex items-center justify-center z-10" style={{ perspective: "1000px" }}>
               <div className="relative w-full h-full flex items-center justify-center transform scale-[0.65] md:scale-[0.85] lg:scale-100">
                 <div
@@ -429,7 +429,7 @@ export function CinematicHero({
                   </div>
                 </div>
 
-                {/* Floating badges — no emojis */}
+                {/* Floating badges - no emojis */}
                 <div className="floating-badge absolute top-6 lg:top-12 left-[-10px] lg:left-[-90px] floating-ui-badge rounded-2xl px-4 py-3 flex items-center gap-3 z-30">
                   <div className="w-8 h-8 rounded-xl bg-red-500/15 flex items-center justify-center shrink-0 border border-red-400/20">
                     <svg className="size-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -456,7 +456,7 @@ export function CinematicHero({
               </div>
             </div>
 
-            {/* Description — bottom mobile / left desktop */}
+            {/* Description - bottom mobile / left desktop */}
             <div className="card-left-text cinematic-card-copy gsap-reveal order-3 lg:order-1 flex flex-col justify-center text-center lg:text-left z-20 w-full px-4 lg:px-0">
               <h3 className="card-heading-plain text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 lg:mb-5">
                 {cardHeading}

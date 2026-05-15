@@ -4,7 +4,7 @@ import { SmoothHashLinks } from "@/components/SmoothHashLinks";
 import { siteName, siteUrl, spacedSiteName } from "@/lib/seo";
 import "./globals.css";
 
-/* Body text — Barlow Regular/Medium/SemiBold */
+/* Body text - Barlow Regular/Medium/SemiBold */
 const barlow = Barlow({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -12,7 +12,7 @@ const barlow = Barlow({
   display: "swap",
 });
 
-/* Headings — Barlow Semi Condensed, more impactful than full-width */
+/* Headings - Barlow Semi Condensed, more impactful than full-width */
 const barlowHeading = Barlow_Semi_Condensed({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
@@ -20,7 +20,7 @@ const barlowHeading = Barlow_Semi_Condensed({
   display: "swap",
 });
 
-/* Accent serif — Lora for testimonial quotes, founder story, pull quotes */
+/* Accent serif - Lora for testimonial quotes, founder story, pull quotes */
 const lora = Lora({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -29,7 +29,7 @@ const lora = Lora({
   display: "swap",
 });
 
-/* Mono — kept for code/labels/badges */
+/* Mono - kept for code/labels/badges */
 const mono = DM_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "ShopSherpa — Scam Detection Extension",
+    default: "ShopSherpa - Scam Detection Extension",
     template: "%s",
   },
 
@@ -68,18 +68,18 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "ShopSherpa — Stop Scams Before You Pay",
+    title: "ShopSherpa - Stop Scams Before You Pay",
     description:
       "Detects phishing emails, flags fake sellers, and masks your card number. Free browser extension. One-time $9.99 lifetime pre-order.",
     url: siteUrl,
     siteName,
     type: "website",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "ShopSherpa — Online Shopping Safety Layer" }],
+    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "ShopSherpa - Online Shopping Safety Layer" }],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "ShopSherpa — Stop Scams Before You Pay",
+    title: "ShopSherpa - Stop Scams Before You Pay",
     description: "Phishing shield + fake review detector + masked cards. One-time $9.99 pre-order.",
     images: ["/og-image.svg"],
   },
@@ -101,10 +101,10 @@ export const metadata: Metadata = {
 
 /* ─── JSON-LD Schemas ────────────────────────────────────────────────────────
    Four schemas working together:
-   1. SoftwareApplication — product listing with price, for rich results
-   2. Organization       — brand entity with contact + social signals
-   3. Person             — founder E-E-A-T (Experience, Expertise, Authority, Trust)
-   4. FAQPage            — targets Featured Snippets and AI Overview pull-quotes
+   1. SoftwareApplication - product listing with price, for rich results
+   2. Organization       - brand entity with contact + social signals
+   3. Person             - founder E-E-A-T (Experience, Expertise, Authority, Trust)
+   4. FAQPage            - targets Featured Snippets and AI Overview pull-quotes
 ─────────────────────────────────────────────────────────────────────────── */
 const jsonLd = {
   "@context": "https://schema.org",
@@ -124,7 +124,7 @@ const jsonLd = {
         "@type": "Offer",
         "price": "9.99",
         "priceCurrency": "USD",
-        "description": "Lifetime pre-order — no subscription",
+        "description": "Lifetime pre-order - no subscription",
         "availability": "https://schema.org/PreOrder",
       },
       "publisher": { "@id": `${siteUrl}/#organization` },
@@ -226,7 +226,7 @@ const jsonLd = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "ShopSherpa scans your inbox for emails that impersonate real brands — such as fake Amazon shipping notices, PayPal alerts, or package redelivery fee requests. It checks sender domains, link destinations, and language patterns against a database of known phishing signatures and flags suspicious messages before you open them.",
+              "ShopSherpa scans your inbox for emails that impersonate real brands - such as fake Amazon shipping notices, PayPal alerts, or package redelivery fee requests. It checks sender domains, link destinations, and language patterns against a database of known phishing signatures and flags suspicious messages before you open them.",
           },
         },
         {
@@ -253,7 +253,7 @@ const jsonLd = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "ShopSherpa processes email headers and sender metadata locally in your browser. It does not store, transmit, or share your email content. Your real card number is replaced by a masked alias — ShopSherpa never sees your actual card details.",
+              "ShopSherpa processes email headers and sender metadata locally in your browser. It does not store, transmit, or share your email content. Your real card number is replaced by a masked alias - ShopSherpa never sees your actual card details.",
           },
         },
         {
@@ -262,7 +262,7 @@ const jsonLd = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text":
-              "Fakespot focuses on Amazon review authenticity. ShopSherpa is broader: it covers phishing emails, fake marketplace sellers across multiple platforms, masked card payments, and real-time scam alerts — all in one extension.",
+              "Fakespot focuses on Amazon review authenticity. ShopSherpa is broader: it covers phishing emails, fake marketplace sellers across multiple platforms, masked card payments, and real-time scam alerts - all in one extension.",
           },
         },
       ],

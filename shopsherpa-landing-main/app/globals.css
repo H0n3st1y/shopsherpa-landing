@@ -97,7 +97,7 @@ body {
   transform: translateY(0);
 }
 
-/* CTA hue shift when email input is focused — driven by data attribute on body */
+/* CTA hue shift when email input is focused - driven by data attribute on body */
 body[data-cta-focused="true"] .cta-section {
   filter: hue-rotate(-8deg) saturate(1.05);
 }

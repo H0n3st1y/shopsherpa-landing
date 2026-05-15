@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * PhishingDemo — the showpiece moment.
+ * PhishingDemo - the showpiece moment.
  * When scrolled into view, a sealed envelope animates open, the suspicious
  * sender details slide up, and a red "FLAGGED" badge slides in from the right.
  * Triggers ONCE per page session via IntersectionObserver.
@@ -59,7 +59,7 @@ export function PhishingDemo() {
         >
           {/* Envelope body */}
           <div className="absolute inset-0 bg-[#F4F0E8] rounded-md border border-white/20" />
-          {/* Inner letter — peeks out at stage >= 2 */}
+          {/* Inner letter - peeks out at stage >= 2 */}
           <div
             className="absolute left-1.5 right-1.5 bottom-1.5 bg-white rounded-sm shadow-sm"
             style={{
@@ -68,7 +68,7 @@ export function PhishingDemo() {
               transition: "all 600ms cubic-bezier(0.16, 1, 0.3, 1)",
             }}
           />
-          {/* Flap — rotates at stage >= 1 */}
+          {/* Flap - rotates at stage >= 1 */}
           <div
             className="absolute top-0 left-0 right-0 origin-top"
             style={{
@@ -103,7 +103,7 @@ export function PhishingDemo() {
           </div>
         </div>
 
-        {/* FLAGGED badge — slides in from the right at stage >= 3 */}
+        {/* FLAGGED badge - slides in from the right at stage >= 3 */}
         <div
           className="absolute top-6 right-6 md:top-8 md:right-8"
           style={{

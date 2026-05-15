@@ -12,7 +12,7 @@ export const blogPostsPart2: BlogPost[] = [
     content: `# What Is Curated Product Discovery and Why It Matters in Ecommerce
 
 ## What Curated Product Discovery Means in Ecommerce
-- Define curated product discovery as the process of presenting pre-selected, relevant products to shoppers based on intent, preferences, or context—rather than making them search manually.
+- Define curated product discovery as the process of presenting pre-selected, relevant products to shoppers based on intent, preferences, or context-rather than making them search manually.
 - Explain this is how stores surface products you didn't know you wanted.
 - Use a bullet list to contrast "discovery" (browsing, exploration) vs. "search" (intent-driven query).
 - Keep this section short and foundational since the reader is encountering this term for the first time.
@@ -34,7 +34,7 @@ export const blogPostsPart2: BlogPost[] = [
 | Intent-driven | Exploration-driven |
 | Returns exact matches | Returns contextual, editorial, or AI-selected items |
 
-- Emphasize these work best together—search gets you to the aisle, curation puts the right product in your hand.
+- Emphasize these work best together-search gets you to the aisle, curation puts the right product in your hand.
 
 ## How AI Powers Curated Product Discovery
 - Explain that AI analyzes browsing behavior, purchase history, and context to surface relevant products automatically.
@@ -45,18 +45,18 @@ export const blogPostsPart2: BlogPost[] = [
 - Use one paragraph and no jargon.
 
 ### AI Shopping Guides and Curated Landing Pages
-- Reference Amazon's AI Shopping Guides as an example—AI creates topic-based landing pages (e.g., "best headphones for running") that combine product suggestions with explanatory content.
+- Reference Amazon's AI Shopping Guides as an example-AI creates topic-based landing pages (e.g., "best headphones for running") that combine product suggestions with explanatory content.
 
 ### Real Time Review and Seller Signals
 - Explain that AI can scan reviews and seller reputation in real time to filter out low-quality or suspicious listings before they appear in curated results.
-- Mention this is where ShopSherpa's approach fits—scanning for fake reviews and risky sellers as part of the discovery process.
+- Mention this is where ShopSherpa's approach fits-scanning for fake reviews and risky sellers as part of the discovery process.
 
 ### Generative and Agentic Discovery
 - Define generative discovery (AI creates custom product descriptions or comparisons on the fly) and agentic discovery (AI acts as a shopping assistant that asks questions and narrows choices).
-- Keep brief—these are emerging trends.
+- Keep brief-these are emerging trends.
 
 ## How Merchandising and Curation Work Together
-- Explain that AI alone isn't enough—human merchandisers layer editorial judgment on top.
+- Explain that AI alone isn't enough-human merchandisers layer editorial judgment on top.
 - Use bullet points:
   - **AI handles scale:** Processes millions of products and signals
   - **Humans add taste:** Seasonal picks, editorial collections, brand storytelling
@@ -79,7 +79,7 @@ export const blogPostsPart2: BlogPost[] = [
 - Use numbered H3s.
 
 ### 1. Define the Shopper You Are Curating For
-- Start with audience—who are you curating for?
+- Start with audience-who are you curating for?
 - What problems do they have?
 - Use one paragraph.
 
@@ -87,7 +87,7 @@ export const blogPostsPart2: BlogPost[] = [
 - Implement recommendation engines and personalization tools that analyze behavior and surface relevant products.
 
 ### 3. Add Human Merchandising and Editorial Picks
-- Combine AI with human judgment—seasonal collections, staff picks, themed guides.
+- Combine AI with human judgment-seasonal collections, staff picks, themed guides.
 
 ### 4. Vet Sellers and Reviews Before They Reach the Shopper
 - Emphasize that curation must include trust signals.
@@ -103,7 +103,7 @@ export const blogPostsPart2: BlogPost[] = [
 - Use bullet format with bold terms.
 
 ### Click Through Rate on Curated Surfaces
-- Define CTR in this context—how often shoppers click on curated recommendations vs. standard listings.
+- Define CTR in this context-how often shoppers click on curated recommendations vs. standard listings.
 
 ### Conversion Rate From Curated Pages
 - Explain that higher conversion on curated pages indicates relevance and trust.
@@ -128,33 +128,33 @@ export const blogPostsPart2: BlogPost[] = [
 - Describe how fraudulent or low-quality sellers sometimes appear in curated results, especially on large marketplaces.
 
 ### Spoofed Checkouts and Phishing Emails
-- Mention that scams don't stop at discovery—fake checkout pages and phishing emails target shoppers after they find a product.
+- Mention that scams don't stop at discovery-fake checkout pages and phishing emails target shoppers after they find a product.
 - Transition to ShopSherpa's protection.
 
 ## Where Curated Product Discovery Is Headed Next
 - Briefly cover emerging trends: conversational commerce (chatbots that curate), agentic AI shopping assistants, and deeper integration of trust/safety signals into curation.
-- Keep to one paragraph—this is forward-looking, not essential.
+- Keep to one paragraph-this is forward-looking, not essential.
 
 ## Shop Curated, Shop Safe With ShopSherpa
 - This is the CTA section.
 - Explain that curated discovery only works when you can trust what you find.
-- ShopSherpa runs in the background to scan for fake reviews, risky sellers, and wrong checkout domains—so you can shop curated surfaces with confidence.
+- ShopSherpa runs in the background to scan for fake reviews, risky sellers, and wrong checkout domains-so you can shop curated surfaces with confidence.
 - Mention free tier (Chrome, Firefox, Safari), Plus tier coming through early access with phishing shield, password vault, and masked cards.
 - End with: [Join the waitlist](https://shopsherpa.org/#cta)
 
 ## Frequently Asked Questions About Curated Product Discovery
 
 ### What are curated products?
-- Curated products are items selected and organized by a person, algorithm, or editorial team to match a specific theme, audience, or intent—rather than appearing randomly or solely by search ranking.
+- Curated products are items selected and organized by a person, algorithm, or editorial team to match a specific theme, audience, or intent-rather than appearing randomly or solely by search ranking.
 
 ### How is curated product discovery different from personalization?
 - Personalization tailors results to an individual shopper's behavior; curation groups products around a theme or intent that applies to many shoppers, often with editorial or expert input layered on top.
 
 ### Can small stores use curated product discovery or is it only for large retailers?
-- Any store can curate—small shops use editorial picks, staff favorites, and themed collections to guide shoppers, even without AI-powered tools.
+- Any store can curate-small shops use editorial picks, staff favorites, and themed collections to guide shoppers, even without AI-powered tools.
 
 ### Can curated product discovery help shoppers avoid scams?
-- Curation can surface trusted sellers and verified products, but it's not foolproof—tools like ShopSherpa add a layer of protection by scanning for fake reviews and risky sellers in real time.
+- Curation can surface trusted sellers and verified products, but it's not foolproof-tools like ShopSherpa add a layer of protection by scanning for fake reviews and risky sellers in real time.
 
 **Top Competitors:** 
 - [Amazon rolls out AI Shopping Guides for curated product ...](https://www.retaildive.com/news/amazon-ai-shopping-guide-curatation-product-discovery-search/729784/)
@@ -198,7 +198,7 @@ export const blogPostsPart2: BlogPost[] = [
     content: `# Detailed Product Comparisons That Help Buyers Choose Confidently
 
 ## What is a detailed product comparison
-Define the term simply as a side-by-side breakdown of multiple products across the same set of attributes. Explain that “detailed” means going beyond price to include specs, reviews, seller trust, and purchase terms. Keep this brief—two short paragraphs max.
+Define the term simply as a side-by-side breakdown of multiple products across the same set of attributes. Explain that “detailed” means going beyond price to include specs, reviews, seller trust, and purchase terms. Keep this brief-two short paragraphs max.
 
 ## Why detailed product comparisons matter for buyers
 Focus on decision confidence and scam avoidance. Explain how comparisons surface red flags like mismatched specs, suspicious sellers, and inflated reviews before checkout. Address the reader directly: “You see what you’re getting before you pay.”
@@ -215,7 +215,7 @@ Describe specific scenarios where comparisons matter most. Keep this scannable w
 - Products with many similar-looking options (electronics, appliances)
 - Marketplaces with mixed seller quality
 
-Note: Do NOT repeat the “why” rationale here—focus on the “when.”
+Note: Do NOT repeat the “why” rationale here-focus on the “when.”
 
 ## What to include in a detailed product comparison
 Brief intro sentence: “A useful comparison covers more than specs.” Then break into H3s below.
@@ -227,16 +227,16 @@ List the core product attributes: dimensions, materials, compatibility, technica
 Explain the difference between sticker price and total cost, including tax, shipping, and accessories. One paragraph.
 
 ### Reviews and ratings
-Note that aggregate star ratings are not enough—look at review volume, recency, and language patterns. Mention that fake reviews skew comparisons.
+Note that aggregate star ratings are not enough-look at review volume, recency, and language patterns. Mention that fake reviews skew comparisons.
 
 ### Seller reputation
-Explain how to check seller history, return rates, and account age. This is where ShopSherpa’s fake seller detection becomes relevant, but do not mention ShopSherpa here—save it for the CTA section.
+Explain how to check seller history, return rates, and account age. This is where ShopSherpa’s fake seller detection becomes relevant, but do not mention ShopSherpa here-save it for the CTA section.
 
 ### Warranty and returns
 Cover manufacturer warranty vs. seller policy. Note that return windows and restocking fees vary by seller.
 
 ### Shipping and delivery
-Mention delivery timeframes, shipping costs, and tracking reliability. Fake tracking emails are a scam vector—flag this briefly.
+Mention delivery timeframes, shipping costs, and tracking reliability. Fake tracking emails are a scam vector-flag this briefly.
 
 ## How to compare products side by side
 Intro sentence: “Follow these steps to build your own comparison.” Use numbered steps below.
@@ -248,7 +248,7 @@ Explain why more than five becomes unmanageable. Keep the set small and relevant
 Tell the reader to identify their priorities, such as battery life vs. weight, before pulling data.
 
 ### 3. Pull specs from the source
-Advise using manufacturer pages or verified listings—not third-party aggregators that may be outdated.
+Advise using manufacturer pages or verified listings-not third-party aggregators that may be outdated.
 
 ### 4. Verify reviews and seller trust
 Explain how to cross-check reviews across platforms and look for review manipulation signals such as repetitive phrasing and sudden spikes.
@@ -269,7 +269,7 @@ Warn against mixing units, such as inches vs. cm, or vague labels like “fast�
 Advise using sticky headers, alternating row colors, and bold for key differences.
 
 ### Highlight the tradeoffs
-Explain that the best tables don’t just list—they call out where each product wins or loses.
+Explain that the best tables don’t just list-they call out where each product wins or loses.
 
 Include a simple example table here showing a 3-product comparison with 4–5 attributes, such as Product A vs. B vs. C with Price, Rating, Seller Trust, Return Policy, and Shipping.
 
@@ -280,13 +280,13 @@ List types of sources, not specific brand names, such as manufacturer comparison
 Intro sentence: “Not every comparison is honest. Watch for these red flags.”
 
 ### Affiliate-heavy best of lists
-Explain that lists ranking products by commission rate—not quality—are common. Look for disclosure statements.
+Explain that lists ranking products by commission rate-not quality-are common. Look for disclosure statements.
 
 ### Reviews that all sound the same
 Describe how fake review farms produce identical phrasing and suspicious timing patterns.
 
 ### Sellers with no track record
-Warn about new accounts with no sales history or reviews—common in marketplace scams.
+Warn about new accounts with no sales history or reviews-common in marketplace scams.
 
 ### Wrong or spoofed checkout domains
 Explain what a spoofed domain looks like, such as amaz0n-checkout.com, and why it matters at the point of payment.
@@ -346,7 +346,7 @@ Answer: Yes. Manipulated reviews inflate ratings and skew your comparison toward
     content: `# Expert Product Recommendations That Actually Drive Sales in 2026
 
 ## What are expert product recommendations
-Define expert product recommendations as guidance from credentialed professionals, industry specialists, or verified users with hands-on experience. Explain how they differ from generic reviews or algorithmic suggestions. Keep it brief—two to three sentences max.
+Define expert product recommendations as guidance from credentialed professionals, industry specialists, or verified users with hands-on experience. Explain how they differ from generic reviews or algorithmic suggestions. Keep it brief-two to three sentences max.
 
 - **Expert recommendation:** Opinion from a credentialed professional who has tested the product
 - **Editorial pick:** Selection made by a publication's review team with transparent methodology
@@ -355,7 +355,7 @@ Define expert product recommendations as guidance from credentialed professional
 ---
 
 ## Why expert recommendations outperform generic reviews and ads
-Explain credibility gap: shoppers trust expertise over anonymous reviews or paid placements. Address why this matters now—fake reviews and sponsored content have eroded trust. Tie to shopper anxiety and decision fatigue.
+Explain credibility gap: shoppers trust expertise over anonymous reviews or paid placements. Address why this matters now-fake reviews and sponsored content have eroded trust. Tie to shopper anxiety and decision fatigue.
 
 Add a simple comparison table:
 
@@ -374,7 +374,7 @@ Brief intro sentence: Not all recommendations carry the same weight. Here are th
 Recommendations from credentialed reviewers (e.g., Wirecutter, Consumer Reports). Explain transparent testing methodology.
 
 ### Verified buyer reviews
-Reviews tied to confirmed purchases. Note limitations—real but not expert.
+Reviews tied to confirmed purchases. Note limitations-real but not expert.
 
 ### AI-powered product recommendations
 Algorithmic suggestions based on browsing or purchase history. Define "personalized recommendations" and "recommendation engine." Note: helpful for discovery, but not a trust signal.
@@ -471,7 +471,7 @@ Before entering payment details, confirm the checkout URL matches the expected s
 ### Step 5: Use masked payment details
 Protect your real card number by using a unique card number per store. Reduces blast radius if something goes wrong.
 
-Mention ShopSherpa naturally here—real-time review scanning, fake seller detection, and wrong checkout domain alerts run quietly in the background. Masked Cards (coming through early access) generate a unique number per store.
+Mention ShopSherpa naturally here-real-time review scanning, fake seller detection, and wrong checkout domain alerts run quietly in the background. Masked Cards (coming through early access) generate a unique number per store.
 
 ---
 
@@ -485,16 +485,16 @@ CTA: [Join the waitlist](https://shopsherpa.org/#cta) to lock in lifetime access
 ## FAQs about expert product recommendations
 
 ### What is it called when someone recommends a product?
-A product endorsement or product recommendation—when an individual vouches for a product based on experience, expertise, or affiliation.
+A product endorsement or product recommendation-when an individual vouches for a product based on experience, expertise, or affiliation.
 
 ### What is the difference between expert recommendations and influencer marketing?
 Expert recommendations come from credentialed professionals with proven expertise; influencer marketing is paid promotion by content creators who may lack specialized knowledge.
 
 ### Are AI-powered product recommendations as trustworthy as expert recommendations?
-AI recommendations are personalized based on your behavior, but they reflect algorithms—not independent expertise or hands-on testing.
+AI recommendations are personalized based on your behavior, but they reflect algorithms-not independent expertise or hands-on testing.
 
 ### Can you trust expert recommendation sites like Wirecutter or Consumer Reports?
-Generally yes, because they publish transparent testing methodology and disclose affiliate relationships—but always cross-reference with verified buyer reviews.
+Generally yes, because they publish transparent testing methodology and disclose affiliate relationships-but always cross-reference with verified buyer reviews.
 
 **Top Competitors:** 
 - [Product recommendation techniques proven to get results](https://www.dynamicyield.com/lesson/product-recommendations-guide/)
@@ -632,7 +632,7 @@ Provide a bullet point summary of the article’s main lessons and keep it scann
 ---
 
 ## Shop the Noisy Market With a Quiet Shield
-This is the CTA section. Frame ShopSherpa as the tool that delivers expert shopping advice automatically—quiet by default, alert when something's off. Mention install time, browser compatibility (Chrome, Firefox, Safari), and the Free tier's live features.
+This is the CTA section. Frame ShopSherpa as the tool that delivers expert shopping advice automatically-quiet by default, alert when something's off. Mention install time, browser compatibility (Chrome, Firefox, Safari), and the Free tier's live features.
 
 End with: [Join the waitlist](https://shopsherpa.org/#cta)
 
@@ -656,7 +656,7 @@ Explain that virtual or masked card numbers limit exposure if a store is comprom
 Explain that readers should file a complaint with the FTC at ReportFraud.ftc.gov and notify their bank immediately to dispute the charge and protect their account.
 
 **Top Competitors:** 
-- [Buy Side — Expert Shopping Advice and Reviews](https://www.wsj.com/buyside)
+- [Buy Side - Expert Shopping Advice and Reviews](https://www.wsj.com/buyside)
 - [When the Expert Stops Shopping, Someone Pays the Price](https://www.mondayeconomist.com/p/expert-shopping)
 - [Consumer Reports: Product Reviews and Ratings, Buying ...](https://www.consumerreports.org/)
 
@@ -909,7 +909,7 @@ Explain that readers should file a complaint with the FTC at ReportFraud.ftc.gov
 ## Frequently asked questions about niche gift discovery
 
 ### Is a discovery set a good gift?
-- Yes—discovery sets let recipients sample multiple options before committing, making them ideal for fragrance, tea, olive oil, or any category where personal taste varies.
+- Yes-discovery sets let recipients sample multiple options before committing, making them ideal for fragrance, tea, olive oil, or any category where personal taste varies.
 
 ### How do I find unique gifts for someone who has everything?
 - Focus on their specific obsessions rather than broad categories.
@@ -935,7 +935,7 @@ Explain that readers should file a complaint with the FTC at ReportFraud.ftc.gov
 - Mention:
   - ShopSherpa scans sellers and reviews in real time
   - Alerts appear before you pay if something looks off
-  - Free browser extension for Chrome, Firefox, Safari—installs in under a minute
+  - Free browser extension for Chrome, Firefox, Safari-installs in under a minute
 - CTA: [Join the waitlist](https://shopsherpa.org/#cta) for ShopSherpa Plus to get masked cards, phishing protection, and password vault when it launches.
 
 **Top Competitors:** 

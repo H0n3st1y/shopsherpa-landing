@@ -337,7 +337,7 @@ export default async function BlogPostPage({
             ShopSherpa scans while you shop.
           </h2>
           <p className="text-readable-dark text-base leading-relaxed mb-6 max-w-lg">
-            Fake reviews, sketchy sellers, phishing emails — ShopSherpa flags them automatically. Free for Chrome, Firefox, and Safari.
+            Fake reviews, sketchy sellers, phishing emails - ShopSherpa flags them automatically. Free for Chrome, Firefox, and Safari.
           </p>
           <Link
             href="/#cta"

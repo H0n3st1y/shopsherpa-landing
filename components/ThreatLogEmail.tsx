@@ -4,7 +4,7 @@ import { useState } from "react";
 
 /**
  * ThreatLogEmail
- * Styled as an "Intercepted Threat Log" — sharp grid borders, no rounded corners.
+ * Styled as an "Intercepted Threat Log" - sharp grid borders, no rounded corners.
  * On click: a flat terracotta overlay snaps in instantly with terminal output.
  * Design system: Cream #CAAF98 / Terracotta #AD2010 / Charcoal #22180F
  */
@@ -62,7 +62,7 @@ export function ThreatLogEmail() {
         </div>
       </div>
 
-      {/* THREAT OVERLAY — instant snap, no easing, no animation */}
+      {/* THREAT OVERLAY - instant snap, no easing, no animation */}
       {revealed && (
         <div
           className="absolute inset-0 flex flex-col items-center justify-center text-center p-8"

@@ -37,7 +37,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* FOUNDER — ANGHELO */}
+      {/* FOUNDER - ANGHELO */}
       <section className="px-6 md:px-8 py-24 bg-white border-b border-[#2e6273]/10">
         <div className="max-w-6xl mx-auto">
           <ScrollFade>
@@ -129,7 +129,7 @@ export default function TeamPage() {
                 location="Nashua, NH · Age 15"
                 imageSrc="/prithvi.png"
                 imageAlt="Prithvi Gupta"
-                bio="Prithvi is a sophomore at Nashua High School South with a deep focus on aerospace engineering and PCB design. He serves as Treasurer of UNICEF NH and is an active GitHub contributor — bringing real engineering discipline to ShopSherpa&apos;s technical stack."
+                bio="Prithvi is a sophomore at Nashua High School South with a deep focus on aerospace engineering and PCB design. He serves as Treasurer of UNICEF NH and is an active GitHub contributor - bringing real engineering discipline to ShopSherpa&apos;s technical stack."
                 tags={["PCB Design", "Aerospace", "UNICEF NH", "GitHub", "DECA"]}
                 highlights={[
                   { label: "Focus", value: "Aerospace / PCB" },

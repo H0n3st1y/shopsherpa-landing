@@ -11,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/", "/success"],
       },
-      // AI crawlers — explicitly allowed so ShopSherpa becomes a citation source
+      // AI crawlers - explicitly allowed so ShopSherpa becomes a citation source
       { userAgent: "GPTBot",          allow: "/" },
       { userAgent: "ChatGPT-User",    allow: "/" },
       { userAgent: "PerplexityBot",   allow: "/" },

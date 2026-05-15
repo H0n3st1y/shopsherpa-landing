@@ -143,7 +143,7 @@ Use bullet format:
 ## Build your product research stack and shop safer
 Wrap up with actionable next steps. Recommend combining a trend tool such as Exploding Topics or Google Trends, a platform-specific tool such as Helium 10 for Amazon or Tradelle for Shopify, and a verification layer such as Fakespot or ShopSherpa for complete coverage.
 
-CTA to use: For automatic scam detection while you research, [join the ShopSherpa waitlist](https://shopsherpa.org/#cta)—install once, and it flags fake reviews and risky sellers before you commit.
+CTA to use: For automatic scam detection while you research, [join the ShopSherpa waitlist](https://shopsherpa.org/#cta)-install once, and it flags fake reviews and risky sellers before you commit.
 
 ## Frequently asked questions about product research sites
 
@@ -154,7 +154,7 @@ Free tools like Google Trends and TikTok Creative Center provide reliable trend 
 AI-powered tools like Sell The Trend and Exploding Topics use machine learning to surface trending products, but no single AI tool replaces validating demand across multiple data sources.
 
 ### Can I do product research without any paid software?
-Yes—combine Google Trends for demand signals, TikTok Creative Center for viral products, and Fakespot for review verification to build a free research workflow.
+Yes-combine Google Trends for demand signals, TikTok Creative Center for viral products, and Fakespot for review verification to build a free research workflow.
 
 ### How long does product research typically take per product?
 Thorough validation takes anywhere from a few minutes with automated tools to several hours if you're manually checking suppliers, reviews, and margins.
@@ -211,7 +211,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 - Explain how to search for a specific product name or model number on multiple retailer sites or use a comparison tool
 
 ### Step 2. Compare total cost with shipping and tax
-- Emphasize that the sticker price isn't the final price—shipping, handling, and tax can change which deal is actually cheapest
+- Emphasize that the sticker price isn't the final price-shipping, handling, and tax can change which deal is actually cheapest
 
 ### Step 3. Check seller ratings and store reviews
 - Explain why the lowest price means nothing if the seller is fraudulent or has poor reviews
@@ -237,7 +237,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 - Combines price comparison with cash back offers and automatic coupon application
 
 ### ShopSherpa
-- Free browser extension that scans for fake reviews and risky sellers while you shop—catches scams before you pay
+- Free browser extension that scans for fake reviews and risky sellers while you shop-catches scams before you pay
 - Position this as the safety layer that complements price comparison tools
 
 ## Major retailers worth comparing prices across
@@ -245,7 +245,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 - Present this section in bullet format using **Retailer:** followed by what they're known for (price matching, free shipping thresholds, etc.)
 
 ### Amazon
-- Massive selection, variable pricing from third-party sellers—prices fluctuate frequently
+- Massive selection, variable pricing from third-party sellers-prices fluctuate frequently
 
 ### Walmart
 - Often matches or beats Amazon on everyday items, offers free shipping over a threshold and in-store pickup
@@ -260,14 +260,14 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 - Competitive on home improvement, offers bulk pricing and pro discounts
 
 ## How to find the real lowest price online
-- Explain that the listed "sale price" isn't always the best deal—savvy shoppers dig deeper
+- Explain that the listed "sale price" isn't always the best deal-savvy shoppers dig deeper
 - Present this section in numbered tips format
 
 ### 1. Check price history before you buy
 - Explain price history tools (like CamelCamelCamel) that show whether the current price is actually a deal or an inflated "sale"
 
 ### 2. Compare marketplace sellers, not just listings
-- Note that a single product page may have multiple sellers at different prices—compare them
+- Note that a single product page may have multiple sellers at different prices-compare them
 
 ### 3. Watch for hidden shipping and fees
 - Remind readers to factor in shipping, handling, and restocking fees before deciding
@@ -290,7 +290,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
   - **Keepa:** Provides detailed Amazon price history charts
 
 ## Coupons and cash back that stack with comparison tools
-- Explain that finding the lowest price is step one—coupons and cash back can reduce it further
+- Explain that finding the lowest price is step one-coupons and cash back can reduce it further
 - Define stacking: using multiple discounts (store coupon + cash back portal + credit card rewards) on the same purchase
 - Present cash back portals and coupon extensions in bullet format:
   - **Rakuten:** Cash back at thousands of stores
@@ -304,7 +304,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
   - **Check seller reviews:** Look for recent, verified reviews
   - **Verify the checkout domain:** Make sure the URL matches the store you think you're buying from
   - **Look for contact information:** Legitimate sellers have clear return policies and customer service info
-- Mention ShopSherpa as a tool that automates this—scans sellers and alerts you before you pay
+- Mention ShopSherpa as a tool that automates this-scans sellers and alerts you before you pay
 
 ## Privacy risks of price comparison browser extensions
 - Explain that some extensions track your browsing data, purchase history, and personal information
@@ -338,7 +338,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 - Answer: Google Shopping and Price.com both offer mobile apps that let you compare prices, scan barcodes, and find cash back offers while shopping in-store or online.
 
 ### Are price comparison browser extensions safe to use?
-- Answer: Most are safe, but some track your browsing data and sell it to advertisers. Look for extensions with clear privacy policies and minimal data collection—ShopSherpa, for example, runs without tracking.
+- Answer: Most are safe, but some track your browsing data and sell it to advertisers. Look for extensions with clear privacy policies and minimal data collection-ShopSherpa, for example, runs without tracking.
 
 **Top Competitors:** 
 - [Price.com: Save with Cash Back, Coupons & Price Comparison](https://price.com/)
@@ -385,7 +385,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 - Define "shopping assistant" for first-time readers.
 - Explain it runs quietly in the background while you browse and shop online.
 - Distinguish between sales-focused assistants and protection-focused assistants.
-- Keep this brief—set context, then move on.
+- Keep this brief-set context, then move on.
 
 - **Sales-focused assistants:** help you find and compare products
 - **Protection-focused assistants:** catch scams before you pay
@@ -402,7 +402,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 |---------|-------------------|
 | You ask a question, it responds | Runs automatically in the background |
 | Reactive support | Proactive protection |
-| Requires your input | No input needed—alerts you when something's off |
+| Requires your input | No input needed-alerts you when something's off |
 
 ---
 
@@ -413,7 +413,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 ### 1. Real time fake review detection
 - Explain the assistant scans product reviews as you browse.
 - Flag manipulated, paid, or suspicious reviews before you trust them.
-- Mention this runs automatically—no clicking required.
+- Mention this runs automatically-no clicking required.
 
 ### 2. Sketchy seller and fake store alerts
 - Detect risky or unverified sellers on marketplaces.
@@ -422,7 +422,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 
 ### 3. Wrong checkout domain warnings
 - Alert when the checkout page URL doesn't match the store you think you're buying from.
-- Explain this catches phishing attempts right at the payment step—the moment it matters most.
+- Explain this catches phishing attempts right at the payment step-the moment it matters most.
 
 ### 4. Phishing email detection for Gmail and Outlook
 - Scan your inbox for fake order confirmations, shipping alerts, and brand impersonation emails.
@@ -455,12 +455,12 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 
 ### 10. Cross platform coverage across major marketplaces
 - Explain that it works on Amazon, eBay, Walmart, and other major sites.
-- Stress consistent protection wherever you shop—not just one store or platform.
+- Stress consistent protection wherever you shop-not just one store or platform.
 
 ### 11. Quiet background alerts without the noise
 - Explain that it only surfaces when something is actually wrong.
 - No constant pop-ups, no interruptions.
-- Quiet by default—loud only when it matters.
+- Quiet by default-loud only when it matters.
 
 ---
 
@@ -482,7 +482,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 - Emphasize: install once, it does the rest.
 
 1. Install the browser extension (Chrome, Firefox, or Safari)
-2. Shop like you normally would—no setup wizards, no configuration
+2. Shop like you normally would-no setup wizards, no configuration
 3. The assistant scans in the background as you browse
 4. When something looks off, you see a quiet alert before you pay
 
@@ -509,10 +509,10 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 | Fake review detection | ✓ | ✓ |
 | Seller alerts | ✓ | ✓ |
 | Wrong checkout domain warnings | ✓ | ✓ |
-| Phishing email detection | — | ✓ |
-| Password vault and breach alerts | — | ✓ |
-| Masked card numbers | — | ✓ |
-| Mobile app | — | ✓ |
+| Phishing email detection | - | ✓ |
+| Password vault and breach alerts | - | ✓ |
+| Masked card numbers | - | ✓ |
+| Mobile app | - | ✓ |
 
 - Note: ShopSherpa's free tier is live now; Plus tier opens in early access.
 
@@ -523,23 +523,23 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 - Mention ShopSherpa's free browser extension is live now.
 - Reference the lifetime pre-order for Plus at $9.99 (limited spots).
 - Link to waitlist: https://shopsherpa.org/#cta.
-- Keep it direct and confident—no fluff.
+- Keep it direct and confident-no fluff.
 
 ---
 
 ## Frequently Asked Questions About Shopping Assistant Features
 
 ### What is a shopping assistant called?
-- Answer: A shopping assistant may also be called a virtual shopping assistant, AI shopping assistant, or shopping copilot—terms vary, but they all refer to tools that help you browse, compare, or stay safe while shopping online.
+- Answer: A shopping assistant may also be called a virtual shopping assistant, AI shopping assistant, or shopping copilot-terms vary, but they all refer to tools that help you browse, compare, or stay safe while shopping online.
 
 ### What is an example of an AI shopping assistant?
-- Answer: Examples include ShopSherpa (scam and fraud protection), Amazon Rufus (product discovery), and Fakespot (review analysis)—each focuses on a different part of the shopping experience.
+- Answer: Examples include ShopSherpa (scam and fraud protection), Amazon Rufus (product discovery), and Fakespot (review analysis)-each focuses on a different part of the shopping experience.
 
 ### Are shopping assistants safe to install?
 - Answer: Reputable shopping assistants from known providers are safe to install, but always check what permissions the extension requests and whether the company tracks your data.
 
 ### Do shopping assistants track my data?
-- Answer: Some do, some don't—ShopSherpa, for example, operates without tracking or selling your browsing data, but not all assistants make that commitment.
+- Answer: Some do, some don't-ShopSherpa, for example, operates without tracking or selling your browsing data, but not all assistants make that commitment.
 
 ### Can a shopping assistant stop scams before I pay?
 - Answer: Yes, a well-designed shopping assistant scans for fake reviews, risky sellers, and wrong checkout domains in real time, alerting you before you enter payment details.
@@ -681,7 +681,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 *Check payout methods: PayPal, check, gift card, and minimum withdrawal amounts.*
 
 ### Browser and mobile support
-*Best apps work across platforms—Chrome, Firefox, Safari, iOS, Android.*
+*Best apps work across platforms-Chrome, Firefox, Safari, iOS, Android.*
 
 ### Privacy and data handling
 *Some apps track browsing. Look for clear privacy policies. Mention that not all deal apps are transparent about data.*
@@ -720,7 +720,7 @@ Be skeptical of curated "winning product" lists that don't show data sources. Al
 *Not all coupon codes work. Some are outdated or never valid. Transition to the safety section.*
 
 ## Are Shopping Deal Apps Safe
-*Address common concerns. This is where ShopSherpa’s perspective becomes relevant—savings apps are great, but scams exist. Use bullet points for risks and red flags.*
+*Address common concerns. This is where ShopSherpa’s perspective becomes relevant-savings apps are great, but scams exist. Use bullet points for risks and red flags.*
 
 ### Common risks of deal apps
 *List these in bullets:*
@@ -843,10 +843,10 @@ Use a comparison table to show what’s included in each tier.
 | Real-time review scanning | ✓ | ✓ |
 | Fake seller detection | ✓ | ✓ |
 | Wrong checkout domain alerts | ✓ | ✓ |
-| Phishing Shield (Gmail/Outlook) | — | ✓ |
-| Password Vault with breach alerts | — | ✓ |
-| Masked Cards per store | — | ✓ |
-| Mobile app (iOS/Android) | — | ✓ |
+| Phishing Shield (Gmail/Outlook) | - | ✓ |
+| Password Vault with breach alerts | - | ✓ |
+| Masked Cards per store | - | ✓ |
+| Mobile app (iOS/Android) | - | ✓ |
 
 ## What's Inside ShopSherpa Plus
 Open with one sentence introducing Plus as the full shield, available in early access. Then break into the three core features below.

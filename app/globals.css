@@ -89,7 +89,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Headings use Barlow Semi Condensed — tighter, more impactful */
+/* Headings use Barlow Semi Condensed - tighter, more impactful */
 h1, h2, h3, h4, h5 {
   font-family: var(--font-heading);
   line-height: 1.05;
@@ -194,7 +194,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ─────────────────────────────────────────────────────────── */
-/* GRAIN TEXTURE — ultra-subtle tactile overlay                */
+/* GRAIN TEXTURE - ultra-subtle tactile overlay                */
 /* SVG turbulence tiled at 256px, ~3.5% opacity.              */
 /* Fixed position, no JS, zero performance cost.              */
 /* ─────────────────────────────────────────────────────────── */
@@ -211,7 +211,7 @@ body::before {
 }
 
 /* ─────────────────────────────────────────────────────────── */
-/* PAPER TEXTURE — warm linen base                             */
+/* PAPER TEXTURE - warm linen base                             */
 /* ─────────────────────────────────────────────────────────── */
 .bg-paper {
   background:
@@ -342,7 +342,7 @@ html.dark .text-readable {
 }
 
 /* ─────────────────────────────────────────────────────────── */
-/* NAV LINK UNDERLINES — animated, hand-drawn feel            */
+/* NAV LINK UNDERLINES - animated, hand-drawn feel            */
 /* Applies to all <a> inside <nav> automatically              */
 /* ─────────────────────────────────────────────────────────── */
 header nav a {
@@ -455,7 +455,7 @@ header nav a[aria-current="page"]::after {
 }
 
 /* ─────────────────────────────────────────────────────────── */
-/* CARD HOVER — warmer, more organic shadow lift              */
+/* CARD HOVER - warmer, more organic shadow lift              */
 /* ─────────────────────────────────────────────────────────── */
 .card-hover {
   transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -468,7 +468,7 @@ header nav a[aria-current="page"]::after {
 }
 
 /* ─────────────────────────────────────────────────────────── */
-/* BLOB FLOAT — slow organic background drift                 */
+/* BLOB FLOAT - slow organic background drift                 */
 /* Apply .blob-float to large blurred ambient divs            */
 /* ─────────────────────────────────────────────────────────── */
 @keyframes blobFloat {
@@ -520,7 +520,7 @@ header nav a[aria-current="page"]::after {
 }
 
 /* ─────────────────────────────────────────────────────────── */
-/* CTA HUE SHIFT — on email focus                             */
+/* CTA HUE SHIFT - on email focus                             */
 /* ─────────────────────────────────────────────────────────── */
 body[data-cta-focused="true"] .cta-section {
   filter: hue-rotate(-8deg) saturate(1.06);

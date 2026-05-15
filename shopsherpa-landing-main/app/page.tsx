@@ -40,7 +40,7 @@ export default function Page() {
       </header>
 
       {/* ─── HERO ──────────────────────────────────────────────────────────────
-          One headline, one sub. Outcome first — the reader is a shopper who
+          One headline, one sub. Outcome first - the reader is a shopper who
           worries about scams, not a product manager evaluating a feature list.
           HeroShapes adds visual depth without illustration clichés.
           LiveCounter grounds the copy in real activity.
@@ -102,7 +102,7 @@ export default function Page() {
       </section>
 
       {/* ─── TRUST STRIP ───────────────────────────────────────────────────────
-          Four hard numbers on a white bar — a distinct visual beat between
+          Four hard numbers on a white bar - a distinct visual beat between
           the hero and the how-it-works section. "1,800+ proprietary fraud
           patterns" doubles as a moat claim, not just a vanity stat.
       ────────────────────────────────────────────────────────────────────── */}
@@ -119,7 +119,7 @@ export default function Page() {
 
       {/* ─── HOW IT WORKS ──────────────────────────────────────────────────────
           Free tier only. Three steps, each concrete and short.
-          The reader should feel "that's it?" — simplicity is the pitch.
+          The reader should feel "that's it?" - simplicity is the pitch.
           No numbered list styling that looks like documentation.
       ────────────────────────────────────────────────────────────────────── */}
       <section id="how-it-works" className="bg-[#FAF8F4] px-6 md:px-8 py-24 md:py-32">
@@ -194,7 +194,7 @@ export default function Page() {
             <PhishingDemo />
           </ScrollFade>
 
-          {/* Before / After — the emotional punchline */}
+          {/* Before / After - the emotional punchline */}
           <ScrollFade delay={300}>
             <div className="grid md:grid-cols-2 gap-4 mt-6">
               <BeforeAfterCard
@@ -224,7 +224,7 @@ export default function Page() {
 
       {/* ─── PLUS TIER ─────────────────────────────────────────────────────────
           Visual roadmap, not a bullet list. Three cards, each with one outcome.
-          The pricing block below uses a real progress bar for scarcity —
+          The pricing block below uses a real progress bar for scarcity -
           a concrete number ("184 of 500") is more credible than "limited time."
           Only one CTA in this section. No competing actions.
       ────────────────────────────────────────────────────────────────────── */}
@@ -269,7 +269,7 @@ export default function Page() {
             </ScrollFade>
           </div>
 
-          {/* Pricing block — dark card so it stands out on the linen background */}
+          {/* Pricing block - dark card so it stands out on the linen background */}
           <ScrollFade delay={200}>
             <div className="bg-[#0d1f2d] text-white rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-start gap-10">
               <div className="flex-1">
@@ -282,7 +282,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                {/* Scarcity progress bar — 184 / 500 = 36.8% */}
+                {/* Scarcity progress bar - 184 / 500 = 36.8% */}
                 <div className="mt-8 max-w-xs">
                   <div className="flex justify-between text-xs text-white/50 font-mono mb-2">
                     <span>184 of 500 spots claimed</span>
@@ -384,7 +384,7 @@ export default function Page() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Tag chip — sits outside the image to feel like a sticker */}
+                {/* Tag chip - sits outside the image to feel like a sticker */}
                 <div className="absolute -bottom-4 -right-4 bg-[#1d9e75] text-white text-xs font-mono px-4 py-2.5 rounded-xl leading-snug">
                   <span className="block font-medium">Anghelo Araujo</span>
                   <span className="text-white/80">Sophomore · Nashua, NH</span>
@@ -425,7 +425,7 @@ export default function Page() {
       </section>
 
       {/* ─── FINAL CTA ─────────────────────────────────────────────────────────
-          Pre-order is the primary action — centered, one button.
+          Pre-order is the primary action - centered, one button.
           Waitlist is the fallback, below an "or" divider so the visual
           hierarchy is unmistakable. Never side by side. One wins.
       ────────────────────────────────────────────────────────────────────── */}
@@ -442,7 +442,7 @@ export default function Page() {
             </p>
           </ScrollFade>
 
-          {/* Pre-order — the one big action */}
+          {/* Pre-order - the one big action */}
           <ScrollFade delay={300}>
             <div className="flex justify-center mb-10">
               <PreorderButton variant="white" />
@@ -458,7 +458,7 @@ export default function Page() {
             </div>
           </ScrollFade>
 
-          {/* Waitlist — secondary fallback, clearly de-emphasized */}
+          {/* Waitlist - secondary fallback, clearly de-emphasized */}
           <ScrollFade delay={450}>
             <p className="text-white/60 text-sm mb-5">
               Not ready yet? Join the waitlist and we'll let you know when we launch.
@@ -498,7 +498,7 @@ export default function Page() {
 }
 
 /* ─────── HELPER COMPONENTS ─────────────────────────────────────────────────
-   All purely presentational — no hooks, no state. Safe in a server component.
+   All purely presentational - no hooks, no state. Safe in a server component.
 ─────────────────────────────────────────────────────────────────────────── */
 
 function Logo() {
@@ -541,7 +541,7 @@ function TrustStat({ n, label }: { n: string; label: string }) {
   );
 }
 
-// Numbered steps with a subtle circle border — less visually dominant than
+// Numbered steps with a subtle circle border - less visually dominant than
 // the filled circles in the original, giving more weight to the copy.
 function Step({ n, title, copy }: { n: number; title: string; copy: string }) {
   return (
@@ -592,7 +592,7 @@ function BeforeAfterCard({
   );
 }
 
-// Plus tier feature card — icon + title + one-line outcome.
+// Plus tier feature card - icon + title + one-line outcome.
 // Hover lift matches the use-case cards in the original design.
 function PlusCard({
   icon,
@@ -615,7 +615,7 @@ function PlusCard({
   );
 }
 
-// Light-background testimonial cards — reversed from the dark original
+// Light-background testimonial cards - reversed from the dark original
 // because this section sits between two dark sections and needs air.
 function TestimonialCard({
   quote,
@@ -637,7 +637,7 @@ function TestimonialCard({
   );
 }
 
-/* ─── Plus tier icons — minimal SVG glyphs, no icon library needed ─────── */
+/* ─── Plus tier icons - minimal SVG glyphs, no icon library needed ─────── */
 
 function ShieldIcon() {
   return (
