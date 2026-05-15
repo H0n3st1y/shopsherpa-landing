@@ -4,6 +4,7 @@ import { blogPostsPart3 } from "./blog-posts-3";
 import { blogPostsPart4 } from "./blog-posts-4";
 import { blogPostsPart5 } from "./blog-posts-5";
 import { blogPostsPart6 } from "./blog-posts-6";
+import { blogPostSeoOverrides } from "./blog-posts-seo";
 
 export type BlogPost = {
   slug: string;
@@ -115,26 +116,28 @@ function hasDraftCopy(post: Pick<BlogPost, "content" | "preview">): boolean {
 }
 
 function restorePost(post: SourceBlogPost, index: number): BlogPost {
+  const seoOverride = blogPostSeoOverrides[post.slug];
+  const mergedPost = seoOverride ? { ...post, ...seoOverride } : post;
   const thumbnail = post.thumbnail ?? FEATURED_THUMBNAILS[index + 1] ?? THUMBNAILS[index % THUMBNAILS.length];
   const thumbnailAlt =
     post.thumbnailAlt ??
-    `${post.title} guide from ShopSherpa about ${post.keyword || post.tag}`.replace(/\s+/g, " ");
+    `${mergedPost.title} guide from ShopSherpa about ${mergedPost.keyword || mergedPost.tag}`.replace(/\s+/g, " ");
 
-  if (isPublishReady({ ...post, thumbnail, thumbnailAlt })) {
+  if (isPublishReady({ ...mergedPost, thumbnail, thumbnailAlt })) {
     return {
-      ...post,
-      date: DATE_OVERRIDES[post.slug] ?? post.date,
-      preview: PREVIEW_OVERRIDES[post.slug] ?? post.preview,
+      ...mergedPost,
+      date: DATE_OVERRIDES[mergedPost.slug] ?? mergedPost.date,
+      preview: seoOverride?.preview ?? PREVIEW_OVERRIDES[mergedPost.slug] ?? mergedPost.preview,
       thumbnail,
       thumbnailAlt,
     };
   }
 
   return {
-    ...post,
-    date: DATE_OVERRIDES[post.slug] ?? post.date,
-    preview: PREVIEW_OVERRIDES[post.slug] ?? buildPreview(post),
-    content: buildRestoredContent(post),
+    ...mergedPost,
+    date: DATE_OVERRIDES[mergedPost.slug] ?? mergedPost.date,
+    preview: seoOverride?.preview ?? PREVIEW_OVERRIDES[mergedPost.slug] ?? buildPreview(mergedPost),
+    content: seoOverride?.content ?? buildRestoredContent(mergedPost),
     thumbnail,
     thumbnailAlt,
   };
