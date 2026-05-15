@@ -146,8 +146,6 @@ const jsonLd = {
       "founder": { "@id": `${siteUrl}/#founder` },
       "sameAs": [
         "https://x.com/shop_sherpa",
-        "https://www.linkedin.com/company/shopsherpa",
-        "https://www.instagram.com/shop_sherpa/",
       ],
     },
 
@@ -171,9 +169,6 @@ const jsonLd = {
       "name": "Anghelo Araujo Lazaro",
       "jobTitle": "Founder & CEO",
       "url": `${siteUrl}/team`,
-      "sameAs": [
-        "https://www.linkedin.com/in/angheloaraujolazaro/",
-      ],
       "worksFor": { "@id": `${siteUrl}/#organization` },
       "alumniOf": [
         {

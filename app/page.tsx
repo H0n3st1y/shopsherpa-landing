@@ -87,9 +87,14 @@ export default function Page() {
         <div aria-hidden className="blob-float-slow absolute -bottom-24 -left-24 size-80 rounded-full bg-[#1d9e75]/5 blur-3xl pointer-events-none" />
       </section>
 
-      <section id="what-is-shopsherpa" aria-label="What is ShopSherpa" className="border-y border-[#2e6273]/10 bg-white px-6 py-8 md:px-8">
-        <p className="mx-auto max-w-4xl text-base leading-relaxed text-[#1a1a1a]/70 md:text-lg">
-          ShopSherpa is a free browser extension that protects online shoppers from fraud. It automatically scans websites for 1,800+ fraud patterns, detects fake reviews, flags counterfeit sellers, and identifies phishing emails in your inbox before you interact with them. A paid Plus tier adds masked virtual credit card numbers, a password vault with breach alerts, and advanced phishing shields for Gmail and Outlook.
+      <section id="what-is-shopsherpa" aria-label="What is ShopSherpa" className="sr-only">
+        <p>
+          ShopSherpa is a free browser extension that protects online shoppers from fraud.
+          It automatically scans websites for 1,800+ fraud patterns, detects fake reviews,
+          flags counterfeit sellers, and identifies phishing emails in your inbox before you
+          interact with them. A paid Plus tier adds masked virtual credit card numbers, a
+          password vault with breach alerts, and advanced phishing shields for Gmail and
+          Outlook - available as a one-time $9.99 lifetime pre-order.
         </p>
       </section>
 
@@ -113,7 +118,7 @@ export default function Page() {
               ].map(([n, title, copy]) => (
                 <div key={title} className="rounded-2xl border border-[#2e6273]/10 bg-white p-5">
                   <p className="text-xs font-mono text-[#2e6273] mb-4">0{n}</p>
-                  <p className="text-xl font-medium tracking-tight mb-2">{title}</p>
+                  <h3 className="text-xl font-medium tracking-tight mb-2">{title}</h3>
                   <p className="text-sm leading-6 text-readable">{copy}</p>
                 </div>
               ))}
@@ -862,8 +867,6 @@ export default function Page() {
             <a href="/team" className="hover:text-white transition">Team</a>
             <a href="/product" className="hover:text-white transition">MiniUAV</a>
             <a href="https://x.com/shop_sherpa" className="hover:text-white transition">X</a>
-            <a href="https://www.linkedin.com/company/shopsherpa" className="hover:text-white transition">LinkedIn</a>
-            <a href="https://www.instagram.com/shop_sherpa/" className="hover:text-white transition">Instagram</a>
           </div>
           <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
         </div>
@@ -910,7 +913,7 @@ function Step({ n, title, copy }: { n: number; title: string; copy: string }) {
       <div className="size-10 rounded-full border-2 border-[#2e6273]/25 text-[#2e6273] flex items-center justify-center font-mono font-medium text-sm mb-6">
         {n}
       </div>
-      <p className="text-xl font-medium mb-3 tracking-tight">{title}</p>
+      <h3 className="text-xl font-medium mb-3 tracking-tight">{title}</h3>
       <p className="text-sm text-[#1a1a1a]/60 leading-relaxed">{copy}</p>
     </div>
   );
@@ -959,7 +962,7 @@ function PlanCard({
       <div className="flex items-start justify-between gap-4 mb-8">
         <div>
           <p className={`text-xs font-mono uppercase tracking-wider mb-3 ${featured ? "text-[#1d9e75]" : "text-[#2e6273]"}`}>{eyebrow}</p>
-          <p className="text-3xl md:text-4xl font-medium tracking-tight">{title}</p>
+          <h3 className="text-3xl md:text-4xl font-medium tracking-tight">{title}</h3>
         </div>
         {featured && (
           <span className="rounded-full bg-[#1d9e75]/15 border border-[#1d9e75]/25 px-3 py-1 text-xs font-mono text-[#1d9e75] shrink-0">
@@ -1007,7 +1010,7 @@ function PlusCard({ icon, title, outcome }: { icon: ReactNode; title: string; ou
     <div className="card-hover bg-white rounded-2xl p-7 border border-[#2e6273]/10 h-full">
       <div className="size-10 rounded-xl bg-[#F4F0E8] flex items-center justify-center text-[#2e6273] mb-5">{icon}</div>
       <p className="text-xs font-mono uppercase tracking-wider text-[#2e6273]/50 mb-2">Coming early access</p>
-      <p className="text-xl font-medium tracking-tight mb-3">{title}</p>
+      <h3 className="text-xl font-medium tracking-tight mb-3">{title}</h3>
       <p className="text-sm text-[#1a1a1a]/60 leading-relaxed">{outcome}</p>
     </div>
   );
@@ -1040,7 +1043,7 @@ function RoadmapCard({
           {statusStyles.label}
         </span>
       </div>
-      <p className="text-xl font-medium tracking-tight mb-5">{title}</p>
+      <h3 className="text-xl font-medium tracking-tight mb-5">{title}</h3>
       <ul className="space-y-2.5">
         {items.map((item) => (
           <li key={item} className="flex items-start gap-2.5 text-sm text-[#1a1a1a]/65">
@@ -1061,7 +1064,7 @@ function BlogCard({ tag, title, read }: { tag: string; title: string; read: stri
       className="card-hover group bg-[#FAF8F4] rounded-2xl p-7 border border-[#2e6273]/10 h-full flex flex-col"
     >
       <p className="text-xs font-mono uppercase tracking-wider text-[#2e6273]/60 mb-4">{tag}</p>
-      <p className="text-lg font-medium leading-snug tracking-tight mb-6 flex-1">{title}</p>
+      <h3 className="text-lg font-medium leading-snug tracking-tight mb-6 flex-1">{title}</h3>
       <div className="flex items-center justify-between pt-5 border-t border-[#2e6273]/10">
         <p className="text-xs text-[#1a1a1a]/40 font-mono">{read}</p>
         <svg
