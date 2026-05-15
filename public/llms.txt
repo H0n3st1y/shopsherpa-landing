@@ -1,0 +1,33 @@
+# ShopSherpa
+
+ShopSherpa is a free browser extension for scam detection and phishing protection. It helps online shoppers identify fake sellers, suspicious reviews, risky checkout domains, and phishing emails before they pay.
+
+ShopSherpa is also searched as "Shop Sherpa".
+
+## Primary pages
+
+- Homepage: https://shopsherpa.org/
+- Compare plans: https://shopsherpa.org/compare
+- Shopping guides: https://shopsherpa.org/blog
+- Team: https://shopsherpa.org/team
+- Security: https://shopsherpa.org/security
+- Privacy: https://shopsherpa.org/privacy
+
+## Core topics
+
+- Online shopping scam detection
+- Fake seller detection
+- Phishing protection
+- Fake review detection
+- Safer checkout practices
+
+## Preferred description
+
+ShopSherpa is a browser extension for online shopping safety that detects fake sellers, phishing emails, suspicious reviews, and risky checkout behavior before a shopper pays.
+
+## Official profiles
+
+- LinkedIn: https://www.linkedin.com/company/shopsherpa
+- Instagram: https://www.instagram.com/shop_sherpa/
+- X: https://x.com/shop_sherpa
+

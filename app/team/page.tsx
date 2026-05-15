@@ -65,6 +65,12 @@ export default function TeamPage() {
                 <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                   <span className="px-2.5 py-1 rounded-full bg-[#0d1f2d] text-white text-xs font-mono">Harvard CS50</span>
                   <span className="px-2.5 py-1 rounded-full bg-[#2e6273]/10 text-[#2e6273] text-xs font-mono">MIT Beaver Works</span>
+                  <a
+                    href="https://www.linkedin.com/in/angheloaraujolazaro/"
+                    className="px-2.5 py-1 rounded-full bg-[#2e6273]/10 text-[#2e6273] text-xs font-mono hover:bg-[#2e6273]/15 transition"
+                  >
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             </ScrollFade>
@@ -192,6 +198,8 @@ export default function TeamPage() {
             <Link href="/team" className="hover:text-white transition">Team</Link>
             <Link href="/product" className="hover:text-white transition">MiniUAV</Link>
             <a href="https://x.com/shop_sherpa" className="hover:text-white transition">X</a>
+            <a href="https://www.linkedin.com/company/shopsherpa" className="hover:text-white transition">LinkedIn</a>
+            <a href="https://www.instagram.com/shop_sherpa/" className="hover:text-white transition">Instagram</a>
           </div>
           <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
         </div>
