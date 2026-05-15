@@ -87,9 +87,14 @@ export default function Page() {
         <div aria-hidden className="blob-float-slow absolute -bottom-24 -left-24 size-80 rounded-full bg-[#1d9e75]/5 blur-3xl pointer-events-none" />
       </section>
 
-      <section id="what-is-shopsherpa" aria-label="What is ShopSherpa" className="border-y border-[#2e6273]/10 bg-white px-6 py-8 md:px-8">
-        <p className="mx-auto max-w-4xl text-base leading-relaxed text-[#1a1a1a]/70 md:text-lg">
-          ShopSherpa is a free browser extension that protects online shoppers from fraud. It automatically scans websites for 1,800+ fraud patterns, detects fake reviews, flags counterfeit sellers, and identifies phishing emails in your inbox before you interact with them. A paid Plus tier adds masked virtual credit card numbers, a password vault with breach alerts, and advanced phishing shields for Gmail and Outlook.
+      <section id="what-is-shopsherpa" aria-label="What is ShopSherpa" className="sr-only">
+        <p>
+          ShopSherpa is a free browser extension that protects online shoppers from fraud.
+          It automatically scans websites for 1,800+ fraud patterns, detects fake reviews,
+          flags counterfeit sellers, and identifies phishing emails in your inbox before you
+          interact with them. A paid Plus tier adds masked virtual credit card numbers, a
+          password vault with breach alerts, and advanced phishing shields for Gmail and
+          Outlook - available as a one-time $9.99 lifetime pre-order.
         </p>
       </section>
 
@@ -524,7 +529,7 @@ export default function Page() {
                 <p className="text-sm text-[#1a1a1a]/60">We read every message. Reply to any email from ShopSherpa.</p>
               </div>
               <a
-                href="mailto:anghelobusiness@gmail.com"
+                href="mailto:hello@shopsherpa.org"
                 className="shrink-0 px-5 py-2.5 rounded-full bg-[#0d1f2d] text-white text-sm font-medium hover:bg-[#2e6273] transition active:scale-[0.98]"
               >
                 Send a message
@@ -862,10 +867,8 @@ export default function Page() {
             <a href="/team" className="hover:text-white transition">Team</a>
             <a href="/product" className="hover:text-white transition">MiniUAV</a>
             <a href="https://x.com/shop_sherpa" className="hover:text-white transition">X</a>
-            <a href="https://www.linkedin.com/company/shopsherpa" className="hover:text-white transition">LinkedIn</a>
-            <a href="https://www.instagram.com/shop_sherpa/" className="hover:text-white transition">Instagram</a>
           </div>
-          <div className="text-xs text-white/40">2026 ShopSherpa, Nashua NH · 603-514-8595</div>
+          <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
         </div>
       </footer>
     </main>

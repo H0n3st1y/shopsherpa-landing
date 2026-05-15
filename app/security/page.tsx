@@ -35,7 +35,7 @@ const CONTROLS = [
   "Supabase-backed waitlist storage with restricted project access.",
   "Minimal retention for logs that are not needed for product safety or debugging.",
   "Human review before adding high-risk integrations such as inbox access, vault storage, or masked-card flows.",
-  "A responsible disclosure inbox at anghelobusiness@gmail.com.",
+  "A responsible disclosure inbox at hello@shopsherpa.org.",
 ];
 
 const ROADMAP = [
@@ -86,7 +86,7 @@ export default function SecurityPage() {
                 Please report it before making it public. Include the affected page or feature, steps to reproduce, impact, and screenshots or proof-of-concept details if safe to share.
               </p>
               <a
-                href="mailto:anghelobusiness@gmail.com?subject=Security%20report"
+                href="mailto:hello@shopsherpa.org?subject=Security%20report"
                 className="inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-[#0d1f2d] transition hover:bg-[#F4F0E8] active:scale-[0.98]"
               >
                 Report security issue

@@ -65,12 +65,6 @@ export default function TeamPage() {
                 <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                   <span className="px-2.5 py-1 rounded-full bg-[#0d1f2d] text-white text-xs font-mono">Harvard CS50</span>
                   <span className="px-2.5 py-1 rounded-full bg-[#2e6273]/10 text-[#2e6273] text-xs font-mono">MIT Beaver Works</span>
-                  <a href="https://www.linkedin.com/in/angheloaraujolazaro/" className="px-2.5 py-1 rounded-full bg-[#2e6273]/10 text-[#2e6273] text-xs font-mono hover:bg-[#2e6273]/15 transition">
-                    LinkedIn
-                  </a>
-                  <a href="https://github.com/H0n3st1y" className="px-2.5 py-1 rounded-full bg-[#2e6273]/10 text-[#2e6273] text-xs font-mono hover:bg-[#2e6273]/15 transition">
-                    GitHub
-                  </a>
                 </div>
               </div>
             </ScrollFade>
@@ -173,7 +167,7 @@ export default function TeamPage() {
                 </p>
               </div>
               <a
-                href="mailto:anghelobusiness@gmail.com"
+                href="mailto:hello@shopsherpa.org"
                 className="shrink-0 px-6 py-3 rounded-full bg-[#1d9e75] text-white text-sm font-medium hover:bg-[#167a5a] transition active:scale-[0.98] whitespace-nowrap"
               >
                 Say hello
@@ -198,10 +192,8 @@ export default function TeamPage() {
             <Link href="/team" className="hover:text-white transition">Team</Link>
             <Link href="/product" className="hover:text-white transition">MiniUAV</Link>
             <a href="https://x.com/shop_sherpa" className="hover:text-white transition">X</a>
-            <a href="https://www.linkedin.com/company/shopsherpa" className="hover:text-white transition">LinkedIn</a>
-            <a href="https://www.instagram.com/shop_sherpa/" className="hover:text-white transition">Instagram</a>
           </div>
-          <div className="text-xs text-white/40">2026 ShopSherpa, Nashua NH · 603-514-8595</div>
+          <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
         </div>
       </footer>
     </main>

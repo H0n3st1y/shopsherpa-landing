@@ -41,13 +41,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "ShopSherpa Scam Detection & Phishing Protection",
+    default: "ShopSherpa - Browser Extension for Scam Detection & Phishing Protection",
     template: "%s",
   },
 
   // First 50 words follow the Direct Answer Box pattern for AI Overview eligibility
   description:
-    "ShopSherpa is a free scam detection browser extension that catches fake sellers, phishing emails, risky checkouts, and fraudulent listings before you pay.",
+    "ShopSherpa detects fake sellers, phishing emails, and fraudulent listings before you pay. Scans 1,800+ fraud patterns in 60 seconds. Free browser extension.",
 
   keywords: [
     "ShopSherpa",
@@ -60,11 +60,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Anghelo Araujo Lazaro", url: `${siteUrl}/team` }],
   alternates: {
     canonical: siteUrl,
-  },
-
-  icons: {
-    icon: "/favicon.png",
-    apple: "/apple-touch-icon.png",
   },
 
   openGraph: {
@@ -144,39 +139,13 @@ const jsonLd = {
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "anghelobusiness@gmail.com",
-        "telephone": "+1-603-514-8595",
+        "email": "hello@shopsherpa.org",
         "contactType": "customer support",
         "availableLanguage": "English",
       },
       "founder": { "@id": `${siteUrl}/#founder` },
       "sameAs": [
         "https://x.com/shop_sherpa",
-        "https://www.linkedin.com/company/shopsherpa",
-        "https://www.instagram.com/shop_sherpa/",
-      ],
-    },
-
-    {
-      "@type": "LocalBusiness",
-      "@id": `${siteUrl}/#local-business`,
-      "name": siteName,
-      "alternateName": spacedSiteName,
-      "url": siteUrl,
-      "image": `${siteUrl}/logo.svg`,
-      "telephone": "+1-603-514-8595",
-      "email": "anghelobusiness@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Nashua",
-        "addressRegion": "NH",
-        "addressCountry": "US",
-      },
-      "parentOrganization": { "@id": `${siteUrl}/#organization` },
-      "sameAs": [
-        "https://x.com/shop_sherpa",
-        "https://www.linkedin.com/company/shopsherpa",
-        "https://www.instagram.com/shop_sherpa/",
       ],
     },
 
@@ -200,10 +169,6 @@ const jsonLd = {
       "name": "Anghelo Araujo Lazaro",
       "jobTitle": "Founder & CEO",
       "url": `${siteUrl}/team`,
-      "sameAs": [
-        "https://www.linkedin.com/in/angheloaraujolazaro/",
-        "https://github.com/H0n3st1y",
-      ],
       "worksFor": { "@id": `${siteUrl}/#organization` },
       "alumniOf": [
         {
@@ -342,28 +307,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <head>
         <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MXGFXT4M');`,
-          }}
-        />
-        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="bg-paper antialiased">
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MXGFXT4M"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
         <SmoothHashLinks />
         {children}
       </body>
