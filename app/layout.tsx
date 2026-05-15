@@ -1,22 +1,53 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import { Barlow, Barlow_Semi_Condensed, Lora, DM_Mono } from "next/font/google";
 import { SmoothHashLinks } from "@/components/SmoothHashLinks";
 import { siteName, siteUrl, spacedSiteName } from "@/lib/seo";
 import "./globals.css";
 
-const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.NEXT_PUBLIC_GA_ID;
+/* Body text - Barlow Regular/Medium/SemiBold */
+const barlow = Barlow({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+/* Headings - Barlow Semi Condensed, more impactful than full-width */
+const barlowHeading = Barlow_Semi_Condensed({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+/* Accent serif - Lora for testimonial quotes, founder story, pull quotes */
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+/* Mono - kept for code/labels/badges */
+const mono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "ShopSherpa Scam Detection & Phishing Protection",
+    default: "ShopSherpa - Browser Extension for Scam Detection & Phishing Protection",
     template: "%s",
   },
 
   // First 50 words follow the Direct Answer Box pattern for AI Overview eligibility
   description:
-    "ShopSherpa is a free scam detection browser extension that catches fake sellers, phishing emails, risky checkouts, and fraudulent listings before you pay.",
+    "ShopSherpa detects fake sellers, phishing emails, and fraudulent listings before you pay. Scans 1,800+ fraud patterns in 60 seconds. Free browser extension.",
 
   keywords: [
     "ShopSherpa",
@@ -29,11 +60,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Anghelo Araujo Lazaro", url: `${siteUrl}/team` }],
   alternates: {
     canonical: siteUrl,
-  },
-
-  icons: {
-    icon: "/favicon.png",
-    apple: "/apple-touch-icon.png",
   },
 
   openGraph: {
@@ -275,7 +301,10 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${barlow.variable} ${barlowHeading.variable} ${lora.variable} ${mono.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -284,19 +313,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-paper antialiased">
         <SmoothHashLinks />
-        {gaId ? (
-          <>
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaId}');
-              `}
-            </Script>
-          </>
-        ) : null}
         {children}
       </body>
     </html>

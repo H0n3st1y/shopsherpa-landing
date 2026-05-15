@@ -38,7 +38,7 @@ export default function Page() {
 
           <ScrollFade delay={240}>
             <p className="mt-6 md:mt-8 text-lg md:text-xl text-[#1a1a1a]/65 max-w-xl leading-relaxed">
-              Catch the scam before you pay with ShopSherpa. It scans every store you visit for fake reviews and bad sellers, then flags phishing emails before you open them. Free, and ready in 60 seconds.
+              ShopSherpa scans every store you visit for fake reviews and bad sellers. It flags phishing emails before you open them. Free, and ready in 60 seconds.
             </p>
           </ScrollFade>
 
@@ -65,13 +65,9 @@ export default function Page() {
 
           <ScrollFade delay={240}>
             <div className="group relative overflow-hidden rounded-[2rem] border border-[#2e6273]/15 bg-white shadow-[var(--shadow-lift)]">
-              <Image
+              <img
                 src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80"
                 alt="ShopSherpa browser extension scanning a secure online checkout for scam protection"
-                width={720}
-                height={900}
-                sizes="(min-width: 1024px) 38vw, 100vw"
-                priority
                 className="image-lift aspect-[4/5] w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f2d]/78 via-[#0d1f2d]/18 to-transparent" />
@@ -109,7 +105,7 @@ export default function Page() {
             <div>
               <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-3 font-mono">Easier install path</p>
               <h2 className="text-3xl md:text-5xl font-medium tracking-tighter leading-[1] max-w-xl">
-                Fake seller and phishing protection in three clicks.
+                Make download feel like three clicks.
               </h2>
             </div>
           </ScrollFade>
