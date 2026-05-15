@@ -55,7 +55,7 @@ const SECTIONS = [
     title: "Your choices",
     body: [
       "You can unsubscribe from emails at any time.",
-      "You can ask us to delete waitlist or account information by emailing hello@shopsherpa.org.",
+      "You can ask us to delete waitlist or account information by emailing anghelobusiness@gmail.com.",
       "You can uninstall the extension at any time from your browser's extension settings.",
     ],
   },
@@ -108,7 +108,7 @@ export default function PrivacyPage() {
               Email us if you want your waitlist information deleted, have a privacy question, or want more detail about a specific product feature.
             </p>
             <a
-              href="mailto:hello@shopsherpa.org?subject=Privacy%20question"
+              href="mailto:anghelobusiness@gmail.com?subject=Privacy%20question"
               className="inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-[#0d1f2d] transition hover:bg-[#F4F0E8] active:scale-[0.98]"
             >
               Email privacy question

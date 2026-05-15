@@ -97,7 +97,7 @@ function HeaderCta({ cta, dark }: { cta: "preorder" | "access" | "waitlist" | "h
   if (cta === "access") {
     return (
       <a
-        href="mailto:hello@shopsherpa.org?subject=ShopSherpa%20Lab%20early%20access"
+        href="mailto:anghelobusiness@gmail.com?subject=ShopSherpa%20Lab%20early%20access"
         className={`px-4 py-2 rounded-full text-sm font-medium transition active:scale-[0.98] ${dark ? "bg-white text-[#0d1f2d] hover:bg-[#F4F0E8]" : "bg-[#1a1a1a] text-white hover:bg-[#2e6273]"}`}
       >
         Request access
