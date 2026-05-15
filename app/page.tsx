@@ -38,7 +38,7 @@ export default function Page() {
 
           <ScrollFade delay={240}>
             <p className="mt-6 md:mt-8 text-lg md:text-xl text-[#1a1a1a]/65 max-w-xl leading-relaxed">
-              ShopSherpa scans every store you visit for fake reviews and bad sellers. It flags phishing emails before you open them. Free, and ready in 60 seconds.
+              Catch the scam before you pay with ShopSherpa. It scans every store you visit for fake reviews and bad sellers, then flags phishing emails before you open them. Free, and ready in 60 seconds.
             </p>
           </ScrollFade>
 

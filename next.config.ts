@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.shopsherpa.org" }],
+        destination: "https://shopsherpa.org/:path*",
+        permanent: true,
+      },
+      {
         source: "/aeo",
         destination: "/",
         permanent: true,

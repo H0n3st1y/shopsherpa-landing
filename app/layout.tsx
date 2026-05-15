@@ -41,13 +41,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "ShopSherpa — Browser Extension for Scam Detection & Phishing Protection",
+    default: "ShopSherpa — Scam Detection Extension",
     template: "%s",
   },
 
   // First 50 words follow the Direct Answer Box pattern for AI Overview eligibility
   description:
-    "ShopSherpa detects fake sellers, phishing emails, and fraudulent listings before you pay. It scans 1,800+ fraud patterns in 60 seconds — free browser extension, one-time $9.99 lifetime pre-order.",
+    "ShopSherpa catches fake sellers, phishing emails, and risky checkouts before you pay. Free browser extension for safer online shopping.",
 
   keywords: [
     "ShopSherpa",
@@ -60,6 +60,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Anghelo Araujo Lazaro", url: `${siteUrl}/team` }],
   alternates: {
     canonical: siteUrl,
+  },
+
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
 
   openGraph: {
