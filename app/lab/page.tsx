@@ -121,12 +121,12 @@ export default function LabPage() {
           </ScrollFade>
           <ScrollFade delay={120}>
             <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-2xl">
-              One Lab.<br />Four product bets.
+              One Lab.<br />Four products.
             </h2>
           </ScrollFade>
           <ScrollFade delay={200}>
             <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-14 max-w-xl leading-relaxed">
-              The Lab lets each idea have a clear job. ShopSherpa protects shoppers. Sherpa, Finance Guru, Caddy, and MiniUAV explore what practical agents and safety tools can become.
+              The Lab lets each idea have a clear job. ShopSherpa protects shoppers. Sherpa, Finance Guru, and Caddy each point toward a different practical bet for businesses.
             </p>
           </ScrollFade>
           <ScrollFade delay={280}>
@@ -219,7 +219,6 @@ export default function LabPage() {
             <Link href="/" className="hover:text-white transition">ShopSherpa</Link>
             <Link href="/lab" className="text-white transition">Lab</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>
-            <Link href="/product" className="hover:text-white transition">MiniUAV</Link>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
           </div>
           <div className="text-xs text-white/40">2026 ShopSherpa Lab, built in Nashua NH</div>

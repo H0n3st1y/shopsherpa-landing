@@ -81,7 +81,7 @@ export default function TeamPage() {
                     After weeks of begging for a dog, the money was wired and the seller vanished. That emotional toll turned into a mission: building ShopSherpa, an AI-powered shield that stops marketplace fraud before it hits your wallet.
                   </p>
                   <p>
-                    At 16, Anghelo is a multidisciplinary developer at Nashua High School South. He has completed Harvard&apos;s CS50 curricula and MIT Beaver Works programs, specializing in Quantum Software and Microelectronics. His technical portfolio ranges from financial modeling to autonomous hardware, most notably co-developing the MiniUAV Guardian, a security quadrotor with custom PCB architecture and real-time threat detection.
+                    At 16, Anghelo is a multidisciplinary developer at Nashua High School South. He has completed Harvard&apos;s CS50 curricula and MIT Beaver Works programs, specializing in Quantum Software and Microelectronics. His technical portfolio spans financial modeling, autonomous hardware, and AI-powered consumer tools.
                   </p>
                   <p>
                     A state-level DECA competitor and former front-end intern at Rayfield Systems, Anghelo also holds leadership roles in Interact Rotary and competes in Track and Cross Country. He combines the grit of a student-athlete with the technical depth of an engineer to ensure no other family gets scammed online.
@@ -90,7 +90,7 @@ export default function TeamPage() {
               </ScrollFade>
               <ScrollFade delay={300}>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  {["Fraud Detection", "MIT Beaver Works", "MiniUAV Guardian", "DECA", "Rayfield Systems", "Interact Rotary", "Track & XC"].map((tag) => (
+                  {["Fraud Detection", "MIT Beaver Works", "DECA", "Rayfield Systems", "Interact Rotary", "Track & XC"].map((tag) => (
                     <span key={tag} className="px-3 py-1.5 rounded-full bg-[#FAF8F4] border border-[#2e6273]/15 text-xs font-mono text-[#2e6273]">
                       {tag}
                     </span>
@@ -190,7 +190,6 @@ export default function TeamPage() {
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
             <Link href="/lab" className="hover:text-white transition">Lab</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>
-            <Link href="/product" className="hover:text-white transition">MiniUAV</Link>
             <a href="https://x.com/shop_sherpa" className="hover:text-white transition">X</a>
           </div>
           <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>

@@ -13,7 +13,9 @@ const PRODUCTS = [
     image:
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Business procurement spreadsheet and vendor deal research for the Sherpa agent",
-    className: "max-lg:rounded-t-[2rem] lg:col-span-3 lg:rounded-tl-[2rem]",
+    href: "/lab#sherpa",
+    cta: "See Sherpa run",
+    className: "max-lg:rounded-t-[1.5rem] lg:col-span-3 lg:rounded-tl-[1.5rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
   {
@@ -24,7 +26,9 @@ const PRODUCTS = [
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Finance dashboard charts for Finance Guru business agent analysis",
-    className: "lg:col-span-3 lg:rounded-tr-[2rem]",
+    href: "mailto:hello@shopsherpa.org?subject=Finance%20Guru%20early%20access",
+    cta: "Ask about Finance Guru",
+    className: "lg:col-span-3 lg:rounded-tr-[1.5rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
   {
@@ -35,18 +39,9 @@ const PRODUCTS = [
     image:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Sales team workflow for Caddy follow-up automation agent",
-    className: "lg:col-span-2 lg:rounded-bl-[2rem]",
-    fade: ["bottom"] as ("top" | "bottom")[],
-  },
-  {
-    eyebrow: "Security hardware",
-    title: "MiniUAV Guardian brings threat detection into a room.",
-    description:
-      "An autonomous indoor security quadrotor with ESP32 control, PIR motion sensing, and real-time Wi-Fi logs.",
-    image:
-      "https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Drone hardware concept for MiniUAV Guardian indoor security",
-    className: "lg:col-span-2",
+    href: "mailto:hello@shopsherpa.org?subject=Caddy%20early%20access",
+    cta: "Ask about Caddy",
+    className: "lg:col-span-3 lg:rounded-bl-[1.5rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
   {
@@ -57,7 +52,9 @@ const PRODUCTS = [
     image:
       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Secure online checkout protection for the ShopSherpa browser extension",
-    className: "max-lg:rounded-b-[2rem] lg:col-span-2 lg:rounded-br-[2rem]",
+    href: "/",
+    cta: "Visit ShopSherpa",
+    className: "max-lg:rounded-b-[1.5rem] lg:col-span-3 lg:rounded-br-[1.5rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
 ];
@@ -72,6 +69,8 @@ export default function FUIBentoGridDark() {
             eyebrow={product.eyebrow}
             title={product.title}
             description={product.description}
+            href={product.href}
+            cta={product.cta}
             graphic={
               <img
                 src={product.image}
@@ -96,6 +95,8 @@ export function BentoCard({
   title,
   description,
   graphic,
+  href,
+  cta,
   fade = [],
 }: {
   dark?: boolean;
@@ -104,6 +105,8 @@ export function BentoCard({
   title: ReactNode;
   description: ReactNode;
   graphic?: ReactNode;
+  href: string;
+  cta: string;
   fade?: ("top" | "bottom")[];
 }) {
   return (
@@ -114,12 +117,12 @@ export function BentoCard({
       data-dark={dark ? "true" : undefined}
       className={clsx(
         className,
-        "group relative flex min-h-[30rem] flex-col overflow-hidden rounded-lg transform-gpu",
+        "group relative flex min-h-[16rem] flex-col overflow-hidden rounded-lg transform-gpu",
         "bg-[#0d1f2d] shadow-sm ring-1 ring-white/10",
         "data-[dark]:bg-gray-800 data-[dark]:ring-white/15"
       )}
     >
-      <div className="relative h-[29rem] shrink-0">
+      <div className="relative h-[15rem] shrink-0">
         {graphic}
         <div className="absolute inset-0 bg-[#0d1f2d]/30" />
         {fade.includes("top") && (
@@ -129,14 +132,21 @@ export function BentoCard({
           <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f2d] via-[#0d1f2d]/70 to-transparent" />
         )}
       </div>
-      <div className="relative z-20 isolate mt-[-11.5rem] min-h-48 p-7 md:p-9 text-white backdrop-blur-xl">
+      <div className="relative z-20 isolate mt-[-7rem] min-h-28 p-5 md:p-6 text-white backdrop-blur-xl">
         <p className="text-xs uppercase tracking-wider text-[#1d9e75] font-mono">{eyebrow}</p>
-        <h3 className="mt-2 text-2xl md:text-3xl font-medium tracking-tight leading-[1.05] text-white">
+        <h3 className="mt-2 text-xl md:text-2xl font-medium tracking-tight leading-[1.08] text-white">
           {title}
         </h3>
         <p className="mt-3 max-w-[620px] text-sm leading-6 text-white/70">
           {description}
         </p>
+        <a
+          href={href}
+          className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:border-white/30 hover:bg-white/15"
+        >
+          {cta}
+          <span aria-hidden>→</span>
+        </a>
       </div>
     </motion.div>
   );
