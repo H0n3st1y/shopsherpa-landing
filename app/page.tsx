@@ -58,7 +58,7 @@ export default function Page() {
             <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-readable">
               <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
               <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
-              <a href="https://chromewebstore.google.com/detail/fcelgmiapbglnffjekjlgbogogaiipog/preview?hl=en&authuser=0" className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5 hover:border-[#1d9e75]/40 transition"><CheckIcon />Install from Chrome Web Store</a>
+              <a href="https://github.com/H0n3st1y/shopsherpa-landing" className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5 hover:border-[#1d9e75]/40 transition"><CheckIcon />Install from GitHub</a>
             </div>
           </ScrollFade>
           </div>
@@ -112,9 +112,9 @@ export default function Page() {
           <ScrollFade delay={120}>
             <div className="grid md:grid-cols-3 gap-3">
               {[
-                ["1", "Open Web Store", "Visit the Chrome Web Store listing."],
-                ["2", "Add extension", "Click Add to Chrome from the listing page."],
-                ["3", "Start shopping", "ShopSherpa begins checking stores while you browse."],
+                ["1", "Open GitHub", "Use the public repo while store review is in progress."],
+                ["2", "Download build", "Grab the extension folder from the latest release."],
+                ["3", "Add to Chrome", "Open Extensions, enable Developer Mode, and load the folder."],
               ].map(([n, title, copy]) => (
                 <div key={title} className="rounded-2xl border border-[#2e6273]/10 bg-white p-5">
                   <p className="text-xs font-mono text-[#2e6273] mb-4">0{n}</p>
@@ -125,13 +125,13 @@ export default function Page() {
             </div>
             <div className="mt-5 flex flex-col sm:flex-row gap-3">
               <a
-                href="https://chromewebstore.google.com/detail/fcelgmiapbglnffjekjlgbogogaiipog/preview?hl=en&authuser=0"
+                href="https://github.com/H0n3st1y/shopsherpa-landing"
                 className="inline-flex items-center justify-center rounded-full bg-[#1a1a1a] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#2e6273] active:scale-[0.98]"
               >
-                Install from Chrome Web Store
+                Install from GitHub
               </a>
               <p className="text-sm leading-6 text-readable max-w-md">
-                Install directly from the Chrome Web Store listing and start shopping with protection enabled.
+                My recommendation: publish a Chrome Web Store listing next, then keep GitHub as the transparent developer install option.
               </p>
             </div>
           </ScrollFade>
