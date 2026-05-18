@@ -7,7 +7,7 @@ const items = [
   },
   {
     q: "When does Plus launch?",
-    a: "Public access is opening through GitHub and the waitlist.",
+    a: "Public access is opening through the Chrome Web Store and the waitlist.",
   },
   {
     q: "How is this different from 1Password or LifeLock?",
