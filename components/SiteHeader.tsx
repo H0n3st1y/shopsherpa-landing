@@ -4,7 +4,7 @@ import { PreorderButton } from "@/components/PreorderButton";
 import { ThemeToggle } from "@/components/ui/curtain-theme-toggle";
 
 type HeaderVariant = "light" | "dark";
-type ActivePage = "home" | "compare" | "lab" | "team" | "blog";
+type ActivePage = "home" | "compare" | "lab" | "team" | "blog" | "product";
 
 export function SiteHeader({
   active = "home",
