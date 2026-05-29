@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
                 Thanks for backing ShopSherpa. Your $9.99 locks in lifetime access. You'll never see a monthly bill from us.
               </p>
               <p style="line-height: 1.6; color: #4a4a4a; margin: 0 0 16px;">
-                Early access details will arrive by email. We'll email you when it's ready, plus once or twice between now and then with progress updates. Nothing else.
+                Beta access opens July 2026. We'll email you when it's ready, plus once or twice between now and then with progress updates. Nothing else.
               </p>
               <p style="line-height: 1.6; color: #4a4a4a; margin: 0 0 24px;">
                 If anything feels off in the next 30 days, reply to this email or write to refund@shopsherpa.ai. Full refund, no questions.

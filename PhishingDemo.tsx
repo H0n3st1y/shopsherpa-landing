@@ -37,7 +37,7 @@ export function PhishingDemo() {
       ref={ref}
       className="relative bg-[#142736] border border-white/10 rounded-2xl p-8 md:p-10 overflow-hidden"
     >
-      {/* FLAGGED badge - absolute to card, sits in top-right corner */}
+      {/* FLAGGED badge — absolute to card, sits in top-right corner */}
       <div
         className="absolute top-6 right-6 md:top-8 md:right-8 z-10"
         style={{
@@ -59,11 +59,11 @@ export function PhishingDemo() {
       {/* Stack vertically on mobile, side-by-side on sm+ */}
       <div className="flex flex-col sm:flex-row sm:items-start gap-7 sm:gap-10">
 
-        {/* Envelope - fixed height container so the letter peek stays clipped inside */}
+        {/* Envelope — fixed height container so the letter peek stays clipped inside */}
         <div className="shrink-0 self-start" style={{ width: 110, height: 86, position: "relative", perspective: "600px" }}>
           {/* Body */}
           <div className="absolute inset-0 bg-[#F4F0E8] rounded-md border border-black/10" />
-          {/* Inner letter - slides up but stays within envelope body */}
+          {/* Inner letter — slides up but stays within envelope body */}
           <div
             className="absolute left-2 right-2 bottom-2 bg-white rounded-sm"
             style={{
@@ -86,7 +86,7 @@ export function PhishingDemo() {
           />
         </div>
 
-        {/* Email content - fades in after flap opens */}
+        {/* Email content — fades in after flap opens */}
         <div
           className="flex-1 min-w-0 pr-20 sm:pr-0"
           style={{

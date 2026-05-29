@@ -1,13 +1,3 @@
-import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
-
-export const metadata: Metadata = pageMetadata({
-  title: "Plus Pre-Order Confirmed",
-  description:
-    "Your ShopSherpa Plus lifetime pre-order is confirmed. Beta access opens in 2026 with phishing protection, masked cards, and priority support.",
-  path: "/success",
-});
-
 export default function SuccessPage() {
   return (
     <main className="min-h-screen flex items-center justify-center px-6">
@@ -19,7 +9,7 @@ export default function SuccessPage() {
         </div>
         <h1 className="text-4xl font-semibold tracking-tight mb-4">You're in. For life.</h1>
         <p className="text-lg text-[var(--color-ink-muted)] leading-relaxed mb-8">
-          Thanks for backing Plus. Early access details will arrive by email. We sent a confirmation to your email with the details.
+          Thanks for backing Plus. Beta access opens July 2026. We sent a confirmation to your email with the details.
         </p>
         <a
           href="/"

@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 
 /**
  * StoryCard
- * Subtle 3D mouse-tilt card (max 4°) - dark variant for navy backgrounds.
+ * Subtle 3D mouse-tilt card (max 4°) — dark variant for navy backgrounds.
  */
 export function StoryCard({
   source,

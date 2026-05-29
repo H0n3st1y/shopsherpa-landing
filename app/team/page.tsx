@@ -2,21 +2,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ScrollFade } from "@/components/ScrollFade";
-import { SiteHeader } from "@/components/SiteHeader";
-import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Team",
-  description: "Meet the people building ShopSherpa, also searched as Shop Sherpa, the safety layer for online shopping.",
-  path: "/team",
-  keywords: ["ShopSherpa team", "Shop Sherpa team", "Anghelo Araujo Lazaro"],
-});
+export const metadata: Metadata = {
+  title: "Team | ShopSherpa",
+  description: "Meet the people building ShopSherpa — the safety layer for online shopping.",
+};
 
 export default function TeamPage() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
 
-      <SiteHeader active="team" cta="preorder" />
+      {/* NAV */}
+      <header className="sticky top-0 z-40 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition">
+            <Logo />
+            <span className="font-semibold text-base tracking-tight">ShopSherpa</span>
+          </Link>
+          <nav className="hidden md:flex items-center gap-7 text-sm text-[#1a1a1a]/70">
+            <Link href="/#how-it-works" className="hover:text-[#1a1a1a] transition">How it works</Link>
+            <Link href="/#roadmap" className="hover:text-[#1a1a1a] transition">Roadmap</Link>
+            <Link href="/team" className="text-[#2e6273] font-medium">Team</Link>
+            <Link href="/blog" className="hover:text-[#1a1a1a] transition">Blog</Link>
+          </nav>
+          <Link
+            href="/#cta"
+            className="px-4 py-2 rounded-full bg-[#1a1a1a] text-white text-sm font-medium hover:bg-[#2e6273] transition active:scale-[0.98]"
+          >
+            Pre-order $9.99
+          </Link>
+        </div>
+      </header>
 
       {/* HERO */}
       <section className="px-6 md:px-8 pt-24 pb-16 border-b border-[#2e6273]/10">
@@ -37,7 +53,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* FOUNDER - ANGHELO */}
+      {/* FOUNDER — ANGHELO */}
       <section className="px-6 md:px-8 py-24 bg-white border-b border-[#2e6273]/10">
         <div className="max-w-6xl mx-auto">
           <ScrollFade>
@@ -81,7 +97,7 @@ export default function TeamPage() {
                     After weeks of begging for a dog, the money was wired and the seller vanished. That emotional toll turned into a mission: building ShopSherpa, an AI-powered shield that stops marketplace fraud before it hits your wallet.
                   </p>
                   <p>
-                    At 16, Anghelo is a multidisciplinary developer at Nashua High School South. He has completed Harvard&apos;s CS50 curricula and MIT Beaver Works programs, specializing in Quantum Software and Microelectronics. His technical portfolio spans financial modeling, autonomous hardware, and AI-powered consumer tools.
+                    At 16, Anghelo is a multidisciplinary developer at Nashua High School South. He has completed Harvard&apos;s CS50 curricula and MIT Beaver Works programs, specializing in Quantum Software and Microelectronics. His technical portfolio ranges from financial modeling to autonomous hardware, most notably co-developing the MiniUAV Guardian, a security quadrotor with custom PCB architecture and real-time threat detection.
                   </p>
                   <p>
                     A state-level DECA competitor and former front-end intern at Rayfield Systems, Anghelo also holds leadership roles in Interact Rotary and competes in Track and Cross Country. He combines the grit of a student-athlete with the technical depth of an engineer to ensure no other family gets scammed online.
@@ -90,7 +106,7 @@ export default function TeamPage() {
               </ScrollFade>
               <ScrollFade delay={300}>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  {["Fraud Detection", "MIT Beaver Works", "DECA", "Rayfield Systems", "Interact Rotary", "Track & XC"].map((tag) => (
+                  {["Fraud Detection", "MIT Beaver Works", "MiniUAV Guardian", "DECA", "Rayfield Systems", "Interact Rotary", "Track & XC"].map((tag) => (
                     <span key={tag} className="px-3 py-1.5 rounded-full bg-[#FAF8F4] border border-[#2e6273]/15 text-xs font-mono text-[#2e6273]">
                       {tag}
                     </span>
@@ -129,7 +145,7 @@ export default function TeamPage() {
                 location="Nashua, NH · Age 15"
                 imageSrc="/prithvi.png"
                 imageAlt="Prithvi Gupta"
-                bio="Prithvi is a sophomore at Nashua High School South with a deep focus on aerospace engineering and PCB design. He serves as Treasurer of UNICEF NH and is an active GitHub contributor - bringing real engineering discipline to ShopSherpa&apos;s technical stack."
+                bio="Prithvi is a sophomore at Nashua High School South with a deep focus on aerospace engineering and PCB design. He serves as Treasurer of UNICEF NH and is an active GitHub contributor — bringing real engineering discipline to ShopSherpa&apos;s technical stack."
                 tags={["PCB Design", "Aerospace", "UNICEF NH", "GitHub", "DECA"]}
                 highlights={[
                   { label: "Focus", value: "Aerospace / PCB" },
@@ -185,12 +201,12 @@ export default function TeamPage() {
             <span className="font-medium text-white">ShopSherpa</span>
           </Link>
           <div className="flex flex-wrap gap-6 text-sm">
-            <a href="/privacy" className="hover:text-white transition">Privacy</a>
-            <a href="/security" className="hover:text-white transition">Security</a>
+            <a href="#" className="hover:text-white transition">Privacy</a>
+            <a href="#" className="hover:text-white transition">Security</a>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
-            <Link href="/lab" className="hover:text-white transition">Lab</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>
-            <a href="https://x.com/shop_sherpa" className="hover:text-white transition">X</a>
+            <Link href="/product" className="hover:text-white transition">MiniUAV</Link>
+            <a href="#" className="hover:text-white transition">Twitter</a>
           </div>
           <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
         </div>

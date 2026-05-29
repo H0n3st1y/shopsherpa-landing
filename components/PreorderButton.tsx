@@ -28,16 +28,19 @@ export function PreorderButton({
     }
   }
 
-  const sizeClass = size === "sm" ? "btn--sm" : "";
-  const colorClass = variant === "white" ? "btn-primary-inverse" : "btn-primary";
+  const sizeClasses = size === "sm" ? "px-4 py-2 text-sm" : "px-6 py-3.5 text-sm";
+  const colorClasses =
+    variant === "white"
+      ? "bg-white text-[#2e6273] hover:bg-[#F4F0E8]"
+      : "bg-[#1a1a1a] text-white hover:bg-[#2e6273]";
 
   return (
     <button
       onClick={handleClick}
       disabled={loading}
-      className={`btn ${colorClass} ${sizeClass} disabled:opacity-50 disabled:cursor-not-allowed`}
+      className={`rounded-full font-medium transition-[transform,background-color] duration-150 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap ${sizeClasses} ${colorClasses}`}
     >
-      {loading ? "Redirecting…" : "Pre-order Plus"}
+      {loading ? "Redirecting..." : "Pre-order for $9.99"}
     </button>
   );
 }
