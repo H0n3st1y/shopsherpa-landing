@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import { headers } from "next/headers";
 import { ScrollFade } from "@/components/ScrollFade";
 import { HeroShapes } from "@/components/HeroShapes";
 import { PreorderButton } from "@/components/PreorderButton";
@@ -8,10 +9,118 @@ import { InteractiveField } from "@/components/InteractiveField";
 import { StoryCard } from "@/components/StoryCard";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
+import { siteUrl } from "@/lib/seo";
 
-export default function Page() {
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "name": "ShopSherpa",
+      "url": siteUrl,
+      "description": "ShopSherpa helps shoppers spot fake sellers, phishing emails, fake reviews, suspicious domains, and risky checkout pages before they pay.",
+      "publisher": { "@id": `${siteUrl}/#organization` },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": `${siteUrl}/scam-directory?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${siteUrl}/#software`,
+      "name": "ShopSherpa",
+      "url": siteUrl,
+      "description": "A browser extension and scam intelligence layer that flags fake reviews, risky sellers, phishing emails, and suspicious checkout domains.",
+      "operatingSystem": "Chrome, Firefox, Safari",
+      "applicationCategory": "SecurityApplication",
+      "applicationSubCategory": "Fraud Detection",
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/PreOrder",
+        "description": "Lifetime ShopSherpa Plus pre-order",
+      },
+      "publisher": { "@id": `${siteUrl}/#organization` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      "name": "ShopSherpa",
+      "url": siteUrl,
+      "logo": `${siteUrl}/logo.svg`,
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@shopsherpa.org",
+        "contactType": "customer support",
+        "availableLanguage": "English",
+      },
+      "founder": { "@id": `${siteUrl}/#founder` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#founder`,
+      "name": "Anghelo Araujo Lazaro",
+      "jobTitle": "Founder & CEO",
+      "url": `${siteUrl}/team`,
+      "worksFor": { "@id": `${siteUrl}/#organization` },
+      "knowsAbout": [
+        "Online fraud detection",
+        "Phishing prevention",
+        "Browser extension development",
+        "Consumer safety",
+        "Security software",
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is ShopSherpa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ShopSherpa is a shopping safety layer that helps detect fake reviews, suspicious sellers, phishing emails, and risky checkout pages before shoppers pay.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "How does ShopSherpa help spot online shopping scams?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ShopSherpa checks review patterns, seller signals, checkout domains, and known scam tactics, then warns shoppers when something looks suspicious.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "How much does ShopSherpa Plus cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ShopSherpa Plus is available as a $9.99 lifetime pre-order before the public launch.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Does ShopSherpa include scam education?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ShopSherpa includes a scam directory and scam guides that explain common fraud tactics such as fake sellers, phishing emails, fake reviews, and suspicious payment requests.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
+export default async function Page() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased overflow-x-hidden">
+      <script nonce={nonce} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }} />
 
       {/* NAV */}
       <header className="sticky top-0 z-40 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">
