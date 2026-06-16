@@ -174,14 +174,11 @@ function Footer() {
 }
 
 function Logo({ dark = false }: { dark?: boolean }) {
+  void dark;
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src="/logo.svg"
-      alt="ShopSherpa"
-      width={32}
-      height={32}
-      className={`size-8 shrink-0 object-contain ${dark ? "brightness-0 invert" : ""}`}
-    />
+    <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-white p-1 ring-1 ring-black/5 shadow-sm">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/logo.svg" alt="ShopSherpa" width={24} height={24} className="size-full object-contain" />
+    </span>
   );
 }

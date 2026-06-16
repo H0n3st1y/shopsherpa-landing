@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, type ReactNode, type ElementType } from "r
 /**
  * ScrollFade
  * Wraps any node and fades it up + slightly translates when it enters the viewport.
- * Uses IntersectionObserver — no library, ~1KB JS.
+ * Uses IntersectionObserver - no library, ~1KB JS.
  * Triggers ONCE per element. Respects prefers-reduced-motion via the parent CSS variables.
  */
 export function ScrollFade({

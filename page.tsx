@@ -324,7 +324,7 @@ export default function Page() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start">
 
-            {/* Photo — intentionally small so it feels personal, not a hero shot */}
+            {/* Photo - intentionally small so it feels personal, not a hero shot */}
             <ScrollFade>
               <div className="flex flex-col items-start gap-5">
                 <div className="relative">

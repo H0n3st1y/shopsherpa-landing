@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 /**
  * HeroShapes
  * Floating SVG shapes with two animations:
- *  1. Parallax on scroll — each shape translates up to 30px based on scroll position.
- *  2. Cursor follow (desktop only) — shapes drift toward the cursor with a damped spring,
+ *  1. Parallax on scroll - each shape translates up to 30px based on scroll position.
+ *  2. Cursor follow (desktop only) - shapes drift toward the cursor with a damped spring,
  *     max 15px offset. Mobile devices skip cursor follow (matchMedia pointer: fine).
  * Both effects use only `transform` (GPU-accelerated, 60fps).
  * Honors prefers-reduced-motion: when set, no transforms are applied.

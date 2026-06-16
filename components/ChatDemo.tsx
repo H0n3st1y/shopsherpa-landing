@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * ChatDemo — interactive live preview of the ShopSherpa AI agent.
+ * ChatDemo - interactive live preview of the ShopSherpa AI agent.
  * Auto-plays a scripted conversation when scrolled into view, with realistic
  * typing indicators and message-bubble pop-ins. Users can click "Try it" to
  * type their own message and get a canned reply.
@@ -13,17 +13,17 @@ type Msg = { role: "user" | "agent"; text: string; delay: number };
 
 const SCRIPT: Msg[] = [
   { role: "user",  text: "Hey, do you have these in size 9?", delay: 800 },
-  { role: "agent", text: "Yes — the Cloudfoam Runners are in stock in size 9. Want me to add a pair to your cart?", delay: 1400 },
+  { role: "agent", text: "Yes - the Cloudfoam Runners are in stock in size 9. Want me to add a pair to your cart?", delay: 1400 },
   { role: "user",  text: "What's your return policy?", delay: 1100 },
   { role: "agent", text: "Free returns within 30 days, no questions asked. I can email you the prepaid label if you ever need it.", delay: 1500 },
-  { role: "user",  text: "Okay — add to cart and apply a first-time code if you have one", delay: 1300 },
-  { role: "agent", text: "Done. WELCOME10 applied — you saved $12.99. Ready to check out?", delay: 1400 },
+  { role: "user",  text: "Okay - add to cart and apply a first-time code if you have one", delay: 1300 },
+  { role: "agent", text: "Done. WELCOME10 applied - you saved $12.99. Ready to check out?", delay: 1400 },
 ];
 
 const CANNED_REPLIES = [
-  "Great question — happy to help with that.",
+  "Great question - happy to help with that.",
   "I can do that for you right now. Want me to walk you through it?",
-  "Yes — we ship to 40+ countries with free returns. Want a shipping estimate?",
+  "Yes - we ship to 40+ countries with free returns. Want a shipping estimate?",
   "Let me check that for you.",
 ];
 
