@@ -6,41 +6,41 @@ import type { ReactNode } from "react";
 
 const PRODUCTS = [
   {
-    eyebrow: "Procurement agent",
-    title: "Sherpa finds the best deal and drafts the sheet.",
+    eyebrow: "Scam Directory",
+    title: "Check suspicious stores before you enter a card.",
     description:
-      "Give it a buying brief. Sherpa searches vendors, compares total landed cost, checks trust signals, and returns a spreadsheet with source links.",
+      "Search common scam patterns, risky domain signals, phishing tricks, and seller warning signs in plain English.",
     image:
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Business procurement spreadsheet and vendor deal research for the Sherpa agent",
-    href: "/lab#sherpa",
-    cta: "See Sherpa run",
+    imageAlt: "Spreadsheet-style scam directory and online store safety checks",
+    href: "/scam-directory",
+    cta: "Search the directory",
     className: "max-lg:rounded-t-[1.5rem] lg:col-span-3 lg:rounded-tl-[1.5rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
   {
-    eyebrow: "Finance agent",
-    title: "Finance Guru turns messy numbers into decisions.",
+    eyebrow: "Fake store checks",
+    title: "Understand why a checkout page feels off.",
     description:
-      "Upload exports, invoices, or spend data. It summarizes cash-flow risks, spend leaks, and practical next moves in plain English.",
+      "Learn how domain mismatch, unrealistic discounts, missing policies, and payment pressure combine into risk.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Finance dashboard charts for Finance Guru business agent analysis",
-    href: "mailto:hello@shopsherpa.org?subject=Finance%20Guru%20early%20access",
-    cta: "Ask about Finance Guru",
+    imageAlt: "Online checkout and fraud signal analysis",
+    href: "/scam-directory/too-cheap-clearance-store",
+    cta: "View warning signs",
     className: "lg:col-span-3 lg:rounded-tr-[1.5rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },
   {
-    eyebrow: "Sales agent",
-    title: "Caddy keeps follow-up moving after the call.",
+    eyebrow: "Phishing examples",
+    title: "Spot fake delivery and order emails faster.",
     description:
-      "Prep accounts, draft follow-ups, and turn scattered notes into the next action so customer work does not stall in the CRM.",
+      "See the sender, link, urgency, and payment cues that make a message risky before you click.",
     image:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Sales team workflow for Caddy follow-up automation agent",
-    href: "mailto:hello@shopsherpa.org?subject=Caddy%20early%20access",
-    cta: "Ask about Caddy",
+    imageAlt: "Phishing email and fake delivery message safety check",
+    href: "/scam-directory/brand-delivery-fee-texts",
+    cta: "Review examples",
     className: "lg:col-span-3 lg:rounded-bl-[1.5rem]",
     fade: ["bottom"] as ("top" | "bottom")[],
   },

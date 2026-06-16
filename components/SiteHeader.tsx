@@ -6,7 +6,7 @@ import { PreorderButton } from "@/components/PreorderButton";
 import { ThemeToggle } from "@/components/ui/curtain-theme-toggle";
 
 type HeaderVariant = "light" | "dark";
-type ActivePage = "home" | "compare" | "lab" | "team" | "blog" | "product";
+type ActivePage = "home" | "compare" | "team" | "blog" | "scam-directory";
 
 export function SiteHeader({
   active = "home",
@@ -15,7 +15,7 @@ export function SiteHeader({
 }: {
   active?: ActivePage;
   variant?: HeaderVariant;
-  cta?: "preorder" | "access" | "waitlist" | "home";
+  cta?: "preorder" | "waitlist" | "home";
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const dark = variant === "dark";
@@ -42,15 +42,12 @@ export function SiteHeader({
           <NavLink href="/compare" active={active === "compare"} className={`${active === "compare" ? activeText : hoverText}`}>
             Compare
           </NavLink>
+          <NavLink href="/scam-directory" active={active === "scam-directory"} className={`${active === "scam-directory" ? activeText : hoverText}`}>
+            Scam Directory
+          </NavLink>
           <NavLink href="/#pricing" className={hoverText}>
             Pricing
           </NavLink>
-          <Link
-            href="/lab"
-            className={`lab-nav-bezel ${active === "lab" ? "lab-nav-bezel--active" : ""}`}
-          >
-            Lab
-          </Link>
           <NavLink href="/team" active={active === "team"} className={`${active === "team" ? activeText : hoverText}`}>
             Team
           </NavLink>
@@ -86,8 +83,8 @@ export function SiteHeader({
             {[
               { href: "/#how-it-works", label: "How it works" },
               { href: "/compare", label: "Compare" },
+              { href: "/scam-directory", label: "Scam Directory" },
               { href: "/#pricing", label: "Pricing" },
-              { href: "/lab", label: "Lab" },
               { href: "/team", label: "Team" },
               { href: "/blog", label: "Blog" },
             ].map((item) => (
@@ -128,7 +125,7 @@ function NavLink({
   );
 }
 
-function HeaderCta({ cta, dark }: { cta: "preorder" | "access" | "waitlist" | "home"; dark: boolean }) {
+function HeaderCta({ cta, dark }: { cta: "preorder" | "waitlist" | "home"; dark: boolean }) {
   if (cta === "preorder") {
     return (
       <div className="flex items-center gap-3">
@@ -137,17 +134,6 @@ function HeaderCta({ cta, dark }: { cta: "preorder" | "access" | "waitlist" | "h
         </Link>
         <PreorderButton size="sm" />
       </div>
-    );
-  }
-
-  if (cta === "access") {
-    return (
-      <a
-        href="mailto:hello@shopsherpa.org?subject=ShopSherpa%20Lab%20early%20access"
-        className={`px-4 py-2 rounded-full text-sm font-medium transition active:scale-[0.98] ${dark ? "bg-white text-[#0d1f2d] hover:bg-[#F4F0E8]" : "bg-[#1a1a1a] text-white hover:bg-[#2e6273]"}`}
-      >
-        Request access
-      </a>
     );
   }
 
