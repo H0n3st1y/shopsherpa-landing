@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
 import { getSupabaseAdmin } from "@/lib/supabase";
 import { getResend, FROM } from "@/lib/resend";
+import { noStoreJson, safeLogError } from "@/lib/security/response";
 import type Stripe from "stripe";
 
 export const config = { api: { bodyParser: false } };
@@ -21,7 +22,7 @@ export async function POST(req: NextRequest) {
   try {
     event = stripe.webhooks.constructEvent(body, sig, secret);
   } catch (err) {
-    console.error("Webhook signature verification failed:", err);
+    safeLogError("Webhook signature verification failed", err);
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
   }
 
@@ -56,7 +57,7 @@ export async function POST(req: NextRequest) {
                 Thanks for backing ShopSherpa. Your $9.99 locks in lifetime access. You'll never see a monthly bill from us.
               </p>
               <p style="line-height: 1.6; color: #4a4a4a; margin: 0 0 16px;">
-                Early access details will arrive by email. We'll email you when it's ready, plus once or twice between now and then with progress updates. Nothing else.
+                Beta access opens July 2026. We'll email you when it's ready, plus once or twice between now and then with progress updates. Nothing else.
               </p>
               <p style="line-height: 1.6; color: #4a4a4a; margin: 0 0 24px;">
                 If anything feels off in the next 30 days, reply to this email or write to refund@shopsherpa.ai. Full refund, no questions.
@@ -69,10 +70,10 @@ export async function POST(req: NextRequest) {
           `,
         });
       } catch (e) {
-        console.error("Webhook side-effect error:", e);
+        safeLogError("Webhook side-effect error", e);
       }
     }
   }
 
-  return NextResponse.json({ received: true });
+  return noStoreJson({ received: true });
 }

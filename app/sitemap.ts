@@ -1,27 +1,24 @@
 import type { MetadataRoute } from "next";
-import { blogPosts } from "@/lib/blog-posts";
-import { isoDateFromPostDate, siteUrl } from "@/lib/seo";
+import { scamDirectoryEntries } from "@/lib/scam-directory";
+import { siteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = siteUrl;
   const now = new Date();
-  const blogUrls = blogPosts.map((post) => ({
-    url: `${base}/blog/${post.slug}`,
-    lastModified: new Date(isoDateFromPostDate(post.date)),
+  const directoryUrls = scamDirectoryEntries.map((entry) => ({
+    url: `${siteUrl}/scam-directory/${entry.slug}`,
+    lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: post.slug === "fake-sellers" ? 0.85 : 0.72,
+    priority: entry.risk === "High" ? 0.82 : 0.72,
   }));
 
   return [
-    // Core pages
-    { url: base,                     lastModified: now, changeFrequency: "weekly",  priority: 1.0  },
-    { url: `${base}/team`,           lastModified: now, changeFrequency: "monthly", priority: 0.8  },
-    { url: `${base}/blog`,           lastModified: now, changeFrequency: "daily",   priority: 0.9  },
-    { url: `${base}/compare`,        lastModified: now, changeFrequency: "monthly", priority: 0.8  },
-    { url: `${base}/product`,        lastModified: now, changeFrequency: "monthly", priority: 0.7  },
-    { url: `${base}/lab`,            lastModified: now, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${base}/privacy`,        lastModified: now, changeFrequency: "monthly", priority: 0.5  },
-    { url: `${base}/security`,       lastModified: now, changeFrequency: "monthly", priority: 0.5  },
-    ...blogUrls,
+    { url: siteUrl, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    { url: `${siteUrl}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${siteUrl}/scam-directory`, lastModified: now, changeFrequency: "weekly", priority: 0.92 },
+    { url: `${siteUrl}/compare`, lastModified: now, changeFrequency: "monthly", priority: 0.74 },
+    { url: `${siteUrl}/team`, lastModified: now, changeFrequency: "monthly", priority: 0.65 },
+    { url: `${siteUrl}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.45 },
+    { url: `${siteUrl}/security`, lastModified: now, changeFrequency: "yearly", priority: 0.45 },
+    ...directoryUrls,
   ];
 }

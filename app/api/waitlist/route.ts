@@ -1,10 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase";
 import { getResend, FROM } from "@/lib/resend";
+import { assertTrustedOrigin, corsHeaders, optionsResponse } from "@/lib/security/cors";
+import { rateLimitKeys, rateLimitRequest } from "@/lib/security/rate-limit";
+import { noStoreJson, safeLogError } from "@/lib/security/response";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+export function OPTIONS(req: NextRequest) {
+  return optionsResponse(req);
+}
+
 export async function POST(req: NextRequest) {
+  const originError = assertTrustedOrigin(req);
+  if (originError) return originError;
+
   try {
     const { email } = await req.json();
 
@@ -14,6 +24,22 @@ export async function POST(req: NextRequest) {
 
     const supabase = getSupabaseAdmin();
     const cleaned = email.toLowerCase().trim();
+    const keys = await rateLimitKeys(req, "waitlist", cleaned);
+    const limitError = await rateLimitRequest(req, [
+      {
+        name: "waitlist:email-ip",
+        limit: 3,
+        windowSeconds: 10 * 60,
+        keyParts: [keys.route, keys.ip, keys.subjectHash],
+      },
+      {
+        name: "waitlist:network",
+        limit: 30,
+        windowSeconds: 10 * 60,
+        keyParts: [keys.route, keys.network],
+      },
+    ]);
+    if (limitError) return limitError;
 
     // upsert prevents duplicate errors
     const { error } = await supabase
@@ -21,7 +47,7 @@ export async function POST(req: NextRequest) {
       .upsert({ email: cleaned, source: "landing" }, { onConflict: "email" });
 
     if (error) {
-      console.error("Supabase error:", error);
+      safeLogError("Supabase waitlist error", error);
       return NextResponse.json({ error: "Could not save. Try again." }, { status: 500 });
     }
 
@@ -52,13 +78,15 @@ export async function POST(req: NextRequest) {
         `,
       });
     } catch (emailErr) {
-      console.error("Resend error:", emailErr);
+      safeLogError("Resend waitlist email error", emailErr);
       // Don't fail the request just because email failed
     }
 
-    return NextResponse.json({ success: true });
+    const response = noStoreJson({ success: true });
+    for (const [key, value] of corsHeaders(req)) response.headers.set(key, value);
+    return response;
   } catch (err) {
-    console.error("Waitlist error:", err);
+    safeLogError("Waitlist route error", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

@@ -164,7 +164,7 @@ function Footer() {
           <Link href="/privacy" className="hover:text-white transition">Privacy</Link>
           <Link href="/security" className="text-white transition">Security</Link>
           <Link href="/blog" className="hover:text-white transition">Blog</Link>
-          <Link href="/lab" className="hover:text-white transition">Lab</Link>
+          <Link href="/scam-directory" className="hover:text-white transition">Scam Directory</Link>
           <Link href="/team" className="hover:text-white transition">Team</Link>
         </div>
         <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>

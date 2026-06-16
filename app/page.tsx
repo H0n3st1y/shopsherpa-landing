@@ -6,22 +6,47 @@ import { PreorderButton } from "@/components/PreorderButton";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { InteractiveField } from "@/components/InteractiveField";
 import { StoryCard } from "@/components/StoryCard";
-import { ScamCheckDemo } from "@/components/ScamCheckDemo";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SocialLinks } from "@/components/SocialLinks";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { WebGLShader } from "@/components/ui/web-gl-shader";
 
 export default function Page() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased overflow-x-hidden">
 
-      <SiteHeader active="home" cta="preorder" />
+      {/* NAV */}
+      <header className="sticky top-0 z-40 bg-[#FAF8F4]/80 backdrop-blur-md border-b border-[#2e6273]/10">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <Logo />
+            <span className="font-semibold text-base tracking-tight">ShopSherpa</span>
+          </div>
+          <nav className="hidden md:flex items-center gap-7 text-sm text-[#1a1a1a]/70">
+            <a href="#how-it-works" className="hover:text-[#1a1a1a] transition">How it works</a>
+            <a href="/scam-directory" className="hover:text-[#1a1a1a] transition">Scam Directory</a>
+            <a href="#roadmap" className="hover:text-[#1a1a1a] transition">Roadmap</a>
+            <a href="#pricing" className="hover:text-[#1a1a1a] transition">Pricing</a>
+            <a href="/team" className="hover:text-[#1a1a1a] transition">Team</a>
+          </nav>
+          <div className="flex items-center gap-3">
+            <a href="#cta" className="hidden sm:inline text-sm text-[#1a1a1a]/60 hover:text-[#1a1a1a] transition">
+              Join waitlist
+            </a>
+            <PreorderButton size="sm" />
+          </div>
+        </div>
+      </header>
 
       {/* ─── HERO ────────────────────────────────────────────────────────────── */}
       <section className="px-6 md:px-8 pt-20 md:pt-32 pb-20 md:pb-28 relative overflow-hidden">
         <HeroShapes />
-        <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-[0.98fr_0.82fr] gap-12 lg:gap-16 items-center">
-          <div>
+        <div className="max-w-6xl mx-auto relative z-10">
+
+          <ScrollFade>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2e6273]/15 bg-white text-xs font-mono text-[#2e6273] mb-8">
+              <span className="size-1.5 rounded-full bg-[#1d9e75] pulse-dot" />
+              Private beta · Q3 2026 launch
+            </div>
+          </ScrollFade>
 
           <ScrollFade delay={120}>
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-semibold leading-[1] max-w-4xl">
@@ -40,96 +65,25 @@ export default function Page() {
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <PreorderButton />
               <a
-                href="#compare"
+                href="#cta"
                 className="px-6 py-3.5 rounded-full bg-white text-[#1a1a1a] border border-[#2e6273]/15 font-medium text-sm hover:border-[#2e6273]/40 transition active:scale-[0.98] text-center"
               >
-                Compare free vs Plus
+                Join the free waitlist
               </a>
             </div>
           </ScrollFade>
 
           <ScrollFade delay={480}>
-            <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-readable">
+            <div className="mt-10 flex flex-wrap items-center gap-3 text-sm text-[#1a1a1a]/60">
               <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />No credit card for free tier</div>
               <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />Chrome, Firefox, Safari</div>
-              <a href="https://github.com/H0n3st1y/shopsherpa-landing" className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5 hover:border-[#1d9e75]/40 transition"><CheckIcon />Install from GitHub</a>
-            </div>
-          </ScrollFade>
-          </div>
-
-          <ScrollFade delay={240}>
-            <div className="group relative overflow-hidden rounded-[2rem] border border-[#2e6273]/15 bg-white shadow-[var(--shadow-lift)]">
-              <img
-                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80"
-                alt="ShopSherpa browser extension scanning a secure online checkout for scam protection"
-                className="image-lift aspect-[4/5] w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f2d]/78 via-[#0d1f2d]/18 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7 text-white">
-                <div className="live-shield-bubble max-w-sm">
-                  <p className="type-caption font-mono uppercase text-[#1d9e75] mb-2">Live shopping shield</p>
-                  <p className="text-2xl md:text-3xl font-medium tracking-tight leading-tight">
-                    Review patterns, seller signals, and checkout domains in one calm alert.
-                  </p>
-                </div>
-              </div>
+              <div className="flex items-center gap-2 bg-white border border-[#2e6273]/15 rounded-full px-3 py-1.5"><CheckIcon />Public launch Q3 2026</div>
             </div>
           </ScrollFade>
         </div>
 
         <div aria-hidden className="blob-float absolute -top-32 -right-32 size-[480px] rounded-full bg-[#2e6273]/5 blur-3xl pointer-events-none" />
         <div aria-hidden className="blob-float-slow absolute -bottom-24 -left-24 size-80 rounded-full bg-[#1d9e75]/5 blur-3xl pointer-events-none" />
-      </section>
-
-      <section id="what-is-shopsherpa" aria-label="What is ShopSherpa" className="sr-only">
-        <p>
-          ShopSherpa is a free browser extension that protects online shoppers from fraud.
-          It automatically scans websites for 1,800+ fraud patterns, detects fake reviews,
-          flags counterfeit sellers, and identifies phishing emails in your inbox before you
-          interact with them. A paid Plus tier adds masked virtual credit card numbers, a
-          password vault with breach alerts, and advanced phishing shields for Gmail and
-          Outlook - available as a one-time $9.99 lifetime pre-order.
-        </p>
-      </section>
-
-      {/* ─── INSTALL PATH ───────────────────────────────────────────────────── */}
-      <section className="bg-[#F4F0E8] px-6 md:px-8 py-14 border-y border-[#2e6273]/10">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-center">
-          <ScrollFade>
-            <div>
-              <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-3 font-mono">Easier install path</p>
-              <h2 className="text-3xl md:text-5xl font-medium tracking-tighter leading-[1] max-w-xl">
-                Make download feel like three clicks.
-              </h2>
-            </div>
-          </ScrollFade>
-          <ScrollFade delay={120}>
-            <div className="grid md:grid-cols-3 gap-3">
-              {[
-                ["1", "Open GitHub", "Use the public repo while store review is in progress."],
-                ["2", "Download build", "Grab the extension folder from the latest release."],
-                ["3", "Add to Chrome", "Open Extensions, enable Developer Mode, and load the folder."],
-              ].map(([n, title, copy]) => (
-                <div key={title} className="rounded-2xl border border-[#2e6273]/10 bg-white p-5">
-                  <p className="text-xs font-mono text-[#2e6273] mb-4">0{n}</p>
-                  <h3 className="text-xl font-medium tracking-tight mb-2">{title}</h3>
-                  <p className="text-sm leading-6 text-readable">{copy}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-5 flex flex-col sm:flex-row gap-3">
-              <a
-                href="https://github.com/H0n3st1y/shopsherpa-landing"
-                className="inline-flex items-center justify-center rounded-full bg-[#1a1a1a] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#2e6273] active:scale-[0.98]"
-              >
-                Install from GitHub
-              </a>
-              <p className="text-sm leading-6 text-readable max-w-md">
-                My recommendation: publish a Chrome Web Store listing next, then keep GitHub as the transparent developer install option.
-              </p>
-            </div>
-          </ScrollFade>
-        </div>
       </section>
 
       {/* ─── HOW IT WORKS ──────────────────────────────────────────────────────
@@ -147,55 +101,27 @@ export default function Page() {
           </ScrollFade>
           <ScrollFade delay={200}>
             <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-16 max-w-xl leading-relaxed">
-              No setup wizards. No manual scanning. ShopSherpa runs quietly and speaks up when something looks wrong. Want the full breakdown? <a href="#compare" className="text-[#2e6273] font-medium hover:text-[#1d9e75] transition">Compare the free tier and Plus</a>.
+              No setup wizards. No manual scanning. ShopSherpa runs quietly and speaks up when something looks wrong.
             </p>
           </ScrollFade>
 
-          <ol className="grid md:grid-cols-3 gap-10 md:gap-16" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-            <li data-step="1">
-              <ScrollFade delay={100}>
-                <Step n={1} title="Add the extension." copy="Takes 60 seconds. Works in Chrome, Firefox, and Safari. On mobile, download the app." />
-              </ScrollFade>
-            </li>
-            <li data-step="2">
-              <ScrollFade delay={200}>
-                <Step n={2} title="Shop like you normally would." copy="ShopSherpa checks sellers and reviews automatically while you browse. You don't have to do anything." />
-              </ScrollFade>
-            </li>
-            <li data-step="3">
-              <ScrollFade delay={300}>
-                <Step n={3} title="Get a quiet alert when it matters." copy="Fake reviews. Sketchy sellers. Wrong checkout domain. You'll know before you pay." />
-              </ScrollFade>
-            </li>
-          </ol>
+          <div className="grid md:grid-cols-3 gap-10 md:gap-16">
+            <ScrollFade delay={100}>
+              <Step n={1} title="Add the extension." copy="Takes 60 seconds. Works in Chrome, Firefox, and Safari. On mobile, download the app." />
+            </ScrollFade>
+            <ScrollFade delay={200}>
+              <Step n={2} title="Shop like you normally would." copy="ShopSherpa checks sellers and reviews automatically while you browse. You don't have to do anything." />
+            </ScrollFade>
+            <ScrollFade delay={300}>
+              <Step n={3} title="Get a quiet alert when it matters." copy="Fake reviews. Sketchy sellers. Wrong checkout domain. You'll know before you pay." />
+            </ScrollFade>
+          </div>
         </div>
       </section>
 
-      {/* ─── INSTANT SCAM CHECK ──────────────────────────────────────────────── */}
-      <section className="bg-[#FAF8F4] px-6 md:px-8 py-24 md:py-32">
-        <div className="max-w-6xl mx-auto">
-          <ScrollFade>
-            <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">New beta feature</p>
-          </ScrollFade>
-          <ScrollFade delay={120}>
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-2xl">
-              A scam gut-check<br />before you trust it.
-            </h2>
-          </ScrollFade>
-          <ScrollFade delay={200}>
-            <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-12 max-w-xl leading-relaxed">
-              Paste a seller message, store link, email sender, or review. ShopSherpa turns vague suspicion into a clear risk readout.
-            </p>
-          </ScrollFade>
-          <ScrollFade delay={280}>
-            <ScamCheckDemo />
-          </ScrollFade>
-        </div>
-      </section>
-
-      {/* ─── DEMO ─────────────────────────────────────────────────────────────────
+      {/* ─── LIVE PRODUCT MOMENT ───────────────────────────────────────────────
           ContainerScroll: email window tilts in on scroll like a laptop opening.
-      ────────────────────────────────────────────────────────────────────────── */}
+      ────────────────────────────────────────────────────────────────────── */}
       <section id="demo" className="bg-[#0d1f2d] text-white relative overflow-hidden">
         <ContainerScroll
           titleComponent={
@@ -217,24 +143,25 @@ export default function Page() {
               <span className="size-3 rounded-full bg-red-400" />
               <span className="size-3 rounded-full bg-yellow-400" />
               <span className="size-3 rounded-full bg-green-400" />
-              <span className="ml-3 text-xs font-mono text-white/30">Gmail - Inbox</span>
+              <span className="ml-3 text-xs font-mono text-white/30">Gmail — Inbox</span>
             </div>
             {/* Email content */}
             <div className="flex-1 p-6 md:p-10 relative overflow-hidden">
-              {/* FLAGGED badge */}
-              <span className="absolute top-6 right-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 text-white text-xs font-mono font-medium tracking-wider uppercase shadow-lg shadow-red-500/40">
-                <span className="size-1.5 rounded-full bg-white animate-pulse" />
-                Flagged
-              </span>
-              {/* Sender row */}
-              <div className="flex items-start gap-3 mb-6">
-                <div className="size-9 rounded-full bg-[#2e6273] flex items-center justify-center text-xs font-bold text-white shrink-0">A</div>
-                <div>
-                  <p className="text-sm font-medium text-white/90">Amazon</p>
-                  <p className="text-xs font-mono text-red-400">tracking@am4z0n-delivery.shop</p>
+              {/* Sender row + FLAGGED badge in same row so they never overlap */}
+              <div className="flex items-start justify-between gap-3 mb-6">
+                <div className="flex items-start gap-3 min-w-0">
+                  <div className="size-9 rounded-full bg-[#2e6273] flex items-center justify-center text-xs font-bold text-white shrink-0">A</div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-white/90">Amazon</p>
+                    <p className="text-xs font-mono text-red-400 truncate">tracking@am4z0n-delivery.shop</p>
+                  </div>
                 </div>
+                <span className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-500 text-white text-xs font-mono font-medium tracking-wider uppercase shadow-lg shadow-red-500/40">
+                  <span className="size-1.5 rounded-full bg-white animate-pulse" />
+                  Flagged
+                </span>
               </div>
-              <p className="text-lg md:text-2xl font-medium text-white leading-snug mb-4 pr-24">
+              <p className="text-lg md:text-2xl font-medium text-white leading-snug mb-4">
                 Your package needs a redelivery fee. Confirm now.
               </p>
               <p className="text-sm text-white/50 leading-relaxed mb-6">
@@ -263,18 +190,18 @@ export default function Page() {
                 label="Without ShopSherpa"
                 variant="before"
                 items={[
-                  "Visits seller page. Sees 4.9 stars.",
-                  "Pays $89. Gets a counterfeit.",
-                  "Files dispute. Weeks of stress.",
+                  "Opens the email.",
+                  "Clicks the link. Enters her card.",
+                  "Loses $312 to a scammer.",
                 ]}
               />
               <BeforeAfterCard
                 label="With ShopSherpa"
                 variant="after"
                 items={[
-                  "Page loads. ShopSherpa scans.",
-                  "Sees 'fake reviews detected' alert.",
-                  "Leaves. Finds a real seller in 60 seconds.",
+                  "Email arrives. ShopSherpa scans it.",
+                  "A FLAGGED badge slides in.",
+                  "Maria deletes it. Keeps her $312.",
                 ]}
               />
             </div>
@@ -282,7 +209,11 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── INTERACTIVE FIELD ────────────────────────────────────────────────── */}
+      {/* ─── INTERACTIVE FIELD ─────────────────────────────────────────────────
+          A quiet moment between the demo and the pricing pitch.
+          Shows the product's personality: calm, not alarming.
+          StoryCards below reinforce with real examples.
+      ────────────────────────────────────────────────────────────────────── */}
       <section className="bg-[#0d1f2d] text-white px-6 md:px-10 py-24 md:py-40 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <ScrollFade>
@@ -320,63 +251,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── PLAN COMPARISON ─────────────────────────────────────────────────── */}
-      <section id="compare" className="bg-white border-y border-[#2e6273]/10 px-6 md:px-8 py-24 md:py-32">
-        <div className="max-w-6xl mx-auto">
-          <ScrollFade>
-            <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">Free vs Plus</p>
-          </ScrollFade>
-          <ScrollFade delay={120}>
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-2xl">
-              Start free.<br />Upgrade when you want the full shield.
-            </h2>
-          </ScrollFade>
-          <ScrollFade delay={200}>
-            <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-14 max-w-xl leading-relaxed">
-              The free extension covers everyday shopping scams. Plus adds the higher-risk layers: email, passwords, masked cards, and priority help.
-            </p>
-          </ScrollFade>
-
-          <div className="grid lg:grid-cols-2 gap-5">
-            <ScrollFade delay={100}>
-              <PlanCard
-                eyebrow="Free extension"
-                title="For everyday shopping"
-                price="Free"
-                note="No credit card for the free tier"
-                cta="Join free waitlist"
-                href="#cta"
-                features={[
-                  "Real-time review scanning",
-                  "Fake seller detection",
-                  "Wrong checkout domain alerts",
-                  "Chrome, Firefox, and Safari support",
-                ]}
-              />
-            </ScrollFade>
-            <ScrollFade delay={200}>
-              <PlanCard
-                featured
-                eyebrow="ShopSherpa Plus"
-                title="For full account protection"
-                price="$9.99"
-                note="Lifetime pre-order · monthly pricing later"
-                cta="Pre-order Plus"
-                href="#pricing"
-                preorder
-                features={[
-                  "Everything in the free extension",
-                  "Phishing Shield for Gmail and Outlook",
-                  "Password vault with breach alerts",
-                  "One masked card number per store",
-                  "Priority support",
-                ]}
-              />
-            </ScrollFade>
-          </div>
-        </div>
-      </section>
-
       {/* ─── PLUS TIER ─────────────────────────────────────────────────────────
           Three feature cards as a visual roadmap. Scarcity progress bar.
           One CTA only per section.
@@ -384,7 +258,7 @@ export default function Page() {
       <section id="pricing" className="bg-[#F4F0E8] px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
           <ScrollFade>
-            <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">ShopSherpa Plus · Early access</p>
+            <p className="text-xs uppercase tracking-wider text-[#2e6273] mb-4 font-mono">ShopSherpa Plus · Coming Q3 2026</p>
           </ScrollFade>
           <ScrollFade delay={120}>
             <h2 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1] mb-4 max-w-2xl">
@@ -393,7 +267,7 @@ export default function Page() {
           </ScrollFade>
           <ScrollFade delay={200}>
             <p className="text-[#1a1a1a]/60 text-base md:text-lg mb-16 max-w-xl leading-relaxed">
-              Pre-order now and lock in $9.99 for life. Monthly pricing comes later. The <a href="#compare" className="text-[#2e6273] font-medium hover:text-[#1d9e75] transition">free tier stays free</a>.
+              Pre-order now and lock in $9.99 for life. It goes to $14.99 a month at launch.
             </p>
           </ScrollFade>
 
@@ -416,7 +290,7 @@ export default function Page() {
                 <div className="flex items-baseline gap-3 mb-2">
                   <p className="text-6xl md:text-7xl font-medium tracking-tighter">$9.99</p>
                   <div>
-                    <p className="text-white/40 line-through text-sm">future monthly plan</p>
+                    <p className="text-white/40 line-through text-sm">$14.99/mo at launch</p>
                     <p className="text-white/50 text-sm">pay once, yours forever</p>
                   </div>
                 </div>
@@ -490,7 +364,7 @@ export default function Page() {
             </ScrollFade>
             <ScrollFade delay={200}>
               <RoadmapCard
-                phase="Early access"
+                phase="Q3 2026"
                 status="building"
                 title="Plus tier"
                 items={[
@@ -630,6 +504,9 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ─── FOUNDER ───────────────────────────────────────────────────────────
+          Centered layout: photo + name badge above, story text below.
+      ────────────────────────────────────────────────────────────────────── */}
       <section id="founder" className="bg-[#0d1f2d] text-white px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-2xl mx-auto text-center">
 
@@ -667,7 +544,7 @@ export default function Page() {
                 After weeks of begging for a dog, the money was wired and the seller vanished. The puppy never existed. That emotional toll turned into a mission.
               </p>
               <p>
-                At 16, Anghelo has completed Harvard&apos;s CS50 curricula and MIT Beaver Works programs in Quantum Software and Microelectronics. He interned at Rayfield Systems and competes in DECA and Track.
+                At 16, Anghelo has completed Harvard&apos;s CS50 curricula and MIT Beaver Works programs in Quantum Software and Microelectronics. He has built security tools, interned at Rayfield Systems, and competes in DECA and Track.
               </p>
               <p>
                 ShopSherpa is his answer: an AI-powered shield that stops marketplace fraud before it hits your wallet, so no other family goes through what his did.
@@ -694,7 +571,7 @@ export default function Page() {
           </ScrollFade>
           <ScrollFade delay={150}>
             <p className="text-white/75 text-lg mb-10 leading-relaxed">
-              Join the free waitlist, or lock in Plus for $9.99 while lifetime spots are still available.
+              316 lifetime spots left at $9.99. Goes to $14.99 a month at launch this fall.
             </p>
           </ScrollFade>
           <ScrollFade delay={300}>
@@ -727,20 +604,18 @@ export default function Page() {
 
       {/* FOOTER */}
       <footer className="bg-[#0d1f2d] text-white/60 px-6 md:px-8 py-12">
-        <div className="max-w-6xl mx-auto flex flex-col gap-8">
-          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <Logo dark />
-              <span className="font-medium text-white">ShopSherpa</span>
-            </div>
-            <div className="flex flex-wrap gap-6 text-sm">
-              <a href="/privacy" className="hover:text-white transition">Privacy</a>
-              <a href="/security" className="hover:text-white transition">Security</a>
-              <a href="/blog" className="hover:text-white transition">Blog</a>
-              <a href="/lab" className="hover:text-white transition">Lab</a>
-              <a href="/team" className="hover:text-white transition">Team</a>
-            </div>
-            <SocialLinks />
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <Logo dark />
+            <span className="font-medium text-white">ShopSherpa</span>
+          </div>
+          <div className="flex flex-wrap gap-6 text-sm">
+            <a href="#" className="hover:text-white transition">Privacy</a>
+            <a href="#" className="hover:text-white transition">Security</a>
+            <a href="/blog" className="hover:text-white transition">Blog</a>
+            <a href="/scam-directory" className="hover:text-white transition">Scam Directory</a>
+            <a href="/team" className="hover:text-white transition">Team</a>
+            <a href="#" className="hover:text-white transition">Twitter</a>
           </div>
           <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
         </div>
@@ -752,13 +627,16 @@ export default function Page() {
 /* ─────── HELPERS ─────────────────────────────────────────────────────────── */
 
 function Logo({ dark = false }: { dark?: boolean }) {
-  void dark;
   return (
-    // Logo sits on a light chip so it stays legible on any surface and in dark mode
-    <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-white p-1 ring-1 ring-black/5 shadow-sm">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/logo.svg" alt="ShopSherpa" width={24} height={24} className="size-full object-contain" />
-    </span>
+    // On dark surfaces, invert the logo so the dark outlines become white
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/logo.svg"
+      alt="ShopSherpa"
+      width={32}
+      height={32}
+      className={`size-8 shrink-0 object-contain ${dark ? "brightness-0 invert" : ""}`}
+    />
   );
 }
 
@@ -807,87 +685,18 @@ function BeforeAfterCard({ label, variant, items }: { label: string; variant: "b
   );
 }
 
-function PlanCard({
-  eyebrow,
-  title,
-  price,
-  note,
-  cta,
-  href,
-  features,
-  featured = false,
-  preorder = false,
-}: {
-  eyebrow: string;
-  title: string;
-  price: string;
-  note: string;
-  cta: string;
-  href: string;
-  features: string[];
-  featured?: boolean;
-  preorder?: boolean;
-}) {
-  return (
-    <div className={`card-hover h-full rounded-2xl border p-7 md:p-8 ${featured ? "bg-[#0d1f2d] text-white border-[#0d1f2d]" : "bg-[#FAF8F4] border-[#2e6273]/10"}`}>
-      <div className="flex items-start justify-between gap-4 mb-8">
-        <div>
-          <p className={`text-xs font-mono uppercase tracking-wider mb-3 ${featured ? "text-[#1d9e75]" : "text-[#2e6273]"}`}>{eyebrow}</p>
-          <h3 className="text-3xl md:text-4xl font-medium tracking-tight">{title}</h3>
-        </div>
-        {featured && (
-          <span className="rounded-full bg-[#1d9e75]/15 border border-[#1d9e75]/25 px-3 py-1 text-xs font-mono text-[#1d9e75] shrink-0">
-            Best value
-          </span>
-        )}
-      </div>
-
-      <div className="mb-7">
-        <p className="text-5xl md:text-6xl font-medium tracking-tight">{price}</p>
-        <p className={`mt-2 text-sm ${featured ? "text-white/50" : "text-[#1a1a1a]/50"}`}>{note}</p>
-      </div>
-
-      <ul className="space-y-3 mb-8">
-        {features.map((feature) => (
-          <li key={feature} className={`flex items-start gap-2.5 text-sm ${featured ? "text-white/78" : "text-[#1a1a1a]/68"}`}>
-            <CheckIcon className="text-[#1d9e75] mt-0.5 shrink-0" />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
-
-      {preorder ? (
-        <div className="[&>button]:w-full">
-          <PreorderButton variant={featured ? "white" : "default"} />
-        </div>
-      ) : (
-        <a
-          href={href}
-          className={`inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition active:scale-[0.98] ${
-            featured
-              ? "bg-white text-[#0d1f2d] hover:bg-[#F4F0E8]"
-              : "bg-[#1a1a1a] text-white hover:bg-[#2e6273]"
-          }`}
-        >
-          {cta}
-        </a>
-      )}
-    </div>
-  );
-}
-
 function PlusCard({ icon, title, outcome }: { icon: ReactNode; title: string; outcome: string }) {
   return (
     <div className="card-hover bg-white rounded-2xl p-7 border border-[#2e6273]/10 h-full">
       <div className="size-10 rounded-xl bg-[#F4F0E8] flex items-center justify-center text-[#2e6273] mb-5">{icon}</div>
-      <p className="text-xs font-mono uppercase tracking-wider text-[#2e6273]/50 mb-2">Coming early access</p>
+      <p className="text-xs font-mono uppercase tracking-wider text-[#2e6273]/50 mb-2">Coming Q3 2026</p>
       <h3 className="text-xl font-medium tracking-tight mb-3">{title}</h3>
       <p className="text-sm text-[#1a1a1a]/60 leading-relaxed">{outcome}</p>
     </div>
   );
 }
 
-/* ─── Roadmap card - three states: live, building, planned ─── */
+/* ─── Roadmap card — three states: live, building, planned ─── */
 function RoadmapCard({
   phase,
   status,
@@ -927,7 +736,7 @@ function RoadmapCard({
   );
 }
 
-/* ─── Blog card - teaser only, links to /blog ─── */
+/* ─── Blog card — teaser only, links to /blog ─── */
 function BlogCard({ tag, title, read }: { tag: string; title: string; read: string }) {
   return (
     <a

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -239,6 +240,7 @@ export default async function BlogPostPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) notFound();
@@ -280,6 +282,7 @@ export default async function BlogPostPage({
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
       <script
+        nonce={nonce}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
@@ -384,7 +387,7 @@ export default async function BlogPostPage({
             <Link href="/privacy" className="hover:text-white transition">Privacy</Link>
             <Link href="/security" className="hover:text-white transition">Security</Link>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
-            <Link href="/lab" className="hover:text-white transition">Lab</Link>
+            <Link href="/scam-directory" className="hover:text-white transition">Scam Directory</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>
           </div>
           <div className="text-xs text-white/40">2026 ShopSherpa, made by Anghelo in Nashua NH</div>
@@ -395,11 +398,14 @@ export default async function BlogPostPage({
 }
 
 function Logo({ dark = false }: { dark?: boolean }) {
-  void dark;
   return (
-    <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-white p-1 ring-1 ring-black/5 shadow-sm">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/logo.svg" alt="ShopSherpa" width={24} height={24} className="size-full object-contain" />
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/logo.svg"
+      alt="ShopSherpa"
+      width={32}
+      height={32}
+      className={`size-8 shrink-0 object-contain ${dark ? "brightness-0 invert" : ""}`}
+    />
   );
 }

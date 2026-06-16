@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PreorderButton } from "@/components/PreorderButton";
@@ -71,7 +72,8 @@ const ALTERNATIVE_FEATURES = [
   ["Price", "Free", "$9.99 lifetime", "Free", "Free", "Free"],
 ] as const;
 
-export default function ComparePage() {
+export default async function ComparePage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -86,6 +88,7 @@ export default function ComparePage() {
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#1a1a1a] antialiased">
       <script
+        nonce={nonce}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
