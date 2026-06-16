@@ -1,44 +1,76 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollFade } from "@/components/ScrollFade";
+import { SiteHeader } from "@/components/SiteHeader";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { CinematicHero } from "@/components/ui/cinematic-landing-hero";
+import { pageMetadata, siteUrl } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "MiniUAV Guardian | ShopSherpa",
-  description:
-    "An autonomous security quadrotor designed for indoor patrol. ESP32-powered, PIR motion detection, real-time Wi-Fi logging.",
-};
+const pageDescription =
+  "MiniUAV Guardian is an autonomous indoor security quadrotor from ShopSherpa Lab with ESP32 controls, PIR motion detection, and real-time Wi-Fi logging.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "MiniUAV Guardian",
+  description: pageDescription,
+  path: "/product",
+  image: "/pcb-model.svg",
+  imageAlt: "MiniUAV Guardian PCB and security quadrotor prototype",
+  keywords: ["MiniUAV Guardian", "ShopSherpa Lab", "Shop Sherpa Lab", "autonomous security quadrotor"],
+});
 
 export default function ProductPage() {
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${siteUrl}/product#product`,
+    "name": "MiniUAV Guardian",
+    "description": pageDescription,
+    "brand": { "@id": `${siteUrl}/#organization` },
+    "category": "Autonomous security hardware",
+    "image": `${siteUrl}/pcb-model.svg`,
+    "offers": {
+      "@type": "Offer",
+      "url": `${siteUrl}/product`,
+      "price": "9.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/PreOrder",
+      "itemCondition": "https://schema.org/NewCondition",
+    },
+  };
+
   return (
     <main className="min-h-screen bg-[#000] text-white antialiased overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
 
-      {/* NAV — dark, Apple-style */}
-      <header className="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-white/8">
-        <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 hover:opacity-70 transition">
-            <Logo />
-            <span className="font-semibold text-base tracking-tight text-white">ShopSherpa</span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-7 text-sm text-white/60">
-            <Link href="/#how-it-works" className="hover:text-white transition">How it works</Link>
-            <Link href="/team" className="hover:text-white transition">Team</Link>
-            <Link href="/blog" className="hover:text-white transition">Blog</Link>
-            <Link href="/product" className="text-white font-medium">MiniUAV</Link>
-          </nav>
-          <a
-            href="mailto:hello@shopsherpa.org"
-            className="px-4 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-white/90 transition active:scale-[0.98]"
-          >
-            Contact us
-          </a>
-        </div>
-      </header>
+      <SiteHeader active="product" variant="dark" cta="access" />
+
+      {/* ─── CINEMATIC INTRO ─── */}
+      <CinematicHero
+        tagline1="Security from"
+        tagline2="a new angle."
+        cardHeading="Autonomous. Precise."
+        cardDescription={
+          <>
+            <span className="font-semibold text-white">MiniUAV Guardian</span> is a security quadrotor powered by ShopSherpa&apos;s threat intelligence. It patrols on its own, detects motion with PIR sensing, and logs events in real time - no pilot, no cloud, no compromise.
+          </>
+        }
+        ctaHeading="Early access open."
+        ctaDescription="MiniUAV Guardian is in active development. Request early access and be first to know when we ship."
+      />
+
+      <div className="relative h-28 overflow-hidden bg-black">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#1d9e75]/70 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(29,158,117,.18),transparent_56%)]" />
+        <div className="absolute left-1/2 top-1/2 h-16 w-[min(760px,80vw)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-white/[0.03] blur-sm" />
+      </div>
 
       {/* ─── HERO ─── */}
-      <section className="relative flex flex-col items-center justify-center min-h-[95vh] px-6 text-center overflow-hidden">
-        {/* WebGL wave shader — fills the hero */}
+      <section className="relative flex flex-col items-center justify-center min-h-[78vh] px-6 py-28 text-center overflow-hidden">
+        {/* WebGL wave shader - fills the hero */}
         <WebGLShader className="absolute inset-0 w-full h-full block opacity-40" />
         {/* Dark overlay so text stays readable */}
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black pointer-events-none" />
@@ -47,12 +79,12 @@ export default function ProductPage() {
           <p className="text-xs uppercase tracking-[0.2em] text-[#1d9e75] mb-6 font-mono">MiniUAV Guardian</p>
         </ScrollFade>
         <ScrollFade delay={100}>
-          <h1 className="text-5xl sm:text-7xl md:text-[6rem] lg:text-[7rem] font-semibold tracking-tighter leading-[0.95] max-w-5xl mb-8">
+          <h2 className="text-5xl sm:text-7xl md:text-[6rem] lg:text-[7rem] font-semibold tracking-tighter leading-[0.95] max-w-5xl mb-8">
             Security from<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2e6273] via-[#1d9e75] to-[#2e6273]">
               a new angle.
             </span>
-          </h1>
+          </h2>
         </ScrollFade>
         <ScrollFade delay={200}>
           <p className="text-white/55 text-lg md:text-xl max-w-xl leading-relaxed mb-12">
@@ -76,47 +108,6 @@ export default function ProductPage() {
             >
               View specs
             </a>
-          </div>
-        </ScrollFade>
-
-        {/* 3D render placeholder */}
-        <ScrollFade delay={400}>
-          <div className="mt-20 relative">
-            <div className="w-[320px] h-[320px] md:w-[480px] md:h-[480px] rounded-3xl bg-gradient-to-b from-[#1a2a35] to-[#0d1f2d] border border-white/10 flex flex-col items-center justify-center shadow-[0_0_120px_rgba(46,98,115,0.25)]">
-              {/* Drone wireframe SVG */}
-              <svg viewBox="0 0 200 160" className="w-48 md:w-64 text-[#2e6273]" fill="none" stroke="currentColor" strokeWidth="1.5">
-                {/* Body */}
-                <rect x="75" y="65" width="50" height="35" rx="8" fill="#1d9e75" fillOpacity="0.15" stroke="#1d9e75" strokeWidth="1.5" />
-                {/* Arms */}
-                <line x1="75" y1="72" x2="30" y2="45" strokeOpacity="0.6" />
-                <line x1="125" y1="72" x2="170" y2="45" strokeOpacity="0.6" />
-                <line x1="75" y1="93" x2="30" y2="118" strokeOpacity="0.6" />
-                <line x1="125" y1="93" x2="170" y2="118" strokeOpacity="0.6" />
-                {/* Rotors */}
-                <ellipse cx="30" cy="45" rx="22" ry="6" strokeOpacity="0.5" />
-                <ellipse cx="170" cy="45" rx="22" ry="6" strokeOpacity="0.5" />
-                <ellipse cx="30" cy="118" rx="22" ry="6" strokeOpacity="0.5" />
-                <ellipse cx="170" cy="118" rx="22" ry="6" strokeOpacity="0.5" />
-                {/* Motor hubs */}
-                <circle cx="30" cy="45" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                <circle cx="170" cy="45" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                <circle cx="30" cy="118" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                <circle cx="170" cy="118" r="4" fill="#1d9e75" stroke="#1d9e75" />
-                {/* Camera / PIR sensor */}
-                <circle cx="100" cy="90" r="5" fill="#2e6273" stroke="#2e6273" strokeWidth="1" />
-                {/* PCB grid inside body */}
-                <line x1="83" y1="75" x2="83" y2="92" strokeOpacity="0.3" strokeWidth="0.8" />
-                <line x1="91" y1="75" x2="91" y2="92" strokeOpacity="0.3" strokeWidth="0.8" />
-                <line x1="109" y1="75" x2="109" y2="92" strokeOpacity="0.3" strokeWidth="0.8" />
-                <line x1="117" y1="75" x2="117" y2="92" strokeOpacity="0.3" strokeWidth="0.8" />
-              </svg>
-              <p className="text-xs font-mono text-white/30 mt-6">3D render · WIP</p>
-              <div className="absolute -top-2 -right-2 bg-[#1d9e75] text-white text-[10px] font-mono px-2 py-1 rounded-lg">
-                In development
-              </div>
-            </div>
-            {/* Ground shadow */}
-            <div aria-hidden className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 h-6 bg-[#2e6273]/20 blur-xl rounded-full" />
           </div>
         </ScrollFade>
 
@@ -153,7 +144,7 @@ export default function ProductPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-            {/* Large card — PCB */}
+            {/* Large card - PCB */}
             <ScrollFade delay={100} className="md:col-span-2">
               <BentoCard accent="#2e6273" label="Custom Hardware">
                 <div className="flex flex-col h-full justify-between">
@@ -211,7 +202,7 @@ export default function ProductPage() {
                   <div>
                     <p className="text-2xl font-semibold tracking-tight mb-3">Audible + Wi-Fi</p>
                     <p className="text-white/55 text-sm leading-relaxed">
-                      Triggers a buzzer on detection and logs a timestamped event over Wi-Fi. No cloud required — works on your local network.
+                      Triggers a buzzer on detection and logs a timestamped event over Wi-Fi. No cloud required - works on your local network.
                     </p>
                   </div>
                   <div className="mt-6 flex items-center gap-3">
@@ -250,7 +241,7 @@ export default function ProductPage() {
           </ScrollFade>
           <ScrollFade delay={100}>
             <blockquote className="text-3xl md:text-5xl font-medium tracking-tight leading-[1.15] max-w-3xl text-white/90">
-              "Existing security cameras are passive. I wanted something that could move, think, and respond — without anyone controlling it."
+              "Existing security cameras are passive. I wanted something that could move, think, and respond - without anyone controlling it."
             </blockquote>
           </ScrollFade>
           <ScrollFade delay={200}>
@@ -319,6 +310,8 @@ export default function ProductPage() {
             <span className="font-medium text-white">ShopSherpa</span>
           </Link>
           <div className="flex flex-wrap gap-6 text-sm">
+            <Link href="/privacy" className="hover:text-white transition">Privacy</Link>
+            <Link href="/security" className="hover:text-white transition">Security</Link>
             <Link href="/" className="hover:text-white transition">ShopSherpa</Link>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
             <Link href="/team" className="hover:text-white transition">Team</Link>
@@ -370,14 +363,11 @@ function TimelineRow({ phase, label, detail, status }: { phase: string; label: s
 }
 
 function Logo({ dark = false }: { dark?: boolean }) {
+  void dark;
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src="/logo.svg"
-      alt="ShopSherpa"
-      width={32}
-      height={32}
-      className={`size-8 shrink-0 object-contain ${dark ? "brightness-0 invert" : "brightness-0 invert"}`}
-    />
+    <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-white p-1 ring-1 ring-black/5 shadow-sm">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/logo.svg" alt="ShopSherpa" width={24} height={24} className="size-full object-contain" />
+    </span>
   );
 }
