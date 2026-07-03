@@ -3,6 +3,21 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  webpack: (config) => {
+    config.resolve.extensionAlias = {
+      ".js": [".ts", ".js"],
+      ".jsx": [".tsx", ".jsx"],
+    };
+    return config;
+  },
+  outputFileTracingIncludes: {
+    "/api/extension/visual-scan": [
+      "./lib/visual/model.onnx",
+      "./lib/visual/model.onnx.data",
+      "./lib/visual/model.meta.json",
+      "./lib/visual/thresholds.json",
+    ],
+  },
   async redirects() {
     return [
       {

@@ -1,0 +1,24 @@
+{
+  "model_type": "binary_classifier",
+  "output": "visual_risk_probability",
+  "output_description": "Calibrated probability that the screenshot is suspicious (0..1).",
+  "label_names": [
+    "benign",
+    "suspicious"
+  ],
+  "default_threshold": 0.5,
+  "image_size": 224,
+  "normalize_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalize_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "opset": 18,
+  "per_finding_signals": false,
+  "note": "This model outputs a single risk probability. Per-finding signals (brand_impersonation, etc.) are not available until per-image human annotations are collected."
+}
